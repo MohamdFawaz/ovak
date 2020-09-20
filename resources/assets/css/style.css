@@ -1,0 +1,222 @@
+@font-face {
+    font-family: "fontawesome";
+    src: url("../fonts/fa-regular-400.woff2");
+    src: url("../fonts/fontawesome-webfont.woff2");
+    src: url("../fonts/fa-regular-400.eot");
+    src: url("../fonts/fa-regular-400.ttf");
+    src: url("../fonts/fa-regular-400.woff");
+}
+.no-padding{
+    padding:0px !important;
+}
+body {
+    padding: 0px;
+}
+.margin-top-10{
+    margin-top:10px;
+}
+.margin-bottom-10{
+    margin-bottom:10px;
+}
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: none !important;
+    }
+
+.home-header-image ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.header-logo {
+    width: 160px;
+    margin: 20px;
+    float: left;
+}
+
+.home-header-image {
+    background: url("../images/header.png");
+    width: 100%;
+    height: 800px;
+    background-repeat:no-repeat;
+    background-size:cover;
+    position:relative;
+}
+.links-carrier {
+    position: absolute;
+    width: 300px;
+    background-color: #0D3A3A;
+    right: -129px;
+    top: 129px;
+    padding: 9px 0px;
+    transform: rotate(-90deg);
+}
+.calculator {
+    background-color: #B7893D;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin-right:15px;
+    margin-left:10px;
+}
+    .calculator .fa {
+        transform: rotate(90deg);
+        color:#fff;
+    }
+.links-carrier a{
+    color:#fff;
+}
+.consultancy-square{
+    position:absolute;
+    top:53%;
+    left:14%;
+    background-color:#0D3A3A;
+    padding:0px 30px;
+    text-align:center;
+    
+}
+    .consultancy-square .square-acc{
+        background-color:#B7893D;
+        width:4px;
+        height:20px;
+        top:0px;
+        margin-left:50%;
+        margin-bottom:15px;
+    }
+.consultany{
+    color:#ffffff;
+    font-size:10px;
+    text-align:center;
+}
+.consultancy-square span {
+    display: block;
+}
+.consultancy-square-link{
+    text-align:center;
+    background-color:#B7893D;
+    padding:10px 20px;
+    color:#fff;
+    margin-bottom:7px;
+    font-size:12px;
+    border-radius:5px;
+}
+.consultancy-square a{
+    color:#fff;
+}
+.consultancy-square a:hover{
+    color:#0D3A3A;
+}
+.white-color{
+    color:#fff;
+}
+.gold-color{
+    color:#B7893D;
+}
+.green-color{
+    color:#0D3A3A;
+}
+.links-carrier a:hover{
+    color:#B7893D;
+}
+
+.navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link {
+    color: #B7893D !important;
+}
+
+.navbar-nav .nav-link {
+    color: #0D3A3A !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #B7893D !important;
+}
+.dropdown-menu{
+    background-color: #0D3A3A !important;
+}
+.dropdown-item {
+    color: #B7893D !important;
+    background-color: #0D3A3A !important;
+}
+.dropdown-menu li{
+    margin:5px !important;
+}
+.dropdown-item:hover{
+    background-color:#B7893D !important;
+    color:#0D3A3A !important;
+}
+.navbar-nav .fa{
+    color:#B7893D !important;
+}
+.ml-auto .nav-item a{
+    color:#fff !important;
+}
+.navbar {
+    border-bottom: 1px solid #0D3A3A;
+    padding:0px !important;
+}
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        margin-top: 0;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 80%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .dropdown-menu.fade-up {
+        top: 180%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transition: .3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: rotateX(0deg);
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding:0px !important;
+    }
+}
+@media all and (min-width: 768px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        margin-top: 0;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 80%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .dropdown-menu.fade-up {
+        top: 180%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transition: .3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: rotateX(0deg);
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 0px !important;
+    }
+}
