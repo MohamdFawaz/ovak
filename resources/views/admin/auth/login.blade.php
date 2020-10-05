@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('content')
+@include('admin.partials.unauthorized.header')
+
     <div class="login-box">
         <div class="login-logo">
             <a href="../../index2.html"><b>Ovak</b> Admin</a>
@@ -53,4 +53,4 @@
             <!-- /.login-card-body -->
         </div>
     </div>
-@endsection
+@include('admin.partials.unauthorized.footer')

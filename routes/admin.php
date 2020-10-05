@@ -16,7 +16,7 @@ Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
     Route::group(['middleware' => 'auth:admin'] , function (){
         Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
 
-        Route::group(['prefix' => '/user'], function (){
+        Route::group(['prefix' => '/users'], function (){
             Route::resource('/','UserController'); //todo use as a class
         });
 
