@@ -1,11 +1,12 @@
-var navbar = document.querySelector('.menu');
+$(function () {
+    var header = $(".menu");
 
-window.onscroll = function () {
-
-    // pageYOffset or scrollY
-    if (window.pageYOffset > 0) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-};
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 50) {
+            header.addClass("scrolled");
+        } else {
+            header.removeClass("scrolled");
+        }
+    });
+});
