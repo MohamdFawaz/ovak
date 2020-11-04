@@ -36,6 +36,10 @@
         color: #B7893D;
     }
 
+.not-link a {
+    color: #fff !important;
+}
+
 .menu-list-right .fa {
     color: #B7893D;
 }
@@ -80,8 +84,13 @@
     .scrolled .menu-list-right li:hover a {
         color: #0D3A3A;
     }
+
     .scrolled .menu-list-right li a {
         color: #B7893D;
+    }
+
+    .scrolled .not-link a {
+        color: #B7893D !important;
     }
 
 @media only screen and (max-width: 1100px) {
@@ -127,7 +136,7 @@
     }
 
         .scrolled .nav-button a .fa:hover {
-            color: #fff;
+            color: #0D3A3A;
         }
 }
 
@@ -138,14 +147,14 @@
     }
 
     .mobile-menu {
-        background-color: #0D3A3A;
+        /*background-color: #0D3A3A;*/
         border: 1px solid #B7893D;
         height: 100vh;
         left: 0;
         top: 0;
         position: absolute;
         float: left;
-        z-index: 1005;
+        z-index: 1205;
         box-shadow: 1px 5px 4px #B7893D;
     }
 
@@ -155,18 +164,23 @@
         top: 0;
         right: 0;
         padding: 0px;
+        z-index: 1201;
         background-color: rgba(13,58,58,.9);
     }
 
     .mobile-menu-logo {
-        background-color: #B7893D;
+        background-color: #fff;
         width: 100%;
         padding: 25px;
     }
 
     .mobile-links ul li a {
-        color: #B7893D;
+        color: #fff;
     }
+
+        .mobile-links ul li a i {
+            color: #B7893D;
+        }
 
     .mobile-links ul {
         padding: 0px;
@@ -178,7 +192,6 @@
 
         .mobile-links ul li {
             display: block;
-            margin: 20px;
             border-bottom: 1px solid #B7893D;
             padding: 5px;
         }
@@ -218,7 +231,7 @@
 
         .social-links .phone {
             color: #B7893D;
-            text-align:center;
+            text-align: center;
         }
 
         .social-links a i {

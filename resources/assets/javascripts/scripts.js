@@ -63,3 +63,126 @@ function closeAllSelect(elmnt) {
     }
 }
 document.addEventListener("click", closeAllSelect);
+$(document).ready(function () {
+    $("#nav-toggle").click(function () {
+        $(".mobile-menu").toggleClass("display-none");
+        $(".menu-background").toggleClass("display-none", "filter");
+        $(".login-modal").addClass("display-none");
+        $(".modal").removeClass("page-ovarlay");
+        $(".consultancy-square").toggleClass("display-none");
+        $(".links-carrier").toggleClass("display-none");
+    });
+    $(".menu-background").click(function () {
+        $(".menu-background").addClass("display-none");
+        $(".mobile-menu").toggleClass("display-none");
+        $(".consultancy-square").toggleClass("display-none");
+        $(".links-carrier").toggleClass("display-none");
+
+    });
+});
+$(document).ready(function () {
+    $("#show").click(function () {
+        $(".filter-select").toggleClass("extend");
+    });
+});
+$(".variable").slick({
+    dots: true,
+    infinite: true,
+    variableWidth: true,
+    autoplay: true
+});
+$(".slider-item").click(function () {
+    $(".slider-item").removeClass("slick-current slick-active");
+    $(this).toggleClass("slick-current slick-active");
+});
+let mybutton = document.getElementById("top");
+window.onscroll = function () { scrollFunction() };
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+$(".login").click(function () {
+    $(".consultancy-square").addClass("display-none");
+    $(".links-carrier").addClass("display-none");
+    $(".modals").toggleClass("page-ovarlay");
+    $(".login-modal").toggleClass("display-none");
+    $(".mobile-menu").addClass("display-none");
+    $(".menu-background").toggleClass("display-none");
+});
+$(".modal-close").click(function () {
+    $(".consultancy-square").toggleClass("display-none");
+    $(".links-carrier").toggleClass("display-none");
+    $(".modals").toggleClass("page-ovarlay");
+    $(".login-modal").addClass("display-none");
+    $(".registration-modal").addClass("display-none");
+    $(".logout-modal").addClass("display-none");
+    $(".password-modal").addClass("display-none");
+});
+$(".login-change-modal").click(function () {
+    $(".registration-modal").toggleClass("display-none");
+    $(".login-modal").toggleClass("display-none");
+});
+
+$(".registration-change-modal").click(function () {
+    $(".registration-modal").toggleClass("display-none");
+    $(".login-modal").toggleClass("display-none");
+});
+$(".logout").click(function () {
+    $(".logout-modal").toggleClass("display-none");
+    $(".consultancy-square").addClass("display-none");
+    $(".links-carrier").addClass("display-none");
+    $(".modals").toggleClass("page-ovarlay");
+    $(".menu-background").toggleClass("display-none");
+    $(".mobile-menu").addClass("display-none");
+});
+$(".forget-cahnge-modal").click(function () {
+    $(".password-modal").toggleClass("display-none");
+    $(".login-modal").toggleClass("display-none");
+});
+$(document).ready(function () {
+    $("select.select").change(function () {
+        var selectedElement = $(this).children("option:selected").val();
+        if (selectedElement === "all") {
+            $(".column").removeClass("hide");
+        }
+        else {
+            $(".column").addClass("hide");
+            $("." + selectedElement).toggleClass("hide");
+        }
+    });
+});
+$(document).ready(function () {
+    var item = $(".column");
+    var numToShow = 8;
+    var button = $("#show");
+    var numInList = item.length;
+    item.hide();
+    if (numInList > numToShow) {
+        button.show();
+    }
+    item.slice(0, numToShow).show();
+
+    button.click(function () {
+        var showing = item.filter(':visible').length;
+        item.slice(showing - 1, showing + numToShow).fadeIn();
+        var nowShowing = item.filter(':visible').length;
+        if (nowShowing >= numInList) {
+            button.hide();
+        }
+    });
+});
+
+$(".footer a[href^='#']").on("click", function (n) {
+    n.preventDefault();
+    var e = this.hash;
+    $("html, body").animate({ scrollTop: $(e).offset().top }, 1e3, function () {
+        window.location.hash = e;
+    });
+});

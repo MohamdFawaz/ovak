@@ -197,10 +197,13 @@
 .developers .slick-current .slider-image img {
     height: auto;
     opacity: 1;
-    background-color:#fff;
+    background-color: #fff;
 }
-.developers .slider-item{
-    margin-top:0px;
+.developers .slider-item {
+    margin-top: 0px;
+    background-color: #fff;
+    border-radius: 50%;
+    outline: 0;
 }
 
 .developers .slick-list{

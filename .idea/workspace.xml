@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cadb9586-ec9e-4b28-953b-8397360d44c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/javascripts/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/javascripts/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -173,6 +179,7 @@
       <updated>1600628987324</updated>
       <workItem from="1600628988524" duration="742000" />
       <workItem from="1600793257108" duration="100000" />
+      <workItem from="1603618603617" duration="399000" />
     </task>
     <task id="LOCAL-00001" summary="Added files">
       <created>1600629016754</created>
@@ -220,5 +227,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600629158516" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603618646745">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603618646745" />
   </component>
 </project>
