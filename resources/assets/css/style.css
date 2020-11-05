@@ -13,6 +13,9 @@
 }
 
 /*****General Styles****/
+body{
+    position:relative;
+}
 .no-padding {
     padding: 0 !important;
 }
@@ -21,7 +24,6 @@
 .white-color {
     color: #fff;
 }
-
 .gold-color {
     color: #B7893D;
 }
@@ -45,21 +47,25 @@
 .image-full-width {
     width: 100%;
 }
-.ovak-font{
-    font-family:Bahnschrift;
+
+.ovak-font {
+    font-family: Bahnschrift;
 }
+
 section {
     margin-bottom: 50px;
 }
-
+.login{
+    cursor:pointer;
+}
 .ovak-button {
     background-color: #B7893D;
     color: #fff;
     padding: 15px 40px;
     border-radius: 5px;
     font-family: Bahnschrift;
-    border:0;
-    outline:0;
+    border: 0;
+    outline: 0;
 }
 
     .ovak-button:hover, .ovak-button:focus {
@@ -67,19 +73,24 @@ section {
         color: #fff;
         text-decoration: none;
     }
-    .ovak-dark-button{
-        background-color:#0D3A3A;
-        color:#fff;
-        border-radius:5px;
-        font-family:Bahnschrift;
-        width:100%;
-        padding:5px 0;
-        border:0;
-        outline:0;
+
+.ovak-dark-button {
+    background-color: #0D3A3A;
+    color: #fff;
+    border-radius: 5px;
+    font-family: Bahnschrift;
+    width: 100%;
+    padding: 5px 0;
+    border: 0;
+    outline: 0;
+}
+
+    .ovak-dark-button:hover {
+        background-color: #B7893D;
+        color: #fff;
     }
-    .ovak-dark-button:hover{
-        background-color:#B7893D;
-        color:#fff;
+    #show{
+        cursor:pointer;
     }
 body {
     padding: 0;
@@ -88,6 +99,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
+a:hover, a:focus{
+    outline:0;
+}
+
 
 .display-none {
     display: none;
@@ -116,16 +131,23 @@ h1, h2, h3, h4, h5, h6 {
 .margin-top-25 {
     margin-top: 25px;
 }
-.margin-top-80{
-    margin-top:80px;
+
+.margin-top-80 {
+    margin-top: 80px;
 }
+
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}
+
 
 .margin-bottom-50 {
     margin-bottom: 50px;
 }
+
 .margin-bottom-80 {
     margin-bottom: 80px;
 }
@@ -154,13 +176,14 @@ a {
     text-decoration: none;
 }
 
-    a:hover, a:focus{
+    a:hover, a:focus {
         text-decoration: none !important;
     }
 
 .gold-border-bottom {
     border-bottom: 1px solid #B7893D;
 }
+
 /*****Scroll Style****/
 ::-webkit-scrollbar {
     width: 6px;
@@ -188,7 +211,7 @@ a {
     width: 40px;
     height: 40px;
     outline: 0;
-    z-index: 1200;
+    z-index: 25;
 }
 
 .return-top i {
@@ -222,14 +245,6 @@ a {
     position: relative;
     border: 1px solid #707070;
 }
-.header-ovarlay{
-    top:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    background-color:rgba(0,0,0,0.5);
-}
-
 
 .links-carrier {
     position: absolute;
@@ -261,7 +276,7 @@ a {
 
 .consultancy-square {
     position: absolute;
-    top: 35%;
+    top: 10%;
     left: 14%;
     background-color: #0D3A3A;
     padding: 0 30px;
@@ -309,6 +324,17 @@ a {
 .links-carrier a:hover {
     color: #B7893D;
 }
+.page-ovarlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    margin-bottom:0;
+    z-index:1000;
+}
+
 .modal-form {
     height: 100%;
 }
@@ -316,60 +342,107 @@ a {
 .user-model img {
     height: 400px;
 }
+
 .user-modal {
-    position: absolute;
+    position: fixed;
     top: 25%;
     height: 387px;
     overflow: hidden;
 }
+
 .modal-close {
     position: absolute;
     right: 10px;
     top: 5px;
-    color: #fff;
+    color: #0D3A3A;
 }
-.modal-close i:hover{
-    color:#B7893D
-}
+
+    .modal-close i:hover {
+        color: #B7893D
+    }
+
 .registration-modal-close {
     position: absolute;
     right: 10px;
     top: 5px;
     color: #B7893D;
 }
-    .registration-modal-close i:hover{
-        color:#0D3A3A;
+
+    .registration-modal-close i:hover {
+        color: #0D3A3A;
     }
-    .modal-contents {
-        padding: 20px;
-    }
+
+.modal-contents {
+    padding: 20px;
+}
+
     .modal-contents input {
         margin-top: 10px;
         border: 1px solid #80BDFF;
-        border-radius:5px;
-        color:#B7893D;
-        font-size:12px;
+        border-radius: 5px;
+        color: #B7893D;
+        font-size: 12px;
+        width:100%;
     }
+
 .user-modal .modal-image {
-    position:relative;
+    position: relative;
 }
-.modal-image-ovarlay{
-    position:absolute;
-    top:35%;
-    color:#fff;
-    text-align:center;
+
+.modal-image-ovarlay {
+    position: absolute;
+    top: 35%;
+    color: #fff;
+    text-align: center;
+    padding:20px;
 }
-.modal-image-ovarlay .ovak-button{
-    padding:10px 45px;
-    border-radius:25px;
-}
+
+    .modal-image-ovarlay .ovak-button {
+        padding: 10px 45px;
+        border-radius: 25px;
+    }
+
 .modal-contents ::placeholder {
     color: #000;
     opacity: 0.5;
     font-size: 10px;
 }
-.input-edit{
-    width:45%;
+
+.input-edit {
+    width: 45%;
+}
+
+.logout-modal .logout-image {
+    width: 120px;
+    margin: auto;
+    border: 1px solid #B7893D;
+    border-radius: 50%;
+    height: 120px;
+    padding: 10px;
+    padding-top: 12%;
+    position: relative;
+    top: -50px;
+    background-color: #fff;
+}
+
+    .logout-modal .logout-image img {
+        width: 100%;
+    }
+
+.logout-modal .user-modal {
+    overflow: visible;
+}
+
+.logout-modal .modal-form {
+    height: auto;
+    border: 1px solid #B7893D;
+}
+
+.logout-modal .modal-contents {
+    padding-top: 0;
+}
+.modals{
+    margin-bottom:0;
 }
 /*******Ovak Filter*********/
 .filter-label {
@@ -380,6 +453,7 @@ a {
     padding: 12px;
     position: absolute;
     margin-top: -21px;
+    border-radius:5px;
 }
 
 .box-shadow {
@@ -456,9 +530,11 @@ a {
     right: 0;
     z-index: 99;
 }
+
     .select-items div {
         padding-left: 5px !important;
     }
+
 .select-hide {
     display: none;
 }
@@ -486,9 +562,10 @@ a {
         border: 1px solid #B7893D !important;
         outline: none !important;
     }
-    .filter-button .ovak-button{
-        padding:10px 45px;
-    }
+
+.filter-button .ovak-button {
+    padding: 10px 45px;
+}
 
 /*********Vision Section***********/
 .vision-img-show {
@@ -602,6 +679,10 @@ a {
     outline: 0;
     color: #B7893D;
 }
+.slider-background {
+    background-color: #F6F6F6;
+    padding:40px 0;
+}
 /********Footer******************/
 .footer {
     background-color: #092A2A;
@@ -703,7 +784,7 @@ a {
 
     .footer .copy-right h5 {
         padding: 15px;
-        margin-bottom:0;
+        margin-bottom: 0;
     }
 /*********Mobile Styles***********/
 @media only screen and (max-width: 1100px) {
@@ -746,44 +827,95 @@ a {
 }
 
 @media only screen and (max-width: 992px) {
-    .vision-text{
-        margin-top:0;
+    .vision-text {
+        margin-top: 0;
     }
-    .filter-body .border-right-md{
-        border-right:0;
+
+    .filter-body .border-right-md {
+        border-right: 0;
     }
-    .filter-body .border-right-sm{
-        border-right:1px solid #707070;
+
+    .filter-body .border-right-sm {
+        border-right: 1px solid #707070;
     }
-    .header-letter-spacing{
-        letter-spacing:7px;
+
+    .header-letter-spacing {
+        letter-spacing: 7px;
     }
-    .letter-spacing{
-        letter-spacing:0;
+
+    .letter-spacing {
+        letter-spacing: 0;
     }
-    .vision-img-show{
-        height:330px;
+
+    .vision-img-show {
+        height: 330px;
     }
-    .subscription .margin-top-50{
-        margin-top:20px;
+
+    .subscription .margin-top-50 {
+        margin-top: 20px;
     }
-    .footer ul{
-        padding-top:5px;
+
+    .footer ul {
+        padding-top: 5px;
     }
-    .footer-links{
-        margin-top:20px;
+
+    .footer-links {
+        margin-top: 20px;
     }
-    .footer .social-links{
-        margin-top:20px;
+
+    .footer .social-links {
+        margin-top: 20px;
     }
-    .footer .margin-top-25{
-        margin-top:10px;
+
+    .footer .margin-top-25 {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .logout-modal .logout-image {
+        top: -55px;
+        padding-top: 14%;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .no-padding-xs {
         padding: 0;
+    }
+
+    .user-modal .margin-bottom-80, .user-modal .margin-top-80 {
+        margin: 0;
+    }
+    .mobile-menu {
+        overflow:auto;
+    }
+    .user-modal .modal-form {
+        height: auto;
+        border: 1px solid #B7893D;
+    }
+
+    .user-modal .modal-contents input {
+        display: block;
+        margin: 10px auto;
+    }
+    .logout-modal .logout-image{
+        padding-top:18%;
+    }
+    .modal-contents form {
+        text-align: center;
+    }
+
+    .user-modal .margin-right-xs {
+        margin-right: 5px;
+    }
+
+    .user-modal .input-edit {
+        width: 87%;
+    }
+
+    .logout-modal .modal-contents {
+        margin-top: -30px;
     }
 
     .filter-body {
@@ -810,12 +942,11 @@ a {
     .filter-body .custom-select {
         width: 100%;
     }
-    .filter-label{
-        margin-left:20px;
+   
+    .vision-img-show {
+        margin-top: 25px;
     }
-    .vision-img-show{
-        margin-top:25px;
-    }
+
     .section-second-header {
         font-size: 30px;
     }
@@ -824,7 +955,7 @@ a {
         letter-spacing: 0;
     }
 
-    .letter-spacing {
+   .subscription .letter-spacing {
         letter-spacing: 0;
     }
 
@@ -832,16 +963,20 @@ a {
         height: 300px;
         background-position-x: 188px;
     }
-    .subscription .subscription-input{
-        margin-bottom:25px;
+
+    .subscription .subscription-input {
+        margin-bottom: 25px;
     }
-    .footer{
-        padding-top:25px;
+
+    .footer {
+        padding-top: 25px;
     }
-    .footer .subscription-input{
-        margin-bottom:20px;
-    }
-    .footer ul {
-        margin-bottom:25px;
-    }
+
+        .footer .subscription-input {
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            margin-bottom: 25px;
+        }
 }
