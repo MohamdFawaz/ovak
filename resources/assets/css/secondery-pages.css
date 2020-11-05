@@ -131,7 +131,32 @@ p {
     width: 100%;
     height: 1px;
 }
-@media only screen and (max-width: 768px){
+.single-project .secondery-page-header-ovarlay{
+    left:13%;
+    bottom:50px;
+}
+    .single-project .secondery-page-header-ovarlay .ovak-button{
+        padding:10px 25px;
+    }
+    .single-project .demed-background{
+        background-color:#aaa
+    }
+.single-project-details .single-project-header h2{
+    text-transform:uppercase;
+    display:inline-block;
+    padding-left:5px;
+}
+.single-project-details .single-project-header img{
+    width:100px;
+    border-radius:50%;
+    height:100px;
+    overflow:hidden;
+    border:7px solid #707070;
+}
+.single-project-details .single-item-details img{
+    width:100%;
+}
+@media only screen and (max-width: 768px) {
     .details-paragraph{
         width:100%;
     }
