@@ -29,13 +29,15 @@
 
     <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
 
     @yield('css')
 </head>
 @if(strpos(url()->current(),'auth'))
     <body class="hold-transition login-page">
 @else
-    <body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+    <body class="hold-transition sidebar-mini layout-fixed "> <!-- sidebar-collapse -->
 @endif
 <div class="wrapper">
     <!-- Navbar -->
@@ -46,24 +48,21 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../index3.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+                <a href="{{route('admin.dashboard')}}" class="nav-link">Home</a>
             </li>
         </ul>
 
         <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+{{--        <form class="form-inline ml-3">--}}
+{{--            <div class="input-group input-group-sm">--}}
+{{--                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">--}}
+{{--                <div class="input-group-append">--}}
+{{--                    <button class="btn btn-navbar" type="submit">--}}
+{{--                        <i class="fas fa-search"></i>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </form>--}}
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
@@ -180,7 +179,7 @@
 
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Mohamed Fawaz</a>
+                    <a href="#" class="d-block">{{auth()->guard('admin')->user()->name}}</a>
                 </div>
             </div>
 

@@ -9,7 +9,7 @@
             <div class="card-body login-card-body">
                 @include('admin.partials.flash-messages')
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form method="post" action="{{ route('admin.auth.login') }}">
+                <form method="post" action="{{ route('login') }}">
                     {{method_field('post')}}
                     {{csrf_field()}}
                     <div class="input-group mb-3">
