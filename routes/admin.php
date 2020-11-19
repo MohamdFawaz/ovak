@@ -3,8 +3,8 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 
-Route::get('/', function () {
-    return view('admin.dashboard');
+Route::get('/admin',function (){
+   return redirect(route('admin.auth.login.form'));
 });
 
 Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
