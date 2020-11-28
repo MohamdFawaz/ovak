@@ -1,0 +1,106 @@
+.links-carrier {
+    right: unset;
+    left: -131px;
+}
+.menu-list-right li a{
+    color:#000;
+}
+    .menu-list-right li a:hover {
+        color: #B7893D
+    }
+.menu-list-right .fa-phone{
+    transform:rotate(100deg);
+}
+.consultancy-square {
+    right:14%;
+    left:unset;
+}
+    .consultancy-square .square-acc{
+        margin-left:unset;
+        margin-right:50%;
+    }
+.select-selected:after{
+    right:unset;
+    left:10px;
+}
+.select-items div, .select-selected{
+    padding:8px 4px;
+}
+.slider-ovarlay .ovak-button{
+    margin-left:unset;
+    margin-right:30px;
+}
+.developer-icon{
+    float:left;
+}
+.subscription-input{
+    float:right;
+}
+.subscription-button{
+    float:left;
+    left:20px;
+    right:unset;
+}
+.footer .footer-links div{
+    float:right;
+}
+.footer .social-links li{
+    padding-right:unset;
+    padding-left:40px;
+}
+.footer .subscription-button{
+    right:unset;
+    left:15px;
+}
+.footer .subscription-input {
+    width: 100%;;
+}
+.modal-close{
+    right:unset;
+    left:10px;
+}
+.about-icon-design{
+    float:right;
+}
+.about-paragraph{
+    text-align:right;
+}
+.select-style {
+    border-right: 1px solid #B7893D;
+    border-left:0;
+}
+.single-project-details .single-item-details .consultancy-square{
+    right:unset;
+    left:40px;
+    text-align:right;
+}
+.header-line{
+    margin-right:5px;
+}
+.home-vision img {
+    transform: scaleX(-1);
+}
+.vision-img-show{
+    transform:scaleX(-1);
+
+}
+.vision-text{
+    transform:scaleX(-1);
+}
+.menu .nav-button {
+    text-align:center;
+}
+.menu .nav-button a {
+    float: unset !important; 
+}
+.menu #nav-toggle i {
+    margin-top:20px;
+}
+.mobile-links ul li a .fa-phone {
+    transform: rotate(350Deg)
+}
+@media only screen and (max-width: 500px) {
+    .vision-water-mark {
+        margin-bottom: 50px;
+    }
+}

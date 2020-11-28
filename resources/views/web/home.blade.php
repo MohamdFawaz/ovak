@@ -3,147 +3,147 @@
 @section('content')
     <section class="header">
         <div class="home-header-image">
-            <div class="ovarlay">
-                <div class="login-modal display-none">
-                    <div class="user-modal col-lg-6 col-lg-push-3 col-md-8 col-md-push-3 col-sm-10 col-sm-push-1">
-                        <div class="col-lg-4 col-md-5 col-sm-6 white-background modal-form no-padding">
-                            <div class="modal-contents margin-top-80 margin-bottom-80">
-                                <form method="post" id="login-form">
-                                    <h3 class="green-color ovak-font">Sign in to OVAK</h3>
-                                    <input name="lemail" id="lemail" type="email" placeholder="Email Address" required />
-                                    <small id="lemail-error" class="text-danger"></small>
-                                    <input name="lpassword" id="lpassword" type="password" placeholder="Password" required />
-                                    <div class="margin-top-10">
-                                        <a class="gold-color" href="#">Forget Password?</a>
-                                    </div>
-                                    <div class="margin-top-25 col-sm-12 no-padding">
-                                        <button class="ovak-dark-button" type="submit">Login</button>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </form>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-lg-4 col-md-5 col-sm-6 no-padding">
-                            <img src="{{asset('img/login-form.png')}}" class="image-full-width modal-image" alt="" />
-                            <div class="clearfix"></div>
-                            <div class="modal-close"><i class="fa fa-close"></i></div>
-                            <div class="modal-image-ovarlay">
-                                <h4>Hello , Friend</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.</p>
-                                <a class="ovak-button login-change-modal">Sign up</a>
-                            </div>
-                        </div>
+            <div class="menu">
+                <div class="logo col-md-2 col-sm-3 col-xs-5">
+                    <a href="./index.html"><img src="resources/assets/images/logo.png" class="image-full-width" alt="" /></a>
+                </div>
+                <div class="menu-list col-md-10 hidden-sm hidden-xs">
+                    <div class="menu-list-centere col-md-7 col-sm-6">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./projects.html">Projects</a></li>
+                            <li><a href="./developers.html">Developers</a></li>
+                            <li><a href="./about.html">About/Contact</a></li>
+                            <li><a href="./counsultancy.html">Consultancy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 menu-list-right col-sm-6">
+                        <ul>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:01154474317"> 01154474317</a></li>
+                            <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> Login</a></li>
+                            <li><i class="fa fa-globe" aria-hidden="true"></i><a href="#"> Arabic</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="registration-modal display-none">
-                    <div class="user-modal col-lg-6 col-lg-push-3 col-md-8 col-md-push-3 col-sm-10 col-sm-push-1">
-                        <div class="col-lg-4 col-md-5 col-sm-6 no-padding">
-                            <img src="{{asset('img/login-form.png')}}" class="image-full-width modal-image" alt=""/>
-                            <div class="clearfix"></div>
-
-                            <div class="modal-image-ovarlay">
-                                <h4>Hello , Friend</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.</p>
-                                <a class="ovak-button registration-change-modal">Login</a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-5 col-sm-6 white-background modal-form no-padding">
-                            <div class="clearfix"></div>
-                            <div class="modal-contents margin-top-80 margin-bottom-80">
-                                <form>
-                                    <div class="registration-modal-close"><i class="fa fa-close"></i></div>
-                                    <h3 class="green-color ovak-font">Create Account</h3>
-                                    <input class="input-edit" name="rfname" type="text" placeholder="First Name" required />
-                                    <input class="input-edit" name="rlname" type="text" placeholder="Last Name" required />
-                                    <input name="remail" type="email" placeholder="Email Address" required />
-                                    <input name="rphone" type="text" placeholder="Phone Number" required />
-                                    <input name="rpassword" placeholder="Password" required />
-                                    <div class="margin-top-25 col-sm-12 no-padding">
-                                        <button class="ovak-dark-button" type="submit">Register</button>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </form>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
+                <div class="hidden-md hidden-lg col-sm-8 col-xs-5 nav-button">
+                    <a id="nav-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
-                <div class="clearfix"></div>
-                <div class="menu">
-                    <div class="logo col-md-2 col-sm-3 col-xs-5">
-                        <a href="./index.html"><img src="{{asset('web/images/Logo.png')}}" class="image-full-width" alt="" /></a>
-                    </div>
-                    <div class="menu-list col-md-10 hidden-sm hidden-xs">
-                        <div class="menu-list-centere col-md-7 col-sm-6">
-                            <ul>
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Developers</a></li>
-                                <li><a href="#">About/Contact</a></li>
-                                <li><a href="#">Consultancy</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-5 menu-list-right col-sm-6">
-                            <ul>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:01154474317"> 01154474317</a></li>
-                                <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> Login</a></li>
-                                <li><i class="fa fa-globe" aria-hidden="true"></i><a href="#"> Arabic</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="hidden-md hidden-lg col-sm-8 col-xs-5 nav-button">
-                        <a id="nav-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                    </div>
-                    <div>
-                        <div class="col-sm-4 col-xs-8 mobile-menu display-none">
-                            <div class="mobile-links">
-                                <img class="mobile-menu-logo" src="{{asset('web/images/Logo.png')}}" alt="" />
+                <div>
+                    <div class="col-sm-4 col-xs-6 mobile-menu display-none">
+                        <div class="mobile-links">
+                            <img class="mobile-menu-logo" src="resources/assets/images/logo.png" alt="" />
+                            <div class="col-sm-12">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-home" aria-hidden="true"> </i> Home</a></li>
-                                    <li><a href="#"><i class="fa fa-building-o" aria-hidden="true"> </i> Projects</a></li>
-                                    <li><a href="#"><i class="fa fa-users" aria-hidden="true"> </i> Devlopers</a></li>
-                                    <li><a href="#"><i class="fa fa-address-card" aria-hidden="true"> </i> About/contact</a></li>
-                                    <li><a href="#"><i class="fa fa-question" aria-hidden="true"> </i> Consultancy</a></li>
-
+                                    <li><a href="./index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                    <li><a href="./projects.html"><i class="fa fa-building-o" aria-hidden="true"></i> Projects</a></li>
+                                    <li><a href="./developers.html"><i class="fa fa-users" aria-hidden="true"></i> Devlopers</a></li>
+                                    <li><a href="./about.html"><i class="fa fa-address-card" aria-hidden="true"></i> About/contact</a></li>
+                                    <li><a href="./counsultancy.html"><i class="fa fa-question" aria-hidden="true"></i> Consultancy</a></li>
                                 </ul>
-                                <div class="social-links">
-                                    <div class="col-sm-12">
-                                        <span class="col-sm-1"></span>
-                                        <a href="#" class="col-sm-3 facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a>
-                                        <a href="#" class="col-sm-3 instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                        <a href="#" class="col-sm-3 google"><i class="fa fa-google" aria-hidden="true"></i></a>
-                                        <div class="clearfix"></div>
-                                        <div class="side-menu-border"></div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <span class="col-sm-1"></span>
-                                        <a href="#" class="col-sm-3 whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"> </i></a>
-                                        <a href="#" class="col-sm-3 twitter"><i class="fa fa-twitter" aria-hidden="true"> </i></a>
-                                        <a href="#" class="col-sm-3 youtube"><i class="fa fa-youtube" aria-hidden="true"> </i></a>
-                                        <div class="clearfix"></div>
-                                        <div class="side-menu-border"></div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <a href="tel:01154474317" class="col-sm-12 phone"> <i class="fa fa-phone" aria-hidden="true"><span class="white-color"> 0111111111111</span> </i></a>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <ul>
-                                            <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> Login</a></li>
-                                            <li><i class="fa fa-globe" aria-hidden="true"></i><a href="#"> Arabic</a></li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="social-links">
+                                <div class="col-sm-12">
+                                    <span class="col-sm-1"></span>
+                                    <a href="#" class="col-sm-3 facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a>
+                                    <a href="#" class="col-sm-3 instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="#" class="col-sm-3 google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                                    <div class="clearfix"></div>
+                                    <div class="side-menu-border"></div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="col-sm-1"></span>
+                                    <a href="#" class="col-sm-3 whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"> </i></a>
+                                    <a href="#" class="col-sm-3 twitter"><i class="fa fa-twitter" aria-hidden="true"> </i></a>
+                                    <a href="#" class="col-sm-3 youtube"><i class="fa fa-youtube" aria-hidden="true"> </i></a>
+                                    <div class="clearfix"></div>
+                                    <div class="side-menu-border"></div>
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <ul>
+                                    <li><a href="tel:01154474317" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> 0111111111111 </a></li>
+                                    <li class="login"><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Login</a></li>
+                                    <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Arabic</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                        <div class="col-sm-12 col-xs-12 no-padding menu-background display-none"></div>
                     </div>
+                    <div class="col-sm-12 col-xs-12 no-padding menu-background display-none"></div>
                 </div>
                 <div class="clearfix"></div>
-                <div class="border-bottom"></div>
             </div>
+            <!--if the user logged in-->
+            <!--<div class="menu">
+                <div class="logo col-md-2 col-sm-3 col-xs-5">
+                    <a href="./index.html"><img src="resources/assets/images/logo.png" class="image-full-width" alt="" /></a>
+                </div>
+                <div class="menu-list col-md-10 hidden-sm hidden-xs">
+                    <div class="menu-list-centere col-md-7 col-sm-6">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./projects.html">Projects</a></li>
+                            <li><a href="./developers.html">Developers</a></li>
+                            <li><a href="./about.html">About/Contact</a></li>
+                            <li><a href="./counsultancy.html">Consultancy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 menu-list-right col-sm-6">
+                        <ul>
+                            <li class="not-link"><i class="fa fa-user-o" aria-hidden="true"></i><a class=""> User Name</a></li>
+                            <li class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#"> Logout</a></li>
+                            <li><i class="fa fa-globe" aria-hidden="true"></i><a href="#"> Arabic</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hidden-md hidden-lg col-sm-8 col-xs-5 nav-button">
+                    <a id="nav-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                    <div class="col-sm-4 col-xs-6 mobile-menu display-none">
+                        <div class="mobile-links">
+                            <img class="mobile-menu-logo" src="resources/assets/images/logo.png" alt="" />
+                            <ul>
+                                <li class=""><a><i class="fa fa-user-o" aria-hidden="true"></i> User Name</a></li>
+                                <li><a href="./index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                <li><a href="./projects.html"><i class="fa fa-building-o" aria-hidden="true"></i> Projects</a></li>
+                                <li><a href="./developers.html"><i class="fa fa-users" aria-hidden="true"></i> Devlopers</a></li>
+                                <li><a href="./about.html"><i class="fa fa-address-card" aria-hidden="true"></i> About/contact</a></li>
+                                <li><a href="./counsultancy.html"><i class="fa fa-question" aria-hidden="true"></i> Consultancy</a></li>
+                            </ul>
+                            <div class="social-links">
+                                <div class="col-sm-12">
+                                    <span class="col-sm-1"></span>
+                                    <a href="#" class="col-sm-3 facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a>
+                                    <a href="#" class="col-sm-3 instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="#" class="col-sm-3 google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                                    <div class="clearfix"></div>
+                                    <div class="side-menu-border"></div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span class="col-sm-1"></span>
+                                    <a href="#" class="col-sm-3 whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"> </i></a>
+                                    <a href="#" class="col-sm-3 twitter"><i class="fa fa-twitter" aria-hidden="true"> </i></a>
+                                    <a href="#" class="col-sm-3 youtube"><i class="fa fa-youtube" aria-hidden="true"> </i></a>
+                                    <div class="clearfix"></div>
+                                    <div class="side-menu-border"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <ul>
+                                    <li><a href="tel:01154474317" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> 0111111111111</a></li>
+                                    <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Arabic</a></li>
+                                    <li class="logout"><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 no-padding menu-background display-none"></div>
+                </div>
+            </div>-->
+            <div class="clearfix"></div>
+            <div class="border-bottom"></div>
         </div>
         <div class="links-carrier">
             <span class="calculator"><i class="fa fa-calculator"></i></span>
@@ -159,7 +159,7 @@
             <a href="#"><span class="consultancy-square-link">LEARN MORE</span></a>
         </div>
     </section>
-    <section class="ovak-filter">
+    <section id="filter" class="ovak-filter">
         <div class="container">
             <div class="filter-label col-md-2 col-md-push-5 col-sm-push-4 col-xs-3 col-xs-push-2">
                 <span>SEARCH FOR YOUR POROPERTY</span>
@@ -172,9 +172,8 @@
                                 <div class="custom-select">
                                     <select name="project-type">
                                         <option value="1">Project Type</option>
-                                        @foreach($project_types as $project_type)
-                                        <option value="{{$project_type->id}}">{{ $project_type->name }}</option>
-                                        @endforeach
+                                        <option value="1">Commercial</option>
+                                        <option value="2">Residential</option>
                                     </select>
                                 </div>
                             </div>
@@ -184,9 +183,8 @@
                                 <div class="custom-select">
                                     <select name="project-type">
                                         <option value="1">District Location</option>
-                                        @foreach($districts as $district)
-                                            <option value="{{$district->id}}">{{ $district->name }}</option>
-                                        @endforeach
+                                        <option value="1">El shekih zaied</option>
+                                        <option value="2">Fifth sattelment</option>
                                     </select>
                                 </div>
                             </div>
@@ -196,9 +194,10 @@
                                 <div class="custom-select">
                                     <select name="project-type">
                                         <option value="0">Development Company</option>
-                                        @foreach($development_companies as $company)
-                                            <option value="{{$company->id}}">{{ $company->name }}</option>
-                                        @endforeach
+                                        <option value="1">Sodic</option>
+                                        <option value="2">Palm Hills</option>
+                                        <option value="3">Palm Hills</option>
+                                        <option value="3">Palm Hills</option>
                                     </select>
                                 </div>
                             </div>
@@ -208,9 +207,8 @@
                                 <div class="custom-select">
                                     <select name="project-type">
                                         <option value="0">Finishing Type</option>
-                                        @foreach($finish_types as $type)
-                                            <option value="{{$type->id}}">{{ $type->name }}</option>
-                                        @endforeach
+                                        <option value="1">Fully Finished</option>
+                                        <option value="2">Semi-Finihsed</option>
                                     </select>
                                 </div>
                             </div>
@@ -220,9 +218,8 @@
                                 <div class="custom-select">
                                     <select name="project-type">
                                         <option value="0">Unit Type</option>
-                                        @foreach($unit_types as $type)
-                                            <option value="{{$type->id}}">{{ $type->name }}</option>
-                                        @endforeach
+                                        <option value="0">Medical</option>
+                                        <option value="1">Residential</option>
                                     </select>
                                 </div>
                             </div>
@@ -276,13 +273,13 @@
             </div>
         </div>
     </section>
-    <section class="home-vision">
+    <section id="vision" class="home-vision">
         <div class="col-sm-12 no-padding">
-            <div class="col-sm-6 col-xs-12 no-padding"><img class="image-full-width" src="{{asset('web/images/home-vision.png')}}" alt="" /> </div>
+            <div class="col-sm-6 col-xs-12 no-padding"><img class="image-full-width" src="resources/assets/images/home-vision.png" alt="" /> </div>
             <div class="col-sm-6 col-xs-12 no-padding vision-water-mark">
                 <div class="vision-img-show">
                     <div class="col-lg-9 col-lg-push-1 col-md-11 col-md-push-1 col-xs-12 vision-text">
-                        <h2 class="section-first-header header-letter-spacing"><span class="col-lg-8 col-md-10 col-sm-11 col-xs-8 no-padding">we find you</span><span class="header-line col-md-2 col-sm-1 col-xs-1 no-padding"></span></h2>
+                        <h2 class="section-first-header header-letter-spacing"><span class="col-lg-8 col-md-10 col-sm-11 col-xs-9 no-padding">we find you</span><span class="header-line col-md-2 col-sm-1 hidden-xs no-padding"></span></h2>
                         <div class="clearfix"></div>
                         <h2 class="section-second-header letter-spacing no-padding">the perfect choice</h2>
                         <div class="clearfix"></div>
@@ -309,7 +306,7 @@
         <div class="variable slider">
             <div class="slider-item">
                 <div class="slider-image slider-ovarlay">
-                    <img src="{{asset('img/slider-5.png')}}" alt="" />
+                    <img src="resources/assets/images/slider-5.png" alt="" />
                     <a href="#" class="ovak-button"> View More <i class="fa fa-arrow-right"></i></a>
                 </div>
                 <div class="slider-body">
@@ -529,6 +526,135 @@
         </div>
         <div class="clearfix"></div>
         <div class="text-center margin-top-75"><a class="ovak-button">View all developers</a></div>
+    </section>
+    <section class="modals">
+        <div class="login-modal display-none">
+            <div class="user-modal col-lg-6 col-lg-push-4 col-md-8 col-md-push-3 col-sm-10 col-sm-push-1 col-xs-push-2">
+                <div class="col-lg-4 col-md-5 col-sm-6 white-background modal-form no-padding">
+                    <div class="modal-contents margin-top-80 margin-bottom-80">
+                        <form>
+                            <div class="modal-close hidden-sm hidden-md hidden-lg"><i class="fa fa-close"></i></div>
+                            <h3 class="green-color ovak-font">Sign in to OVAK</h3>
+                            <input name="lname" type="email" placeholder="Email Address" required />
+                            <input name="lpassword" placeholder="Password" required />
+                            <div class="margin-top-10 forget-cahnge-modal">
+                                <a class="gold-color" href="#">Forget Password ? </a>
+                            </div>
+                            <div class="margin-top-25 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-xs-5 hidden-sm hidden-md hidden-lg no-padding-xs float-left">
+                                    <button class="ovak-dark-button registration-change-modal" type="button">register</button>
+                                </div>
+                                <div class="col-xs-5 col-sm-12 no-padding-xs margin-right-xs no-padding float-right">
+                                    <button class="ovak-dark-button" type="submit">Login</button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 hidden-xs no-padding">
+                    <img src="{{asset('img/login-form.png')}}" class="image-full-width modal-image" alt="" />
+                    <div class="clearfix"></div>
+                    <div class="modal-close"><i class="fa fa-close"></i></div>
+                    <div class="modal-image-ovarlay">
+                        <h4>Hello , Friend</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.</p>
+                        <a class="ovak-button login-change-modal">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="password-modal display-none">
+            <div class="user-modal col-lg-6 col-lg-push-4 col-md-8 col-md-push-3 col-sm-10 col-sm-push-1 col-xs-push-2">
+                <div class="col-lg-4 col-md-5 col-sm-6 white-background modal-form no-padding">
+                    <div class="modal-contents margin-top-80 margin-bottom-80">
+                        <form>
+                            <div class="modal-close hidden-sm hidden-md hidden-lg"><i class="fa fa-close"></i></div>
+                            <h3 class="green-color ovak-font">Forget Password</h3>
+                            <input name="lname" type="email" placeholder="Email Address" required />
+                            <div class="margin-top-25 col-sm-12 col-xs-12 no-padding">
+                                <button class="ovak-dark-button" type="submit">Reset Password</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 hidden-xs no-padding">
+                    <img src="resources/assets/images/login-form.png" class="image-full-width modal-image" alt="" />
+                    <div class="clearfix"></div>
+                    <div class="modal-close"><i class="fa fa-close"></i></div>
+                    <div class="modal-image-ovarlay">
+                        <h4>Hello , Friend</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="logout-modal display-none">
+            <div class="user-modal col-lg-4 col-lg-push-4 col-md-6 col-md-push-4 col-sm-8 col-sm-push-3 text-center col-xs-push-2">
+                <div class="col-lg-10 col-md-9 col-sm-8 white-background modal-form no-padding">
+                    <div class="modal-close"><i class="fa fa-close"></i></div>
+                    <div class="logout-image">
+                        <img src="./resources/assets/images/logo.png" />
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="modal-contents">
+                        <h4> Are you sure you want to</h4>
+                        <div class="col-sm-8 col-sm-push-2 text-center margin-bottom-25">
+                            <button class="ovak-dark-button">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="registration-modal display-none">
+            <div class="user-modal col-lg-6 col-lg-push-4 col-md-8 col-md-push-3 col-sm-10 col-sm-push-1 col-xs-push-2">
+                <div class="col-lg-4 col-md-5 col-sm-6 no-padding hidden-xs">
+                    <img src="resources/assets/images/login-form.png" class="image-full-width modal-image" alt="" />
+                    <div class="clearfix"></div>
+                    <div class="modal-image-ovarlay">
+                        <h4>Hello , Friend</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.</p>
+                        <a class="ovak-button registration-change-modal">Login</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 white-background modal-form no-padding">
+                    <div class="clearfix"></div>
+                    <div class="modal-contents margin-top-80 margin-bottom-80">
+                        <form>
+                            <div class="modal-close"><i class="fa fa-close"></i></div>
+                            <h3 class="green-color ovak-font">Create Account</h3>
+                            <div class="col-sm-5 float-left no-padding">
+                                <input class="input-edit" name="rfname" type="text" placeholder="First Name" required />
+                            </div>
+                            <div class="col-sm-5 float-right no-padding">
+                                <input class="input-edit" name="rlname" type="text" placeholder="Last Name" required />
+                            </div>
+                            <div class="clearfix"></div>
+                            <input name="remail" type="email" placeholder="Email Address" required />
+                            <input name="rphone" type="text" placeholder="Phone Number" required />
+                            <input name="rpassword" placeholder="Password" required />
+                            <div class="margin-top-25 col-sm-12 no-padding">
+                                <div class="col-xs-5 hidden-sm hidden-md hidden-lg no-padding-xs float-left">
+                                    <button class="ovak-dark-button registration-change-modal" type="button">Login</button>
+                                </div>
+                                <div class="col-xs-5 col-sm-12 no-padding-xs margin-right-xs no-padding float-right">
+                                    <button class="ovak-dark-button" type="submit">Register</button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
     </section>
 @endsection
 

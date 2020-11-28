@@ -87,101 +87,10 @@
 </section>
 <script src="{{asset('web/javascripts/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('web/javascripts/bootstrap.min.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
 <script src="{{asset('web/javascripts/navbar.js')}}"></script>
+<script src="{{asset('web/javascripts/slick.min.js')}}"></script>
 <script src="{{asset('web/javascripts/scripts.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#nav-toggle").click(function () {
-            $(".mobile-menu").toggleClass("display-block","display-none");
-            $(".menu-background").toggleClass("filter","display-none");
-            $(".login-modal").addClass("display-none");
-            $(".ovarlay").removeClass("header-ovarlay");
-            $(".consultancy-square").removeClass("display-none");
-            $(".links-carrier").removeClass("display-none");
-        });
-        $(".menu-background").click(function () {
-            $(".menu-background").addClass("display-none");
-            $(".mobile-menu").removeClass("display-block","display-none");
-        })
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        $("#show").click(function () {
-            $(".filter-select").toggleClass("extend");
-        });
-    });
-</script>
-<script>
-    $(".variable").slick({
-        dots: true,
-        infinite: true,
-        variableWidth: true,
-        autoplay: true
-    });
-</script>
-<script>
-    $(".slider-item").click(function () {
-        $(".slider-item").removeClass("slick-current slick-active");
-        $(this).toggleClass("slick-current slick-active");
-    });
-</script>
-<script>
-    let mybutton = document.getElementById("top");
-    window.onscroll = function () { scrollFunction() };
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-<script>
-    $(".login").click(function () {
-        $(".consultancy-square").toggleClass("display-none");
-        $(".links-carrier").toggleClass("display-none");
-        $(".ovarlay").toggleClass("header-ovarlay");
-        $(".login-modal").toggleClass("display-none");
-        $(".mobile-menu").removeClass("display-block","display-none");
-        $(".menu-background").toggleClass("filter","display-none");
-    });
-</script>
-<script>
-    $(".modal-close").click(function () {
-        $(".consultancy-square").toggleClass("display-none");
-        $(".links-carrier").toggleClass("display-none");
-        $(".ovarlay").toggleClass("header-ovarlay");
-        $(".login-modal").toggleClass("display-none");
-    });
-</script>
-<script>
-    $(".registration-modal-close").click(function () {
-        $(".consultancy-square").toggleClass("display-none");
-        $(".links-carrier").toggleClass("display-none");
-        $(".ovarlay").toggleClass("header-ovarlay");
-        $(".registration-modal").toggleClass("display-none");
-    });
-</script>
-<script>
-    $(".login-change-modal").click(function () {
-        $(".registration-modal").toggleClass("display-none");
-        $(".login-modal").toggleClass("display-none");
-    });
-
-</script>
-<script>
-    $(".registration-change-modal").click(function () {
-        $(".registration-modal").toggleClass("display-none");
-        $(".login-modal").toggleClass("display-none");
-    });
-</script>
 @yield('js')
 </body>
 </html>

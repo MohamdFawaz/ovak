@@ -66,6 +66,7 @@ section {
     font-family: Bahnschrift;
     border: 0;
     outline: 0;
+    cursor:pointer;
 }
 
     .ovak-button:hover, .ovak-button:focus {
@@ -586,6 +587,8 @@ a {
     background-color: #B7893D;
     height: 5px;
     margin-top: 15px;
+    width: 40px;
+    display: inline-block
 }
 
 .section-first-header {
@@ -714,7 +717,7 @@ a {
 .footer ul {
     padding: 0;
     list-style: none;
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 .footer-links h5 a {
@@ -788,10 +791,6 @@ a {
     }
 /*********Mobile Styles***********/
 @media only screen and (max-width: 1100px) {
-    .consultancy-square {
-        top: 35%;
-    }
-
     .filter-body {
         padding: 5px;
         margin-bottom: 20px;
@@ -894,6 +893,9 @@ a {
         height: auto;
         border: 1px solid #B7893D;
     }
+    .consultancy-square{
+        top:6%;
+    }
 
     .user-modal .modal-contents input {
         display: block;
@@ -919,7 +921,7 @@ a {
     }
 
     .filter-body {
-        padding: 25px 5px;
+        padding: 25px 25px;
     }
 
         .filter-body .padding-control {
@@ -979,4 +981,10 @@ a {
         .footer ul {
             margin-bottom: 25px;
         }
+}
+.fa-phone{
+    transform:rotate(90Deg);
+}
+.content .item-pic{
+    height: 200px;
 }
