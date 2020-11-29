@@ -3,10 +3,10 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('admin.partials.breadcrumb')
+        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.users')])
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Users List</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

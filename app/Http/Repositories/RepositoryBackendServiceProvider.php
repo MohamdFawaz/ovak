@@ -16,5 +16,13 @@ class RepositoryBackendServiceProvider extends ServiceProvider
             UserRepositoryInterface::class,
             UserRepository::class
         );
+
+        $this->app->bind(
+            /*
+            * Register your Repository classes and interface here
+            **/
+            DevelopmentCompanyRepositoryInterface::class,
+            DevelopmentCompanyRepository::class
+        );
     }
 }

@@ -13,4 +13,22 @@ class Property extends Model implements TranslatableContract
 
     public $translatedAttributes = ['name'];
     protected $guarded = [];
+
+    public function getImageAttribute($value)
+    {
+        if ($value){
+            return asset('images/properties/'.$value);
+        }else{
+            return asset('img/placeholder/vendor-placeholder-logo.png');
+        }
+    }
+
+    public function setImageAttribute($image)
+    {
+        if($image){
+            $img_name = time().rand(1111,9999).'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('images/properties/'),$img_name);
+            $this->attributes['image'] = $img_name ;
+        }
+    }
 }

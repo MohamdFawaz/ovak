@@ -92,4 +92,9 @@ class UserController extends Controller
     {
         //
     }
+
+    public function calculationList()
+    {
+        return view('admin.user.calculationLogs');
+    }
 }

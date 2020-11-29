@@ -12041,7 +12041,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 [class*='sidebar-dark-'] {
-  background-color: #343a40;
+  background-color: #B7893D;
 }
 
 [class*='sidebar-dark-'] .user-panel a:hover {
@@ -12093,7 +12093,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 [class*='sidebar-dark-'] .sidebar a {
-  color: #C2C7D0;
+  color: #ffffff;
 }
 
 [class*='sidebar-dark-'] .sidebar a:hover, [class*='sidebar-dark-'] .sidebar a:focus {

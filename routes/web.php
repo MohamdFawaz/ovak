@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Web\DevelopmentCompanyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-include 'admin.php';
+Route::get('/',[\App\Http\Controllers\Web\HomeController::class,'home']);
 
-include 'front.php';
+Route::get('developers',[DevelopmentCompanyController::class,'index'])->name('developers.list');
+
+Route::get('developer/{slug}',[DevelopmentCompanyController::class,'developerPage'])->name('developer.page');
