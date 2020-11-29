@@ -13,7 +13,7 @@ class CreatePropertiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('properties', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('district_id')->unsigned()->nullable();
             $table->bigInteger('property_type_id')->unsigned()->nullable();
@@ -21,8 +21,7 @@ class CreatePropertiesTable extends Migration
             $table->bigInteger('finish_type_id')->unsigned()->nullable();
             $table->bigInteger('unit_type_id')->unsigned()->nullable();
             $table->string('image')->nullable();
-            $table->integer('area')->default(0);
-            $table->decimal('price')->default(0);
+            $table->string('statue')->default('available');
             $table->date('delivery_date')->default(now());
             $table->timestamps();
 
@@ -52,14 +51,15 @@ class CreatePropertiesTable extends Migration
                     ->onDelete('set null');
         });
 
-        Schema::create('property_translations', function(Blueprint $table) {
+        Schema::create('project_translations', function(Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('property_id')->unsigned();
+            $table->bigInteger('project_id')->unsigned();
             $table->string('locale')->index();
             $table->string('name');
             $table->text('description');
-            $table->unique(['property_id', 'locale']);
-            $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
+            $table->text('address');
+            $table->unique(['project_id', 'locale']);
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
         });
     }
 
@@ -70,7 +70,7 @@ class CreatePropertiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('properties');
-        Schema::dropIfExists('property_translations');
+        Schema::dropIfExists('projects');
+        Schema::dropIfExists('project_translations');
     }
 }

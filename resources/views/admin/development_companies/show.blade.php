@@ -22,8 +22,16 @@
                             <input type="text" readonly name="arabic_name" class="form-control" id="arabicName" placeholder="Enter Name" value="{{$company->translate('ar')->name}}">
                         </div>
                         <div class="form-group">
+                            <label for="arabicDescription">Arabic Description</label>
+                            <textarea readonly name="arabic_description" class="form-control" id="arabicDescription">{{$company->translate('ar')->description}}</textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="englishName">English Name</label>
                             <input type="text" readonly name="english_name" class="form-control" id="englishName" placeholder="Enter Name" value="{{$company->translate('en')->name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="englishDescription">English Description</label>
+                            <textarea readonly name="english_description" class="form-control" id="englishDescription">{{$company->translate('en')->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <img class="img-fluid img-responsive mt-2" width="100px" src="{{ $company->image }}" alt="{{$company->id . '-image'}}">

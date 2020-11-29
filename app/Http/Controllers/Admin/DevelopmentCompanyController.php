@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\DevelopmentCompanyRepository;
 use App\Models\DevelopmentCompany;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DevelopmentCompanyController extends Controller
 {
@@ -49,16 +50,19 @@ class DevelopmentCompanyController extends Controller
     {
         $company = new DevelopmentCompany();
         $company->image = $request->image;
+        $company->slug = Str::slug($request->english_name);
         $company->fill([
            'en' => [
-               'name' => $request->english_name
+               'name' => $request->english_name,
+               'description' => $request->english_description
            ],
            'ar' => [
-               'name' => $request->arabic_name
+               'name' => $request->arabic_name,
+               'description' => $request->arabic_description
            ]
         ]);
         $company->save();
-        return redirect(route('development_companies.index'));
+        return redirect(route('development.index'));
     }
 
     /**
@@ -96,12 +100,15 @@ class DevelopmentCompanyController extends Controller
     {
         $company = DevelopmentCompany::query()->where('id',$id)->first();
         $company->image = $request->image;
+        $company->slug = Str::slug($request->english_name);
         $company->fill([
             'en' => [
-                'name' => $request->english_name
+                'name' => $request->english_name,
+                'description' => $request->english_description
             ],
             'ar' => [
-                'name' => $request->arabic_name
+                'name' => $request->arabic_name,
+                'description' => $request->arabic_description
             ]
         ]);
         $company->save();

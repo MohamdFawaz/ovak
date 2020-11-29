@@ -24,8 +24,16 @@
                             <input type="text" required name="arabic_name" class="form-control" id="arabicName" placeholder="Enter Name">
                         </div>
                         <div class="form-group">
+                            <label for="arabicDescription">Arabic Description</label>
+                            <textarea required name="arabic_description" class="form-control" id="arabicDescription"></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="englishName">English Name</label>
                             <input type="text" required name="english_name" class="form-control" id="englishName" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="englishDescription">English Description</label>
+                            <textarea required name="english_description" class="form-control" id="englishDescription"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="image">Image</label>

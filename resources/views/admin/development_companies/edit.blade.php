@@ -24,8 +24,16 @@
                             <input type="text" required name="arabic_name" class="form-control" id="arabicName" placeholder="Enter Name" value="{{$company->translate('ar')->name}}">
                         </div>
                         <div class="form-group">
+                            <label for="arabicDescription">Arabic Description</label>
+                            <textarea required name="arabic_description" class="form-control" id="arabicDescription">{{$company->translate('ar')->description}}</textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="englishName">English Name</label>
                             <input type="text" required name="english_name" class="form-control" id="englishName" placeholder="Enter Name" value="{{$company->translate('en')->name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="englishDescription">English Description</label>
+                            <textarea required name="english_description" class="form-control" id="englishDescription">{{$company->translate('en')->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="image">Image</label>

@@ -79,7 +79,7 @@
             <a href="{{ route('property.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
-                    {{ __('admin.sidebar.properties') }}
+                    {{ __('admin.sidebar.projects') }}
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>

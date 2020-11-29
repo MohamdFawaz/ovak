@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Web\DevelopmentCompanyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,3 +11,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/',[\App\Http\Controllers\Web\HomeController::class,'home']);
+
+Route::get('developers',[DevelopmentCompanyController::class,'index'])->name('developers.list');
+
+Route::get('developer/{slug}',[DevelopmentCompanyController::class,'developerPage'])->name('developer.page');

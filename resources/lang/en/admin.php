@@ -11,7 +11,7 @@ return [
         'finish_types' => 'Finish Types',
         'property_type' => 'Property Types',
         'unit_type' => 'Unit Types',
-        'properties' => 'Properties',
+        'projects' => 'Projects',
     ],
     'breadcrumb' => [
         'home' => 'Home',
@@ -22,7 +22,7 @@ return [
         'finish_types' => 'Finish Types',
         'property_type' => 'Property Types',
         'unit_type' => 'Unit Types',
-        'property' => 'Properties',
+        'projects' => 'Projects',
     ],
     'development_companies' => [
         'id' => 'ID',
