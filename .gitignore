@@ -14,3 +14,4 @@ yarn-error.log
 ovak.error_log
 ovak.in-access_log
 public/images
+.idea/

@@ -85,12 +85,25 @@ $(document).ready(function () {
         $(".filter-select").toggleClass("extend");
     });
 });
-$(".variable").slick({
-    dots: true,
-    infinite: true,
-    variableWidth: true,
-    autoplay: true
-});
+var lang = document.getElementsByTagName("html")[0].getAttribute("dir");
+if (lang == "ltr") {
+    $(".variable").slick({
+        rtl: false,
+        dots: true,
+        infinite: true,
+        variableWidth: true,
+        autoplay: true
+    });
+}
+else if (lang == "rtl") {
+    $(".variable").slick({
+        rtl: true,
+        dots: true,
+        infinite: true,
+        variableWidth: true,
+        autoplay: true
+    });
+}
 $(".slider-item").click(function () {
     $(".slider-item").removeClass("slick-current slick-active");
     $(this).toggleClass("slick-current slick-active");
@@ -142,6 +155,14 @@ $(".logout").click(function () {
     $(".menu-background").toggleClass("display-none");
     $(".mobile-menu").addClass("display-none");
 });
+$("#ask-modal").click(function () {
+    $(".ask-modal").toggleClass("display-none");
+    $(".consultancy-square").addClass("display-none");
+    $(".links-carrier").addClass("display-none");
+    $(".modals").toggleClass("page-ovarlay");
+    $(".menu-background").toggleClass("display-none");
+    $(".mobile-menu").addClass("display-none");
+});
 $(".forget-cahnge-modal").click(function () {
     $(".password-modal").toggleClass("display-none");
     $(".login-modal").toggleClass("display-none");
@@ -159,7 +180,7 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
-    var item = $(".column");
+    var item = $(".column , .developer-item");
     var numToShow = 8;
     var button = $("#show");
     var numInList = item.length;
@@ -186,3 +207,16 @@ $(".footer a[href^='#']").on("click", function (n) {
         window.location.hash = e;
     });
 });
+
+$(document).ready(function () {
+    $(".st-click-action").click(function () {
+        $(".click-action").removeClass("active");
+        $(".st-click-action").addClass("active");
+    });
+    $(".nd-click-action").click(function () {
+        $(".click-action").removeClass("active");
+        $(".nd-click-action").addClass("active");
+    });
+});
+document.getElementById("year").innerHTML = new Date().getFullYear();
+

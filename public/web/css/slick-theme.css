@@ -174,10 +174,10 @@
 
 @media only screen and (max-width: 500px) {
     .slick-next {
-        right: 0px;
+        left: -15px !important;
     }
 
     .slick-prev {
-        left: 0px;
+        right: -15px !important;
     }
 }

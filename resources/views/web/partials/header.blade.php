@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ovak</title>
+    <title>Ovak | Home</title>
+    <link rel="icon" href="{{asset('web/images/icon.png')}}" width="60">
+    <meta name="description" content="Present the perfect advise for the real estate seekers and the consultancy you need Own variable Advanced knowledge">
     <link rel="stylesheet" href="{{asset('web/css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('web/css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('web/css/fontawesome/css/all.css')}}">
-    <link rel="stylesheet" href="{{asset('web/css/fontawesome/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('web/css/header.css')}}">
-    <link rel="stylesheet" href="{{asset('web/css/_slick.css')}}">
-    <link rel="stylesheet" href="{{asset('web/css/_slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('web/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('web/css/slick-theme.css')}}">
+    <script src="https://kit.fontawesome.com/9867776862.js" crossorigin="anonymous"></script>
+    @yield('css')
 </head>
 <body id="body" data-spy="scroll" data-target=".footer" data-offset="50">
-<div class="return-top"><button onclick="topFunction()" id="top" class="ovak-button"><i class="fa fa-angle-double-up"></i></button></div>
+<div class="return-top">
+    <button onclick="topFunction()" id="top" class="ovak-button">
+        <i class="fa fa-angle-double-up"></i>
+    </button>
+</div>

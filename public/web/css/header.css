@@ -147,7 +147,7 @@
     }
 
     .mobile-menu {
-        /*background-color: #0D3A3A;*/
+        background-color: #fff;
         border: 1px solid #B7893D;
         height: 100vh;
         left: 0;
@@ -172,10 +172,11 @@
         background-color: #fff;
         width: 100%;
         padding: 25px;
+        border-bottom:2px solid #0D3A3A;
     }
 
     .mobile-links ul li a {
-        color: #fff;
+        color: #000;
     }
 
         .mobile-links ul li a i {
@@ -189,12 +190,13 @@
         .mobile-links ul li a .fa {
             font-size: 20px;
         }
+          
 
-        .mobile-links ul li {
-            display: block;
-            border-bottom: 1px solid #B7893D;
-            padding: 5px;
-        }
+            .mobile-links ul li {
+                display: block;
+                border-bottom: 1px solid #0D3A3A;
+                padding: 5px;
+            }
 
     .side-menu-border {
         border-bottom: 1px solid #B7893D;
