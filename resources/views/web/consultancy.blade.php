@@ -1,0 +1,175 @@
+@extends('web.layout')
+@section('css')
+    <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
+@endsection
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{__('front.header.consultancy')}}</title>
+@endsection
+@section('content')
+    @include('web.partials.inner_pages_header',['innerContent' => '<div class="header-text">
+                <div class="secondery-page-header-ovarlay">
+                    <h2 class="white-color header-letter-spacing">'.__('front.header.inner_header.consultancy.consultancy').'</h2>
+                    <h2 class="green-color">'.__('front.header.inner_header.consultancy.service').' <span class="header-line"></span></h2>
+                </div>
+            </div>'])
+
+    <section id="consult" class="consult">
+        <div class="container">
+            <div class="col-md-4 col-sm-8 col-xs-12 no-padding-xs margin-top-50">
+                <h2 class="section-first-header letter-spacing"><span>{{__('front.consultancy.consult')}}</span></h2>
+                <div class="clearfix"></div>
+                <h2 class="section-second-header"><span class="letter-spacing">{{__('front.head.title.name')}}</span> <span class="header-line"></span></h2>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="about-service">
+            <div class="service-background">
+                <div class="service-details margin-top-75">
+                    <div class="container no-padding-xs">
+                        <h2 class="ovak-font white-color text-uppercase text-center">{{__('front.consultancy.form.title')}}</h2>
+                        <div class="consultation">
+                            <div class="col-md-push-2 col-md-8 col-sm-push-1 col-sm-10 col-xs-12 consultation-background no-padding-xs">
+                                <div class="col-sm-8 col-sm-push-2 col-xs-12 m text-center consultation-btns no-padding-xs margin-top-50">
+                                    <button class="ovak-button click-action st-click-action" value="residential"><i class="fa fa-home"></i>
+                                        {{__('front.consultancy.form.choices.residential')}}</button>
+                                    <button class="ovak-button click-action nd-click-action" value="commercial"><i class="fa fa-building-o"></i>
+                                        {{__('front.consultancy.form.choices.commercial')}}</button>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6 col-sm-push-3 margin-top-10">
+                                        <div class="custom-select">
+                                            <select name="district" >
+                                                <option value="">{{__('front.filter.district_location')}} </option>
+                                                @foreach($districts as $district)
+                                                <option value="{{$district->id}}">{{$district->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6 col-sm-push-3 margin-top-10">
+                                        <div class="custom-select">
+                                            <select name="project_id">
+                                                <option value="">{{__('front.projects.projects')}} </option>
+                                                @foreach($projects as $project)
+                                                <option value="{{$project->id}}">{{$project->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-sm-push-3 margin-top-10">
+                                    <input type="text" placeholder="Please insert project name" />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-sm-6 col-sm-push-3 margin-top-10">
+                                    <input type="text" placeholder="Please insert project name" />
+                                </div>
+                                <div class="col-xs-12 text-center margin-top-25 margin-bottom-50">
+                                    <button class="ovak-button">{{__('front.consultancy.form.action.submit')}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <section id="install" class="installment">
+        <div class="container">
+            <div class="margin-top-50">
+                <h2 class="section-first-header letter-spacing"><i class="fa fa-calculator gold-color"></i><span>{{__('front.consultancy.installment.installment')}}</span></h2>
+                <div class="clearfix"></div>
+                <h2 class="section-second-header"><span class="letter-spacing">{{__('front.head.title.name')}}</span> <span class="header-line"></span></h2>
+            </div>
+        </div>
+        <div class="about-service">
+            <div class="service-background">
+                <div class="service-details margin-top-75">
+                    <div class="col-md-push-2 col-md-8 col-sm-12 consultation-background">
+                        <div class="col-md-8 col-sm-12 no-padding">
+                            <span class="ovak-font white-color"> {{__('front.consultancy.installment.form.property_price')}}</span>
+                            <span class="float-right gold-background white-color ovak-font"> {{__('front.consultancy.installment.form.currency')}}</span>
+                            <h4 class="white-color text-uppercase bold margin-top-10 ovak-font">{{__('front.consultancy.installment.form.total_amount')}}</h4>
+                            <input type="text" placeholder="{{__('front.consultancy.installment.form.total_amount_placeholder')}}" />
+                            <div class="margin-top-50">
+                                <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.down_payment')}}</h4>
+                                <div class="col-sm-6 no-padding">
+                                    <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.amount')}}</h4>
+                                    <input type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                </div>
+                                <div class="col-sm-6 pl-10">
+                                    <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.percent')}}</h4>
+                                    <input type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="margin-top-25">
+                                    <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.installment_period')}}</h4>
+                                </div>
+                                <div>
+                                    <div class="col-sm-6 no-padding">
+                                        <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.years')}}</h4>
+                                        <input type="text" placeholder="{{__('front.consultancy.installment.form.years_placeholder')}}" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 margin-top-25">
+                                    <button type="submit" class="ovak-button text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
+                                    <button type="submit" class="ovak-button transperant text-uppercase bold">{{__('front.consultancy.installment.form.actions.clear')}}</button>
+                                </div>
+                                <div class="col-sm-12 margin-top-10">
+                                    <span class="ovak-font bold white-color">{{__('front.consultancy.installment.table.remaining')}} =</span>
+                                    <span id="result"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="margin-top-50 margin-bottom-80">
+                            <table>
+                                <thead>
+                                <tr class="gold-color ovak-font bold text-center text-uppercase">
+                                    <td class="gold-color">{{__('front.consultancy.installment.table.installment_type')}}</td>
+                                    <td class="gold-color">{{__('front.consultancy.installment.table.amount')}}</td>
+                                    <td class="gold-color">{{__('front.consultancy.installment.table.number')}}</td>
+                                </tr>
+                                </thead>
+                                <tbody class="white-color ovak-font bold text-center text-uppercase">
+                                <tr>
+                                    <td>
+                                        {{__('front.consultancy.installment.table.monthly_installment')}} =
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="table-num">X0le</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{__('front.consultancy.installment.table.quarterly_installment')}} =
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="table-num">X0le</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        {{__('front.consultancy.installment.table.yearly_installment')}} =
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span class="table-num">X0le</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

@@ -13,8 +13,8 @@
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li @if(strpos(\Request::url(),'projects')) class="active" @endif><a href="{{route('projects.list')}}">{{__('front.header.projects')}}</a></li>
                         <li @if(strpos(\Request::url(),'developers')) class="active" @endif><a href="{{route('developers.list')}}">{{__('front.header.developers')}}</a></li>
-                        <li @if(strpos(\Request::url(),'about')) class="active" @endif><a href="{{route('about')}}">About/Contact</a></li>
-                        <li><a href="./counsultancy.html">Consultancy</a></li>
+                        <li @if(strpos(\Request::url(),'about')) class="active" @endif><a href="{{route('about')}}">{{__('front.header.about_contact')}}</a></li>
+                        <li @if(strpos(\Request::url(),'consultancy')) class="active" @endif><a href="{{route('consultancy')}}">{{__('front.header.consultancy')}}</a></li>
                     </ul>
                 </div>
                 <div class="col-md-5 menu-list-right col-sm-6">

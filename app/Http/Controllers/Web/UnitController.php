@@ -11,7 +11,7 @@ use App\Models\PropertyType;
 use App\Models\Unit;
 use App\Models\UnitType;
 
-class HomeController extends Controller
+class UnitController extends Controller
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class HomeController extends Controller
     }
 
 
-    public function home()
+    public function view($id)
     {
         $project_types = PropertyType::all();
         $districts = District::all();
@@ -27,12 +27,9 @@ class HomeController extends Controller
         $finish_types = FinishType::all();
         $unit_types = UnitType::all();
 
-        $featured_projects = Project::all();
-        $projects = Project::query()->with(['developer:id,slug,image','district','propertyType'])->inRandomOrder()->get();
-
-        return view('web.home',compact('project_types',
-            'districts','development_companies','finish_types','unit_types',
-            'featured_projects','projects'));
+        $unit = Unit::query()->with(['project','project.developer','property'])->where('id',$id)->first();
+        return view('web.unit.view',compact('unit','finish_types',
+            'project_types','development_companies','districts','unit_types'));
     }
 
     public function filter()
@@ -50,8 +47,6 @@ class HomeController extends Controller
 
     public function consultancy()
     {
-        $districts = District::query()->get();
-        $projects = Project::query()->get();
-        return view('web.consultancy',compact('districts','projects'));
+        return view('web.consultancy');
     }
 }

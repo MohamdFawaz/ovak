@@ -1,6 +1,7 @@
 @extends('web.layout')
-
-@section('content')
+@section('css')
+    <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
+@endsection
 @section('content')
     @include('web.partials.inner_pages_header',['innerContent' => ''])
     <section id="result">
@@ -8,439 +9,48 @@
             <div class="margin-top-75">
                 <div class="col-md-8 col-sm-6">
                     <div class="secondery-page-header-ovarlay">
-                        <h2 class="green-color ovak-font">24 Residential</h2>
-                        <h2 class="green-color ovak-font">Compounds <span class="header-line"></span></h2>
+                        <h2 class="green-color ovak-font">{{count($units)}} {{__('front.result.residential')}}</h2>
+                        <h2 class="green-color ovak-font">{{__('front.result.compound')}} <span class="header-line"></span></h2>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-6 margin-top-10 float-right select-option-background">
                     <label class="gold-color margin-top-5"> Sort by</label>
                     <select class="select select-style margin-top-5">
-                        <option value="all">Show All</option>
-                        <option value="villa">Villas</option>
-                        <option value="townhouse">Town House</option>
-                        <option value="twinhouse">Twin House</option>
-                        <option value="duplex">Duplex</option>
-                        <option value="flat">Flat</option>
+                        <option value="all">{{__('front.form.show_all')}}</option>
+                        @foreach($property_types as $type)
+                            <option value="type-{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-sm-6 col-xs-12 column villa">
-                <a href="./single-unit.html">
+            @foreach($units as $unit)
+                <div class="col-sm-6 col-xs-12 column type-{{$type->id}}">
+                <a href="{{route('unit.page',$unit->id)}}">
                     <!--link lel unit-->
                     <div class="content">
                         <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
+                            <img class="item-pic" src="{{$unit->image}}" alt="" />
                         </div>
                         <div class="col-sm-8 item-details">
                             <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
+                                <h4 class="project-name black-color">{{$unit->name}}</h4>
                             </div>
                             <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a><!--link lel developer-->
+                                <a href="{{route('developer.page',$unit->project->developer->slug)}}" target="_blank"><img src="{{$unit->project->developer->image}}" alt="" /></a><!--link lel developer-->
                             </div>
                             <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
+                            <div><span class="gold-color">{{__('front.projects.district')}} :</span><span> {{$unit->project->district->name}}</span></div>
+                            <div><span class="gold-color">{{__('front.projects.property_type')}} :</span><span> {{$unit->project->propertyType->name}}</span></div>
+                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span>{{$unit->project->address}}</span></div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                 </a>
                 <div class="clearfix"></div>
             </div>
-            <div class="col-sm-6 col-xs-12 column townhouse">
-                <a href="./singel-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column twinhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column villa">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column townhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column twinhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column villa">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column townhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column twinhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column villa">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column townhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column twinhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column villa">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column townhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column twinhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column villa">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column townhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-sm-6 col-xs-12 column twinhouse">
-                <a href="./single-unit.html">
-                    <div class="content">
-                        <div class="col-sm-4 no-padding">
-                            <img class="item-pic" src="resources/assets/images/slider-5.png" alt="" />
-                        </div>
-                        <div class="col-sm-8 item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding margin-top-10">
-                                <h4 class="project-name black-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="./single-developer.html"><img src="resources/assets/images/developer-icon.png" alt="" /></a>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div><span class="gold-color">District :</span><span> West Cairo</span></div>
-                            <div><span class="gold-color">type of property :</span><span> Villa</span></div>
-                            <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> West Cairo 120, ring road</span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-                <div class="clearfix"></div>
-            </div>
+            @endforeach
         </div>
     </section>
     <div class="text-center margin-top-25"><a class="gold-color-hovarable" id="show">Show More</a></div>

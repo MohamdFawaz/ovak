@@ -2,22 +2,21 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{$project->name}}</title>
+@endsection
 @section('content')
     @include('web.partials.inner_pages_header', ['innerContent' => '<div class="header-text">
                 <div class="secondery-page-header-ovarlay">
                     <h2 class="white-color">'.$project->district->name.'<span class="header-line"></span></h2>
-                    <h2 class="green-color">Luxury villa in RegoGolf Central Park</h2>
-                    <div class="header-buttons">
-                        <button class="ovak-button" type="button"> Available</button>
-                        <button class="ovak-button demed-background">Under Construction</button>
-                    </div>
+                    <h2 class="green-color">'.$project->name.' Park</h2>
                 </div>
             </div>'])
 
     <section class="single-project-details margin-top-75">
         <div class="container">
             <div class="single-project-header">
-                <img src="./resources/assets/images/developer-icon.png" />
+                <img src="{{$project->developer->image}}" />
                 <h2 class="green-color">{{__('front.projects.one_of')}} {{$project->developer->name}} {{__('front.projects.projects')}}</h2>
             </div>
             <div class="single-item-details margin-top-75">
@@ -102,8 +101,8 @@
                 </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    @foreach($project->gallery as $gallery)
-                    <div class="item active">
+                    @foreach($project->gallery as $key => $gallery)
+                    <div class="item @if($key == 0) active @endif">
                         <img class="image-full-width" src="{{$gallery->image}}" alt="...">
                     </div>
                     @endforeach

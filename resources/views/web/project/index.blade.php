@@ -2,6 +2,9 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{__('front.header.projects')}}</title>
+@endsection
 @section('content')
     @include('web.partials.inner_pages_header', ['innerContent' => '<div class="header-text">
                 <div class="secondery-page-header-ovarlay">
@@ -58,7 +61,7 @@
                 <div class="clearfix"></div>
                 <h2 class="section-second-header letter-spacing"><span class="col-sm-6">{{__('front.title.developers')}}</span></h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+                <p class="vision-paragraph col-sm-12">{{__('front.projects.list_developers_paragraph')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>

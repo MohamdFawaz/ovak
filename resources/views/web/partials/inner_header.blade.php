@@ -11,7 +11,7 @@
                         <li><a href="{{route('projects.list')}}">{{__('front.header.projects')}}</a></li>
                         <li><a href="{{route('developers.list')}}">{{ __('front.header.developers') }}</a></li>
                         <li><a href="{{route('about')}}">{{__('front.header.about_contact')}}</a></li>
-                        <li><a href="./counsultancy.html">{{__('front.header.consultancy')}}</a></li>
+                        <li><a href="{{route('consultancy')}}">{{__('front.header.consultancy')}}</a></li>
                     </ul>
                 </div>
                 <div class="col-md-5 menu-list-right col-sm-6">

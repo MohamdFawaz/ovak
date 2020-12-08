@@ -13,7 +13,7 @@
     <section id="filter" class="ovak-filter">
         <div class="container">
             <div class="filter-label col-md-2 col-md-push-5 col-sm-push-4 col-xs-3 col-xs-push-2">
-                <span>SEARCH FOR YOUR POROPERTY</span>
+                <span>{{__('front.filter.title')}}</span>
             </div>
             <div class="filter-body box-shadow">
                 <form action="{{route('filter')}}" method="get">

@@ -2,6 +2,9 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{__('front.header.developers')}}</title>
+@endsection
 @section('content')
 
     @include('web.partials.inner_pages_header',['innerContent' => '<div class="header-text">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ovak | Home</title>
+    @yield('title')
     <link rel="icon" href="{{asset('web/images/icon.png')}}" width="60">
     <meta name="description" content="Present the perfect advise for the real estate seekers and the consultancy you need Own variable Advanced knowledge">
     <link rel="stylesheet" href="{{asset('web/css/bootstrap.css')}}">
