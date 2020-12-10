@@ -19,9 +19,9 @@
                 <div class="col-md-8 col-sm-6">
                     <h1 class="green-color"><i class="fa fa-building-o gold-color"></i> All Projects <span class="header-line"></span></h1>
                 </div>
-                <div class="col-md-2 col-sm-6 margin-top-10 float-right select-option-background">
+                <div class="col-md-3 col-sm-6 margin-top-10 float-right select-option-background">
                     <label class="gold-color margin-top-5">{{__('front.form.sort_by')}}</label>
-                    <select class="select select-style margin-top-5">
+                    <select class="float-right select select-style margin-top-5">
                         <option value="all">{{__('front.form.show_all')}}</option>
                         @foreach($property_types as $type)
                         <option value="type-{{$type->id}}">{{$type->name}}</option>
@@ -36,9 +36,14 @@
                     <div class="content">
                         <img class="item-pic" src="{{$project->image}}" alt="" />
                         <div class="item-details">
-                            <div class="col-sm-6 col-xs-8 no-padding">
+                            <div class="col-sm-8 col-xs-8 no-padding">
                                 <h4 class="project-name black-color">{{$project->name}}</h4>
                             </div>
+                            <style>
+                                .developer-icon img{
+                                    border-radius: 50%;
+                                }
+                            </style>
                             <div class="col-sm-2 no-padding col-xs-3 developer-icon">
                                 <a href="{{route('developer.page',$project->developer->slug)}}"><img src="{{$project->developer->image}}" alt="" /></a>
                             </div>
@@ -68,7 +73,7 @@
         <div class="slider-background">
             <div class="variable slider">
                 @foreach($development_companies as $company)
-                <div class="slider-item">
+              <div class="slider-item">
                     <a href="{{route('developer.page',$company->slug)}}"><!--link lel developer-->
                         <div class="slider-image">
                             <img src="{{$company->image}}" alt="" />

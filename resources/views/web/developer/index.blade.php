@@ -6,14 +6,12 @@
     <title>{{__('front.head.title.name')}} | {{__('front.header.developers')}}</title>
 @endsection
 @section('content')
-
     @include('web.partials.inner_pages_header',['innerContent' => '<div class="header-text">
             <div class="secondery-page-header-ovarlay">
                 <h2 class="white-color header-letter-spacing">'.__('front.title.projects').'</h2>
                 <h2 class="green-color">'.__('front.header.developers').' <span class="header-line"></span></h2>
             </div>
         </div>'])
-
     <section id="developers developers-page" class="margin-top-75">
         <div class="container">
             @foreach($development_companies as $company)

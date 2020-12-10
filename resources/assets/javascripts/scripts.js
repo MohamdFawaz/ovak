@@ -137,6 +137,7 @@ $(".modal-close").click(function () {
     $(".registration-modal").addClass("display-none");
     $(".logout-modal").addClass("display-none");
     $(".password-modal").addClass("display-none");
+    $(".ask-modal").addClass("display-none");
 });
 $(".login-change-modal").click(function () {
     $(".registration-modal").toggleClass("display-none");
@@ -155,13 +156,19 @@ $(".logout").click(function () {
     $(".menu-background").toggleClass("display-none");
     $(".mobile-menu").addClass("display-none");
 });
-$("#ask-modal").click(function () {
+$(".ask").click(function () {
     $(".ask-modal").toggleClass("display-none");
     $(".consultancy-square").addClass("display-none");
     $(".links-carrier").addClass("display-none");
     $(".modals").toggleClass("page-ovarlay");
     $(".menu-background").toggleClass("display-none");
     $(".mobile-menu").addClass("display-none");
+});
+$(".ask-confirm").click(function () {
+    $(".consultancy-square").toggleClass("display-none");
+    $(".links-carrier").toggleClass("display-none");
+    $(".modals").toggleClass("page-ovarlay");
+    $(".ask-modal").addClass("display-none");
 });
 $(".forget-cahnge-modal").click(function () {
     $(".password-modal").toggleClass("display-none");

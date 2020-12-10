@@ -211,6 +211,23 @@
         </div>
     </div>
     <div class="clearfix"></div>
+    <div class="ask-modal display-none">
+        <div class="user-modal col-lg-4 col-lg-push-4 col-md-6 col-md-push-4 col-sm-8 col-sm-push-3 text-center col-xs-push-2">
+            <div class="col-lg-10 col-md-9 col-sm-8 white-background modal-form no-padding">
+                <div class="modal-close"><i class="fa fa-times"></i></div>
+                <div class="ask-img">
+                    <img src="./resources/assets/images/logo.png" />
+                </div>
+                <div class="modal-contents">
+                    <h4>One of our team is going to contact you as soon as possible </h4>
+                    <span>Maximum waiting hours is 24 hours</span>
+                    <div class="col-sm-8 col-sm-push-2 text-center margin-bottom-25">
+                        <button class="ovak-dark-button ask-confirm">confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <script src="{{asset('web/javascripts/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('web/javascripts/bootstrap.min.js')}}"></script>

@@ -23,107 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cadb9586-ec9e-4b28-953b-8397360d44c8" name="Default Changelist" comment="Added development company description">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/DevelopmentCompanyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/ProjectController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProjectAmenity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProjectAmenityTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProjectGallery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProjectUtility.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Propertiesables.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Utility.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/UtilityTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_140112_create_propertiesables_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_143159_create_project_amenities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_143170_create_utilities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_145718_create_project_utilities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_151535_add_google_map_link_to_projects_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_151929_create_project_gallery_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_04_160846_create_units_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/css/ninja-slider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/css/style-ar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/images/calculator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/images/consult.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/images/gym.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/images/pool.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/images/service.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/images/sporting.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/web/javascripts/ninja-slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/front.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/counsultancy.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/developer/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/developer/view.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/filter_result.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/partials/inner_header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/partials/inner_pages_header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/project/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/web/project/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ovak.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PropertyTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProjectTranslation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_203254_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_203254_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_203254_create_properties_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/_slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/_slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/css/all.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/css/fontawesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/css/fontawesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/fontawesome/webfonts/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/secondery-pages.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/secondery-pages.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/slick-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/slick-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/slick.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/slick.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/images/Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/images/pc-repair-setup.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/images/slider-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/images/slider-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/images/slider-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/images/slider-3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/images/slider-6.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/images/slider-6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/javascripts/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/javascripts/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/javascripts/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/javascripts/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/javascripts/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/javascripts/navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/javascripts/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/web/javascripts/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/web/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/secondery-pages.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/secondery-pages.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/slick-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/slick-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/slick.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/slick.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/images/gym.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/images/gym.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/images/pool.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/images/pool.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/images/sporting.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/images/sporting.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/javascripts/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/javascripts/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/developer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/developer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/developer/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/developer/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/filter_result.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/filter_result.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/web/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/front.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/front.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/project/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/project/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/web/project/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/project/view.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +192,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -315,6 +236,8 @@
       <workItem from="1604602320602" duration="1210000" />
       <workItem from="1607065132901" duration="22257000" />
       <workItem from="1607103085695" duration="1062000" />
+      <workItem from="1607336771787" duration="12727000" />
+      <workItem from="1607628128632" duration="4772000" />
     </task>
     <task id="LOCAL-00001" summary="Added files">
       <created>1600629016754</created>
@@ -368,5 +291,19 @@
     <MESSAGE value="adding some website pages" />
     <MESSAGE value="Added development company description" />
     <option name="LAST_COMMIT_MESSAGE" value="Added development company description" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="706" y="0" key="CommitChangelistDialog2" timestamp="1607414008809">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="706" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1607414008809" />
+    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607631196968">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1607631196968" />
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607337766229">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607337766229" />
   </component>
 </project>

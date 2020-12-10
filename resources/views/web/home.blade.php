@@ -158,25 +158,20 @@
         </div>
         <div class="clearfix"></div>
         <div class="variable slider">
+            @foreach($projects as $project)
             <div class="slider-item">
-                @foreach($projects as $project)
                 <a href="{{route('projects.page',$project->id)}}">
-                    <!--link lel project-->
-                    <div class="slider-image slider-ovarlay">
+                    <div class="slider-image slider-ovarlay col-sm-12 no-padding">
                         <img class="img-height" src="{{$project->image}}" alt="" />
                         <a href="{{route('projects.list')}}" class="ovak-button">{{__('front.actions.show_more')}}<i class="fa fa-arrow-right"></i></a><!--link le el project-->
                     </div>
-                    <div class="slider-body">
+                    <div class="clearfix"></div>
+                    <div class="slider-body ">
                         <div class="col-sm-12">
-                            <div class="col-sm-6 col-xs-8 no-padding">
-                                <h4 class="project-name green-color">Palm Hills</h4>
-                            </div>
-                            <div class="col-sm-2 no-padding col-xs-3 developer-icon">
-                                <a href="{{route('developer.page',$project->developer->slug)}}">
-                                    <!--link lel develeoper-->
-                                    <img src="{{$project->developer->image}}" alt="" />
-                                </a>
-                            </div>
+                            <h4 class="project-name green-color" style="float:left; margin-top:10px;">Palm Hills</h4>
+                            <a href="{{route('developer.page',$project->developer->slug)}}">
+                            <img src="{{$project->image}}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #B7893D; float:right;"/>
+                            </a>
                             <div class="clearfix"></div>
                             <div class="slider-list-text">
                                 <div><span class="gold-color">{{__('front.projects.district')}} :</span><span>{{$project->district->name}}</span></div>
@@ -186,9 +181,8 @@
                         </div>
                     </div>
                 </a>
-                @endforeach
             </div>
-            </a>
+            @endforeach
         </div>
         <div class="clearfix"></div>
         <div class="text-center margin-top-75"><a href="{{route('projects.list')}}" class="ovak-button">{{__('front.title.view_all_projects')}}</a></div>

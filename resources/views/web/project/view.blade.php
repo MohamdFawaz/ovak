@@ -24,44 +24,21 @@
                     <img src="{{$project->image}}" />
                     <div class="consultancy-square hidden-xs">
                         <span class="square-acc"></span>
-                        <span class="white-color">{{__('front.projects.interested')}}!</span>
-                        <span class="white-color">{{__('front.projects.ask_about_this_project_details')}}</span>
-                        <a href="./counsultancy.html"><span class="consultancy-square-link margin-top-10">{{__('front.projects.ask_now')}}</span></a>
+                        <span class="white-color">Interested !</span>
+                        <span class="white-color">ask about this project details</span>
+                        <a class="ask"><span class="consultancy-square-link margin-top-10">ask now</span></a>
                     </div>
                     <div class="hidden-md hidden-lg hidden-sm text-center margin-top-10">
-                        <span class="green-color">{{__('front.projects.ask_about_this_project_details')}}</span>
-                        <a href="#"><span class="consultancy-square-link margin-top-10">{{__('front.projects.ask_now')}}</span></a>
+                        <span class="green-color">ask about this project details</span>
+                        <a class="ask"><span class="consultancy-square-link margin-top-10">ask now</span></a>
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <div class="col-sm-6">
                         <div class="clearfix"></div>
                         <div class="unit-details-text margin-top-50">
                             <h2>{{__('front.projects.overview')}}</h2>
                             <p class="details-paragraph">{{$project->description}}</p>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-md-push-3 col-sm-5 col-sm-push-1">
-                        <div class="side-unit-details margin-top-50">
-                            <div class="details-list no-padding">
-                                @if(count($project->property) > 0)
-                                    @foreach($project->property as $property)
-                                    <div>
-                                        <span class="col-xs-8">
-                                            <i class="fa {{$property->icon_class}}"></i>
-                                            {{$property->key}}
-                                        </span>
-                                            <span class="col-xs-4 text-right">
-                                                {{$property->value}}
-                                            </span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    @endforeach
-                                @endif
-                                <div class="white-border-2 no-padding"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="clearfix"></div>
                 @if($project->amenity)
@@ -71,6 +48,7 @@
                             <div class="col-md-4">
                                 <img class="image-full-width" src="{{$amenity->image}}" alt="amenity-{{$amenity->id}}"/>
                             </div>
+                                <h4>($amenity->name)</h4>
                             @endforeach
                         </div>
                 @endif

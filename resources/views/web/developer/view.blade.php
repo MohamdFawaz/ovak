@@ -16,8 +16,13 @@
                     <h2 class="ovak-font">{{$developer->name}}</h2>
                     <p class="details-paragraph">{{$developer->description}}</p>
                 </div>
-                <div class="col-sm-6 col-xs-12 text-center">
-                    <img class="developer-image" src="{{$developer->image}}" />
+                <style>
+                    .developer-image{
+                        height: 240px;
+                    }
+                </style>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img class="developer-image image-full-width" src="{{$developer->image}}" />
                 </div>
             </div>
         </div>
