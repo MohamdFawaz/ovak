@@ -10,16 +10,48 @@ return [
     ],
     'header' =>
     [
+        'home' => 'Home',
         'developers' => 'Developers',
         'projects' => 'Projects',
         'consultancy' => 'Consultancy',
         'about_contact' => 'About/Contact',
+        'filter_result' => 'Filter Result',
+        'logout' => 'Logout',
+        'login' => 'Login',
         'inner_header' => [
             'consultancy' => [
                 'consultancy' => 'Consultancy',
                 'service' => 'Service'
             ]
         ]
+    ],
+    'login' =>
+    [
+        'sign_in' => 'Sign in to',
+        'hello' => 'Hello, Friend',
+        'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.',
+        'action' => [
+            'login' => 'Login'
+        ],
+        'email' => 'Please Enter Your Email Address',
+        'password' => 'Please Enter Your Password'
+    ],
+    'register' =>
+    [
+        'create_account' => 'Create Account',
+        'first_name' => 'Fist Name',
+        'last_name' => 'Last Name',
+        'email_address' => 'Email Address',
+        'phone_number' => 'Phone Number',
+        'password' => 'Password',
+        'action' => [
+            'register' => 'Register',
+        ]
+    ],
+    'logout' =>
+    [
+        'are_you_sure' => "Are you sure you want to",
+        'logout' => 'Logout'
     ],
     'actions' =>
     [
@@ -48,6 +80,40 @@ return [
         'sort_by' => 'Sort By',
         'show_all' => 'Show All'
     ],
+    'home' =>
+    [
+        'relax_and_let' => 'Relax & Let',
+        'do_the_rest' => 'Do the rest.',
+        'consultancy' => 'Consultancy',
+        'service' => 'Service',
+        'learn_more' => 'Learn More',
+        'vision' => [
+            'we_find_you' => 'we find you',
+            'the_perfect_choice' => 'the perfect choice',
+            'description' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                 Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.',
+            'mission_and_vision' => 'Mission & Vision'
+        ],
+        'project' => [
+            'featured' => 'featured',
+            'projects' => 'projects',
+            'headline' => 'Discover how much the latest properties have been sold for'
+        ],
+        'subscription' => [
+            'subscribe' => 'subscribe',
+            'market_news' => 'market news',
+            'title' => 'Get notifications about marketplace, updates and latest offers post.'
+        ],
+        'developers' => [
+            'projects' => 'Projects',
+            'developers'  => 'Developers',
+            'description' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                 accusam et justo duo dolores et ea rebum.'
+        ]
+    ],
     'projects' =>
     [
         'district' => 'District',
@@ -64,7 +130,8 @@ return [
         'next' => 'Next',
         'list_developers_paragraph' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
             eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-             justo duo dolores et ea rebum.'
+             justo duo dolores et ea rebum.',
+        'all_projects' => 'All Projects'
     ],
     'units' => [
         'overview' => 'Overview'

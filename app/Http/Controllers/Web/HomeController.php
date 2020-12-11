@@ -30,7 +30,7 @@ class HomeController extends Controller
         $featured_projects = Project::all();
         $projects = Project::query()->with(['developer:id,slug,image','district','propertyType'])->inRandomOrder()->get();
 
-        return view('web.home',compact('project_types',
+        return view('web.home.home',compact('project_types',
             'districts','development_companies','finish_types','unit_types',
             'featured_projects','projects'));
     }

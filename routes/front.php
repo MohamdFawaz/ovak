@@ -5,7 +5,7 @@ use App\Http\Controllers\Web\DevelopmentCompanyController;
 use App\Http\Controllers\Web\ProjectController;
 use \App\Http\Controllers\Web\UnitController;
 
-
+Route::get('/logout',[\App\Http\Controllers\Web\Auth\LoginController::class,'logout'])->name('user.logout');
 Route::get('/',[HomeController::class,'home']);
 Route::get('/filters-result',[HomeController::class,'filter'])->name('filter');
 Route::get('/about',[HomeController::class,'about'])->name('about');

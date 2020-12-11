@@ -2,22 +2,27 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
+
 @section('title')
     <title>{{__('front.head.title.name')}} | {{__('front.header.projects')}}</title>
 @endsection
-@section('content')
-    @include('web.partials.inner_pages_header', ['innerContent' => '<div class="header-text">
-                <div class="secondery-page-header-ovarlay">
-                    <h2 class="white-color header-letter-spacing">Featured</h2>
-                    <h2 class="green-color">Projects <span class="header-line"></span></h2>
-                </div>
-            </div>'])
 
+@section('pre_header_content')
+    <div class="header-text">
+        <div class="secondery-page-header-ovarlay">
+            <h2 class="white-color header-letter-spacing">{{__('front.home.project.featured')}}</h2>
+            <h2 class="green-color">{{__('front.projects.projects')}}<span class="header-line"></span></h2>
+        </div>
+    </div>
+@endsection
+
+@section('content')
+    @include('web.partials.inner_pages_header')
     <section id="projects">
         <div class="container">
             <div class="margin-top-75">
                 <div class="col-md-8 col-sm-6">
-                    <h1 class="green-color"><i class="fa fa-building-o gold-color"></i> All Projects <span class="header-line"></span></h1>
+                    <h1 class="green-color"><i class="fa fa-building-o gold-color"></i>{{__('front.projects.all_projects')}}<span class="header-line"></span></h1>
                 </div>
                 <div class="col-md-2 col-sm-6 margin-top-10 float-right select-option-background">
                     <label class="gold-color margin-top-5">{{__('front.form.sort_by')}}</label>

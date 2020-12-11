@@ -1,16 +1,23 @@
 @extends('web.layout')
+
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
+
 @section('title')
     <title>{{__('front.head.title.name')}} | {{$unit->name}}</title>
 @endsection
+
+@section('pre_header_content')
+<div class="header-text">
+    <div class="secondery-page-header-ovarlay">
+        <h2 class="green-color">units <span class="header-line"></span></h2>
+    </div>
+</div>
+@endsection
+
 @section('content')
-    @include('web.partials.inner_pages_header', ['innerContent' => '<div class="header-text">
-                <div class="secondery-page-header-ovarlay">
-                    <h2 class="green-color">units <span class="header-line"></span></h2>
-                </div>
-            </div>'])
+    @include('web.partials.inner_pages_header')
 
     <section class="single-unit">
         <section id="filter" class="ovak-filter">

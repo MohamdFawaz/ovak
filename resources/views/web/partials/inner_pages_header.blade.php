@@ -2,10 +2,10 @@
     <div class="clearfix"></div>
     <div class="home-header-image">
         <div class="clearfix"></div>
-        {!! $innerContent !!}
+        @yield('pre_header_content')
         <div class="menu">
             <div class="logo col-md-2 col-sm-3 col-xs-5">
-                <a href="{{url('/')}}"><img src="resources/assets/images/logo.png" class="image-full-width" alt="" /></a>
+                <a href="{{url('/')}}"><img src="{{asset('web/images/logo.png')}}" class="image-full-width" alt="" /></a>
             </div>
             <div class="menu-list col-md-10 hidden-sm hidden-xs">
                 <div class="menu-list-centere col-md-7 col-sm-6">
@@ -19,9 +19,14 @@
                 </div>
                 <div class="col-md-5 menu-list-right col-sm-6">
                     <ul>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:01154474317"> 01154474317</a></li>
-                        <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> Login</a></li>
-                        <li><i class="fa fa-globe" aria-hidden="true"></i><a href="./single-developer-ar.html"> Arabic</a></li>
+                        @if(Auth::check())
+                            <li class="not-link"><i class="fa fa-user-o" aria-hidden="true"></i><a class=""> {{Auth::user()->name}}</a></li>
+                            <li class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#"> {{__('front.header.logout')}}</a></li>
+                        @else
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:01154474317"> 01154474317</a></li>
+                            <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> {{__('front.header.login')}}</a></li>
+                        @endif
+                            <li><i class="fa fa-globe" aria-hidden="true"></i><a href="./index-ar.html"> العربية</a></li>
                     </ul>
                 </div>
             </div>
@@ -147,6 +152,6 @@
     </div>
     <div class="links-carrier">
         <span class="calculator"><i class="fa fa-calculator"></i></span>
-        <span class="calculator-link"><a href="consultancy.html"> Calculate Your installments</a></span>
+        <span class="calculator-link"><a href="{{route('consultancy')}}"> Calculate Your installments</a></span>
     </div>
 </section>

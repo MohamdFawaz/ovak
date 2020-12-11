@@ -4,6 +4,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Auth\LoginController;
+use App\Http\Controllers\Web\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/auth/user-login',[LoginController::class,'login']);
+Route::post('/auth/user-login',[LoginController::class,'login'])->name('user.login');
+
+Route::post('/auth/user-register',[RegisterController::class,'create'])->name('user.register');

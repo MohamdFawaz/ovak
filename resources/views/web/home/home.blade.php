@@ -1,15 +1,21 @@
 @extends('web.layout')
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{__('front.header.home')}}</title>
+@endsection
 
-@section('content')
-    @include('web.partials.inner_header',['innerContent' => '<div class="consultancy-square">
+@section('post_header_content')
+    <div class="consultancy-square">
         <span class="square-acc"></span>
-        <span class="white-color">RELAX & LET</span>
-        <span class="gold-color ovak">OVAK</span>
-        <span class="white-color">DO THE REST.</span>
-        <span class="consultany margin-top-10">CONSULTANCY</span>
-        <span class="consultany margin-bottom-10">SERVICE</span>
-        <a href="counsultancy.html"><span class="consultancy-square-link">LEARN MORE</span></a>
-    </div>'])
+        <span class="white-color">{{strtoupper(__('front.home.relax_and_let'))}}</span>
+        <span class="gold-color ovak">{{strtoupper(__('front.head.title.name'))}}</span>
+        <span class="white-color">{{strtoupper(__('front.home.do_the_rest'))}}</span>
+        <span class="consultany margin-top-10">{{strtoupper(__('front.home.consultancy'))}}</span>
+        <span class="consultany margin-bottom-10">{{strtoupper(__('front.home.service'))}}</span>
+        <a href="{{route('consultancy')}}"><span class="consultancy-square-link">{{strtoupper(__('front.home.learn_more'))}}</span></a>
+    </div>
+@endsection
+@section('content')
+    @include('web.partials.inner_header')
     <section id="filter" class="ovak-filter">
         <div class="container">
             <div class="filter-label col-md-2 col-md-push-5 col-sm-push-4 col-xs-3 col-xs-push-2">
@@ -97,7 +103,7 @@
                                         <input type="text" name="price-range">
                                         <span class="gold-color"><i class="fa fa-arrow-right"></i></span>
                                         <input type="text" name="prince-range">
-                                        <span class="gold-color">/ EGP </span>
+                                        <span class="gold-color">/ {{__('front.consultancy.installment.form.currency')}} </span>
                                     </div>
                                 </div>
                             </div>
@@ -133,12 +139,12 @@
             <div class="col-sm-6 col-xs-12 no-padding vision-water-mark">
                 <div class="vision-img-show">
                     <div class="col-lg-9 col-lg-push-1 col-md-11 col-md-push-1 col-xs-12 vision-text">
-                        <h2 class="section-first-header header-letter-spacing"><span>we find you</span><span class="header-line"></span></h2>
+                        <h2 class="section-first-header header-letter-spacing"><span>{{__('front.home.vision.we_find_you')}}</span><span class="header-line"></span></h2>
                         <div class="clearfix"></div>
-                        <h2 class="section-second-header letter-spacing no-padding">the perfect choice</h2>
+                        <h2 class="section-second-header letter-spacing no-padding">{{__('front.home.vision.the_perfect_choice')}}</h2>
                         <div class="clearfix"></div>
-                        <p class="vision-paragraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                        <div class="margin-top-50"><a href="about.html" class="ovak-button">Mission & Vision</a></div>
+                        <p class="vision-paragraph">{{__('front.home.vision.description')}}</p>
+                        <div class="margin-top-50"><a href="{{route('about')}}" class="ovak-button">{{__('front.home.vision.mission_and_vision')}}</a></div>
                     </div>
                 </div>
             </div>
@@ -149,11 +155,11 @@
     <section id="projects" class="projects long-slider">
         <div class="col-sm-12 no-padding-xs">
             <div class="col-md-4 col-md-push-1 col-sm-8 col-sm-push-1 col-xs-12 no-padding-xs">
-                <h2 class="section-first-header letter-spacing"><span class="col-sm-6">featured</span></h2>
+                <h2 class="section-first-header letter-spacing"><span class="col-sm-6">{{__('front.home.project.featured')}}</span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-second-header"><span>projects</span> <span class="header-line"></span></h2>
+                <h2 class="section-second-header"><span>{{__('front.home.project.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">Discover how much the latest properties have been sold for</p>
+                <p class="vision-paragraph col-sm-12">{{__('front.home.project.headline')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -198,17 +204,17 @@
     <section id="subscription" class="subscription">
         <div class="col-sm-12">
             <div class="col-md-6 col-md-push-1 col-sm-6 margin-top-100">
-                <h2 class="section-second-header header-letter-spacing"><span>subscripe</span><span class="header-line"></span></h2>
+                <h2 class="section-second-header header-letter-spacing"><span>{{__('front.home.subscription.subscribe')}}</span><span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-first-header bold letter-spacing no-padding">market news</h2>
+                <h2 class="section-first-header bold letter-spacing no-padding">{{__('front.home.subscription.market_news')}}</h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12 no-padding">Get notifications about marketplace, updates and latest offers post.</p>
+                <p class="vision-paragraph col-sm-12 no-padding">{{__('front.home.subscription.title')}}</p>
                 <div class="clearfix"></div>
                 <div class="margin-top-50"></div>
                 <div class="subscription-input col-md-6 col-sm-10 no-padding">
                     <form>
                         <input type="email" maxlength="40" placeholder="Enter Your E-mail" required />
-                        <button class="subscription-button" type="submit">subscribe</button>
+                        <button class="subscription-button" type="submit">{{__('front.home.subscription.subscribe')}}</button>
                     </form>
                 </div>
             </div>
@@ -219,11 +225,11 @@
     <section id="developers" class="developers">
         <div class="col-sm-12 no-padding-xs">
             <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
-                <h2 class="section-first-header"><span>projects</span> <span class="header-line"></span></h2>
+                <h2 class="section-first-header"><span>{{__('front.home.developers.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-second-header letter-spacing"><span class="col-sm-6">developers</span></h2>
+                <h2 class="section-second-header letter-spacing"><span class="col-sm-6">{{__('front.home.developers.developers')}}</span></h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+                <p class="vision-paragraph col-sm-12">{{__('front.home.developers.description')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -242,6 +248,6 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="text-center margin-top-75"><a href="{{route('developers.list')}}" class="ovak-button">View all developers</a></div>
+        <div class="text-center margin-top-75"><a href="{{route('developers.list')}}" class="ovak-button">{{__('front.title.view_all_developers')}}</a></div>
     </section>
 @endsection
