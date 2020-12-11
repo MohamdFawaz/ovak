@@ -220,3 +220,71 @@ $(document).ready(function () {
 });
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
+$(document).ready(function () {
+    $('#login-form').submit(function (e) {
+        e.preventDefault();
+        let form = new FormData();
+        let email = $(this).find('#login_email').val();
+        let password = $(this).find('#login_password').val();
+        let _token = $(this).find('input[name="_token"]').val();
+        form.append('email',email);
+        form.append('password',password);
+        form.append('_token',_token);
+
+        $('.login-error').css('display','none');
+        axios({
+            method: 'post',
+            url: `${loginUri}`,
+            data: form,
+            headers: {'Content-Type': 'application/json' }
+        }).then(function (response) {
+            localStorage.setItem('currentUser',JSON.stringify(response.data));
+            window.location.reload();
+        }).catch(error => {
+            $('.login-error').css('display','block');
+            $('.login-error').text(error.response.data.errors.email[0]);
+        });
+    })
+
+    $('#regsiter-form').submit(function (e) {
+        e.preventDefault();
+        let form = new FormData();
+        let firstName = $(this).find('#rfname').val();
+        let lastName = $(this).find('#rlname').val();
+        let email = $(this).find('#remail').val();
+        let phoneNumber = $(this).find('#rphone').val();
+        let password = $(this).find('#rpassword').val();
+        let _token = $(this).find('input[name="_token"]').val();
+        form.append('email',email);
+        form.append('first_name',firstName);
+        form.append('last_name',lastName);
+        form.append('phone',phoneNumber);
+        form.append('password',password);
+        form.append('_token',_token);
+        form.forEach(function (item,key){
+            let el = $('.'+key+'-error');
+            el.css('display','none');
+            el.empty();
+        });
+        axios({
+            method: 'post',
+            url: `${registerUri}`,
+            data: form,
+            headers: {'Content-Type': 'application/json' }
+        }).then(function (response) {
+            localStorage.setItem('currentUser',JSON.stringify(response.data));
+            window.location.reload();
+        }).catch(error => {
+            let errors = error.response.data;
+            Object.entries(errors).forEach(([key, value]) => {
+                $('.'+key+'-error').css('display','block');
+                value.forEach(function (text){
+                    $('.'+key+'-error').append(text + "<br>");
+                });
+            })
+        });
+    });
+    clearUser = () => {
+        localStorage.clear();
+    }
+})

@@ -119,6 +119,13 @@ text-align:center;
     border-radius: 50%;
 }
 
+.developer-icon img{
+    border-radius: 50%;
+}
+
+.developer-image{
+    height: 240px;
+}
 .details-paragraph {
     font-family: Bahnschrift;
     color: #707070;

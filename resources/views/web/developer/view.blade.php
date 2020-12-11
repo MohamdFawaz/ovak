@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
 
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{$developer->name}}</title>
+@endsection
+
 @section('pre_header_content')
     <div class="header-text">
         <div class="secondery-page-header-ovarlay">
@@ -22,8 +26,8 @@
                     <h2 class="ovak-font">{{$developer->name}}</h2>
                     <p class="details-paragraph">{{$developer->description}}</p>
                 </div>
-                <div class="col-sm-6 col-xs-12 text-center">
-                    <img class="developer-image" src="{{$developer->image}}" />
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img class="developer-image image-full-width" src="{{$developer->image}}" alt="developer-image-{{$developer->id}}" />
                 </div>
             </div>
         </div>
@@ -39,7 +43,7 @@
                 <div class="variable slider">
                     @foreach($projects as $project)
                     <div class="slider-item">
-                        <a href="./single-project.html">
+                        <a href="{{route('projects.page',$project->id)}}">
                             <div class="slider-image">
                                 <img src="{{$project->image}}" alt="" />
                             </div>

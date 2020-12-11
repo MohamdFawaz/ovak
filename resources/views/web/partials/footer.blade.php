@@ -217,6 +217,23 @@
         </div>
     </div>
     <div class="clearfix"></div>
+    <div class="ask-modal display-none">
+        <div class="user-modal col-lg-4 col-lg-push-4 col-md-6 col-md-push-4 col-sm-8 col-sm-push-3 text-center col-xs-push-2">
+            <div class="col-lg-10 col-md-9 col-sm-8 white-background modal-form no-padding">
+                <div class="modal-close"><i class="fa fa-times"></i></div>
+                <div class="ask-img">
+                    <img src="{{asset('web/images/logo.png')}}" />
+                </div>
+                <div class="modal-contents">
+                    <h4>One of our team is going to contact you as soon as possible </h4>
+                    <span>Maximum waiting hours is 24 hours</span>
+                    <div class="col-sm-8 col-sm-push-2 text-center margin-bottom-25">
+                        <button class="ovak-dark-button ask-confirm">confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <script src="{{asset('web/javascripts/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('web/javascripts/bootstrap.min.js')}}"></script>
@@ -225,74 +242,8 @@
 <script src="{{asset('web/javascripts/scripts.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $('#login-form').submit(function (e) {
-            e.preventDefault();
-            let form = new FormData();
-            let email = $(this).find('#login_email').val();
-            let password = $(this).find('#login_password').val();
-            let _token = $(this).find('input[name="_token"]').val();
-            form.append('email',email);
-            form.append('password',password);
-            form.append('_token',_token);
-
-            $('.login-error').css('display','none');
-            axios({
-                method: 'post',
-                url: '{{route('user.login')}}',
-                data: form,
-                headers: {'Content-Type': 'application/json' }
-            }).then(function (response) {
-                    localStorage.setItem('currentUser',JSON.stringify(response.data));
-                    window.location.reload();
-                }).catch(error => {
-                    $('.login-error').css('display','block');
-                    $('.login-error').text(error.response.data.error);
-                });
-        })
-
-        $('#regsiter-form').submit(function (e) {
-            e.preventDefault();
-            let form = new FormData();
-            let firstName = $(this).find('#rfname').val();
-            let lastName = $(this).find('#rlname').val();
-            let email = $(this).find('#remail').val();
-            let phoneNumber = $(this).find('#rphone').val();
-            let password = $(this).find('#rpassword').val();
-            let _token = $(this).find('input[name="_token"]').val();
-            form.append('email',email);
-            form.append('first_name',firstName);
-            form.append('last_name',lastName);
-            form.append('phone',phoneNumber);
-            form.append('password',password);
-            form.append('_token',_token);
-            form.forEach(function (item,key){
-                let el = $('.'+key+'-error');
-                el.css('display','none');
-                el.empty();
-            });
-            axios({
-                method: 'post',
-                url: '{{route('user.register')}}',
-                data: form,
-                headers: {'Content-Type': 'application/json' }
-            }).then(function (response) {
-                    localStorage.setItem('currentUser',JSON.stringify(response.data));
-                    window.location.reload();
-                }).catch(error => {
-                    let errors = error.response.data;
-                    Object.entries(errors).forEach(([key, value]) => {
-                        $('.'+key+'-error').css('display','block');
-                        value.forEach(function (text){
-                            $('.'+key+'-error').append(text + "<br>");
-                        });
-                    })
-                });
-        });
-        clearUser = () => {
-            localStorage.clear();
-        }
-    })
+    var loginUri = "{{route('user.login')}}"
+    var registerUri = "{{route('user.register')}}"
 </script>
 </body>
 </html>

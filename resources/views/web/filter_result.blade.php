@@ -28,20 +28,10 @@
                         <h2 class="green-color ovak-font">{{__('front.result.compound')}} <span class="header-line"></span></h2>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6 margin-top-10 float-right select-option-background">
-                    <label class="gold-color margin-top-5"> Sort by</label>
-                    <select class="select select-style margin-top-5">
-                        <option value="all">{{__('front.form.show_all')}}</option>
-                        @foreach($property_types as $type)
-                            <option value="type-{{$type->id}}">{{$type->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
             @foreach($units as $unit)
-                <div class="col-sm-6 col-xs-12 column type-{{$type->id}}">
+                <div class="col-sm-6 col-xs-12 column ">
                 <a href="{{route('unit.page',$unit->id)}}">
                     <!--link lel unit-->
                     <div class="content">

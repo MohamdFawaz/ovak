@@ -184,5 +184,8 @@ return [
                   'le' => 'LE'
               ]
           ]
+    ],
+    'message' => [
+        'unauthorized_user' => 'Please check your email and password'
     ]
 ];

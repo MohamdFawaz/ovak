@@ -64,10 +64,7 @@ class LoginController extends Controller
         if ($user){
             return auth()->user()->only('id','name','email');
         }else{
-            return response()->json([
-                'error' => __('message.unauthorized_user'),
-                'code' => 401,
-            ], 401);
+            return $this->sendFailedLoginResponse($request);
         }
     }
 
@@ -155,7 +152,7 @@ class LoginController extends Controller
     protected function sendFailedLoginResponse(Request $request)
     {
         throw ValidationException::withMessages([
-            $this->username() => [trans('auth.failed')],
+            $this->username() => [trans('front.message.unauthorized_user')],
         ]);
     }
 
