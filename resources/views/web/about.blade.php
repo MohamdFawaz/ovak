@@ -2,13 +2,18 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
+
+@section('pre_header_content')
+    <div class="header-text">
+        <div class="secondery-page-header-ovarlay">
+            <h2 class="white-color header-letter-spacing">{{__('front.header.about')}}</h2>
+            <h2 class="green-color">{{__('front.head.title.name')}} <span class="header-line"></span></h2>
+        </div>
+    </div>
+@endsection
+
 @section('content')
-    @include('web.partials.inner_pages_header',['innerContent' => '<div class="header-text">
-                <div class="secondery-page-header-ovarlay">
-                    <h2 class="white-color header-letter-spacing">about</h2>
-                    <h2 class="green-color">Ovak <span class="header-line"></span></h2>
-                </div>
-            </div>'])
+    @include('web.partials.inner_pages_header')
 
     <section id="vision" class="about-ovak margin-top-75">
         <div class="container">
@@ -117,11 +122,13 @@
                 </div>
                 <div class="col-sm-6 col-xs-12 margin-top-50 margin-bottom-50">
                     <div class="contact-form">
-                        <form>
-                            <input type="text" placeholder="Name" required />
-                            <input type="email" placeholder="Email" required />
-                            <input type="tel" placeholder="Phone Number" required />
-                            <textarea placeholder="Message"></textarea>
+                        <form method="post" action="{{route('contact')}}">
+                            {{method_field('post')}}
+                            {{csrf_field()}}
+                            <input type="text" name="name" placeholder="Name" required />
+                            <input type="email" name="email" placeholder="Email" required />
+                            <input type="tel" name="phone" placeholder="Phone Number" required />
+                            <textarea placeholder="Message" name="message"></textarea>
                             <div class="clearfix"></div>
                             <div class="col-sm-4 no-padding"><button type="submit" class="ovak-dark-button">Send Message</button></div>
                         </form>
