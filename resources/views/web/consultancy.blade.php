@@ -5,13 +5,17 @@
 @section('title')
     <title>{{__('front.head.title.name')}} | {{__('front.header.consultancy')}}</title>
 @endsection
+@section('pre_header_content')
+    <div class="header-text">
+        <div class="secondery-page-header-ovarlay">
+            <h2 class="white-color header-letter-spacing">{{__('front.header.inner_header.consultancy.consultancy')}}</h2>
+            <h2 class="green-color">{{__('front.header.inner_header.consultancy.service')}} <span class="header-line"></span></h2>
+        </div>
+    </div>
+@endsection
+
 @section('content')
-    @include('web.partials.inner_pages_header',['innerContent' => '<div class="header-text">
-                <div class="secondery-page-header-ovarlay">
-                    <h2 class="white-color header-letter-spacing">'.__('front.header.inner_header.consultancy.consultancy').'</h2>
-                    <h2 class="green-color">'.__('front.header.inner_header.consultancy.service').' <span class="header-line"></span></h2>
-                </div>
-            </div>'])
+    @include('web.partials.inner_pages_header')
 
     <section id="consult" class="consult">
         <div class="container">
@@ -91,19 +95,27 @@
                 <div class="service-details margin-top-75">
                     <div class="col-md-push-2 col-md-8 col-sm-12 consultation-background">
                         <div class="col-md-8 col-sm-12 no-padding">
+                            <form id="installment-form">
+                            {{csrf_field()}}
                             <span class="ovak-font white-color"> {{__('front.consultancy.installment.form.property_price')}}</span>
                             <span class="float-right gold-background white-color ovak-font"> {{__('front.consultancy.installment.form.currency')}}</span>
                             <h4 class="white-color text-uppercase bold margin-top-10 ovak-font">{{__('front.consultancy.installment.form.total_amount')}}</h4>
-                            <input type="text" placeholder="{{__('front.consultancy.installment.form.total_amount_placeholder')}}" />
+                            <input name="installment-total-amount" type="text" placeholder="{{__('front.consultancy.installment.form.total_amount_placeholder')}}" />
                             <div class="margin-top-50">
                                 <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.down_payment')}}</h4>
                                 <div class="col-sm-6 no-padding">
                                     <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.amount')}}</h4>
-                                    <input type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                    <input name="installment-down-payment-amount"
+                                           onkeyup="convertDownPayment(event)"
+                                           onchange="convertDownPayment(event)"
+                                           type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
                                 </div>
                                 <div class="col-sm-6 pl-10">
                                     <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.percent')}}</h4>
-                                    <input type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                    <input type="text" name="installment-down-payment-percentage"
+                                           onkeyup="convertDownPayment(event)"
+                                           onchange="convertDownPayment(event)"
+                                           placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="margin-top-25">
@@ -112,22 +124,23 @@
                                 <div>
                                     <div class="col-sm-6 no-padding">
                                         <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.years')}}</h4>
-                                        <input type="text" placeholder="{{__('front.consultancy.installment.form.years_placeholder')}}" />
+                                        <input name="installment-years" type="text" placeholder="{{__('front.consultancy.installment.form.years_placeholder')}}" />
                                     </div>
                                 </div>
                                 <div class="col-sm-12 margin-top-25">
-                                    <button type="submit" class="ovak-button text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
-                                    <button type="submit" class="ovak-button transperant text-uppercase bold">{{__('front.consultancy.installment.form.actions.clear')}}</button>
+                                    <button type="submit" class="ovak-button text-uppercase bold" onclick="calculateInstallment(event)">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
+                                    <button type="submit" class="ovak-button transperant text-uppercase bold" onclick="clearInstallment(event)">{{__('front.consultancy.installment.form.actions.clear')}}</button>
                                 </div>
-                                <div class="col-sm-12 margin-top-10">
+                                <div class="col-sm-12 margin-top-10" id="remaining-result-field" style="display: none">
                                     <span class="ovak-font bold white-color">{{__('front.consultancy.installment.table.remaining')}} =</span>
-                                    <span id="result"></span>
+                                    <span id="remaining-result"></span>
                                 </div>
                             </div>
+                        </form>
                         </div>
                         <div class="clearfix"></div>
                         <div class="margin-top-50 margin-bottom-80">
-                            <table>
+                            <table id="installment-table" class="hidden">
                                 <thead>
                                 <tr class="gold-color ovak-font bold text-center text-uppercase">
                                     <td class="gold-color">{{__('front.consultancy.installment.table.installment_type')}}</td>
@@ -140,29 +153,29 @@
                                     <td>
                                         {{__('front.consultancy.installment.table.monthly_installment')}} =
                                     </td>
-                                    <td></td>
                                     <td>
-                                        <span class="table-num">X0le</span>
+                                        <span class="table-num" id="monthly"></span>
                                     </td>
+                                    <td id="monthly-count"></td>
                                 </tr>
                                 <tr>
                                     <td>
                                         {{__('front.consultancy.installment.table.quarterly_installment')}} =
                                     </td>
-                                    <td></td>
                                     <td>
-                                        <span class="table-num">X0le</span>
+                                        <span class="table-num" id="quarterly"></span>
                                     </td>
+                                    <td id="quarterly-count"></td>
                                 </tr>
 
                                 <tr>
                                     <td>
                                         {{__('front.consultancy.installment.table.yearly_installment')}} =
                                     </td>
-                                    <td></td>
                                     <td>
-                                        <span class="table-num">X0le</span>
+                                        <span class="table-num" id="yearly"></span>
                                     </td>
+                                    <td id="yearly-count"></td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -15,6 +15,7 @@ return [
         'projects' => 'Projects',
         'consultancy' => 'Consultancy',
         'about_contact' => 'About/Contact',
+        'about' => 'About',
         'filter_result' => 'Filter Result',
         'logout' => 'Logout',
         'login' => 'Login',
@@ -69,6 +70,7 @@ return [
     [
         'development_company' => 'Development Company',
         'district_location' => 'District Location',
+        'project_type' => 'Project Type',
         'unit_type' => 'Unit Type',
         'delivery_date' => 'Delivery date',
         'search' => 'Search',

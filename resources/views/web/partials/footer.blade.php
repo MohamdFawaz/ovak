@@ -65,8 +65,10 @@
             </div>
             <div class="col-lg-5 col-md-6 col-sm-8 margin-top-25">
                 <div class="subscription-input">
-                    <form>
-                        <input type="email" placeholder="Please type your e-mail" required />
+                    <form action="{{route('subscribe.newsletter')}}" method="post">
+                        {{method_field('post')}}
+                        {{csrf_field()}}
+                        <input type="email" name="email" placeholder="Please type your e-mail" required />
                         <button type="button" class="subscription-button">submit</button>
                     </form>
                 </div>
@@ -244,6 +246,7 @@
 <script>
     var loginUri = "{{route('user.login')}}"
     var registerUri = "{{route('user.register')}}"
+    var logUserCalculationUri = "{{route('user.logCalculation')}}"
 </script>
 </body>
 </html>

@@ -287,4 +287,126 @@ $(document).ready(function () {
     clearUser = () => {
         localStorage.clear();
     }
+
+    getFromFields = (installmentForm, formFields) => {
+        formFields.totalAmount = $(installmentForm+" input[name='installment-total-amount']");
+        formFields.downPaymentAmount = $(installmentForm+" input[name='installment-down-payment-amount']");
+        formFields.downPaymentPercentage = $(installmentForm+" input[name='installment-down-payment-percentage']");
+        formFields.years = $(installmentForm+" input[name='installment-years']");
+        formFields._token = $(installmentForm+" input[name='_token']");
+        return formFields;
+    }
+
+    calculateInstallment = (e) => {
+        e.preventDefault();
+        let currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            let formFields = {};
+            let installmentForm = '#installment-form';
+
+            formFields = getFromFields(installmentForm, formFields);
+
+            if (formFields.totalAmount.val() &&
+                (formFields.downPaymentAmount.val() || formFields.downPaymentPercentage.val()) &&
+                formFields.years.val()) {
+                let result = {};
+                let remainingAmount = 0;
+                let remainingAmountOverYears = 0;
+                if (formFields.downPaymentAmount.val().length) {
+                    console.log(formFields.downPaymentAmount.val());
+                    remainingAmount = (formFields.totalAmount.val() - formFields.downPaymentAmount.val());
+                } else {
+                    remainingAmount = (formFields.totalAmount.val() - ((parseInt(formFields.downPaymentPercentage.val()) / 100)) * formFields.totalAmount.val());
+                }
+                remainingAmountOverYears = (remainingAmount / formFields.years.val()).toFixed(1);
+
+                result.monthly = ((remainingAmountOverYears) / 12).toFixed(1);
+                result.quarterly = (remainingAmountOverYears / 12 * 3).toFixed(1);
+                result.yearly = (remainingAmountOverYears / formFields.years.val()).toFixed(1);
+
+                initInstallmentTable(remainingAmount, result,formFields.years.val());
+                logUserCalculation(formFields,JSON.parse(currentUser));
+           }
+        }else {
+            $('#login').trigger('click')
+        }
+    }
+    initInstallmentTable = (remaining,result,year) => {
+        let currency = "LE";
+        $('#remaining-result').text(remaining + currency)
+        $('#monthly').text(result.monthly + currency)
+        $('#monthly-count').text(year * 12)
+        $('#quarterly').text(result.quarterly + currency)
+        $('#quarterly-count').text(year * 4)
+        $('#yearly').text(result.yearly + currency)
+        $('#yearly-count').text(year * 2)
+        $('#installment-table').removeClass('hidden');
+        $('#remaining-result-field').css('display','block');
+    }
+    clearInstallment = (e) => {
+        e.preventDefault();
+        let formFields = {};
+        let installmentForm = '#installment-form';
+        formFields = getFromFields(installmentForm,formFields);
+        formFields.totalAmount.val('');
+        formFields.downPaymentAmount.val('');
+        formFields.downPaymentPercentage.val('');
+        formFields.years.val('');
+        $('#remaining-result').empty()
+        $('#monthly').empty();
+        $('#quarterly').empty();
+        $('#yearly').empty();
+        $('#installment-table').addClass('hidden');
+        $('#remaining-result-field').css('display','none');
+    }
+    convertDownPayment = (e) =>
+    {
+        let formFields = {};
+        let installmentForm = '#installment-form';
+        formFields = getFromFields(installmentForm,formFields);
+
+        if (formFields.totalAmount.val().length){
+
+            if (e.currentTarget.classList.contains('percentage')){
+                formFields.downPaymentAmount.val('');
+            }else{
+                formFields.downPaymentPercentage.val('');
+            }
+
+            if (formFields.downPaymentAmount.val().length && (parseInt(formFields.downPaymentAmount.val()) <= parseInt(formFields.totalAmount.val()))){
+                let downPaymentPercentage = (formFields.downPaymentAmount.val() / (formFields.totalAmount.val() * 100));
+                downPaymentPercentage = downPaymentPercentage * 10000;
+                formFields.downPaymentPercentage.val(Math.ceil(downPaymentPercentage));
+            } else if (formFields.downPaymentPercentage.val().length && formFields.downPaymentPercentage.val().match("^[1-9]$|^[1-9][0-9]$|^(100)$")){
+                let downPaymentInAmount = ((parseInt(formFields.downPaymentPercentage.val()) / 100) * formFields.totalAmount.val());
+                formFields.downPaymentAmount.val(downPaymentInAmount);
+            }
+        }
+    }
+
+    logUserCalculation = (formFields,user) =>
+    {
+        let form = new FormData();
+        let userId = user.id;
+        let projectTotalAmount = formFields.totalAmount.val();
+        let downPayment = formFields.downPaymentAmount.val();
+        let numberOfYears = formFields.years.val();
+        let _token = formFields._token.val();
+        form.append('user_id',userId);
+        form.append('project_total_amount',projectTotalAmount);
+        form.append('down_payment',downPayment);
+        form.append('number_of_years',numberOfYears);
+        form.append('_token',_token);
+        axios({
+            method: 'post',
+            url: `${logUserCalculationUri}`,
+            data: form,
+            headers: {'Content-Type': 'application/json' }
+        }).then(function (response) {
+            console.log(response);
+        }).catch(error => {
+            console.error(error);
+        });
+    }
+
 })
