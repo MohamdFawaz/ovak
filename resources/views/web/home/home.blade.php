@@ -143,7 +143,10 @@
                         <div class="clearfix"></div>
                         <h2 class="section-second-header letter-spacing no-padding">{{__('front.home.vision.the_perfect_choice')}}</h2>
                         <div class="clearfix"></div>
-                        <p class="vision-paragraph">{{__('front.home.vision.description')}}</p>
+                        <h4 class="vision-paragraph"><span class="gold-color">{{__('front.home.vision.description_gold')}}</span>
+                            <span>{{__('front.home.vision.description_gray')}}</span>
+                            </h4>
+                        <h4 class="black-color">{{__('front.home.vision.description')}} </h4>
                         <div class="margin-top-50"><a href="{{route('about')}}" class="ovak-button">{{__('front.home.vision.mission_and_vision')}}</a></div>
                     </div>
                 </div>
@@ -155,11 +158,8 @@
     <section id="projects" class="projects long-slider">
         <div class="col-sm-12 no-padding-xs">
             <div class="col-md-4 col-md-push-1 col-sm-8 col-sm-push-1 col-xs-12 no-padding-xs">
-                <h2 class="section-first-header letter-spacing"><span class="col-sm-6">{{__('front.home.project.featured')}}</span></h2>
-                <div class="clearfix"></div>
                 <h2 class="section-second-header"><span>{{__('front.home.project.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">{{__('front.home.project.headline')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -208,7 +208,7 @@
                 <div class="subscription-input col-md-6 col-sm-10 no-padding">
                     <form>
                         <input type="email" maxlength="40" placeholder="Enter Your E-mail" required />
-                        <button class="subscription-button" type="submit">{{__('front.home.subscription.subscribe')}}</button>
+                        <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe')}}</button>
                     </form>
                 </div>
             </div>
@@ -221,13 +221,12 @@
             <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
                 <h2 class="section-first-header"><span>{{__('front.home.developers.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-second-header letter-spacing"><span class="col-sm-6">{{__('front.home.developers.developers')}}</span></h2>
+                <h2 class="section-second-header letter-spacing">{{__('front.home.developers.developers')}}</h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">{{__('front.home.developers.description')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="slider-background">
+        <div class="slider-background margin-top-25">
             <div class="variable slider">
                 @foreach($development_companies as $company)
                 <div class="slider-item">

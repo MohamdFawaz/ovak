@@ -8,9 +8,9 @@ a {
     color: #5673C8;
 }
 
-    a:hover {
-        color: lightblue;
-    }
+a:hover {
+    color: lightblue;
+}
 
 .column {
     float: left;
@@ -23,12 +23,12 @@ a {
     box-shadow: 5px 0px 5px 0px #707070;
 }
 
-    .content img {
-        width: 100%;
-    }
-    .margin-top-5{
-        margin-top:5px;
-    }
+.content img {
+    width: 100%;
+}
+.margin-top-5{
+    margin-top:5px;
+}
 p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -39,10 +39,10 @@ p {
     color:#000;
 }
 .select-option-background{
-background-color:#0D3A3A;
-border:1px solid #B7893D;
-padding:5px;
-text-align:center;
+    background-color:#0D3A3A;
+    border:1px solid #B7893D;
+    padding:5px;
+    text-align:center;
 }
 .select-style {
     background-color: #0D3A3A;
@@ -88,14 +88,14 @@ text-align:center;
     text-align: right;
 }
 
-    .select-list label {
-        color: #707070;
-    }
+.select-list label {
+    color: #707070;
+}
 
-    .select-list select {
-        outline: 0;
-        color: #707070;
-    }
+.select-list select {
+    outline: 0;
+    color: #707070;
+}
 
 .secondery-page-header-ovarlay {
     text-transform: uppercase;
@@ -119,18 +119,12 @@ text-align:center;
     border-radius: 50%;
 }
 
-.developer-icon img{
-    border-radius: 50%;
-}
-
-.developer-image{
-    height: 240px;
-}
 .details-paragraph {
     font-family: Bahnschrift;
-    color: #707070;
+    color: #0D3A3A;
     width: 70%;
-    font-size: 14px;
+    font-size: 19px;
+    margin-top:10px;
 }
 
 .developer-details .developer-image {
@@ -144,13 +138,13 @@ text-align:center;
     color: #fff;
 }
 
-    .side-unit-details div {
-        padding: 5px 0;
-    }
+.side-unit-details div {
+    padding: 5px 0;
+}
 
-    .side-unit-details i {
-        padding-right: 5px;
-    }
+.side-unit-details i {
+    padding-right: 5px;
+}
 
 .white-border-2 {
     border-bottom: 2px solid #fff;
@@ -199,37 +193,37 @@ text-align:center;
     padding-bottom: 20px;
 }
 
-    .single-project-details .single-item-details .consultancy-square .consultancy-square-link {
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+.single-project-details .single-item-details .consultancy-square .consultancy-square-link {
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 .single-project-details .carousel {
     margin-top: 75px;
 }
 
-    .single-project-details .carousel .carousel-control i {
-        position: absolute;
-        top: 50%;
-        color: #B7893D;
-    }
+.single-project-details .carousel .carousel-control i {
+    position: absolute;
+    top: 50%;
+    color: #B7893D;
+}
 
-    .single-project-details .carousel .carousel-control:hover i {
-        color: #fff;
-    }
+.single-project-details .carousel .carousel-control:hover i {
+    color: #fff;
+}
 
 .utilities {
     margin-top: 75px;
 }
 
-    .utilities .utilities-services div {
-        font-size: 18px;
-        margin-top: 20px;
-    }
+.utilities .utilities-services div {
+    font-size: 18px;
+    margin-top: 20px;
+}
 
-    .utilities .utilities-services i {
-        padding-right: 5px;
-    }
+.utilities .utilities-services i {
+    padding-right: 5px;
+}
 
 .about-ovak .details-paragraph {
     width: 100%;
@@ -263,11 +257,14 @@ text-align:center;
     width: 60px;
     text-align: center;
 }
+.about-icon-design .fa-filter, .about-icon-design .fa-calculator{
+    padding:5px;
+}
 
-    .about-icon-design i {
-        font-size: 30px;
-        margin-top: 5px;
-    }
+.about-icon-design i {
+    font-size: 30px;
+    margin-top: 5px;
+}
 
 .about-paragraph p {
     margin: 0;
@@ -293,9 +290,9 @@ text-align:center;
     padding: 5px;
 }
 
-    .contact-form input::placeholder, .contact-form textarea::placeholder {
-        color: #aaa;
-    }
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #aaa;
+}
 
 .contact-form input {
     height: 35px;
@@ -338,17 +335,17 @@ text-align:center;
     padding: 10px 40px;
 }
 
-    .consultation-btns .ovak-button:hover {
-        background-color: #B7893D;
-    }
+.consultation-btns .ovak-button:hover {
+    background-color: #B7893D;
+}
 
-    .consultation-btns .ovak-button.active {
-        background-color: #B7893D;
-    }
+.consultation-btns .ovak-button.active {
+    background-color: #B7893D;
+}
 
-    .consultation-btns .ovak-button i {
-        padding-right: 5px;
-    }
+.consultation-btns .ovak-button i {
+    padding-right: 5px;
+}
 
 .consultation .custom-select {
     width: 100%;
@@ -414,15 +411,17 @@ text-align:center;
     width: 100%;
     border: 1px solid #aaa;
 }
+.installment table thead tr td{
+    font-size:18px;
+}
+.installment table tr {
+    border: 1px solid #aaa;
+}
 
-    .installment table tr {
-        border: 1px solid #aaa;
-    }
-
-        .installment table tr td {
-            border: 1px solid #aaa;
-            padding: 20px;
-        }
+.installment table tr td {
+    border: 1px solid #aaa;
+    padding: 20px;
+}
 
 @media only screen and (max-width: 768px) {
     .details-paragraph {
@@ -438,9 +437,9 @@ text-align:center;
         height: 75px;
     }
 
-        .about-icon-design i {
-            font-size: 45px;
-        }
+    .about-icon-design i {
+        font-size: 45px;
+    }
 }
 
 
@@ -468,17 +467,17 @@ text-align:center;
         display: block;
     }
 
-        .contact-display .margin-top-50 {
-            margin-top: 20px;
-        }
+    .contact-display .margin-top-50 {
+        margin-top: 20px;
+    }
 
-        .contact-display .margin-bottom-50 {
-            margin-bottom: 20px;
-        }
+    .contact-display .margin-bottom-50 {
+        margin-bottom: 20px;
+    }
 
-        .contact-display .margin-top-75 {
-            margin-top: 20px;
-        }
+    .contact-display .margin-top-75 {
+        margin-top: 20px;
+    }
 
     .contact-form input, .contact-form textarea {
         width: 100%;

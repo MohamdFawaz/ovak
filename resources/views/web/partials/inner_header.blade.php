@@ -1,13 +1,13 @@
 <section class="header">
     <div class="home-header-image">
         <div class="menu">
-            <div class="logo col-md-2 col-sm-3 col-xs-5">
+            <div class="logo col-sm-3 col-sm-push-1 col-xs-5">
                 <a href="{{url('/')}}"><img src="{{asset('web/images/logo.png')}}" class="image-full-width" alt="" /></a>
             </div>
-            <div class="menu-list col-md-10 hidden-sm hidden-xs">
+            <div class="menu-list col-sm-9 hidden-sm hidden-xs">
                 <div class="menu-list-centere col-md-7 col-sm-6">
                     <ul>
-                        <li class="active"><a href="{{url('/')}}">Home</a></li>
+                        <li class="active"><a href="{{url('/')}}">{{__('front.header.home')}}</a></li>
                         <li><a href="{{route('projects.list')}}">{{__('front.header.projects')}}</a></li>
                         <li><a href="{{route('developers.list')}}">{{ __('front.header.developers') }}</a></li>
                         <li><a href="{{route('about')}}">{{__('front.header.about_contact')}}</a></li>

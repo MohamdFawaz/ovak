@@ -61,11 +61,25 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-sm-push-3 margin-top-10">
-                                    <input type="text" placeholder="Please insert project name" />
+                                    <select id="FirstProject">
+                                        <option value="">Select Project</option>
+                                        <option value="4">Afghanistan</option>
+                                        <option value="248">Aland Islands</option>
+                                        <option value="8">Albania</option>
+                                        <option value="12">Algeria</option>
+                                        <option value="16">American Samoa</option>
+                                    </select>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-sm-6 col-sm-push-3 margin-top-10">
-                                    <input type="text" placeholder="Please insert project name" />
+                                    <select id="SecondProject">
+                                        <option value="">Select Project</option>
+                                        <option value="4">Afghanistan</option>
+                                        <option value="248">Aland Islands</option>
+                                        <option value="8">Albania</option>
+                                        <option value="12">Algeria</option>
+                                        <option value="16">American Samoa</option>
+                                    </select>
                                 </div>
                                 <div class="col-xs-12 text-center margin-top-25 margin-bottom-50">
                                     <button class="ovak-button">{{__('front.consultancy.form.action.submit')}}</button>

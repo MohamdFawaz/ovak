@@ -136,7 +136,9 @@ a:hover, a:focus{
 .margin-top-80 {
     margin-top: 80px;
 }
-
+.margin-top-15{
+    margin-top:15px;
+}
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
@@ -265,7 +267,7 @@ a:hover, a:focus {
     margin-right: 15px;
     margin-left: 10px;
 }
-
+.cal
 .calculator .fa {
     transform: rotate(90deg);
     color: #fff;
@@ -273,6 +275,7 @@ a:hover, a:focus {
 
 .links-carrier a {
     color: #fff;
+    padding-left:21px;
 }
 
 .consultancy-square {
@@ -392,10 +395,13 @@ a:hover, a:focus {
 
 .modal-image-ovarlay {
     position: absolute;
-    top: 35%;
+    top: 25%;
     color: #fff;
     text-align: center;
     padding:20px;
+}
+.modal-image-ovarlay p{
+    font-size:17px;
 }
 
 .modal-image-ovarlay .ovak-button {
@@ -444,6 +450,9 @@ a:hover, a:focus {
 }
 .modals{
     margin-bottom:0;
+}
+.ask {
+    cursor:pointer;
 }
 .ask-modal .user-modal{
     overflow:visible;
@@ -618,7 +627,7 @@ a:hover, a:focus {
 .section-first-header {
     font-family: 'Bahnschrift Regular';
     font-size: 42px;
-    color: #6E8989;
+    color: #B7893D;
     text-transform: uppercase;
 }
 
