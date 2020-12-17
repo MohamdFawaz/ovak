@@ -25,3 +25,6 @@ Route::group(['prefix' => 'projects'],function (){
     Route::get('/{id}',[ProjectController::class,'projectPage'])->name('projects.page');
 });
 
+Route::post('/contact-us',[HomeController::class,'contactUs'])->name('contact');
+
+Route::post('/subscribe-newsletter',[HomeController::class,'subscribeToNewsletter'])->name('subscribe.newsletter');

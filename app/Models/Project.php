@@ -42,6 +42,16 @@ class Project extends Model implements TranslatableContract
         return $this->belongsTo(District::class,'district_id');
     }
 
+    public function finishType()
+    {
+        return $this->belongsTo(FinishType::class,'finish_type_id');
+    }
+
+    public function unitType()
+    {
+        return $this->belongsTo(UnitType::class,'unit_type_id');
+    }
+
     public function propertyType()
     {
         return $this->belongsTo(PropertyType::class,'property_type_id');
