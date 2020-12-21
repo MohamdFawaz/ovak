@@ -16,19 +16,19 @@
         }
     </style>
     <div class="content-wrapper">
-        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.property')])
+        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.projects')])
         <div class="card container">
             <div class="card-header">
-                <h3 class="card-title">{{__('admin.list') ." ". __('admin.breadcrumb.property') }}</h3>
+                <h3 class="card-title">{{__('admin.list') ." ". __('admin.breadcrumb.projects') }}</h3>
             </div>
             <!-- /.card-header -->
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Create Property</h3>
+                    <h3 class="card-title">Create Project</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{route('property.store')}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{route('project.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{method_field('post')}}
                     <div class="card-body">
@@ -79,14 +79,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="area">Area</label>
-                            <input type="number" required name="area" class="form-control" id="area"
-                                   placeholder="Enter Area">
-                        </div>
-                        <div class="form-group">
-                            <label for="price">Price</label>
-                            <input type="number" required name="price" class="form-control" id="price"
-                                   placeholder="Enter Price">
+                            <label for="area">Google Map Link</label>
+                            <input type="text" required name="google_map_link" class="form-control" id="area"
+                                   placeholder="Enter Google Map Link">
                         </div>
                         <div class="form-group">
                             <label for="deliveryDate">Delivery Date</label>
@@ -113,6 +108,16 @@
                                       id="englishDescription"></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="arabicAddress">Arabic Address</label>
+                            <textarea required name="arabic_address" class="form-control" rows="5"
+                                      id="arabicAddress"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="englishAddress">English Address</label>
+                            <textarea required name="english_address" class="form-control" rows="5"
+                                      id="englishAddress"></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="image">Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
@@ -120,6 +125,46 @@
                                     <label class="custom-file-label" for="image">Choose file</label>
                                 </div>
                             </div>
+                        </div>
+                        <h4>Amenities <a onclick="addMoreAmenity()"><i class="fa fa-plus"></i></a></h4>
+                        <div id="amenities-files" class="row">
+                            <div class="form-group col-6">
+                                <label>Image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="amenities_files[image][]" class="custom-file-input">
+                                        <label class="custom-file-label" for="image">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-3">
+                                <label>Arabic Amenity Name</label>
+                                <input type="text" required name="amenities_files[name][ar][]" class="form-control"
+                                       placeholder="Enter Name">
+                            </div>
+                            <div class="form-group col-3">
+                                <label>English Amenity Name</label>
+                                <input type="text" required name="amenities_files[name][en][]" class="form-control"
+                                       placeholder="Enter Name">
+                            </div>
+                        </div>
+                        <h5>Utilities</h5>
+                        @foreach($utilities as $utility)
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input clearfix" value="{{$utility->id}}" name="utilities[]">
+                            <label class="form-check-label">{{ $utility->name }}</label>
+                        </div>
+                        @endforeach
+
+                        <div class="form-group">
+                            <label>Project Gallery Images</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="project_gallery[]" class="custom-file-input" multiple>
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
+                            </div>
+                            <small>Multiple Files Allowed</small>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -140,6 +185,34 @@
             $('.select').select2({
                 height: '200px'
             });
+            $('.custom-file-label').prev('input').on('change',function (){
+                $(this).next('.custom-file-label').text("File Added")
+            });
+            let amenitiesFileEl = '<div class="form-group col-6"> '+
+                '<label>Image</label>' +
+                '<div class="input-group">' +
+                '<div class="custom-file"> ' +
+                '<input type="file" name="amenities_files[image][]" class="custom-file-input">' +
+                '<label class="custom-file-label" for="image">Choose file</label>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="form-group col-3">' +
+                '<label>Arabic Amenity Name</label>' +
+                '<input type="text"  name="amenities_files[name][ar][]" class="form-control"' +
+                'placeholder="Enter Name">' +
+                '</div>' +
+                '<div class="form-group col-3">' +
+                '<label>English Amenity Name</label>' +
+                '<input type="text"  name="amenities_files[name][en][]" class="form-control"' +
+                'placeholder="Enter Name">' +
+                '</div>' +
+                '</div>';
+
+            addMoreAmenity = () =>
+            {
+                $('#amenities-files').append(amenitiesFileEl);
+            }
         });
     </script>
 @endsection

@@ -112,21 +112,38 @@ Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
                 'destroy'])->name('unitType.delete');
         });
 
-        Route::group(['prefix' => '/properties'], function (){
-            Route::get('/',[\App\Http\Controllers\Admin\PropertyController::class,
-                'index'])->name('property.index');
-            Route::get('/create',[\App\Http\Controllers\Admin\PropertyController::class,
-                'create'])->name('property.create');
-            Route::post('/store',[\App\Http\Controllers\Admin\PropertyController::class,
-                'store'])->name('property.store');
-            Route::get('/show/{id}',[\App\Http\Controllers\Admin\PropertyController::class,
-                'show'])->name('property.show');
-            Route::get('/edit/{id}',[\App\Http\Controllers\Admin\PropertyController::class,
-                'edit'])->name('property.edit');
-            Route::post('/update/{id}',[\App\Http\Controllers\Admin\PropertyController::class,
-                'update'])->name('property.update');
-            Route::get('/delete/{id}',[\App\Http\Controllers\Admin\PropertyController::class,
-                'destroy'])->name('property.delete');
+        Route::group(['prefix' => '/projects'], function (){
+            Route::get('/',[\App\Http\Controllers\Admin\ProjectController::class,
+                'index'])->name('project.index');
+            Route::get('/create',[\App\Http\Controllers\Admin\ProjectController::class,
+                'create'])->name('project.create');
+            Route::post('/store',[\App\Http\Controllers\Admin\ProjectController::class,
+                'store'])->name('project.store');
+            Route::get('/show/{id}',[\App\Http\Controllers\Admin\ProjectController::class,
+                'show'])->name('project.show');
+            Route::get('/edit/{id}',[\App\Http\Controllers\Admin\ProjectController::class,
+                'edit'])->name('project.edit');
+            Route::post('/update/{id}',[\App\Http\Controllers\Admin\ProjectController::class,
+                'update'])->name('project.update');
+            Route::get('/delete/{id}',[\App\Http\Controllers\Admin\ProjectController::class,
+                'destroy'])->name('project.delete');
+        });
+
+        Route::group(['prefix' => '/units'], function (){
+            Route::get('/',[\App\Http\Controllers\Admin\UnitController::class,
+                'index'])->name('unit.index');
+            Route::get('/create',[\App\Http\Controllers\Admin\UnitController::class,
+                'create'])->name('unit.create');
+            Route::post('/store',[\App\Http\Controllers\Admin\UnitController::class,
+                'store'])->name('unit.store');
+            Route::get('/show/{id}',[\App\Http\Controllers\Admin\UnitController::class,
+                'show'])->name('unit.show');
+            Route::get('/edit/{id}',[\App\Http\Controllers\Admin\UnitController::class,
+                'edit'])->name('unit.edit');
+            Route::post('/update/{id}',[\App\Http\Controllers\Admin\UnitController::class,
+                'update'])->name('unit.update');
+            Route::get('/delete/{id}',[\App\Http\Controllers\Admin\UnitController::class,
+                'destroy'])->name('unit.delete');
         });
 
     });

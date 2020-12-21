@@ -9,6 +9,8 @@ class ProjectUtility extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     protected $with = ['utility'];
 
     public function utility()

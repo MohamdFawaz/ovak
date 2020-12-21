@@ -2,7 +2,7 @@
 
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Ovak</b> Admin</a>
+            <a href="{{url('/admin')}}"><b>Ovak</b> Admin</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -45,10 +45,6 @@
                     </div>
                 </form>
                 <!-- /.social-auth-links -->
-
-                <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
-                </p>
             </div>
             <!-- /.login-card-body -->
         </div>

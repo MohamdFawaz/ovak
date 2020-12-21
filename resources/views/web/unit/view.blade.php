@@ -11,7 +11,7 @@
 @section('pre_header_content')
 <div class="header-text">
     <div class="secondery-page-header-ovarlay">
-        <h2 class="green-color">units <span class="header-line"></span></h2>
+        <h2 class="green-color">Units <span class="header-line"></span></h2>
     </div>
 </div>
 @endsection
@@ -26,13 +26,13 @@
                     <span>{{__('front.filter.title')}}</span>
                 </div>
                 <div class="filter-body box-shadow">
-                    <form action="{{route('filter')}}" method="get">
+                    <form action="{{route('filter')}}" method="get" id="filter-form" autocomplete="off">
                         <div class="margin-top-50 filter-select">
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md border-right-sm">
                                     <div class="custom-select">
-                                        <select name="project_type">
-                                            <option value="">Project Type</option>
+                                        <select name="project_type_id">
+                                            <option value="">{{__('front.filter.project_type')}}</option>
                                             @foreach($project_types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
                                             @endforeach
@@ -43,7 +43,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md">
                                     <div class="custom-select">
-                                        <select name="district">
+                                        <select name="district_id">
                                             <option value="">{{__('front.filter.district_location')}}</option>
                                             @foreach($districts as $district)
                                                 <option value="{{$district->id}}">{{$district->name}}</option>
@@ -55,7 +55,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right-sm">
                                     <div class="custom-select">
-                                        <select name="development_company">
+                                        <select name="development_company_id">
                                             <option value="">{{__('front.filter.development_company')}}</option>
                                             @foreach($development_companies as $company)
                                                 <option value="{{$company->id}}">{{$company->name}}</option>
@@ -67,7 +67,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md">
                                     <div class="custom-select">
-                                        <select name="finishing_type">
+                                        <select name="finishing_type_id">
                                             <option value="">{{__('front.filter.finishing_type')}}</option>
                                             @foreach($finish_types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
@@ -79,7 +79,7 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md border-right-sm">
                                     <div class="custom-select">
-                                        <select name="project-type">
+                                        <select name="unit_type_id">
                                             <option value="">{{__('front.filter.unit_type')}}</option>
                                             @foreach($unit_types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
@@ -91,8 +91,8 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="">
                                     <div class="custom-select">
-                                        <select name="project-type">
-                                            <option value="0">{{__('front.filter.delivery_date')}}</option>
+                                        <select name="delivery_date">
+                                            <option value="0">Delivery date</option>
                                             <option value="1">2021</option>
                                             <option value="2">2022</option>
                                         </select>
@@ -104,10 +104,10 @@
                                     <label class="gold-color filter-label-text">Price Range</label>
                                     <div class="">
                                         <div class="input-type">
-                                            <input type="text" name="price-range">
+                                            <input type="text" name="price_range_from">
                                             <span class="gold-color"><i class="fa fa-arrow-right"></i></span>
-                                            <input type="text" name="prince-range">
-                                            <span class="gold-color">/ EGP </span>
+                                            <input type="text" name="prince_range_to">
+                                            <span class="gold-color">/ {{__('front.consultancy.installment.form.currency')}} </span>
                                         </div>
                                     </div>
                                 </div>
@@ -115,9 +115,9 @@
                                     <label class="gold-color filter-label-text">Area Range</label>
                                     <div class="">
                                         <div class="input-type">
-                                            <input type="text" name="prince-range">
+                                            <input type="text" name="area_range_from">
                                             <span class="gold-color"><i class="fa fa-arrow-right"></i> </span>
-                                            <input type="text" name="prince-range">
+                                            <input type="text" name="area_range_to">
                                             <span class="gold-color">/ M<sup>2</sup> </span>
                                         </div>
                                     </div>

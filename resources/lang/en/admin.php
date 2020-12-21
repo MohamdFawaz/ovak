@@ -12,6 +12,7 @@ return [
         'property_type' => 'Property Types',
         'unit_type' => 'Unit Types',
         'projects' => 'Projects',
+        'units' => 'Units'
     ],
     'breadcrumb' => [
         'home' => 'Home',
@@ -23,6 +24,7 @@ return [
         'property_type' => 'Property Types',
         'unit_type' => 'Unit Types',
         'projects' => 'Projects',
+        'units' => 'Units'
     ],
     'development_companies' => [
         'id' => 'ID',
@@ -57,6 +59,13 @@ return [
         'actions' => 'Actions'
     ],
     'property' => [
+        'id' => 'ID',
+        'english_name' => 'English Name',
+        'arabic_name' => 'Arabic Name',
+        'image' => 'Image',
+        'actions' => 'Actions'
+    ],
+    'unit' => [
         'id' => 'ID',
         'english_name' => 'English Name',
         'arabic_name' => 'Arabic Name',

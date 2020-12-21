@@ -6,7 +6,7 @@
 
 
 @section('title')
-    <title>{{__('front.head.title.name')}} | {{$project->name}}</title>
+    <title>{{__('front.head.title.name')}} |  {{$project->name ?? __('front.header.projects') }}</title>
 @endsection
 
 @section('pre_header_content')
@@ -82,8 +82,9 @@
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    @foreach($project->gallery as $key => $gallery)
+                        <li data-target="#carousel-example-generic" data-slide-to="{{$key}}" class="@if($key == 0) active @endif"></li>
+                    @endforeach
                 </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">

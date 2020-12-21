@@ -28,7 +28,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{route('property.update',$property->id)}}" method="post"
+                <form role="form" action="{{route('project.update',$property->id)}}" method="post"
                       enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{method_field('post')}}
