@@ -3,6 +3,10 @@
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
 
+@section('title')
+    <title>{{__('front.head.title.name')}} | {{__('front.header.about')}}</title>
+@endsection
+
 @section('pre_header_content')
     <div class="header-text">
         <div class="secondery-page-header-ovarlay">

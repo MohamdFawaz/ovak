@@ -174,7 +174,7 @@
                     <div class="clearfix"></div>
                     <div class="slider-body ">
                         <div class="col-sm-12">
-                            <h4 class="project-name green-color" style="float:left; margin-top:10px;">Palm Hills</h4>
+                            <h4 class="project-name green-color" style="float:left; margin-top:10px;">{{$project->name}}</h4>
                             <a href="{{route('developer.page',$project->developer->slug)}}">
                             <img src="{{$project->image}}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #B7893D; float:right;"/>
                             </a>
