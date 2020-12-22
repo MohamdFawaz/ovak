@@ -2,9 +2,9 @@
     <div class="home-header-image">
         <div class="menu">
             <div class="logo col-sm-3 col-sm-push-1 col-xs-5">
-                <a href="{{url('/')}}"><img src="{{asset('web/images/logo.png')}}" class="image-full-width" alt="" /></a>
+                <a href="{{url('/')}}"><img src="{{asset('web/images/logo.png')}}" class="image-full-width" alt="Logo" /></a>
             </div>
-            <div class="menu-list col-sm-9 hidden-sm hidden-xs">
+            <div class="menu-list col-md-9 hidden-sm hidden-xs">
                 <div class="menu-list-centere col-md-7 col-sm-6">
                     <ul>
                         <li class="active"><a href="{{url('/')}}">{{__('front.header.home')}}</a></li>
@@ -20,7 +20,7 @@
                             <li class="not-link"><i class="fa fa-user-o" aria-hidden="true"></i><a class=""> {{Auth::user()->name}}</a></li>
                             <li class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i><a href="#"> {{__('front.header.logout')}}</a></li>
                         @else
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:01154474317"> 01154474317</a></li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+20 103 079 6861"> +20 103 079 6861</a></li>
                             <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="javascript:void(0)"> {{__('front.header.login')}}</a></li>
                         @endif
                         <li><i class="fa fa-globe" aria-hidden="true"></i><a href="./index-ar.html"> العربية</a></li>
@@ -48,17 +48,16 @@
                         </div>
                         <div class="social-links">
                             <div class="col-sm-12">
-                                <span class="col-sm-1"></span>
-                                <a href="#" class="col-sm-3 facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a>
-                                <a href="#" class="col-sm-3 instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#" class="col-sm-3 google"><i class="fa fa-google" aria-hidden="true"></i></a>
+                                <a href="https://www.facebook.com/ovakestate" target="_blank" class="col-sm-3 facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a>
+                                <a href="https://www.instagram.com/ovakestate/" target="_blank" class="col-sm-3 instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/OVAK48555581" target="_blank" class="col-sm-3 twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 <div class="clearfix"></div>
                                 <div class="side-menu-border"></div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <ul>
-                                <li><a href="tel:01154474317" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> 0111111111111 </a></li>
+                                <li><a href="tel:+20 103 079 6861" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> +20 103 079 6861 </a></li>
                                 <li class="login"><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Login</a></li>
                                 <li><a href="./index-ar.html"><i class="fa fa-globe" aria-hidden="true"></i> العربية</a></li>
                             </ul>

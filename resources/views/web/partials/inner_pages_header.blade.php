@@ -4,10 +4,10 @@
         <div class="clearfix"></div>
         @yield('pre_header_content')
         <div class="menu">
-            <div class="logo col-md-2 col-sm-3 col-xs-5">
+            <div class="logo col-sm-3 col-sm-push-1 col-xs-5">
                 <a href="{{url('/')}}"><img src="{{asset('web/images/logo.png')}}" class="image-full-width" alt="" /></a>
             </div>
-            <div class="menu-list col-md-10 hidden-sm hidden-xs">
+            <div class="menu-list col-md-9 hidden-sm hidden-xs">
                 <div class="menu-list-centere col-md-7 col-sm-6">
                     <ul>
                         <li><a href="{{url('/')}}">Home</a></li>

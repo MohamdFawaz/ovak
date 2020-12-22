@@ -5,7 +5,7 @@ return [
         [
             'title' =>
                 [
-                    'name' => 'Ovak'
+                    'name' => 'OVAK'
                 ]
         ],
     'header' =>
@@ -15,6 +15,7 @@ return [
             'projects' => 'Projects',
             'consultancy' => 'Consultancy',
             'about_contact' => 'About/Contact',
+            'about' => 'About',
             'filter_result' => 'Filter Result',
             'logout' => 'Logout',
             'login' => 'Login',
@@ -27,27 +28,45 @@ return [
         ],
     'login' =>
         [
+            'sign_up' => 'Sign up',
             'sign_in' => 'Sign in to',
-            'hello' => 'Hello, Friend',
-            'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus dui, et interdum velit.',
+            'hello' => 'Hello',
+            'join' => 'Join',
+            'text' => 'now and let our family show your family the way home',
             'action' => [
                 'login' => 'Login'
             ],
-            'email' => 'Please Enter Your Email Address',
+            'email' => 'Please Enter Your E-mail Address',
             'password' => 'Please Enter Your Password'
+        ],
+    'forget_password' =>
+        [
+            'reset_password' => 'Reset Password',
+            'text' => 'We are going to send you a verification E-mail to recover your password',
+            'forgot_password' => 'Forgot password ?'
+
+        ],
+    'verification' =>
+        [
+            'header' => 'Enter the verification code you received',
+            'input' => 'Enter verification Code'
         ],
     'register' =>
         [
-            'create_account' => 'Create Account',
-            'first_name' => 'Fist Name',
+            'registration' => 'Registration',
+            'first_name' => 'First Name',
             'last_name' => 'Last Name',
-            'email_address' => 'Email Address',
+            'email_address' => 'E-mail Address',
             'phone_number' => 'Phone Number',
             'password' => 'Password',
             'action' => [
-                'register' => 'Register',
-            ]
+                'sign_up' => 'Sign up',
+            ],
+            'welcome_back' => 'Welcome Back',
+            'text' => 'Login now and find out more choices and features from',
+            'website' => 'website'
         ],
+
     'logout' =>
         [
             'are_you_sure' => "Are you sure you want to",
@@ -125,7 +144,6 @@ return [
             'list_developers_paragraph' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
             eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
              justo duo dolores et ea rebum.',
-            'all_projects' => 'All Projects'
         ],
     'units' => [
         'overview' => 'Overview'
@@ -149,7 +167,8 @@ return [
                 ]
             ],
             'installment' => [
-                'installment' => 'Installment',
+                'installment' => 'Installments',
+                'calculator'=>'calculator',
                 'form' => [
                     'property_price' => 'Property Price',
                     'currency' => 'EGP',
@@ -158,7 +177,7 @@ return [
                     'down_payment' => 'Down Payment',
                     'amount' => 'Amount',
                     'amount_placeholder' => 'Amount EGP',
-                    'percent' => 'Percent',
+                    'percent' => 'Percentage',
                     'installment_period' => 'Installment Period',
                     'years' => 'Years',
                     'years_placeholder' => 'Enter Years',
@@ -174,7 +193,7 @@ return [
                     'number' => 'Number',
                     'monthly_installment' => 'Monthly Installment',
                     'quarterly_installment' => 'Quarterly Installment',
-                    'yearly_installment' => 'Yearly Installment',
+                    'semi_annual_installment' => 'Semi Annual Installment',
                     'le' => 'LE'
                 ]
             ]
@@ -188,11 +207,16 @@ return [
        innovative ways to get our own footprints successfully engraved within the solid grounds of the rapid
        growing real–estate world. We strive to provide the most valuable thorough advanced real–estate knowledge
        to facilitate your journey of searching and collecting the market info to comply with your needs, all
-       through one portfolio. Ovak widely and simply opens for you the door of a huge data-base for the most successful
+       through one portfolio. OVAK widely and simply opens for you the door of a huge data-base for the most successful
        names and biggest well-established real-estate powerhouses and developers, in order to reach your perfect tailored consultation.',
-        'our_vision' => 'Our individual user\'s rights are protected and exercised, creating a safe environment to practise the trade without any
-       time restrictions, while also offering the highest commission in the market. And the best part no previous real-estate experience is
-       required.',
+        'slogan' => 'Own Valuable Advanced Knowledge',
+        'our_vision_1' => 'OVAK is not a new Real Estate brokerage company, we’re not seeking ripping off customers with extra fees in-return
+        of our services.',
+        'our_vision_2' => 'is not just a slogan, it’s an idea, mindset and mentality each and every individual in
+        OVAK has it. Our vision is to make information available for the end-user and minimizing the hassle of un-needed tasks. Narrowing the searching
+         is not an easy task, but by compiling experience and analyzing tons of data, knowing the customer needs is easy as a pie. knowledge is a double
+          edged weapon but with OVAK we make it Advanced in order to wield it the way we need.',
+
         'our_mission' => 'We mainly direct our focus on providing our users with the best market experience by only “few clicks” saving their
         search time, avoiding the unneeded hassle wasted in web searching and live showings. We offer the quintessence of years of experience
         providing our users with the most detailed information giving easy access for the end-user within the complicated Egyptian real estate
@@ -214,6 +238,10 @@ return [
             'header' => 'One of our agents is going to contact you as soon as possible',
             'sub_header' => 'Within 24 hours'
         ],
+        'success' => [
+            'header' => 'Compeleted successfully ',
+
+        ]
 
     ]
 ];

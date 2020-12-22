@@ -359,6 +359,7 @@ a:hover, a:focus {
     right: 10px;
     top: 5px;
     color: #0D3A3A;
+    cursor: pointer;
 }
 
 .modal-close i:hover {
@@ -590,7 +591,6 @@ a:hover, a:focus {
 }
 
 .input-type input:hover, input:focus {
-    border: 1px solid #B7893D !important;
     outline: none !important;
 }
 
@@ -777,7 +777,7 @@ a:hover, a:focus {
 
 .footer .social-links li {
     display: inline;
-    padding-right: 40px;
+    padding-right: 25px;
     font-size: 25px;
 }
 
@@ -793,7 +793,7 @@ a:hover, a:focus {
     background-color: #B7893D;
     top: 0;
     right: 15px;
-    padding: 13.5px 25px;
+    padding: 7.5px 25px;
     outline: 0;
     border: 0;
     color: #fff;
@@ -912,7 +912,9 @@ a:hover, a:focus {
     .no-padding-xs {
         padding: 0;
     }
-
+    .service-details{
+        padding: 50px 0;
+    }
     .user-modal .margin-bottom-80, .user-modal .margin-top-80 {
         margin: 0;
     }
@@ -927,10 +929,6 @@ a:hover, a:focus {
         top:6%;
     }
 
-    .user-modal .modal-contents input {
-        display: block;
-        margin: 10px auto;
-    }
     .logout-modal .logout-image{
         padding-top:18%;
     }
@@ -942,9 +940,6 @@ a:hover, a:focus {
         margin-right: 5px;
     }
 
-    .user-modal .input-edit {
-        width: 87%;
-    }
 
     .logout-modal .modal-contents {
         margin-top: -30px;
@@ -1022,8 +1017,31 @@ a:hover, a:focus {
     border: 1px solid #B7893D !important;
     outline:0;
     width: 100%;
+    background-color: #0D3A3A !important;
+    color: #fff !important;
 }
-.select2-container{
-    width: 100% !important;
 
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    color: #fff !important;
+}
+.Verification-modal .modal-form{
+    height: auto;
+}
+.success-modal .modal-form{
+    height: auto;
+}
+.success-modal .success-header{
+    background-color: #0D3A3A;
+    padding: 20px;
+    color: #B7893D;
+}
+.success-modal .modal-close{
+    color: #fff;
+}
+.success-modal .modal-contents{
+    padding: 0;
+}
+input{
+    border: 1px solid #B7893D !important;
+    height: 30px;
 }

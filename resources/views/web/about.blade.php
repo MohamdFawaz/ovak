@@ -29,7 +29,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
-            <div class="details-paragraph">{{__('front.about.our_vision')}}</div>
+            <div class="details-paragraph">{{__('front.about.our_vision_1')}} <span class="gold-color">{{__('front.about.slogan')}}</span> {{__('front.about.our_vision_2')}}</div>
             <div class="col-md-4 col-sm-8 col-xs-12 no-padding margin-top-50">
                 <h2 class="section-first-header letter-spacing"><span>Our</span></h2>
                 <div class="clearfix"></div>
@@ -56,7 +56,7 @@
                             <div class="col-md-2 col-sm-3 green-color margin-top-10 no-padding"><div class="about-icon-design"><i class="fas fa-comments"></i></div></div>
                             <div class="col-sm-9 col-md-10 no-padding white-color about-paragraph">
                                 <h4 class="gold-color">Consultation Service</h4>
-                                <p>We facilitate your searching journey with our variable advanced knowledge to meet your exact needs.</p>
+                                <p>We provide you the precise consultation for your choice with our variable advanced knowledge to meet your exact needs.</p>
                             </div>
                         </div>
                         <div class="col-sm-12 margin-top-75 no-padding">
@@ -92,7 +92,6 @@
                 <h2 class="section-first-header letter-spacing"><span>Contact</span></h2>
                 <div class="clearfix"></div>
                 <h2 class="section-second-header ovak-font letter-spacing"><span>US</span> <span class="header-line"></span></h2>
-                <span class="white-color">We provide the perfect service for</span>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -102,7 +101,7 @@
                     <div class="margin-top-25">
                         <div class="col-sm-8 no-padding">
                             <div><i class="fas fa-2x fa-map-marker-alt"></i></div>
-                            <div class="col-sm-10 no-padding margin-top-10"><p>601 , Al Narges - 5th Compound - New Cairo - Cairo - Egypt</p></div>
+                            <div class="col-sm-10 no-padding margin-top-10"><p>601 , Al Narges - 5th Settlement - New Cairo - Cairo - Egypt</p></div>
                         </div>
                         <div class="col-sm-4 no-padding">
                             <div><i class="far fa-2x fa-envelope"></i></div>
@@ -113,11 +112,11 @@
                     <div class="margin-top-75">
                         <div class="col-sm-8 no-padding">
                             <div><i class="far fa-2x fa-clock"></i></div>
-                            <div class="col-sm-10 no-padding margin-top-10"><p>Sun-Thrthay 8AM-6PM</p></div>
+                            <div class="col-sm-10 no-padding margin-top-10"><p>Sun-Thu 8AM-6PM</p></div>
                         </div>
                         <div class="col-sm-4 no-padding">
                             <div><i class="fas fa-2x fa-phone-alt"></i></div>
-                            <div class="col-sm-10 no-padding margin-top-10"><a class="white-color" href="tel:0201110006466">020111 000 6466</a></div>
+                            <div class="col-sm-10 no-padding margin-top-10"><a class="white-color" href="tel:0201030796861">0201030796861</a></div>
                         </div>
                     </div>
                 </div>

@@ -105,7 +105,7 @@
                                     <div class="">
                                         <div class="input-type">
                                             <input type="text" name="price-range">
-                                            <span class="gold-color"><i class="fa fa-arrow-right"></i></span>
+                                            <span class="gold-color"> to </span>
                                             <input type="text" name="prince-range">
                                             <span class="gold-color">/ EGP </span>
                                         </div>
@@ -116,7 +116,7 @@
                                     <div class="">
                                         <div class="input-type">
                                             <input type="text" name="prince-range">
-                                            <span class="gold-color"><i class="fa fa-arrow-right"></i> </span>
+                                            <span class="gold-color"> to </span>
                                             <input type="text" name="prince-range">
                                             <span class="gold-color">/ M<sup>2</sup> </span>
                                         </div>

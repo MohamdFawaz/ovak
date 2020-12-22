@@ -47,7 +47,7 @@ p {
 .select-style {
     background-color: #0D3A3A;
     border: 0;
-    color: #B7893D;
+    color: #fff;
     border-left: 1px solid #B7893D;
     font-weight: bold;
     outline: 0;
@@ -166,10 +166,10 @@ p {
     background-color: #aaa
 }
 
-.single-project-details .single-project-header h2 {
+.single-project-details .single-project-header span {
     text-transform: uppercase;
-    display: inline-block;
-    padding-left: 5px;
+    padding: 5px;
+    font-size: 16px;
 }
 
 .single-project-details .single-project-header img {
@@ -288,6 +288,7 @@ p {
     margin-bottom: 10px;
     outline: 0;
     padding: 5px;
+    color: #B7893D;
 }
 
 .contact-form input::placeholder, .contact-form textarea::placeholder {
@@ -488,8 +489,8 @@ p {
     }
 
     .single-project-details .single-project-header img {
-        height: 80px;
-        width: 80px;
+        height: 50px;
+        width: 50px;
     }
 
     .single-project-details .single-project-header h2 {
@@ -507,5 +508,17 @@ p {
     }
     .installment .pl-10{
         padding:0;
+    }
+    .service-details{
+        padding: 50px 0;
+    }
+    .consultation-background{
+        width: 100%;
+    }
+    .single-project-details .single-project-header img{
+        border: 3px solid #707070;
+    }
+    .secondery-page-header-ovarlay h2 {
+        font-size: 28px;
     }
 }

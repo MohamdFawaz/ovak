@@ -125,9 +125,10 @@ $(".login").click(function () {
     $(".consultancy-square").addClass("display-none");
     $(".links-carrier").addClass("display-none");
     $(".modals").toggleClass("page-ovarlay");
-    $(".login-modal").toggleClass("display-none");
+    $(".verification-modal").toggleClass("display-none");
     $(".mobile-menu").addClass("display-none");
     $(".menu-background").toggleClass("display-none");
+    $(".login-modal").removeClass("display-none")
 });
 $(".modal-close").click(function () {
     $(".consultancy-square").toggleClass("display-none");
@@ -138,6 +139,8 @@ $(".modal-close").click(function () {
     $(".logout-modal").addClass("display-none");
     $(".password-modal").addClass("display-none");
     $(".ask-modal").addClass("display-none");
+    $(".success-modal").addClass("display-none");
+    $(".verfication-modal").addClass("display-none");
 });
 $(".login-change-modal").click(function () {
     $(".registration-modal").toggleClass("display-none");

@@ -11,7 +11,7 @@
 @section('pre_header_content')
     <div class="header-text">
         <div class="secondery-page-header-ovarlay">
-            <h2 class="white-color">{{__('front.header.developers')}} <span class="header-line"></span></h2>
+            <h2 class="white-color">{{$developer->name}} <span class="header-line"></span></h2>
         </div>
     </div>
 @endsection

@@ -54,9 +54,10 @@
             <div class="col-sm-12 social-links">
                 <h3>Follow us</h3>
                 <ul>
-                    <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li> <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a></li>
-                    <li><a href="#" class="google"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                    <li> <a href="https://www.facebook.com/ovakestate" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a></li>
+                    <li><a href="https://www.instagram.com/ovakestate"  target="_blank" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/OVAK48555581" target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href=" https://wa.me/+0201030796861 " target="_blank" class="twitter"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
             <div class="col-sm-12 margin-top-25">

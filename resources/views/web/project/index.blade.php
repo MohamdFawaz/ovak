@@ -21,10 +21,10 @@
         <div class="container">
             <div class="margin-top-75">
                 <div class="col-md-8 col-sm-6">
-                    <h1 class="green-color"><i class="fa fa-building-o gold-color"></i> {{__('front.projects.all_projects')}} <span class="header-line"></span></h1>
+                    <h1 class="green-color"><i class="fa fa-building-o gold-color"></i> {{__('front.projects.projects')}} <span class="header-line"></span></h1>
                 </div>
-                <div class="col-md-3 col-sm-6 margin-top-10 float-right select-option-background">
-                    <label class="gold-color margin-top-5">{{__('front.form.sort_by')}}</label>
+                <div class="col-md-3 col-sm-6 col-xs-12 margin-top-10 float-right select-option-background">
+                    <label class="white-color margin-top-5">{{__('front.form.sort_by')}}</label>
                     <select class="float-right select select-style margin-top-5">
                         <option value="all">{{__('front.form.show_all')}}</option>
                         @foreach($property_types as $type)
