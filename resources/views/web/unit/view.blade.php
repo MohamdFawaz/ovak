@@ -104,10 +104,10 @@
                                     <label class="gold-color filter-label-text">Price Range</label>
                                     <div class="">
                                         <div class="input-type">
-                                            <input type="text" name="price_range_from">
-                                            <span class="gold-color"><i class="fa fa-arrow-right"></i></span>
-                                            <input type="text" name="prince_range_to">
-                                            <span class="gold-color">/ {{__('front.consultancy.installment.form.currency')}} </span>
+                                            <input type="text" name="price-range">
+                                            <span class="gold-color"> to </span>
+                                            <input type="text" name="prince-range">
+                                            <span class="gold-color">/ EGP </span>
                                         </div>
                                     </div>
                                 </div>
@@ -115,9 +115,9 @@
                                     <label class="gold-color filter-label-text">Area Range</label>
                                     <div class="">
                                         <div class="input-type">
-                                            <input type="text" name="area_range_from">
-                                            <span class="gold-color"><i class="fa fa-arrow-right"></i> </span>
-                                            <input type="text" name="area_range_to">
+                                            <input type="text" name="prince-range">
+                                            <span class="gold-color"> to </span>
+                                            <input type="text" name="prince-range">
                                             <span class="gold-color">/ M<sup>2</sup> </span>
                                         </div>
                                     </div>

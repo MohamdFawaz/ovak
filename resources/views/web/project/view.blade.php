@@ -12,8 +12,7 @@
 @section('pre_header_content')
 <div class="header-text">
     <div class="secondery-page-header-ovarlay">
-        <h2 class="white-color">{{$project->district->name}}<span class="header-line"></span></h2>
-        <h2 class="green-color">{{$project->name}}</h2>
+        <h2 class="white-color">{{$project->district->name}} <span class="header-line"></span></h2>
     </div>
 </div>
 @endsection
@@ -25,7 +24,7 @@
         <div class="container">
             <div class="single-project-header">
                 <img src="{{$project->developer->image}}" />
-                <h2 class="green-color">{{__('front.projects.one_of')}} {{$project->developer->name}} {{__('front.projects.projects')}}</h2>
+                <span class="green-color">{{__('front.projects.one_of')}} {{$project->developer->name}} {{__('front.projects.projects')}}</span>
             </div>
             <div class="single-item-details margin-top-75">
                 <div class="col-sm-12">
@@ -34,7 +33,7 @@
                         <span class="square-acc"></span>
                         <span class="white-color">Interested !</span>
                         <span class="white-color">ask about this project details</span>
-                        <a class="ask" id="ask-modal"><span class="consultancy-square-link margin-top-10">ask now</span></a>
+                        <a class="ask" href="#" id="ask-modal"><span class="consultancy-square-link margin-top-10">ask now</span></a>
                     </div>
                     <div class="hidden-md hidden-lg hidden-sm text-center margin-top-10">
                         <span class="green-color">ask about this project details</span>
@@ -55,8 +54,8 @@
                             @foreach($project->amenity as $amenity)
                             <div class="col-md-4">
                                 <img class="image-full-width" src="{{$amenity->image}}" alt="amenity-{{$amenity->id}}"/>
+                                <h4 class="margin-top-10">{{$amenity->name}}</h4>
                             </div>
-                                <h4>{{$amenity->name}}</h4>
                             @endforeach
                         </div>
                 @endif

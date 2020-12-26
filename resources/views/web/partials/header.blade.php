@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('web/css/header.css')}}">
     <link rel="stylesheet" href="{{asset('web/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('web/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('web/css/select.min.css')}}">
     <script src="https://kit.fontawesome.com/9867776862.js" crossorigin="anonymous"></script>
     @yield('css')
 </head>

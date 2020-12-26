@@ -22,13 +22,13 @@
                 <span>{{__('front.filter.title')}}</span>
             </div>
             <div class="filter-body box-shadow">
-                <form action="{{route('filter')}}" method="get" id="filter-form" autocomplete="off">
+                <form action="{{route('filter')}}" method="get">
                     <div class="margin-top-50 filter-select">
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                             <div class="border-right border-right-md border-right-sm">
                                 <div class="custom-select">
-                                    <select name="project_type_id">
-                                        <option value="">{{__('front.filter.project_type')}}</option>
+                                    <select name="project_type">
+                                        <option value="">Project Type</option>
                                         @foreach($project_types as $type)
                                         <option value="{{$type->id}}">{{$type->name}}</option>
                                         @endforeach
@@ -39,7 +39,7 @@
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                             <div class="border-right border-right-md">
                                 <div class="custom-select">
-                                    <select name="district_id">
+                                    <select name="district">
                                         <option value="">{{__('front.filter.district_location')}}</option>
                                         @foreach($districts as $district)
                                         <option value="{{$district->id}}">{{$district->name}}</option>
@@ -51,7 +51,7 @@
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                             <div class="border-right-sm">
                                 <div class="custom-select">
-                                    <select name="development_company_id">
+                                    <select name="development_company">
                                         <option value="">{{__('front.filter.development_company')}}</option>
                                         @foreach($development_companies as $company)
                                         <option value="{{$company->id}}">{{$company->name}}</option>
@@ -63,7 +63,7 @@
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                             <div class="border-right border-right-md">
                                 <div class="custom-select">
-                                    <select name="finishing_type_id">
+                                    <select name="finishing_type">
                                         <option value="">{{__('front.filter.finishing_type')}}</option>
                                         @foreach($finish_types as $type)
                                         <option value="{{$type->id}}">{{$type->name}}</option>
@@ -75,7 +75,7 @@
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                             <div class="border-right border-right-md border-right-sm">
                                 <div class="custom-select">
-                                    <select name="unit_type_id">
+                                    <select name="project-type">
                                         <option value="">{{__('front.filter.unit_type')}}</option>
                                         @foreach($unit_types as $type)
                                         <option value="{{$type->id}}">{{$type->name}}</option>
@@ -87,7 +87,7 @@
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                             <div class="">
                                 <div class="custom-select">
-                                    <select name="delivery_date">
+                                    <select name="project-type">
                                         <option value="0">Delivery date</option>
                                         <option value="1">2021</option>
                                         <option value="2">2022</option>
@@ -100,9 +100,9 @@
                                 <label class="gold-color filter-label-text">Price Range</label>
                                 <div class="">
                                     <div class="input-type">
-                                        <input type="text" name="price_range_from">
-                                        <span class="gold-color"><i class="fa fa-arrow-right"></i></span>
-                                        <input type="text" name="prince_range_to">
+                                        <input type="text" name="price-range">
+                                        <span class="gold-color"> to </span>
+                                        <input type="text" name="prince-range">
                                         <span class="gold-color">/ {{__('front.consultancy.installment.form.currency')}} </span>
                                     </div>
                                 </div>
@@ -111,9 +111,9 @@
                                 <label class="gold-color filter-label-text">Area Range</label>
                                 <div class="">
                                     <div class="input-type">
-                                        <input type="text" name="area_range_from">
-                                        <span class="gold-color"><i class="fa fa-arrow-right"></i> </span>
-                                        <input type="text" name="area_range_to">
+                                        <input type="text" name="prince-range">
+                                        <span class="gold-color"> to </span>
+                                        <input type="text" name="prince-range">
                                         <span class="gold-color">/ M<sup>2</sup> </span>
                                     </div>
                                 </div>
@@ -143,7 +143,10 @@
                         <div class="clearfix"></div>
                         <h2 class="section-second-header letter-spacing no-padding">{{__('front.home.vision.the_perfect_choice')}}</h2>
                         <div class="clearfix"></div>
-                        <p class="vision-paragraph">{{__('front.home.vision.description')}}</p>
+                        <h4 class="vision-paragraph"><span class="gold-color">{{__('front.home.vision.description_gold')}}</span>
+                            <span>{{__('front.home.vision.description_gray')}}</span>
+                            </h4>
+                        <h4 class="black-color">{{__('front.home.vision.description')}} </h4>
                         <div class="margin-top-50"><a href="{{route('about')}}" class="ovak-button">{{__('front.home.vision.mission_and_vision')}}</a></div>
                     </div>
                 </div>
@@ -155,11 +158,8 @@
     <section id="projects" class="projects long-slider">
         <div class="col-sm-12 no-padding-xs">
             <div class="col-md-4 col-md-push-1 col-sm-8 col-sm-push-1 col-xs-12 no-padding-xs">
-                <h2 class="section-first-header letter-spacing"><span class="col-sm-6">{{__('front.home.project.featured')}}</span></h2>
-                <div class="clearfix"></div>
                 <h2 class="section-second-header"><span>{{__('front.home.project.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">{{__('front.home.project.headline')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -206,11 +206,9 @@
                 <div class="clearfix"></div>
                 <div class="margin-top-50"></div>
                 <div class="subscription-input col-md-6 col-sm-10 no-padding">
-                    <form action="{{route('subscribe.newsletter')}}" method="post">
-                        {{csrf_field()}}
-                        {{method_field('post')}}
-                        <input type="email" name="email" maxlength="40" placeholder="Enter Your E-mail" required />
-                        <button class="subscription-button" type="submit">{{__('front.home.subscription.subscribe')}}</button>
+                    <form>
+                        <input type="email" maxlength="40" placeholder="Enter Your E-mail" required />
+                        <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe')}}</button>
                     </form>
                 </div>
             </div>
@@ -223,17 +221,16 @@
             <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
                 <h2 class="section-first-header"><span>{{__('front.home.developers.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-second-header letter-spacing"><span class="col-sm-6">{{__('front.home.developers.developers')}}</span></h2>
+                <h2 class="section-second-header letter-spacing">{{__('front.home.developers.developers')}}</h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">{{__('front.home.developers.description')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="slider-background">
+        <div class="slider-background margin-top-25">
             <div class="variable slider">
                 @foreach($development_companies as $company)
                 <div class="slider-item">
-                    <a href="{{route('developer.page',$company->slug)}}">
+                    <a href="./single-developer.html">
                         <!--link lel developer-->
                         <div class="slider-image">
                             <img src="{{$company->image}}" alt="" />

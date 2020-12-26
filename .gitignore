@@ -15,3 +15,5 @@ ovak.error_log
 ovak.in-access_log
 public/images
 .idea/
+public/images/companies
+public/images/properties

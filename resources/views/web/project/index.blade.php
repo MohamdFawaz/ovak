@@ -10,8 +10,7 @@
 @section('pre_header_content')
     <div class="header-text">
         <div class="secondery-page-header-ovarlay">
-            <h2 class="white-color header-letter-spacing">{{__('front.home.project.featured')}}</h2>
-            <h2 class="green-color">{{__('front.projects.projects')}}<span class="header-line"></span></h2>
+            <h2 class="white-color">{{__('front.projects.projects')}} <span class="header-line"></span></h2>
         </div>
     </div>
 @endsection
@@ -22,10 +21,10 @@
         <div class="container">
             <div class="margin-top-75">
                 <div class="col-md-8 col-sm-6">
-                    <h1 class="green-color"><i class="fa fa-building-o gold-color"></i>{{__('front.projects.all_projects')}}<span class="header-line"></span></h1>
+                    <h1 class="green-color"><i class="fa fa-building-o gold-color"></i> {{__('front.projects.projects')}} <span class="header-line"></span></h1>
                 </div>
-                <div class="col-md-3 col-sm-6 margin-top-10 float-right select-option-background">
-                    <label class="gold-color margin-top-5">{{__('front.form.sort_by')}}</label>
+                <div class="col-md-3 col-sm-6 col-xs-12 margin-top-10 float-right select-option-background">
+                    <label class="white-color margin-top-5">{{__('front.form.sort_by')}}</label>
                     <select class="float-right select select-style margin-top-5">
                         <option value="all">{{__('front.form.show_all')}}</option>
                         @foreach($property_types as $type)
@@ -64,9 +63,7 @@
             <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
                 <h2 class="section-first-header"><span>{{__('front.title.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-second-header letter-spacing"><span class="col-sm-6">{{__('front.title.developers')}}</span></h2>
-                <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">{{__('front.projects.list_developers_paragraph')}}</p>
+                <h2 class="section-second-header letter-spacing">{{__('front.title.developers')}}</h2>
             </div>
         </div>
         <div class="clearfix"></div>
