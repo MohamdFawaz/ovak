@@ -95,6 +95,8 @@
 <script>
     var loginUri = "{{route('user.login')}}"
     var registerUri = "{{route('user.register')}}"
+    var logUserCalculationUri = "{{route('user.logCalculation')}}"
+    var logUserAskingUri = "{{route('user.logAsking')}}"
 </script>
 </body>
 </html>

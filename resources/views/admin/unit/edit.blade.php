@@ -16,10 +16,10 @@
         }
     </style>
     <div class="content-wrapper">
-        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.property')])
+        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.projects')])
         <div class="card container">
             <div class="card-header">
-                <h3 class="card-title">{{__('admin.list') ." ". __('admin.breadcrumb.property') }}</h3>
+                <h3 class="card-title">{{__('admin.list') ." ". __('admin.breadcrumb.projects') }}</h3>
             </div>
             <!-- /.card-header -->
             <div class="card card-primary">
@@ -28,7 +28,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{route('project.update',$property->id)}}" method="post"
+                <form role="form" action="{{route('project.update',$unit->id)}}" method="post"
                       enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{method_field('post')}}

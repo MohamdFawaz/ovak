@@ -77,4 +77,9 @@ class Project extends Model implements TranslatableContract
     {
         return $this->hasMany(ProjectGallery::class,'project_id');
     }
+
+    public function projectAsking()
+    {
+        return $this->hasMany(UserAsking::class,'project_id');
+    }
 }

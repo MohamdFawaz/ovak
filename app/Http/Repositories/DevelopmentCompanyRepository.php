@@ -58,6 +58,6 @@ class DevelopmentCompanyRepository implements UserRepositoryInterface
      */
     public function paginate($numberPerPage)
     {
-        return DevelopmentCompany::query()->paginate($numberPerPage);
+        return DevelopmentCompany::query()->with(['project','project.projectAsking'])->paginate($numberPerPage);
     }
 }

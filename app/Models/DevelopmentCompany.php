@@ -32,4 +32,9 @@ class DevelopmentCompany extends Model implements TranslatableContract
             $this->attributes['image'] = $img_name ;
         }
     }
+
+    public function project()
+    {
+        return $this->hasMany(Project::class,'development_company_id');
+    }
 }

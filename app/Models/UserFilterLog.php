@@ -2,18 +2,17 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NewsletterSubscription extends Model
+class UserFilterLog extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function getCreatedAtAttribute($value) : string
+    public function user()
     {
-        return Carbon::parse($value)->format('d-M-yy');
+        return $this->belongsTo(User::class,'user_id');
     }
 }

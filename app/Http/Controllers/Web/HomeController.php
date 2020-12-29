@@ -13,7 +13,9 @@ use App\Models\PropertyType;
 use App\Models\Unit;
 use App\Models\UnitType;
 use App\Models\User;
+use App\Models\UserAsking;
 use App\Models\UserCalculationLog;
+use App\Models\UserFilterLog;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 
@@ -27,6 +29,7 @@ class HomeController extends Controller
 
     public function home()
     {
+//        dd(\Auth::check());
         $project_types = PropertyType::all();
         $districts = District::all();
         $development_companies = DevelopmentCompany::all();
@@ -85,6 +88,10 @@ class HomeController extends Controller
             });
         }
         $units = $filterUnitsQuery->get();
+        if(\Auth::check())
+        {
+            UserFilterLog::query()->create(['user_id' => \Auth::user()->id]);
+        }
         return view('web.filter_result', compact('development_companies', 'units'));
     }
 
@@ -109,6 +116,12 @@ class HomeController extends Controller
     public function logUserCalculation(Request $request)
     {
         UserCalculationLog::query()->create($request->all());
+        return response()->json('success');
+    }
+
+    public function logUserAsking(Request $request)
+    {
+        UserAsking::query()->create($request->all());
         return response()->json('success');
     }
 

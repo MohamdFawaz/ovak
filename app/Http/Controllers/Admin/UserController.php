@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\UserRepository;
+use App\Mail\NewsletterMail;
+use App\Models\NewsletterSubscription;
 use App\Models\User;
+use App\Models\UserAsking;
+use App\Models\UserCalculationLog;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -95,6 +99,28 @@ class UserController extends Controller
 
     public function calculationList()
     {
-        return view('admin.user.calculationLogs');
+        $calculations = UserCalculationLog::query()->with('user')->get();
+        return view('admin.user.calculationLogs',compact('calculations'));
+    }
+
+    public function askingList()
+    {
+        $askings = UserAsking::query()->with(['user','project'])->get();
+        return view('admin.user.askings',compact('askings'));
+    }
+
+    public function newsletterSubscription()
+    {
+        $newsletters = NewsletterSubscription::query()->get();
+        return view('admin.user.newsletter',compact('newsletters'));
+    }
+
+    public function sendNewsletter(Request $request)
+    {
+        $emails = NewsletterSubscription::query()->pluck('email');
+        foreach ($emails as $email){
+            \Mail::to($email)->send(new NewsletterMail($request->email_content, $request->subject));
+        }
+        return redirect(route('user.newsletter'));
     }
 }

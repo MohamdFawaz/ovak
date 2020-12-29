@@ -80,7 +80,6 @@ class UnitController extends Controller
             }
             return redirect(route('unit.index'));
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return redirect(route('unit.index'));
         }
     }
@@ -115,7 +114,7 @@ class UnitController extends Controller
      */
     public function edit($id)
     {
-        $property = Project::query()->where('id', $id)->first();
+        $property = Unit::query()->where('id', $id)->first();
         $districts = District::query()->get();
         $propertyTypes = PropertyType::query()->get();
         $companies = DevelopmentCompany::query()->get();

@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Http\Request;
@@ -28,3 +27,5 @@ Route::post('/auth/user-register',[RegisterController::class,'create'])->name('u
 
 
 Route::post('/log-user-calculations',[HomeController::class,'logUserCalculation'])->name('user.logCalculation');
+
+Route::post('/log-user-askings',[HomeController::class,'logUserAsking'])->name('user.logAsking');

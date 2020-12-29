@@ -33,11 +33,13 @@
                         <span class="square-acc"></span>
                         <span class="white-color">Interested !</span>
                         <span class="white-color">ask about this project details</span>
-                        <a class="ask" href="#" id="ask-modal"><span class="consultancy-square-link margin-top-10">ask now</span></a>
+                        <a class="ask" href="javascript:void(0)" id="ask-modal">
+                            <span class="trigger-ask consultancy-square-link margin-top-10" data-project-id="{{$project->id}}">ask now</span>
+                        </a>
                     </div>
                     <div class="hidden-md hidden-lg hidden-sm text-center margin-top-10">
                         <span class="green-color">ask about this project details</span>
-                        <a class="ask" id="ask-modal"><span class="consultancy-square-link margin-top-10">ask now</span></a>
+                        <a class="ask" id="ask-modal"><span class="trigger-ask consultancy-square-link margin-top-10" data-project-id="{{$project->id}}">ask now</span></a>
                     </div>
                 </div>
                 <div class="col-sm-12">

@@ -419,6 +419,33 @@ $(document).ready(function () {
         });
     }
 
+    $('.trigger-ask').on('click',function (e) {
+        let projectId = $(this).data('projectId');
+        if (localStorage.getItem('currentUser') && projectId !== undefined){
+            let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            logUserAsking(currentUser,projectId);
+        }else{
+            e.stopPropagation();
+            $('#login').trigger('click');
+        }
+    });
+
+    logUserAsking = (currentUser,projectId) => {
+        let form = new FormData();
+        let userId = currentUser.id;
+        form.append('user_id',userId);
+        form.append('project_id',projectId);
+        axios({
+            method: 'post',
+            url: `${logUserAskingUri}`,
+            data: form,
+            headers: {'Content-Type': 'application/json' }
+        }).then(function (response) {
+            console.log(response);
+        }).catch(error => {
+            console.error(error);
+        });
+    }
 })
 $("#FirstProject").select2( {
     placeholder: "Select Project",

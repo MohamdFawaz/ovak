@@ -16,12 +16,12 @@
         }
     </style>
     <div class="content-wrapper">
-        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.property')])
+        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.projects')])
         <div class="card container">
             <div class="card-header">
-                <h3 class="card-title">{{__('admin.list') ." ". __('admin.breadcrumb.property') }}</h3>
+                <h3 class="card-title">{{__('admin.list') ." ". __('admin.breadcrumb.projects') }}</h3>
             </div>
-            <!-- /.card-header -->
+            <!-- /.card-header -->property
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Edit Property</h3>

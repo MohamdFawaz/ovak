@@ -31,6 +31,24 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="{{ route('user.askings') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    {{ __('admin.sidebar.users_askings') }}
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('user.newsletter') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    {{ __('admin.breadcrumb.user_newsletter_subscription') }}
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('development.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-building"></i>
                 <p>

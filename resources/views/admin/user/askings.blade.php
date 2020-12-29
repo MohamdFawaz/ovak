@@ -3,10 +3,10 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.users_calculation_logs')])
+        @include('admin.partials.breadcrumb',['page_header' => __('admin.breadcrumb.users_asking')])
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">{{ __('admin.sidebar.users_calculation_logs') }}</h3>
+                <h3 class="card-title">{{ __('admin.sidebar.users_askings') }}</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -14,20 +14,20 @@
                     <thead>
                     <tr>
                         <th>User Name</th>
-                        <th>Total Amount</th>
-                        <th>Down Payment</th>
-                        <th>No of years</th>
+                        <th>User Mobile</th>
+                        <th>User Email</th>
+                        <th>Project Name</th>
                         <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($calculations as $calculation)
+                    @foreach($askings as $asking)
                     <tr>
-                        <td>{{$calculation->user->name}}</td>
-                        <td>{{$calculation->project_total_amount}}</td>
-                        <td>{{$calculation->down_payment}}</td>
-                        <td>{{$calculation->number_of_years}}</td>
-                        <td>{{$calculation->created_at}}</td>
+                        <td>{{$asking->user->name}}</td>
+                        <td>{{$asking->user->mobile}}</td>
+                        <td>{{$asking->user->email}}</td>
+                        <td>{{$asking->project->name}}</td>
+                        <td>{{$asking->created_at}}</td>
                     </tr>
                     @endforeach
                     </tbody>

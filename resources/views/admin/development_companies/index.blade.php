@@ -24,6 +24,8 @@
                         <th>{{ __('admin.development_companies.image') }}</th>
                         <th>{{ __('admin.development_companies.arabic_name') }}</th>
                         <th>{{ __('admin.development_companies.english_name') }}</th>
+                        <th>{{ __('admin.development_companies.number_of_projects') }}</th>
+                        <th>{{ __('admin.development_companies.number_of_user_interactions') }}</th>
                         <th>{{ __('admin.development_companies.actions') }}</th>
                     </tr>
                     </thead>
@@ -34,6 +36,16 @@
                             <td><img class="img-fluid img-responsive" width="100px" src="{{ $company->image }}" alt="{{$company->id . '-image'}}"></td>
                             <td>{{ $company->translate('ar')->name ?? "-" }}</td>
                             <td>{{ $company->translate('en')->name ?? "-" }}</td>
+                            <td>
+                                @foreach($company->project as $project)
+                                <a href="{{route('project.show',$project->id)}}" target="_blank">{{ $project->name }}</a>
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach($company->project as $project)
+                                    {{$project->project_asking ? $project->projectAsking->count() : 0}}
+                                @endforeach
+                            </td>
                             <td class="text-center">
                                 <a class="m-2" href="{{route('development.show',$company->id)}}">
                                     <i class="fa fa-eye"></i>

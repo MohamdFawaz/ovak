@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserCalculationLog extends Model
+class UserAsking extends Model
 {
     use HasFactory;
 
@@ -14,11 +13,11 @@ class UserCalculationLog extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class,"user_id");
     }
 
-    public function getCreatedAtAttribute($value) : string
+    public function project()
     {
-        return Carbon::parse($value)->format('d-M-yy');
+        return $this->belongsTo(Project::class,"project_id");
     }
 }

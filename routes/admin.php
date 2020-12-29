@@ -27,6 +27,14 @@ Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
         Route::group(['prefix' => '/user-calculation-log'], function (){
             Route::get('/',[\App\Http\Controllers\Admin\UserController::class,'calculationList'])->name('user.calculation.log');
         });
+        Route::group(['prefix' => '/user-askings'], function (){
+            Route::get('/',[\App\Http\Controllers\Admin\UserController::class,'askingList'])->name('user.askings');
+        });
+
+       Route::group(['prefix' => '/newsletter'], function (){
+            Route::get('/',[\App\Http\Controllers\Admin\UserController::class,'newsletterSubscription'])->name('user.newsletter');
+            Route::post('/',[\App\Http\Controllers\Admin\UserController::class,'sendNewsletter'])->name('user.newsletter.send');
+        });
 
         Route::group(['prefix' => '/development-companies'], function (){
             Route::get('/',[\App\Http\Controllers\Admin\DevelopmentCompanyController::class,

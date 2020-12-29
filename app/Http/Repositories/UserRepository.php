@@ -26,7 +26,7 @@ class UserRepository implements UserRepositoryInterface
      */
     public function all()
     {
-        return User::all();
+        return User::query()->withCount(['calculations','filters','askings'])->get();
     }
 
     /**

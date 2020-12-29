@@ -17,19 +17,25 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
+                        <th>Calculations</th>
+                        <th>Filtration Count</th>
+                        <th>Asking Count</th>
                         <th>Registered On</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        @foreach($users as $user)
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->phone ?? "-" }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ \Carbon\Carbon::parse($user->created_at)->format('d-M-yy') }}</td>
-                        @endforeach
-                    </tr>
+                    @foreach($users as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->phone ?? "-" }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->calculations_count > 0 ? 'true' : 'false' }}</td>
+                            <td>{{ $user->filters_count}}</td>
+                            <td>{{ $user->askings_count}}</td>
+                            <td>{{ $user->created_at }}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
