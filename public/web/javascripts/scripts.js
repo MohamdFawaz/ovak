@@ -294,6 +294,53 @@ $(document).ready(function () {
             })
         });
     });
+    $('#forgot-password-form').submit(function (e) {
+        e.preventDefault();
+        let form = new FormData();
+        let email = $(this).find('#forgot-password-mail').val();
+        let _token = $(this).find('input[name="_token"]').val();
+        form.append('email',email);
+        form.append('_token',_token);
+
+        axios({
+            method: 'post',
+            url: `${forgotPasswordUri}`,
+            data: form,
+            headers: {'Content-Type': 'application/json' }
+        }).then(function (response) {
+            $(".password-modal").addClass("display-none")
+            $(".Verification-modal").removeClass("display-none")
+            // window.location.reload();
+        }).catch(error => {
+            console.error(error);
+        });
+    })
+
+    $('#verify-code').submit(function (e) {
+        e.preventDefault();
+        let form = new FormData();
+        let email = $('#forgot-password-mail').val();
+        let code = $(this).find('#verify_code').val();
+        let _token = $(this).find('input[name="_token"]').val();
+        form.append('email',email);
+        form.append('token',code);
+        form.append('_token',_token);
+        $(".verify-code-error").css('display','none');
+        axios({
+            method: 'post',
+            url: `${verifyCodeUri}`,
+            data: form,
+            headers: {'Content-Type': 'application/json' }
+        }).then(function (response) {
+            console.log(response);
+            // window.location.reload();
+        }).catch(error => {
+            $(".verify-code-error").css('display','block');
+            let errors = error.response.data;
+            $(".verify-code-error").text(errors);
+        });
+    })
+
     clearUser = () => {
         localStorage.clear();
     }

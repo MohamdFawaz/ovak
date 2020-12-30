@@ -46,10 +46,11 @@
         <div class="user-modal col-lg-6 col-lg-push-4 col-md-8 col-md-push-3 col-sm-10 col-sm-push-1">
             <div class="col-lg-4 col-md-5 col-sm-6 white-background modal-form no-padding">
                 <div class="modal-contents margin-top-80 margin-bottom-80">
-                    <form>
+                    <form id="forgot-password-form" method="post">
+                        {{csrf_field()}}
                         <div class="modal-close hidden-sm hidden-md hidden-lg"><i class="fa fa-times"></i></div>
                         <h3 class="green-color ovak-font">{{__('front.forget_password.reset_password')}}</h3>
-                        <input name="lname" type="email" placeholder="{{__('front.login.email')}}" required />
+                        <input name="email" id="forgot-password-mail" type="email" placeholder="{{__('front.login.email')}}" required />
                         <div class="margin-top-25 margin-bottom-25 col-sm-12 col-xs-12 no-padding">
                             <button class="ovak-dark-button" type="submit">{{__('front.forget_password.reset_password')}}</button>
                         </div>
@@ -179,10 +180,14 @@
                 <div class="modal-contents">
                     <h2>{{__('front.verification.header')}}</h2>
                     <div class="clearfix"></div>
-                    <input type="" placeholder="{{__('front.verification.input')}}">
+                    <form id="verify-code" method="post">
+                    {{csrf_field()}}
+                    <input type="text" name="verify_code" id="verify_code" placeholder="{{__('front.verification.input')}}">
+                        <small class="verify-code-error" style="display: none"></small>
                     <div class="col-sm-8 col-sm-push-2 text-center margin-bottom-25 margin-top-25">
-                        <button class="ovak-dark-button ask-confirm">confirm</button>
+                        <button class="ovak-dark-button">confirm</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
