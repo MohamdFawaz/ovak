@@ -10,15 +10,15 @@ return [
         ],
     'header' =>
         [
-            'home' => 'Home',
-            'developers' => 'Developers',
-            'projects' => 'Projects',
-            'consultancy' => 'Consultancy',
-            'about_contact' => 'About/Contact',
-            'about' => 'About',
+            'home' => 'الرئيسية',
+            'developers' => 'المطورين',
+            'projects' => 'المشروعات',
+            'consultancy' => 'استشارات',
+            'about_contact' => 'عنا /تواصل معنا',
+            'about' => 'عنا',
             'filter_result' => 'Filter Result',
             'logout' => 'Logout',
-            'login' => 'Login',
+            'login' => 'تسجيل الدخول',
             'inner_header' => [
                 'consultancy' => [
                     'consultancy' => 'Consultancy',

@@ -1,4 +1,4 @@
-@extends('web.layout')
+@extends('web.ar.layout')
 
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
@@ -18,7 +18,7 @@
 @endsection
 
 @section('content')
-    @include('web.partials.inner_pages_header')
+    @include('web.ar.partials.inner_pages_header')
     <section id="result">
         <div class="container">
             <div class="margin-top-75">
@@ -61,12 +61,11 @@
     <div class="text-center margin-top-25"><a class="gold-color-hovarable" id="show">{{__('front.actions.show_more')}}</a></div>
     <section id="developers" class="developers">
         <div class="col-sm-12 no-padding-xs">
-            <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
-                <h2 class="section-first-header"><span>{{__('front.title.projects')}}</span> <span class="header-line"></span></h2>
+            <div class="col-xs-12 text-right float-right">
+                <h2 class="section-first-header"><span>المطورين</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
-                <h2 class="section-second-header letter-spacing"><span class="col-sm-6">{{__('front.title.developers')}}</span></h2>
+                <h2 class="section-second-header"><span>العقاريين</span></h2>
                 <div class="clearfix"></div>
-                <p class="vision-paragraph col-sm-12">{{__('front.home.developers.description')}}</p>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -74,7 +73,8 @@
             <div class="variable slider">
                 @foreach($development_companies as $company)
                     <div class="slider-item">
-                        <a href="{{route('developer.page',$company->slug)}}"><!--link lel developer-->
+                        <a href="./single-developer.html">
+                            <!--link lel developer-->
                             <div class="slider-image">
                                 <img src="{{$company->image}}" alt="" />
                             </div>
@@ -84,6 +84,6 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="text-center margin-top-75"><a href="{{route('developers.list')}}" class="ovak-button">{{__('front.title.view_all_developers')}}</a></div>
+        <div class="text-center margin-top-75"><a href="{{route('developers.list')}}" class="ovak-button">عرض جميع المطورين العقاريين</a></div>
     </section>
 @endsection

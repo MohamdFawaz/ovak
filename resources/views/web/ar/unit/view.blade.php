@@ -1,4 +1,4 @@
-@extends('web.layout')
+@extends('web.ar.layout')
 
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
@@ -17,22 +17,22 @@
 @endsection
 
 @section('content')
-    @include('web.partials.inner_pages_header')
+    @include('web.ar.partials.inner_pages_header')
 
     <section class="single-unit">
         <section id="filter" class="ovak-filter">
             <div class="container">
-                <div class="filter-label col-md-2 col-md-push-5 col-sm-push-4 col-xs-3 col-xs-push-2">
-                    <span>{{__('front.filter.title')}}</span>
+                <div class="filter-label col-md-2 col-md-push-5 col-sm-push-5 col-xs-3 col-xs-push-4">
+                    <span>إبحث عن عقارك</span>
                 </div>
                 <div class="filter-body box-shadow">
-                    <form action="{{route('filter')}}" method="get" id="filter-form" autocomplete="off">
+                    <form action="{{route('filter')}}" method="get">
                         <div class="margin-top-50 filter-select">
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md border-right-sm">
                                     <div class="custom-select">
-                                        <select name="project_type_id">
-                                            <option value="">{{__('front.filter.project_type')}}</option>
+                                        <select name="project_type">
+                                            <option value="">نوع المشروع</option>
                                             @foreach($project_types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
                                             @endforeach
@@ -43,8 +43,8 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md">
                                     <div class="custom-select">
-                                        <select name="district_id">
-                                            <option value="">{{__('front.filter.district_location')}}</option>
+                                        <select name="district">
+                                            <option value="">الموقع</option>
                                             @foreach($districts as $district)
                                                 <option value="{{$district->id}}">{{$district->name}}</option>
                                             @endforeach
@@ -55,8 +55,8 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right-sm">
                                     <div class="custom-select">
-                                        <select name="development_company_id">
-                                            <option value="">{{__('front.filter.development_company')}}</option>
+                                        <select name="development_company">
+                                            <option value="">الشركة المطورة</option>
                                             @foreach($development_companies as $company)
                                                 <option value="{{$company->id}}">{{$company->name}}</option>
                                             @endforeach
@@ -67,8 +67,8 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md">
                                     <div class="custom-select">
-                                        <select name="finishing_type_id">
-                                            <option value="">{{__('front.filter.finishing_type')}}</option>
+                                        <select name="finishing_type">
+                                            <option value="">نوع التشطيب</option>
                                             @foreach($finish_types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
                                             @endforeach
@@ -79,8 +79,8 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="border-right border-right-md border-right-sm">
                                     <div class="custom-select">
-                                        <select name="unit_type_id">
-                                            <option value="">{{__('front.filter.unit_type')}}</option>
+                                        <select name="project-type">
+                                            <option value="">نوع الوحدة</option>
                                             @foreach($unit_types as $type)
                                                 <option value="{{$type->id}}">{{$type->name}}</option>
                                             @endforeach
@@ -91,8 +91,8 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
                                 <div class="">
                                     <div class="custom-select">
-                                        <select name="delivery_date">
-                                            <option value="0">Delivery date</option>
+                                        <select name="project-type">
+                                            <option value="0">تاريخ التسليم</option>
                                             <option value="1">2021</option>
                                             <option value="2">2022</option>
                                         </select>
@@ -100,36 +100,37 @@
                                 </div>
                             </div>
                             <div class="filter-range">
-                                <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
-                                    <label class="gold-color filter-label-text">Price Range</label>
+                                <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control float-right">
+                                    <label class="gold-color filter-label-text"> نطاق الاسعار</label>
                                     <div class="">
                                         <div class="input-type">
                                             <input type="text" name="price-range">
-                                            <span class="gold-color"> to </span>
+                                            <span class="gold-color"><i class="fa fa-arrow-left"></i></span>
                                             <input type="text" name="prince-range">
-                                            <span class="gold-color">/ EGP </span>
+                                            <span class="gold-color">/ جم </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control">
-                                    <label class="gold-color filter-label-text">Area Range</label>
+                                <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 padding-control float-right">
+                                    <label class="gold-color filter-label-text"> نطاق المساحة</label>
                                     <div class="">
                                         <div class="input-type">
                                             <input type="text" name="prince-range">
-                                            <span class="gold-color"> to </span>
+                                            <span class="gold-color"><i class="fa fa-arrow-left"></i> </span>
                                             <input type="text" name="prince-range">
-                                            <span class="gold-color">/ M<sup>2</sup> </span>
+                                            <span class="gold-color">/ متر<sup>2</sup> </span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
                         <div class="filter-button">
-                            <div class="hidden-lg hidden-sm hidden-md col-xs-6 margin-top-10 text-center">
-                                <a id="show" class="gold-color"><i class="fa fa-plus"> </i> More Filters </a>
+                            <div class="col-sm-11 col-xs-6 no-padding-xs float-right">
+                                <input type="submit" class="ovak-button float-left" value="بحث">
                             </div>
-                            <div class="col-sm-11 col-xs-6">
-                                <input type="submit" class="ovak-button float-right" value="{{__('front.filter.search')}}">
+                            <div class="hidden-lg hidden-sm hidden-md col-xs-6 margin-top-10 no-padding-xs text-left">
+                                <a id="show" class="gold-color"><i class="fa fa-plus"> </i> شاهد المزيد </a>
                             </div>
                             <div class="clearfix"></div>
                         </div>

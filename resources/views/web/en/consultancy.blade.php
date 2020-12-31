@@ -1,4 +1,4 @@
-@extends('web.layout')
+@extends('web.en.layout')
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-    @include('web.partials.inner_pages_header')
+    @include('web.en.partials.inner_pages_header')
 
     <section id="consult" class="consult">
         <div class="container">

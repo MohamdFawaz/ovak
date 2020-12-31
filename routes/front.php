@@ -10,6 +10,7 @@ Route::get('/',[HomeController::class,'home']);
 Route::get('/filters-result',[HomeController::class,'filter'])->name('filter');
 Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/consultancy',[HomeController::class,'consultancy'])->name('consultancy');
+Route::get('/change-locale/{lang}',[HomeController::class,'switchLocale'])->name('change.locale');
 
 Route::group(['prefix' => 'units'],function (){
     Route::get('/{id}',[UnitController::class,'view'])->name('unit.page');
