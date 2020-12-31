@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Auth\LoginController;
 use App\Http\Controllers\Web\Auth\RegisterController;
+use App\Http\Controllers\Web\Auth\ForgotPasswordController;
 use App\Http\Controllers\Web\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::post('/auth/user-login',[LoginController::class,'login'])->name('user.log
 
 Route::post('/auth/user-register',[RegisterController::class,'create'])->name('user.register');
 
+Route::post('/auth/user-forgot-password',[ForgotPasswordController::class,'forgotPassword'])->name('user.forgotPassword');
+
+Route::post('/auth/verify-code',[ForgotPasswordController::class,'verifyResetCode'])->name('user.verifyCode');
 
 Route::post('/log-user-calculations',[HomeController::class,'logUserCalculation'])->name('user.logCalculation');
 

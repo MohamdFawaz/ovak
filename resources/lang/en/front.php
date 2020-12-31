@@ -43,7 +43,8 @@ return [
         [
             'reset_password' => 'Reset Password',
             'text' => 'We are going to send you a verification E-mail to recover your password',
-            'forgot_password' => 'Forgot password ?'
+            'forgot_password' => 'Forgot password?',
+            'invalid_token' => 'Invalid verification code'
 
         ],
     'verification' =>
