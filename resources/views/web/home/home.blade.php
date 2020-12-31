@@ -125,7 +125,9 @@
                             <a id="show" class="gold-color"><i class="fa fa-plus"> </i> More Filters </a>
                         </div>
                         <div class="col-sm-11 col-xs-6">
-                            <input type="submit" class="ovak-button float-right" value="{{__('front.filter.search')}}">
+                            <div class="ovak-button search-btn float-right">
+                            <input type="submit" value="{{__('front.filter.search')}}">
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -157,7 +159,7 @@
     <div class="clearfix"></div>
     <section id="projects" class="projects long-slider">
         <div class="col-sm-12 no-padding-xs">
-            <div class="col-md-4 col-md-push-1 col-sm-8 col-sm-push-1 col-xs-12 no-padding-xs">
+            <div class="col-md-4 col-md-push-1 col-sm-8 col-sm-push-1 col-xs-12">
                 <h2 class="section-second-header"><span>{{__('front.home.project.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
             </div>
@@ -169,7 +171,7 @@
                 <a href="{{route('projects.page',$project->id)}}">
                     <div class="slider-image slider-ovarlay col-sm-12 no-padding">
                         <img class="img-height" src="{{$project->image}}" alt="" />
-                        <a href="{{route('projects.list')}}" class="ovak-button">{{__('front.actions.show_more')}}<i class="fa fa-arrow-right"></i></a><!--link le el project-->
+                        <a href="{{route('projects.list')}}" class="ovak-button">{{__('front.actions.show_more')}} <i class="fa fa-arrow-right"></i></a><!--link le el project-->
                     </div>
                     <div class="clearfix"></div>
                     <div class="slider-body ">
@@ -218,7 +220,7 @@
     </section>
     <section id="developers" class="developers">
         <div class="col-sm-12 no-padding-xs">
-            <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
+            <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12">
                 <h2 class="section-first-header"><span>{{__('front.home.developers.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
                 <h2 class="section-second-header letter-spacing">{{__('front.home.developers.developers')}}</h2>

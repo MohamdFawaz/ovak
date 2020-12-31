@@ -40,12 +40,20 @@ body{
     color: #0D3A3A;
 }
 
+.search-btn input{
+background-color: #B7893D;
+    border: 0 !important;
+}
+.search-btn:hover input{
+    background-color: #0D3A3A;
+}
 .white-background {
     background-color: #fff;
 }
 
 .image-full-width {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .ovak-font {
@@ -250,13 +258,14 @@ a:hover, a:focus {
 }
 
 .links-carrier {
-    position: absolute;
+    position: fixed;
     width: 300px;
     background-color: #0D3A3A;
     right: -131px;
     top: 129px;
     padding: 9px 0;
     transform: rotate(-90deg);
+    z-index: 10000;
 }
 
 .calculator {
@@ -561,6 +570,8 @@ a:hover, a:focus {
     left: 0;
     right: 0;
     z-index: 99;
+    max-height: 115px;
+    overflow: auto;
 }
 
 .select-items div {
@@ -679,7 +690,7 @@ a:hover, a:focus {
 }
 
 .subscription-input input {
-    padding: 15px;
+    padding: 20px;
     width: 100%;
     outline: 0;
     border: 0;
@@ -793,7 +804,7 @@ a:hover, a:focus {
     background-color: #B7893D;
     top: 0;
     right: 15px;
-    padding: 7.5px 25px;
+    padding: 12.5px 25px;
     outline: 0;
     border: 0;
     color: #fff;
@@ -906,6 +917,10 @@ a:hover, a:focus {
         top: -55px;
         padding-top: 14%;
     }
+    .links-carrier{
+        position: absolute;
+        z-index: 1;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -915,8 +930,20 @@ a:hover, a:focus {
     .service-details{
         padding: 50px 0;
     }
+    .margin-top-xs-25{
+        margin-top:25px;
+    }
+    .margin-xs-top-10{
+        margin-top: 10px;
+    }
     .user-modal .margin-bottom-80, .user-modal .margin-top-80 {
         margin: 0;
+    }
+    .footer .subscription-button{
+        padding:7.5px 15px;
+    }
+    .subscription-input input{
+        padding: 15px;
     }
     .mobile-menu {
         overflow:auto;

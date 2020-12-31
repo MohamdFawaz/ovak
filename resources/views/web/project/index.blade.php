@@ -60,7 +60,7 @@
     </section>
     <section id="developers" class="developers">
         <div class="col-sm-12 no-padding-xs">
-            <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12 no-padding-xs">
+            <div class="col-lg-4 col-lg-push-1 col-md-6 col-md-push-1 col-sm-8 col-xs-12">
                 <h2 class="section-first-header"><span>{{__('front.title.projects')}}</span> <span class="header-line"></span></h2>
                 <div class="clearfix"></div>
                 <h2 class="section-second-header letter-spacing">{{__('front.title.developers')}}</h2>

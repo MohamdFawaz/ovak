@@ -55,7 +55,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-sm-6 no-padding mobile-margin-top-50">
+                    <div class="col-sm-6 mobile-margin-top-50">
                         <div class="col-sm-12 no-padding">
                             <div class="col-md-2 col-sm-3 green-color margin-top-10 no-padding"><div class="about-icon-design"><i class="fas fa-comments"></i></div></div>
                             <div class="col-sm-9 col-md-10 no-padding white-color about-paragraph">
