@@ -84,7 +84,7 @@
     </div>
     <div class="clearfix"></div>
 </section>
-@include('web.partials.Modals')
+@include('web.en.partials.Modals')
 <script src="{{asset('web/javascripts/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('web/javascripts/bootstrap.min.js')}}"></script>
 <script src="{{asset('web/javascripts/select.js')}}"></script>

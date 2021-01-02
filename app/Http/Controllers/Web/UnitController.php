@@ -28,7 +28,7 @@ class UnitController extends Controller
         $unit_types = UnitType::all();
 
         $unit = Unit::query()->with(['project','project.developer','property'])->where('id',$id)->first();
-        return view('web.unit.view',compact('unit','finish_types',
+        return view_front('web.unit.view',compact('unit','finish_types',
             'project_types','development_companies','districts','unit_types'));
     }
 
@@ -37,16 +37,16 @@ class UnitController extends Controller
         $development_companies = DevelopmentCompany::query()->inRandomOrder()->get();
         $units = Unit::query()->with(['project','project.developer'])->get();
         $property_types = PropertyType::all();
-        return view('web.filter_result',compact('development_companies','units','property_types'));
+        return view_front('web.filter_result',compact('development_companies','units','property_types'));
     }
 
     public function about()
     {
-        return view('web.about');
+        return view_front('web.about');
     }
 
     public function consultancy()
     {
-        return view('web.consultancy');
+        return view_front('web.consultancy');
     }
 }

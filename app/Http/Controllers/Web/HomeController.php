@@ -29,7 +29,6 @@ class HomeController extends Controller
 
     public function home()
     {
-//        dd(\Auth::check());
         $project_types = PropertyType::all();
         $districts = District::all();
         $development_companies = DevelopmentCompany::all();
@@ -39,7 +38,7 @@ class HomeController extends Controller
         $featured_projects = Project::all();
         $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])->inRandomOrder()->get();
 
-        return view('web.home.home', compact('project_types',
+        return view_front('web.home.home', compact('project_types',
             'districts', 'development_companies', 'finish_types', 'unit_types',
             'featured_projects', 'projects'));
     }
@@ -92,19 +91,19 @@ class HomeController extends Controller
         {
             UserFilterLog::query()->create(['user_id' => \Auth::user()->id]);
         }
-        return view('web.filter_result', compact('development_companies', 'units'));
+        return view_front('web.filter_result', compact('development_companies', 'units'));
     }
 
     public function about()
     {
-        return view('web.about');
+        return view_front('web.about');
     }
 
     public function consultancy()
     {
         $districts = District::query()->get();
         $projects = Project::query()->get();
-        return view('web.consultancy', compact('districts', 'projects'));
+        return view_front('web.consultancy', compact('districts', 'projects'));
     }
 
     public function contactUs(Request $request)
@@ -128,6 +127,13 @@ class HomeController extends Controller
     public function subscribeToNewsletter(Request $request)
     {
         NewsletterSubscription::query()->create($request->except('_token','_method'));
+        return redirect()->back();
+    }
+
+    public function switchLocale($lang)
+    {
+        \Session::put('locale',$lang);
+        \Session::save();
         return redirect()->back();
     }
 }

@@ -18,7 +18,7 @@ class DevelopmentCompanyController extends Controller
     {
         $development_companies = DevelopmentCompany::all();
 
-        return view('web.developer.index',compact('development_companies'));
+        return view_front('web.developer.index',compact('development_companies'));
     }
 
     public function developerPage($slug)
@@ -26,6 +26,6 @@ class DevelopmentCompanyController extends Controller
         $developer = DevelopmentCompany::query()->where('slug',$slug)->first();
         $development_companies = DevelopmentCompany::query()->inRandomOrder()->get();
         $projects = Project::query()->where('development_company_id',$developer->id)->inRandomOrder()->get();
-        return view('web.developer.view',compact('developer','development_companies','projects'));
+        return view_front('web.developer.view',compact('developer','development_companies','projects'));
     }
 }

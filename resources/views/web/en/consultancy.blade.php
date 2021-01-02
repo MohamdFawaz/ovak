@@ -1,4 +1,4 @@
-@extends('web.layout')
+@extends('web.en.layout')
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
 @endsection
@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-    @include('web.partials.inner_pages_header')
+    @include('web.en.partials.inner_pages_header')
 
     <section id="consult" class="consult">
         <div class="container">
@@ -34,9 +34,12 @@
                     <div class="container no-padding-xs">
                         <h3 class="ovak-font white-color text-uppercase text-center">{{__('front.consultancy.form.title')}}</h3>
                         <div class="consultation">
-                            <div class="col-md-push-2 col-md-8 col-sm-push-1 col-sm-10 col-xs-12 consultation-background no-padding-xs">
-                                <div class="col-sm-8 col-sm-push-2 col-xs-12 m text-center consultation-btns no-padding-xs margin-top-50">
-                                    <button class="ovak-button click-action st-click-action" value="residential"><i class="fa fa-home"></i>
+                            <div
+                                class="col-md-push-2 col-md-8 col-sm-push-1 col-sm-10 col-xs-12 consultation-background no-padding-xs">
+                                <div
+                                    class="col-sm-8 col-sm-push-2 col-xs-12 m text-center consultation-btns no-padding-xs margin-top-50">
+                                    <button class="ovak-button click-action st-click-action" value="residential"><i
+                                            class="fa fa-home"></i>
                                         {{__('front.consultancy.form.choices.residential')}}</button>
                                     <button class="ovak-button click-action nd-click-action" value="commercial"><i
                                             class="fa fa-building-o"></i>
@@ -44,7 +47,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-sm-12">
-                                    <div class="col-sm-6 col-sm-push-3 margin-top-25">
+                                    <div class="col-sm-6 col-sm-push-3 margin-top-10">
                                         <div class="custom-select">
                                             <select name="district">
                                                 <option value="">{{__('front.filter.district_location')}} </option>
@@ -55,8 +58,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 margin-top-25">
-                                    <div class="col-sm-3 col-sm-push-3 col-xs-6">
+
+                                <div class="clearfix"></div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-3 col-sm-push-3 col-xs-6 margin-top-10">
                                         <select id="FirstProject">
                                             <option value="">Select Project</option>
                                             <option value="4">Afghanistan</option>
@@ -66,7 +71,7 @@
                                             <option value="16">American Samoa</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-3 col-sm-push-3 col-xs-6 margin-top-10">
+                                    <div class="col-sm-3 col-sm-push-3  col-xs-6 margin-top-10">
                                         <select id="SecondProject">
                                             <option value="">Select Project</option>
                                             <option value="4">Afghanistan</option>
@@ -108,10 +113,10 @@
                                 {{csrf_field()}}
                                 <div class="col-sm-12">
                                     <div class="row">
-                                        <div class=" no-padding col-sm-6 col-xs-9">
+                                        <div class=" no-padding col-sm-6">
                                             <h2 class="ovak-font gold-color"> {{__('front.consultancy.installment.form.property_price')}}</h2>
                                         </div>
-                                        <div class="col-sm-6 col-xs-3">
+                                        <div class="col-sm-6">
                                         <span class="float-right gold-background white-color ovak-font"> {{__('front.consultancy.installment.form.currency')}}</span>
                                         </div>
                                     </div>
@@ -122,8 +127,7 @@
                                        placeholder="{{__('front.consultancy.installment.form.total_amount_placeholder')}}"/>
                                 <div class="margin-top-50">
                                     <h3 class="black-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.down_payment')}}</h3>
-                                    <div class="clearfix"></div>
-                                    <div class="col-sm-6 no-padding margin-top-xs-25">
+                                    <div class="col-sm-6 no-padding">
                                         <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.amount')}}</h4>
                                         <input name="installment-down-payment-amount"
                                                onkeyup="convertDownPayment(event)"
@@ -131,7 +135,7 @@
                                                type="text"
                                                placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}"/>
                                     </div>
-                                    <div class="col-sm-6 margin-xs-top-10 pl-10">
+                                    <div class="col-sm-6 pl-10">
                                         <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.percent')}}</h4>
                                         <input type="text" name="installment-down-payment-percentage"
                                                onkeyup="convertDownPayment(event)"
@@ -142,7 +146,7 @@
                                     <div class="margin-top-25">
                                         <h3 class="black-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.installment_period')}}</h3>
                                     </div>
-                                    <div class="margin-top-xs-25">
+                                    <div>
                                         <div class="col-sm-6 no-padding">
                                             <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.years')}}</h4>
                                             <input name="installment-years" type="text"

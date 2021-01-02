@@ -1,4 +1,4 @@
-@extends('web.layout')
+@extends('web.en.layout')
 
 @section('css')
     <link rel="stylesheet" href="{{asset('web/css/secondery-pages.css')}}">
@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-    @include('web.partials.inner_pages_header')
+    @include('web.en.partials.inner_pages_header')
     <section class="single-developer">
         <div class="developer-details margin-top-75">
             <div class="container">
