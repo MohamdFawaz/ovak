@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Unit extends Model implements TranslatableContract
 {
-    use HasFactory, Translatable;
+    use HasFactory, Translatable, SoftDeletes;
 
     public $translatedAttributes = ['name','description'];
 
@@ -46,5 +47,10 @@ class Unit extends Model implements TranslatableContract
     public function gallery()
     {
         return $this->hasMany(UnitGallery::class,'unit_id');
+    }
+
+    public function finishType()
+    {
+        return $this->hasMany(UnitFinishType::class,'unit_id');
     }
 }

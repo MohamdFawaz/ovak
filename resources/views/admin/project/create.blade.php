@@ -41,15 +41,15 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="propertyTypesId">Property Type</label>
-                            <select id="propertyTypesId" class="form-control select" name="property_type_id" required>
-                                <option value="" class="form-control">Choose Property Type</option>
-                                @foreach($propertyTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="propertyTypesId">Property Type</label>--}}
+{{--                            <select id="propertyTypesId" class="form-control select" name="property_type_id" required>--}}
+{{--                                <option value="" class="form-control">Choose Property Type</option>--}}
+{{--                                @foreach($propertyTypes as $type)--}}
+{{--                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             <label for="developmentCompanyId">Development Company</label>
                             <select id="developmentCompanyId" class="form-control select" name="development_company_id"
@@ -60,15 +60,15 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="finishTypeId">Finish Type</label>
-                            <select id="finishTypeId" class="form-control select" name="finish_type_id" required>
-                                <option value="" class="form-control">Choose Finish Type</option>
-                                @foreach($finishTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="finishTypeId">Finish Type</label>--}}
+{{--                            <select id="finishTypeId" class="form-control select" name="finish_type_id" required>--}}
+{{--                                <option value="" class="form-control">Choose Finish Type</option>--}}
+{{--                                @foreach($finishTypes as $type)--}}
+{{--                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             <label for="unitTypeId">Unit Type</label>
                             <select id="unitTypeId" class="form-control select" name="unit_type_id" required>

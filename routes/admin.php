@@ -135,6 +135,10 @@ Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
                 'update'])->name('project.update');
             Route::get('/delete/{id}',[\App\Http\Controllers\Admin\ProjectController::class,
                 'destroy'])->name('project.delete');
+            Route::get('/delete-amenity/{amenityId}',[\App\Http\Controllers\Admin\ProjectController::class,
+                'deleteAmenity'])->name('project.delete.amenity');
+            Route::get('/delete-image/{imageId}',[\App\Http\Controllers\Admin\ProjectController::class,
+                'deleteImage'])->name('project.delete.image');
         });
 
         Route::group(['prefix' => '/units'], function (){
@@ -152,6 +156,8 @@ Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
                 'update'])->name('unit.update');
             Route::get('/delete/{id}',[\App\Http\Controllers\Admin\UnitController::class,
                 'destroy'])->name('unit.delete');
+            Route::get('/delete-image/{imageId}',[\App\Http\Controllers\Admin\UnitController::class,
+                'deleteImage'])->name('unit.delete.image');
         });
 
     });

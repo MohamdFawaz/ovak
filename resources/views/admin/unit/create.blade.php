@@ -42,6 +42,15 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="finishTypeId">Finish Types</label>
+                            <select id="finishTypeId" class="form-control select text-dark" multiple="multiple" name="finish_type_ids[]" required>
+                                <option value="" class="form-control" >Choose Finish Types</option>
+                                @foreach($finishTypes as $type)
+                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="area">Area</label>
                             <input type="number"  required name="area" class="form-control" id="area"
                                    placeholder="Enter unit area">
