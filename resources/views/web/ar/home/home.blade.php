@@ -185,7 +185,6 @@
                                 <div class="clearfix"></div>
                                 <div class="slider-list-text">
                                     <div><span>{{$project->district->name}}</span><span class="gold-color"> :المنطقه</span></div>
-                                    <div><span>{{$project->propertyType->name}}</span><span class="gold-color"> :نوع العقار</span></div>
                                     <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span> {{$project->address}}</span></div>
                                 </div>
                             </div>

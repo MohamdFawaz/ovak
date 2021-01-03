@@ -48,7 +48,6 @@
                             </div>
                             <div class="clearfix"></div>
                             <div><span class="gold-color">{{__('front.projects.district')}} :</span><span> {{$project->district->name}}</span></div>
-                            <div><span class="gold-color">{{__('front.projects.property_type')}} :</span><span> {{$project->propertyType->name}}</span></div>
                             <div><span class="gold-color"><i class="fa fa-map-marker"></i>:</span><span>{{$project->address}}</span></div>
                         </div>
                     </div>
