@@ -156,7 +156,7 @@ class UnitController extends Controller
             $unit->to_price = $request->to_price;
             $unit->image = $request->image;
 
-            $property->fill([
+            $unit->fill([
                 'en' => [
                     'name' => $request->english_name,
                     'description' => $request->arabic_description
@@ -166,11 +166,20 @@ class UnitController extends Controller
                     'description' => $request->arabic_description
                 ]
             ]);
-            $property->save();
+            $unit->save();
+            $finish_type_ids = $request->finish_type_ids;
+            if (count($finish_type_ids)) {
+                $unit->finishType()->delete();
+                foreach ($finish_type_ids as $finish_type_id) {
+                    $unit->finishType()->create([
+                        'finish_type_id' => $finish_type_id
+                    ]);
+                }
+            }
             return redirect(route('unit.edit', $id));
         } catch (\Exception $e) {
             \Log::info($e->getTraceAsString());
-            return redirect(route('unit.index'));
+            return redirect(route('unit.edit',$unit->id));
         }
     }
 
