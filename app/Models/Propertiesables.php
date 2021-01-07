@@ -11,10 +11,15 @@ class Propertiesables extends Model
 
     protected $guarded = [];
 
+    protected $with = ['property'];
 
     public function propertiesable()
     {
         return $this->morphTo();
     }
 
+    public function property()
+    {
+        return $this->belongsTo(Property::class,'property_id');
+    }
 }

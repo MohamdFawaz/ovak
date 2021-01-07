@@ -66,9 +66,11 @@
             </div>
             <div class="col-lg-5 col-md-6 col-sm-8 margin-top-25">
                 <div class="subscription-input">
-                    <form>
-                        <input type="email" placeholder="Please type your e-mail" required />
-                        <button type="button" class="subscription-button">SUBSCRIBE</button>
+                    <form action="{{route('subscribe.newsletter')}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('post')}}
+                        <input type="email" name="email" maxlength="40" placeholder="Enter Your E-mail" required />
+                        <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe')}}</button>
                     </form>
                 </div>
             </div>

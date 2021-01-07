@@ -7,6 +7,8 @@ return [
         'users' => 'Users',
         'users_calculation_logs' => 'User\'s Calculation Logs',
         'users_askings' => 'User\'s Asking Logs',
+        'users_filters' => 'User\'s Filters',
+        'users_consultations' => 'User\'s Consultations',
         'development_companies' => 'Development Companies',
         'districts' => 'Districts',
         'finish_types' => 'Finish Types',
@@ -21,6 +23,8 @@ return [
         'users_calculation_logs' => 'User\'s Calculation Logs',
         'user_newsletter_subscription' => 'User Newsletter Subscription',
         'users_asking' => 'User\'s Askings',
+        'users_filters' => 'User\'s Filters',
+        'users_consultations' => 'User\'s Consultations',
         'development_companies' => 'Development Companies',
         'districts' => 'Districts',
         'finish_types' => 'Finish Types',
@@ -35,7 +39,7 @@ return [
         'image' => 'Image',
         'english_name' => 'English Name',
         'number_of_projects' => 'Number of projects',
-        'number_of_user_interactions' => 'Number of user interactions',
+        'number_of_user_interactions' => 'User interactions',
         'arabic_name' => 'Arabic Name',
         'actions' => 'Actions'
     ],
@@ -68,6 +72,7 @@ return [
         'english_name' => 'English Name',
         'arabic_name' => 'Arabic Name',
         'image' => 'Image',
+        'development_company' => 'Development Company',
         'actions' => 'Actions'
     ],
     'unit' => [
@@ -75,6 +80,7 @@ return [
         'english_name' => 'English Name',
         'arabic_name' => 'Arabic Name',
         'image' => 'Image',
+        'project' => 'Project',
         'actions' => 'Actions'
     ]
 ];

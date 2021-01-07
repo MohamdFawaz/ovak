@@ -24,7 +24,7 @@ class DevelopmentCompanyController extends Controller
      */
     public function index()
     {
-        $companies = $this->developmentCompanyRepository->paginate(5);
+        $companies = $this->developmentCompanyRepository->all();
 
         return view('admin.development_companies.index',compact('companies'));
 
@@ -123,7 +123,14 @@ class DevelopmentCompanyController extends Controller
      */
     public function destroy($id)
     {
-        DevelopmentCompany::query()->where('id',$id)->delete();
+        $developer = DevelopmentCompany::query()->where('id',$id)->first();
+        $projects = $developer->project()->get();
+        foreach ($projects as $project)
+        {
+            $project->units()->delete();
+        }
+        $developer->project()->delete();
+        $developer->delete();
         return redirect(route('development.index'));
     }
 }

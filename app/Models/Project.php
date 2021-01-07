@@ -82,4 +82,9 @@ class Project extends Model implements TranslatableContract
     {
         return $this->hasMany(UserAsking::class,'project_id');
     }
+
+    public function units()
+    {
+        return $this->hasMany(Unit::class,'project_id');
+    }
 }

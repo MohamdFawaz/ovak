@@ -8,11 +8,10 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FinishType extends Model implements TranslatableContract
+class Property extends Model implements TranslatableContract
 {
-    use HasFactory,Translatable, SoftDeletes;
+    use HasFactory,Translatable;
 
     public $translatedAttributes = ['name'];
-
     protected $guarded = [];
 }

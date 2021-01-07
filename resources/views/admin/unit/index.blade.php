@@ -24,6 +24,7 @@
                         <th>{{ __('admin.unit.id') }}</th>
                         <th>{{ __('admin.unit.arabic_name') }}</th>
                         <th>{{ __('admin.unit.english_name') }}</th>
+                        <th>{{ __('admin.unit.project') }}</th>
                         <th>{{ __('admin.unit.image') }}</th>
                         <th>{{ __('admin.unit.actions') }}</th>
                     </tr>
@@ -34,6 +35,7 @@
                             <td>{{ $unit->id }}</td>
                             <td>{{ $unit->translate('ar')->name ?? "-" }}</td>
                             <td>{{ $unit->translate('en')->name ?? "-" }}</td>
+                            <td>{{ $unit->project->name }}</td>
                             <td>
                                 <img class="img-fluid img-responsive" width="100px" src="{{ $unit->image }}"
                                      alt="{{$unit->id . '-image'}}"></td>
@@ -55,9 +57,18 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="box-footer clearfix" style="margin-left: 20px ">
-                {{ $units->links("pagination::bootstrap-4") }}
-            </div>
+{{--            <div class="box-footer clearfix" style="margin-left: 20px ">--}}
+{{--                {{ $units->links("pagination::bootstrap-4") }}--}}
+{{--            </div>--}}
         </div>
     </div>
+@endsection
+
+
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $('#example1').dataTable();
+        });
+    </script>
 @endsection

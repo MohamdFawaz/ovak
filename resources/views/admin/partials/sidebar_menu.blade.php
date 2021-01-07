@@ -28,6 +28,22 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="{{ route('user.filters') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    {{ __('admin.sidebar.users_filters') }}
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('user.consultation') }}" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    {{ __('admin.sidebar.users_consultations') }}
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('user.askings') }}" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
@@ -77,6 +93,14 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="{{ route('development.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-building"></i>
+                <p>
+                    {{ __('admin.sidebar.development_companies') }}
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('project.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
@@ -89,14 +113,6 @@
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                     {{ __('admin.sidebar.units') }}
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('development.index') }}" class="nav-link">
-                <i class="nav-icon fas fa-building"></i>
-                <p>
-                    {{ __('admin.sidebar.development_companies') }}
                 </p>
             </a>
         </li>

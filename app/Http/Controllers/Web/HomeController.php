@@ -36,7 +36,8 @@ class HomeController extends Controller
         $unit_types = UnitType::all();
 
         $featured_projects = Project::all();
-        $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])->inRandomOrder()->get();
+        $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])
+            ->inRandomOrder()->limit(15)->get();
 
         return view_front('web.home.home', compact('project_types',
             'districts', 'development_companies', 'finish_types', 'unit_types',
@@ -89,7 +90,13 @@ class HomeController extends Controller
         $units = $filterUnitsQuery->get();
         if(\Auth::check())
         {
-            UserFilterLog::query()->create(['user_id' => \Auth::user()->id]);
+            UserFilterLog::query()->create([
+                'user_id' => \Auth::user()->id,
+                'property_type_id' => $projectTypeId,
+                'district_id' => $districtId,
+                'development_company_id' => $developerId,
+                'unit_type_id' => $unitTypeId
+            ]);
         }
         return view_front('web.filter_result', compact('development_companies', 'units'));
     }
@@ -120,13 +127,17 @@ class HomeController extends Controller
 
     public function logUserAsking(Request $request)
     {
-        UserAsking::query()->create($request->all());
+        if (!UserAsking::query()->where($request->all())->exists()){
+            UserAsking::query()->create($request->all());
+        }
         return response()->json('success');
     }
 
     public function subscribeToNewsletter(Request $request)
     {
-        NewsletterSubscription::query()->create($request->except('_token','_method'));
+        if (!NewsletterSubscription::query()->where($request->except('_token','_method'))->exists()){
+            NewsletterSubscription::query()->create($request->except('_token','_method'));
+        }
         return redirect()->back();
     }
 

@@ -207,8 +207,10 @@
                 <div class="clearfix"></div>
                 <div class="margin-top-50"></div>
                 <div class="subscription-input col-md-6 col-sm-10 no-padding">
-                    <form>
-                        <input type="email" maxlength="40" placeholder="Enter Your E-mail" required />
+                    <form action="{{route('subscribe.newsletter')}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('post')}}
+                        <input type="email" name="email" maxlength="40" placeholder="Enter Your E-mail" required />
                         <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe')}}</button>
                     </form>
                 </div>

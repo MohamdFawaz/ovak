@@ -17,7 +17,7 @@
                         </a>
                     </div>
                 </div>
-                <table class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
                         <th>{{ __('admin.development_companies.id') }}</th>
@@ -38,12 +38,12 @@
                             <td>{{ $company->translate('en')->name ?? "-" }}</td>
                             <td>
                                 @foreach($company->project as $project)
-                                <a href="{{route('project.show',$project->id)}}" target="_blank">{{ $project->name }}</a>
+                                <a href="{{route('project.show',$project->id)}}" target="_blank">{{ $project->name }}</a><br>
                                 @endforeach
                             </td>
                             <td>
                                 @foreach($company->project as $project)
-                                    {{$project->project_asking ? $project->projectAsking->count() : 0}}
+                                    {{$project->project_asking ? $project->projectAsking->count() : 0}} <br>
                                 @endforeach
                             </td>
                             <td class="text-center">
@@ -63,20 +63,20 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="box-footer clearfix" style="margin-left: 20px ">
-                    {{ $companies->links("pagination::bootstrap-4") }}
-            </div>
+{{--            <div class="box-footer clearfix" style="margin-left: 20px ">--}}
+{{--                    {{ $companies->links("pagination::bootstrap-4") }}--}}
+{{--            </div>--}}
         </div>
     </div>
 @endsection
 
 @section('js')
-    {{--    <script>--}}
-    {{--        $(function () {--}}
-    {{--            $("#example1").DataTable({--}}
-    {{--                "responsive": true,--}}
-    {{--                "autoWidth": false,--}}
-    {{--            });--}}
-    {{--        });--}}
-    {{--    </script>--}}
+        <script>
+            $(function () {
+                $("#example1").DataTable({
+                    "responsive": true,
+                    "autoWidth": false,
+                });
+            });
+        </script>
 @endsection

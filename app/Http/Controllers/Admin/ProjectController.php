@@ -31,7 +31,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $properties = Project::query()->paginate(5);
+        $properties = Project::query()->with('developer')->paginate(5);
 
         return view('admin.project.index', compact('properties'));
 
@@ -262,8 +262,15 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        Project::query()->where('id', $id)->delete();
-        return redirect(route('project.index'));
+        try {
+            $project = Project::query()->where('id', $id)->first();
+            $project->units()->delete();
+            $project->delete();
+            return redirect(route('project.index'));
+        }catch (\Exception $e){
+            \Log::error($e->getTraceAsString());
+            return redirect(route('project.index'));
+        }
     }
 
     public function deleteAmenity($amenityId)

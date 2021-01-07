@@ -46,10 +46,21 @@
                             <select id="finishTypeId" class="form-control select text-dark" multiple="multiple" name="finish_type_ids[]" required>
                                 <option value="" class="form-control" >Choose Finish Types</option>
                                 @foreach($finishTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control" @if($unit->finishType->where('id',$type->id)->first()) selected @endif>{{$type->name}}</option>
+                                    <option value="{{$type->id}}" class="form-control" @if($unit->finishType->where('finish_type_id',$type->id)->first())
+                                    selected @endif>{{$type->name}}</option>
                                 @endforeach
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="unitTypeId">Unit Type</label>
+                            <select id="unitTypeId" class="form-control select" name="unit_type_id" required>
+                                <option value="" class="form-control">Choose Unit Type</option>
+                                @foreach($unitTypes as $type)
+                                    <option value="{{$type->id}}" @if($unit->unit_type_id == $type->id) selected @endif class="form-control">{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="area">Area</label>
                             <input type="number"  required name="area" class="form-control" id="area"
@@ -88,6 +99,16 @@
                             <label for="englishDescription">English Description</label>
                             <textarea required name="english_description" class="form-control" rows="5"
                                       id="englishDescription">{{$unit->translate('en')->description}}</textarea>
+                        </div>
+                        <label>Properties</label>
+                        <div class="form-group row">
+                            @foreach($properties as $property)
+                                <label class="col-6">{{$property->name}}</label>
+                                <input type="text" name="properties[{{$property->id}}]"
+                                       class="form-control col-6 mt-2"
+                                       placeholder="Enter {{$property->name}}"
+                                       value="{{$unit->property->where('property_id',$property->id)->first()->value ?? ""}}">
+                            @endforeach
                         </div>
                         <div class="form-group">
                             <label for="image">Image</label>
@@ -132,7 +153,8 @@
     <script>
         $(document).ready(function () {
             $('.select').select2({
-                height: '200px'
+                height: '200px',
+                theme: "classic"
             });
             $('.custom-file-label').prev('input').on('change',function (){
                 $(this).next('.custom-file-label').text("File Added")

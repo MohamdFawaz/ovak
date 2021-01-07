@@ -108,16 +108,6 @@
                                       id="englishDescription"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="arabicAddress">Arabic Address</label>
-                            <textarea required name="arabic_address" class="form-control" rows="5"
-                                      id="arabicAddress"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="englishAddress">English Address</label>
-                            <textarea required name="english_address" class="form-control" rows="5"
-                                      id="englishAddress"></textarea>
-                        </div>
-                        <div class="form-group">
                             <label for="image">Image</label>
                             <div class="input-group">
                                 <div class="custom-file">

@@ -8,6 +8,7 @@ use App\Models\District;
 use App\Models\FinishType;
 use App\Models\Project;
 use App\Models\ProjectGallery;
+use App\Models\Property;
 use App\Models\PropertyType;
 use App\Models\Unit;
 use App\Models\UnitGallery;
@@ -30,7 +31,7 @@ class UnitController extends Controller
      */
     public function index()
     {
-        $units = Unit::query()->paginate(5);
+        $units = Unit::query()->with('project')->get();
 
         return view('admin.unit.index', compact('units'));
 
@@ -45,7 +46,9 @@ class UnitController extends Controller
     {
         $projects = Project::query()->get();
         $finishTypes = FinishType::query()->get();
-        return view('admin.unit.create', compact('projects','finishTypes'));
+        $unitTypes = UnitType::query()->get();
+        $properties = Property::query()->get();
+        return view('admin.unit.create', compact('projects','finishTypes','unitTypes','properties'));
     }
 
     /**
@@ -59,6 +62,7 @@ class UnitController extends Controller
         try {
             $unit = new Unit();
             $unit->project_id = $request->project_id;
+            $unit->unit_type_id = $request->unit_type_id;
             $unit->area = $request->area;
             $unit->from_price = $request->from_price;
             $unit->to_price = $request->to_price;
@@ -88,6 +92,16 @@ class UnitController extends Controller
                         'finish_type_id' => $finish_type_id
                     ]);
             }
+            $properties = $request->properties;
+            foreach ($properties as $property_id => $value)
+            {
+                if ($value){
+                    $unit->property()->create([
+                        'property_id' => $property_id,
+                        'value' => $value
+                    ]);
+                }
+            }
             return redirect(route('unit.index'));
         } catch (\Exception $e) {
             return redirect(route('unit.index'));
@@ -102,18 +116,21 @@ class UnitController extends Controller
      */
     public function show($id)
     {
-        $property = Project::query()->where('id', $id)->first();
+        $unit = Unit::query()->where('id', $id)->first();
+        $projects = Project::query()->get();
         $districts = District::query()->get();
         $propertyTypes = PropertyType::query()->get();
         $companies = DevelopmentCompany::query()->get();
         $finishTypes = FinishType::query()->get();
         $unitTypes = UnitType::query()->get();
-        return view('admin.unit.show', compact('property',
+        $properties = Property::query()->get();
+
+        return view('admin.unit.show', compact('unit',
             'districts',
             'propertyTypes',
             'companies',
             'finishTypes',
-            'unitTypes'));
+            'unitTypes','projects','properties'));
     }
 
     /**
@@ -124,19 +141,20 @@ class UnitController extends Controller
      */
     public function edit($id)
     {
-        $unit = Unit::query()->where('id', $id)->first();
+        $unit = Unit::query()->with('property')->where('id', $id)->first();
         $districts = District::query()->get();
         $propertyTypes = PropertyType::query()->get();
         $companies = DevelopmentCompany::query()->get();
         $finishTypes = FinishType::query()->get();
         $unitTypes = UnitType::query()->get();
         $projects = Project::query()->get();
+        $properties = Property::query()->get();
         return view('admin.unit.edit', compact('unit',
             'districts',
             'propertyTypes',
             'companies',
             'finishTypes',
-            'unitTypes','projects'));
+            'unitTypes','projects','properties'));
     }
 
     /**
@@ -151,6 +169,7 @@ class UnitController extends Controller
         try {
             $unit = Unit::query()->where('id', $id)->first();
             $unit->project_id = $request->project_id;
+            $unit->unit_type_id = $request->unit_type_id;
             $unit->area = $request->area;
             $unit->from_price = $request->from_price;
             $unit->to_price = $request->to_price;
@@ -173,6 +192,17 @@ class UnitController extends Controller
                 foreach ($finish_type_ids as $finish_type_id) {
                     $unit->finishType()->create([
                         'finish_type_id' => $finish_type_id
+                    ]);
+                }
+            }
+            $properties = $request->properties;
+            $unit->property()->delete();
+            foreach ($properties as $property_id => $value)
+            {
+                if ($value){
+                    $unit->property()->create([
+                        'property_id' => $property_id,
+                        'value' => $value
                     ]);
                 }
             }
