@@ -53,4 +53,9 @@ class Unit extends Model implements TranslatableContract
     {
         return $this->hasMany(UnitFinishType::class,'unit_id');
     }
+
+    public function unitType()
+    {
+        return $this->belongsTo(UnitType::class,'unit_type_id');
+    }
 }
