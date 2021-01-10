@@ -24,7 +24,7 @@
                     @foreach($askings as $asking)
                     <tr>
                         <td>{{$asking->user->name}}</td>
-                        <td>{{$asking->user->mobile}}</td>
+                        <td>{{$asking->user->phone}}</td>
                         <td>{{$asking->user->email}}</td>
                         <td>{{$asking->project->name}}</td>
                         <td>{{$asking->created_at}}</td>

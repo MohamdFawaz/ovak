@@ -60,7 +60,15 @@
                                 @endforeach
                             </select>
                         </div>
-
+                        <div class="form-group">
+                            <label for="propertyTypeId">Property Type</label>
+                            <select id="propertyTypeId" class="form-control select" name="property_type_id" required>
+                                <option value="" class="form-control">Choose Property Type</option>
+                                @foreach($propertyTypes as $type)
+                                    <option value="{{$type->id}}" @if($unit->property_type_id == $type->id) selected @endif class="form-control">{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="area">Area</label>
                             <input type="number"  required name="area" class="form-control" id="area"

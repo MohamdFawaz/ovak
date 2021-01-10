@@ -194,7 +194,7 @@ class ProjectController extends Controller
             $project->fill([
                 'en' => [
                     'name' => $request->english_name,
-                    'description' => $request->arabic_description
+                    'description' => $request->english_description
                 ],
                 'ar' => [
                     'name' => $request->arabic_name,

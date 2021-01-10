@@ -69,15 +69,15 @@
 {{--                                @endforeach--}}
 {{--                            </select>--}}
 {{--                        </div>--}}
-                        <div class="form-group">
-                            <label for="unitTypeId">Unit Type</label>
-                            <select id="unitTypeId" class="form-control select" name="unit_type_id" required>
-                                <option value="" class="form-control">Choose Unit Type</option>
-                                @foreach($unitTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="unitTypeId">Unit Type</label>--}}
+{{--                            <select id="unitTypeId" class="form-control select" name="unit_type_id" required>--}}
+{{--                                <option value="" class="form-control">Choose Unit Type</option>--}}
+{{--                                @foreach($unitTypes as $type)--}}
+{{--                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             <label for="area">Google Map Link</label>
                             <input type="text" required name="google_map_link" class="form-control" id="area"

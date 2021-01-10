@@ -11,8 +11,12 @@ class ProjectAmenityTranslation extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    public function getNameAttribute($name)
+    public function setNameAttribute($name)
     {
-        return str_replace( array('[',']','"') , ''  , $name);
+        if (is_array($name)){
+            $this->attributes['name'] =  reset($name);
+        }else{
+            $this->attributes['name'] = $name;
+        }
     }
 }

@@ -48,7 +48,9 @@ class UnitController extends Controller
         $finishTypes = FinishType::query()->get();
         $unitTypes = UnitType::query()->get();
         $properties = Property::query()->get();
-        return view('admin.unit.create', compact('projects','finishTypes','unitTypes','properties'));
+        $propertyTypes = PropertyType::query()->get();
+        return view('admin.unit.create', compact('projects','finishTypes','unitTypes',
+            'properties','propertyTypes'));
     }
 
     /**
@@ -63,6 +65,7 @@ class UnitController extends Controller
             $unit = new Unit();
             $unit->project_id = $request->project_id;
             $unit->unit_type_id = $request->unit_type_id;
+            $unit->property_type_id = $request->property_type_id;
             $unit->area = $request->area;
             $unit->from_price = $request->from_price;
             $unit->to_price = $request->to_price;
@@ -88,9 +91,9 @@ class UnitController extends Controller
             }
             $finish_type_ids = $request->finish_type_ids;
             foreach ($finish_type_ids as $finish_type_id){
-                    $unit->finishType()->create([
-                        'finish_type_id' => $finish_type_id
-                    ]);
+                $unit->finishType()->create([
+                    'finish_type_id' => $finish_type_id
+                ]);
             }
             $properties = $request->properties;
             foreach ($properties as $property_id => $value)
@@ -170,6 +173,7 @@ class UnitController extends Controller
             $unit = Unit::query()->where('id', $id)->first();
             $unit->project_id = $request->project_id;
             $unit->unit_type_id = $request->unit_type_id;
+            $unit->property_type_id = $request->property_type_id;
             $unit->area = $request->area;
             $unit->from_price = $request->from_price;
             $unit->to_price = $request->to_price;
@@ -178,7 +182,7 @@ class UnitController extends Controller
             $unit->fill([
                 'en' => [
                     'name' => $request->english_name,
-                    'description' => $request->arabic_description
+                    'description' => $request->english_description
                 ],
                 'ar' => [
                     'name' => $request->arabic_name,

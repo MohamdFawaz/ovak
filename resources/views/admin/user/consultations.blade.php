@@ -14,6 +14,7 @@
                     <thead>
                     <tr>
                         <th>User ID</th>
+                        <th>User Mobile</th>
                         <th>Project</th>
                         <th>District</th>
                     </tr>
@@ -22,6 +23,7 @@
                     @foreach($user_consultations as $user_consultation)
                     <tr>
                         <td><a target="_blank" href="{{url('admin/users')}}">{{$user_consultation->user->name}}</a></td>
+                        <td>{{$user_consultation->user->phone ?? ""}}</td>
                         <td>{{$user_consultation->project->name ?? ""}}</td>
                         <td>{{$user_filter->district->name ?? ""}}</td>
                     </tr>

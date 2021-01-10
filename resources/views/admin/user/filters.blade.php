@@ -14,6 +14,7 @@
                     <thead>
                     <tr>
                         <th>User ID</th>
+                        <th>User Mobile</th>
                         <th>Property Type</th>
                         <th>District</th>
                         <th>Development Company</th>
@@ -24,6 +25,7 @@
                     @foreach($user_filters as $user_filter)
                     <tr>
                         <td><a target="_blank" href="{{url('admin/users')}}">{{$user_filter->user->name}}</a></td>
+                        <td>{{$user_filter->user->phone ?? ""}}</td>
                         <td>{{$user_filter->propertyType->name ?? ""}}</td>
                         <td>{{$user_filter->district->name ?? ""}}</td>
                         <td>{{$user_filter->developer->name ?? ""}}</td>
