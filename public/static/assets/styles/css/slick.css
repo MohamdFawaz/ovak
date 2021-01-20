@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'Bahnschrift Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bahnschrift Regular'), url('./../../webfonts/BAHNSCHRIFT.woff') format('woff');
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height:365px;
+}
+
+    .slick-list:focus {
+        outline: none;
+    }
+
+    .slick-list.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .slick-track:before,
+    .slick-track:after {
+        display: table;
+        content: '';
+    }
+
+    .slick-track:after {
+        clear: both;
+    }
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slider {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.slider-image {
+    width: 230px;
+    position:relative;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slider-item {
+    background-color: #fff;
+    box-shadow: 5px 0px 5px 0px #707070;
+    outline:0px;
+    margin-top:23px;
+}
+.long-slider .slider-item{
+    /*height:300px;*/
+}
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.project-name {
+    font-family: 'Bahnschrift Regular';
+}
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: 1;
+}
+
+.slick-active {
+    opacity: 1;
+}
+.long-slider .slider-item.slick-current {
+    height:355px !important; 
+}
+.slider-item .slider-image .img-height{
+    height: 200px;
+}
+.slick-current .slider-image .img-height {
+    opacity: 0.5;
+    height: 230px !important;
+}
+.slick-current.slider-item{
+    margin-top:0px;
+    height:100% !important;
+}
+.slick-current .slider-ovarlay .ovak-button{
+    display:inline-block;
+}
+.developer-icon{
+    float:right;
+}
+.slider-body{
+    padding:10px 0px;
+}
+.slider-list-text div{
+    line-height:1.2;
+}
+.slider-list-text span{
+    font-size:10px;
+}
+.slider-list-text{
+    margin-bottom:10px;
+}
+.slider-ovarlay .ovak-button{
+    position:absolute;
+    top:25%;
+    margin-left:25px;
+    display:none;
+}
+
+.developers .slider-image{
+    width:100px;
+    overflow:hidden;
+    border:7px solid #707070;
+    height:100px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.developers .slider-item {
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: 0px;
+    background-color: #fff;
+    border-radius: 50%;
+    outline: 0;
+}
+.single-developer .slider-item{
+    margin-top:29px;
+}
+.single-developer .slick-active{
+    margin-top:0;
+}
+.developers .slick-current .slider-image img {
+    height: auto;
+    opacity: 1;
+    background-color: #fff;
+}
+
+.developers .slick-list{
+    height:auto;
+}
+.developers .slick-prev, .developers .slick-next {
+    bottom:0;
+    top:50%;
+}
+.developers .slick-prev{
+    left:-40px;
+}
+
+@media only screen and (max-width: 500px) {
+    .slick-list {
+        height: 400px;
+    }
+    .developers .slick-prev, .developers .slick-next {
+        margin-top:90px;
+    }
+    .developers .slick-prev{
+        left:0px;
+    }
+    .developers .slick-next {
+        right: 5px;
+    }
+    .long-slider .slider-item.slick-current {
+        height: 380px !important;
+    }
+    .slider-item{
+        margin-top:43px;
+    }
+}
