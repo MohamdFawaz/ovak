@@ -68,3 +68,6 @@
     right:0;
     left:unset;
 }
+.text-direction-reverse{
+    text-align:right;
+}

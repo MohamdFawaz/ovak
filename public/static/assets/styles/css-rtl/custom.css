@@ -69,3 +69,6 @@
 .float-direction{
     float:right;
 }
+.text-direction-reverse{
+    text-align:left;
+}

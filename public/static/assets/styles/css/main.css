@@ -309,7 +309,7 @@ a:hover, a:focus {
     background-position: center
 }
 .secondry-page-header {
-    background: url(../../images/secondry-pages.png);
+    background: url(../../images/Secondry-pages.png);
     height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -948,10 +948,57 @@ label {
 .search-result .content .item-pic{
     height: 150px;
 }
-/*.search-result .content {
-   overflow:hidden;
-   height:150px;
-}*/
+.consultation .select-selected {
+    background-color: #0D3A3A;
+    color: #B7893D;
+    padding: 5px;
+}
+.consultation-background {
+    background: rgba(48, 76, 76,.7);
+}
+.consultation-background .ovak-button {
+    border: 1px solid #fff;
+}
+.select2-container--default .select2-selection--single{
+    background-color:#0D3A3A;
+    color:#B7893D;
+    border:1px solid #fff;
+    padding:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.select2-container--open .select2-dropdown--below {
+    background-color:#0D3A3A;
+    color:#B7893D;
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder{
+    color:#B7893D;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #B7893D transparent transparent transparent;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    color:#B7893D;
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #B7893D transparent;
+}
+.service-details input{
+    width:100%;
+    padding:5px;
+}
+.transperant{
+    background-color:transparent;
+}
+table{
+    width:100%;
+    border:1px solid #707070;
+}
+    table td {
+        padding: 20px;
+        border: 1px solid #707070;
+    }
 @media screen and (max-width: 1024px) {
     .navbar .navbar-brand {
         width: 120px;
@@ -965,6 +1012,10 @@ label {
             padding: 0 8px;
             font-size: 12px;
         }
+    table td {
+        padding: 8px;
+        border: 1px solid #707070;
+    }
 }
 
 @media screen and (max-width: 992px) {

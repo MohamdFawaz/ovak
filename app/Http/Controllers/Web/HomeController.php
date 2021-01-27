@@ -15,6 +15,7 @@ use App\Models\UnitType;
 use App\Models\User;
 use App\Models\UserAsking;
 use App\Models\UserCalculationLog;
+use App\Models\UserConsultation;
 use App\Models\UserFilterLog;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
@@ -35,13 +36,14 @@ class HomeController extends Controller
         $finish_types = FinishType::all();
         $unit_types = UnitType::all();
 
+        $delivery_dates = Project::query()->selectRaw('YEAR(delivery_date) as date')->get();
         $featured_projects = Project::all();
         $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])
             ->inRandomOrder()->limit(15)->get();
 
-        return view_front('web.home.home', compact('project_types',
+        return view('web.home.home', compact('project_types',
             'districts', 'development_companies', 'finish_types', 'unit_types',
-            'featured_projects', 'projects'));
+            'featured_projects', 'projects','delivery_dates'));
     }
 
     public function filter()
@@ -87,9 +89,28 @@ class HomeController extends Controller
                 $q->where('id',$unitTypeId);
             });
         }
-        $units = $filterUnitsQuery->get();
+        if ($deliveryDate = request()->get('delivery_date')){
+            $filterUnitsQuery->with(['project' => function ($q) use ($deliveryDate) {
+                $q->whereYear('delivery_date',$deliveryDate);
+            }])->whereHas('project',function ($q) use ($deliveryDate) {
+                $q->whereYear('delivery_date',$deliveryDate);
+            });
+        }
+        $priceFrom = request()->get('price_from');
+        $priceTo = request()->get('price_to');
+        if ($priceFrom && $priceTo){
+            $filterUnitsQuery->where('from_price','<=',$priceFrom)
+                ->where('to_price','>=',$priceTo);
+        }
+
+        $areaFrom = request()->get('area_from');
+        $areaTo = request()->get('area_to');
+        if ($areaFrom && $areaTo){
+            $filterUnitsQuery->whereBetween('area',[$areaFrom,$areaTo]);
+        }
         if(\Auth::check())
         {
+            $units = $filterUnitsQuery->get();
             UserFilterLog::query()->create([
                 'user_id' => \Auth::user()->id,
                 'property_type_id' => $projectTypeId,
@@ -97,20 +118,33 @@ class HomeController extends Controller
                 'development_company_id' => $developerId,
                 'unit_type_id' => $unitTypeId
             ]);
+        }else{
+            $units = $filterUnitsQuery->limit(3)->get();
         }
-        return view_front('web.filter_result', compact('development_companies', 'units'));
+        return view('web.filter_result', compact('development_companies', 'units'));
     }
 
     public function about()
     {
-        return view_front('web.about');
+        return view('web.about');
     }
 
     public function consultancy()
     {
         $districts = District::query()->get();
         $projects = Project::query()->get();
-        return view_front('web.consultancy', compact('districts', 'projects'));
+        $unitTypes = UnitType::query()->get();
+        return view('web.consultancy', compact('districts', 'projects','unitTypes'));
+    }
+
+    public function submitConsultancy(Request $request)
+    {
+        UserConsultation::query()->create([
+                'user_id' => $request->user_id,
+                'project_id' => $request->project_id,
+                'district_id' => $request->project_id,
+            ]);
+        return response()->json('success');
     }
 
     public function contactUs(Request $request)

@@ -210,6 +210,14 @@ class UnitController extends Controller
                     ]);
                 }
             }
+            $unitGallery = $request->unit_gallery;
+            if ($unitGallery && count($unitGallery) && is_array($unitGallery)){
+                foreach ($unitGallery as $image){
+                    $unit->gallery()->create([
+                        'image' => $image
+                    ]);
+                }
+            }
             return redirect(route('unit.edit', $id));
         } catch (\Exception $e) {
             \Log::info($e->getTraceAsString());
