@@ -146,8 +146,12 @@
                             <div class="consultancy-square d-none d-sm-block">
                                 <span class="square-acc"></span>
                                 <span class="white-color">{{__('front.units.interested')}}</span>
-                                <span class="white-color">{{__('front.units.ask_about_this_project_details')}}</span>
-                                <a href="#"><span class="ovak-button my-3 ask">{{__('front.units.ask_now')}}</span></a>
+                                <span class="white-color">{{__('front.projects.ask_about_this_project_details')}}</span>
+                                <a href="javascript:void(0)">
+                                    <span class="ovak-button my-3 trigger-ask @if(Auth::check()) ask @else login @endif"
+                                          data-entity-id="{{$unit->id}}"
+                                          data-entity-type="unit"
+                                          data-entity-name="{{$unit->project->name}}">{{__('front.units.ask_now')}}</span></a>
                             </div>
                         </div>
                     </div>
