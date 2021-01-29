@@ -1,41 +1,41 @@
 @extends('web.layout')
 
 @section('title')
-<title>{{__('front.head.title.name')}} | {{__('front.header.consultancy')}}</title>
+    <title>{{__('front.head.title.name')}} | {{__('front.header.consultancy')}}</title>
 @endsection
 
 
 @section('pre_header_content')
-<div class="h-75 w-100 d-flex justify-content-center align-items-center">
-    <div>
-        <h2 class="white-color header-letter-spacing">{{__('front.consultancy.consultancy')}}</h2>
-        <h2 class="green-color">{{__('front.consultancy.service')}} <span class="header-line"></span></h2>
+    <div class="h-75 w-100 d-flex justify-content-center align-items-center">
+        <div>
+            <h2 class="white-color header-letter-spacing">{{__('front.consultancy.consultancy')}}</h2>
+            <h2 class="green-color">{{__('front.consultancy.service')}} <span class="header-line"></span></h2>
+        </div>
     </div>
-</div>
 @endsection
 
 @section('content')
-@include('web.partials.inner_pages_header')
+    @include('web.partials.inner_pages_header')
 
-<section id="consult" class="consult">
-    <div class="container">
-        <div class="my-5 text-direction">
-            <h2 class="section-first-header letter-spacing"><span>{{__('front.consultancy.consult')}}</span></h2>
-            <h2 class="section-second-header"><span class="letter-spacing">{{__('front.head.title.name')}}</span> <span class="header-line"></span></h2>
+    <section id="consult" class="consult">
+        <div class="container">
+            <div class="my-5 text-direction">
+                <h2 class="section-first-header letter-spacing"><span>{{__('front.consultancy.consult')}}</span></h2>
+                <h2 class="section-second-header"><span class="letter-spacing">{{__('front.head.title.name')}}</span> <span class="header-line"></span></h2>
+            </div>
         </div>
-    </div>
-    <div class="about-service">
-        <div class="service-background py-5">
-            <div class="service-details my-5">
-                <div class="container">
-                    <h2 class="ovak-font white-color text-uppercase text-center">{{__('front.consultancy.form.title')}}</h2>
-                    <div class="consultation d-flex justify-content-center align-items-center">
-                        <div class="col-sm-8 col-12">
-                            <form action="{{route('submit.consultancy')}}" id="consultancy-form" method="post">
-                                {{csrf_field()}}
-                                {{method_field('post')}}
-                                <div class="consultation-background col-12 py-5">
-                                    <div>
+        <div class="about-service">
+            <div class="service-background py-5">
+                <div class="service-details my-5">
+                    <div class="container">
+                        <h2 class="ovak-font white-color text-uppercase text-center">{{__('front.consultancy.form.title')}}</h2>
+                        <div class="consultation d-flex justify-content-center align-items-center">
+                            <div class="col-sm-8 col-12">
+                                <form action="{{route('submit.consultancy')}}" id="consultancy-form" method="post">
+                                    {{csrf_field()}}
+                                    {{method_field('post')}}
+                                    <div class="consultation-background col-12 py-5">
+                                    <div class="my-5">
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-6 col-8">
                                                 <div class="custom-select">
@@ -62,24 +62,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="container-fluid">
-                                            <div class="row d-flex justify-content-center mt-3 w-100">
-                                                <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center">
-                                                    <select id="FirstProject" class="" name="first_project" required>
-                                                        <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
-                                                        @foreach($projects as $project)
+                                        <div class="row d-flex justify-content-center mt-3">
+                                            <div class="col-12 col-sm-3 d-sm-block mt-3 mt-sm-0 d-flex justify-content-center">
+                                                <select id="FirstProject" name="first_project" required>
+                                                    <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
+                                                    @foreach($projects as $project)
                                                         <option value="{{$project->id}}">{{$project->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="col-12 col-sm-3 d-sm-block mt-3 mt-sm-0 d-flex justify-content-center">
-                                                    <select id="SecondProject" class="" name="second_project" required>
-                                                        <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
-                                                        @foreach($projects as $project)
-                                                        <option value="{{$project->id}}">{{$project->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div>
+
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
@@ -87,31 +80,31 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section id="install" class="installment">
-    <div class="container">
-        <div class="my-5 text-direction">
-            <h2 class="section-second-header letter-spacing"><i class="fa fa-calculator gold-color"> </i><span> {{__('front.consultancy.installment.calculator')}}</span> <span class="header-line"></span></h2>
+    </section>
+    <section id="install" class="installment">
+        <div class="container">
+            <div class="my-5 text-direction">
+                <h2 class="section-second-header letter-spacing"><i class="fa fa-calculator gold-color"> </i><span> {{__('front.consultancy.installment.calculator')}}</span> <span class="header-line"></span></h2>
+            </div>
         </div>
-    </div>
-    <div class="about-service">
-        <div class="service-background">
-            <div class="service-details my-5 d-flex justify-content-center py-5">
-                <div class="col-sm-8 col-12">
-                    <div class="consultation-background py-5">
-                        <div class="container">
-                            <div class="col-12">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-8 col-12">
-                                        <form id="installment-form">
-                                            {{csrf_field()}}
+        <div class="about-service">
+            <div class="service-background">
+                <div class="service-details my-5 d-flex justify-content-center py-5">
+                    <div class="col-sm-8 col-12">
+                        <div class="consultation-background py-5">
+                            <div class="container">
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-8 col-12">
+                                            <form id="installment-form">
+                                                {{csrf_field()}}
                                             <div class="row">
                                                 <div class="col-sm-6 col-9">
                                                     <h2 class="ovak-font gold-color"> {{__('front.consultancy.installment.form.property_price')}}</h2>
@@ -121,7 +114,8 @@
                                                 </div>
                                                 <div class="col-sm-12 mt-3">
                                                     <h4 class="white-color text-uppercase bold ovak-font">{{__('front.consultancy.installment.form.total_amount')}}</h4>
-                                                    <input name="installment-total-amount" type="text" placeholder="{{__('front.consultancy.installment.form.total_amount_placeholder')}}" />
+                                                    <input name="installment-total-amount" type="text"
+                                                           placeholder="{{__('front.consultancy.installment.form.total_amount_placeholder')}}" />
                                                 </div>
                                             </div>
                                             <div class="col-12 p-0 mt-3">
@@ -131,11 +125,17 @@
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.amount')}}</h4>
-                                                        <input name="installment-down-payment-amount" onkeyup="convertDownPayment(event)" onchange="convertDownPayment(event)" type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                                        <input name="installment-down-payment-amount"
+                                                               onkeyup="convertDownPayment(event)"
+                                                               onchange="convertDownPayment(event)"
+                                                               type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
                                                     </div>
                                                     <div class="col-6">
                                                         <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.percent')}}</h4>
-                                                        <input type="text" name="installment-down-payment-percentage" onkeyup="convertDownPayment(event)" onchange="convertDownPayment(event)" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                                        <input type="text" name="installment-down-payment-percentage"
+                                                               onkeyup="convertDownPayment(event)"
+                                                               onchange="convertDownPayment(event)"
+                                                               placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -149,10 +149,14 @@
                                             <div class="col-sm-8 col-12 mt-3 p-0">
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <button type="submit" onclick="calculateInstallment(event)" class="ovak-button w-100 py-2 text-center text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
+                                                        <button type="submit"
+                                                                onclick="calculateInstallment(event)"
+                                                                class="ovak-button w-100 py-2 text-center text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
                                                     </div>
                                                     <div class="col-6">
-                                                        <button type="submit" class="ovak-button py-2 w-100 text-center transperant text-uppercase bold" onclick="clearInstallment(event)">{{__('front.consultancy.installment.form.actions.clear')}}</button>
+                                                        <button type="submit"
+                                                                class="ovak-button py-2 w-100 text-center transperant text-uppercase bold"
+                                                                onclick="clearInstallment(event)">{{__('front.consultancy.installment.form.actions.clear')}}</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,18 +166,18 @@
                                                     <h3 class="white-color bold ovak-font" id="remaining-result"></h3>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <div class="col-12">
-                                        <table id="installment-table" class="hide mt-5">
-                                            <thead>
+                                            </form>
+                                        </div>
+                                        <div class="col-12 mt-5">
+                                            <table id="installment-table" class="hide">
+                                                <thead>
                                                 <tr class="gold-color ovak-font bold text-center text-uppercase">
                                                     <td class="gold-color">{{__('front.consultancy.installment.table.installment_type')}}</td>
                                                     <td class="gold-color">{{__('front.consultancy.installment.table.number')}}</td>
                                                     <td class="gold-color">{{__('front.consultancy.installment.table.amount')}}</td>
                                                 </tr>
-                                            </thead>
-                                            <tbody class="white-color ovak-font bold text-center text-uppercase">
+                                                </thead>
+                                                <tbody class="white-color ovak-font bold text-center text-uppercase">
                                                 <tr>
                                                     <td>
                                                         {{__('front.consultancy.installment.table.monthly_installment')}} =
@@ -201,17 +205,20 @@
                                                         <span class="table-num" id="yearly"></span>
                                                     </td>
                                                 </tr>
-                                            </tbody>
-                                        </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="margin-top-50 margin-bottom-80">
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
+

@@ -161,6 +161,15 @@ class HomeController extends Controller
 
     public function logUserAsking(Request $request)
     {
+        if ($request->entity_type === 'project'){
+            $request->merge(['project_id' => $request->entity_id]);
+            $request->request->remove('entity_type');
+            $request->request->remove('entity_id');
+        }else{
+            $request->merge(['unit_id' => $request->entity_id]);
+            $request->request->remove('entity_type');
+            $request->request->remove('entity_id');
+        }
         if (!UserAsking::query()->where($request->all())->exists()){
             UserAsking::query()->create($request->all());
         }

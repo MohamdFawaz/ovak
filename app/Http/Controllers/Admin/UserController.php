@@ -107,7 +107,7 @@ class UserController extends Controller
 
     public function askingList()
     {
-        $askings = UserAsking::query()->with(['user','project'])->get();
+        $askings = UserAsking::query()->with(['user','project','unit'])->get();
         return view('admin.user.askings',compact('askings'));
     }
     public function newsletterSubscription()

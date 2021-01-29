@@ -26,6 +26,10 @@
         <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/custom.css')}}">
         <link rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/bootstrap.min.css')}}">
     @endif
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css')}}">
     <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css')}}">

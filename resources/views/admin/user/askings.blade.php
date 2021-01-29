@@ -17,6 +17,7 @@
                         <th>User Mobile</th>
                         <th>User Email</th>
                         <th>Project Name</th>
+                        <th>Unit Name</th>
                         <th>Date</th>
                     </tr>
                     </thead>
@@ -26,7 +27,8 @@
                         <td>{{$asking->user->name}}</td>
                         <td>{{$asking->user->phone}}</td>
                         <td>{{$asking->user->email}}</td>
-                        <td>{{$asking->project->name}}</td>
+                        <td>{{$asking->project->name ?? "-"}}</td>
+                        <td>{{$asking->unit->name ?? "-"}}</td>
                         <td>{{$asking->created_at}}</td>
                     </tr>
                     @endforeach
