@@ -16,7 +16,7 @@
                 <ul class="navbar-nav s-ul ml-auto mb-2 mb-lg-0">
                     @if(Auth::check())
                         <li class="nav-item"><a href="javascript:void(0)" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>{{Auth::user()->name}}</a></li>
-                        <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> {{__('front.header.logout')}}</a></li>
+                        <li class="logout"><i class="fa fa-user-o" aria-hidden="true"></i><a href="{{route('user.logout')}}"> {{__('front.header.logout')}}</a></li>
                     @else
                         <li class="nav-item"><a href="tel:{{config('settings.mobile')}}" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>{{config('settings.mobile')}} </a></li>
                         <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="{{route('user.logout')}}"> {{__('front.header.login')}}</a></li>

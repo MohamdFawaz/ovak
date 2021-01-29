@@ -52,7 +52,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="text-center margin-top-25"><a class="gold-color-hovarable" id="show">{{__('front.actions.show_more')}}</a></div>
+{{--        <div class="text-center margin-top-25"><a class="gold-color-hovarable" id="show">{{__('front.actions.show_more')}}</a></div>--}}
     </section>
     <section id="developers" class="developers">
         <div class="col-sm-12 no-padding-xs">

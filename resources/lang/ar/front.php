@@ -302,8 +302,16 @@ return [
         ],
         'success' => [
             'header' => 'Compeleted successfully ',
-
+        ],
+        'email_password' => [
+            'title' => 'ادخل الرمز',
+            'enter_the_code_you_received_on_your_mail' => 'أدخل الرمز اللذي تم ارسالة ',
+            'or_you_can_sign_up_now' => 'او يمكنك تسجيل الدخول الان',
+            'sign_up' => 'تسجيل الدخول',
+            'reset_password' => 'إعادة تعيين كلمة المرور',
+            'submit' => 'تعيين كلمة المرور',
         ]
+
 
     ],
     'footer' => [

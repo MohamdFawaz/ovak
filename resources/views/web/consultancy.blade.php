@@ -76,7 +76,11 @@
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="ovak-button py-2 px-4 mt-4"> {{__('front.consultancy.form.action.submit')}}</button>
+                                            @if(Auth::check())
+                                                <button class="ovak-button py-2 px-4 mt-4"> {{__('front.consultancy.form.action.submit')}}</button>
+                                            @else
+                                                <a class="ovak-button py-2 px-4 mt-4 login text-white"> {{__('front.consultancy.form.action.submit')}}</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -149,9 +153,17 @@
                                             <div class="col-sm-8 col-12 mt-3 p-0">
                                                 <div class="row">
                                                     <div class="col-6">
+                                                        @if(Auth::check())
                                                         <button type="submit"
                                                                 onclick="calculateInstallment(event)"
-                                                                class="ovak-button w-100 py-2 text-center text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
+                                                                class="ovak-button w-100 py-2 text-center text-uppercase bold ">
+                                                            {{__('front.consultancy.installment.form.actions.calculate')}}
+                                                        </button>
+                                                        @else
+                                                        <button onclick="return false;" class="ovak-button w-100 py-2 text-center text-uppercase login bold text-white">
+                                                            {{__('front.consultancy.installment.form.actions.calculate')}}
+                                                        </button>
+                                                        @endif
                                                     </div>
                                                     <div class="col-6">
                                                         <button type="submit"

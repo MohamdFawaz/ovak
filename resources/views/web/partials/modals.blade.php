@@ -77,20 +77,19 @@
             <div class="user-modal">
                 <div class="modal-contents h-100">
                     <div class="container-fluid h-100">
-                        <form class="h-100">
+                        <form class="h-100" id="forgot-password-form" method="post">
                             <div class="row h-100">
                                 <div class="col-sm-6 h-100">
                                     <div class="d-flex justify-content-center align-items-center h-100">
                                         <div>
-                                            <form id="forgot-password-form" method="post">
-                                                {{csrf_field()}}
+                                            {{csrf_field()}}
+                                            {{method_field('post')}}
                                             <div class="modal-close d-xs-block d-sm-none"><i class="fa fa-times"></i></div>
                                             <h3 class="green-color ovak-font">{{__('front.forget_password.reset_password')}}</h3>
                                             <input name="email" id="forgot-password-mail" type="email" placeholder="{{__('front.login.email')}}" required />
                                             <div class="mt-3">
                                                 <button class="ovak-dark-button pointer open-change-password-modal">{{__('front.forget_password.reset_password')}}</button>
                                             </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -118,17 +117,17 @@
             <div class="user-modal">
                 <div class="modal-contents h-100">
                     <div class="container-fluid h-100">
-                        <form class="h-100">
+                        <form class="h-100" id="verify-code" method="post">
                             <div class="row h-100">
                                 <div class="col-sm-6 p-0">
                                     <div class="d-none d-sm-block">
                                         <img src="{{asset('static/assets/images/login-form.png')}}" class="img-fluid modal-image" alt="" />
                                         <div class="modal-image-ovarlay">
-                                            <h2>Enter the Code</h2>
-                                            <p>Enter the code you recieved on your E-mail</p>
-                                            <p>Or you can sign up now </p>
+                                            <h2>{{__('front.modals.email_password.title')}}</h2>
+                                            <p>{{__('front.modals.email_password.enter_the_code_you_received_on_your_mail')}}</p>
+                                            <p>{{__('front.modals.email_password.or_you_can_sign_up_now')}} </p>
                                             <div class="margin-top-25">
-                                                <a class="ovak-button password-change-modal">Sign up</a>
+                                                <a class="ovak-button password-change-modal">{{__('front.modals.email_password.sign_up')}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -137,10 +136,13 @@
                                     <div class="d-flex justify-content-center align-items-center h-100">
                                         <div>
                                             <div class="modal-close"><i class="fa fa-times"></i></div>
-                                            <h3 class="green-color ovak-font">Reset Password</h3>
-                                            <input name="Code" type="text" placeholder="Verification Code" required />
+                                            <h3 class="green-color ovak-font">{{__('front.modals.email_password.reset_password')}}</h3>
+                                            {{csrf_field()}}
+                                            <input name="code" id="verify_code" type="text" placeholder="{{__('front.modals.email_password.sign_up')}}" required />
+                                            <span class="small text-red verify-code-error"></span>
                                             <div class="mt-3">
-                                                <button class="ovak-dark-button pointer open-change-password-modal">Reset Password</button>
+                                                <button class="ovak-dark-button pointer open-change-password-modal">
+                                                    {{__('front.modals.email_password.submit')}}</button>
                                             </div>
                                         </div>
                                     </div>

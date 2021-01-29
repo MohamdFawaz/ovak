@@ -137,7 +137,7 @@
                                 <span class="square-acc"></span>
                                 <span class="white-color">{{__('front.units.interested')}}</span>
                                 <span class="white-color">{{__('front.units.ask_about_this_unit_details')}}</span>
-                                <a href="#"><span class="ovak-button my-3 ask">{{__('front.units.ask_now')}}</span></a>
+                                <a href="javascript:void(0)"><span class="ovak-button my-3 trigger-ask @if(Auth::check()) ask @else login @endif" data-entity-id="{{$unit->id}}" data-entity-type="unit">{{__('front.units.ask_now')}}</span></a>
                             </div>
                         </div>
                     </div>

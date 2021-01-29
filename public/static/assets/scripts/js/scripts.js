@@ -327,6 +327,7 @@ $(document).ready(function () {
     });
     $('#forgot-password-form').submit(function (e) {
         e.preventDefault();
+        console.log('test');
         let form = new FormData();
         let email = $(this).find('#forgot-password-mail').val();
         let _token = $(this).find('input[name="_token"]').val();
@@ -340,7 +341,7 @@ $(document).ready(function () {
             headers: {'Content-Type': 'application/json' }
         }).then(function (response) {
             $(".password-modal").addClass("display-none")
-            $(".Verification-modal").removeClass("display-none")
+            $(".password-token-modal").removeClass("display-none")
             // window.location.reload();
         }).catch(error => {
             console.error(error);
@@ -498,21 +499,23 @@ $(document).ready(function () {
     }
 
     $('.trigger-ask').on('click',function (e) {
-        let projectId = $(this).data('projectId');
-        if (localStorage.getItem('currentUser') && projectId !== undefined){
+        let entityId = $(this).data('entityId');
+        let entityType = $(this).data('entityType');
+        if (localStorage.getItem('currentUser') && entityId !== undefined){
             let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            logUserAsking(currentUser,projectId);
+            logUserAsking(currentUser,entityId, entityType);
         }else{
             e.stopPropagation();
             $('#login').trigger('click');
         }
     });
 
-    logUserAsking = (currentUser,projectId) => {
+    logUserAsking = (currentUser,entityId, entityType) => {
         let form = new FormData();
         let userId = currentUser.id;
         form.append('user_id',userId);
-        form.append('project_id',projectId);
+        form.append('entity_id',entityId);
+        form.append('entity_type',entityType);
         axios({
             method: 'post',
             url: `${logUserAskingUri}`,
@@ -563,6 +566,4 @@ $(document).ready(function () {
         }
     })
 })
-
-document.getElementById("year").innerHTML = new Date().getFullYear();
 

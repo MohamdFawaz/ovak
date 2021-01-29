@@ -19,10 +19,6 @@
     <meta property="twitter:description" content="Present the perfect advise for the real estate seekers and the consultancy you need Own variable Advanced knowledge">
     <meta property="twitter:image" content="{{asset('static/assets/images/logo.png')}}">
     <meta property="twitter:url" content="https//www.ovakestate.com">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css')}}">
     @if(app()->getLocale() == 'ar')
         <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-rtl/custom.css')}}">
         <link rel="stylesheet" href="{{asset('static/assets/styles/css-rtl/bootstrap.min.css')}}">
@@ -30,6 +26,10 @@
         <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/custom.css')}}">
         <link rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/bootstrap.min.css')}}">
     @endif
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css')}}">
     @yield('css')
 </head>

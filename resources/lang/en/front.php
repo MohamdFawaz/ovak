@@ -298,7 +298,14 @@ return [
         ],
         'success' => [
             'header' => 'Compeleted successfully ',
-
+        ],
+        'email_password' => [
+            'title' => 'Enter the Code',
+            'enter_the_code_you_received_on_your_mail' => 'Enter the code you received on your E-mail',
+            'or_you_can_sign_up_now' => 'Or you can sign up now',
+            'sign_up' => 'Sign up',
+            'reset_password' => 'Reset Password',
+            'submit' => 'Reset Password',
         ]
 
     ],
