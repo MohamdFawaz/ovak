@@ -14,7 +14,18 @@
 
 @section('content')
     @include('web.partials.inner_pages_header')
-
+    <div class="col-sm-12 white-background gold-border-bottom py-3 p-0 display-none project-menu">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <a class="ovak-button ask py-2" href="#">{{__('front.units.ask_now')}}</a>
+                    </div>
+                    <div class="col-6 p-0">
+                        <a class="ovak-button py-2 green-background" href="{{config('settings.whatsapp_link')}}"><i class="fab fa-whatsapp"></i> {{__('front.whatsapp')}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <section class="single-unit">
         <section id="filter" class="ovak-filter">
             <div class="container">
@@ -37,7 +48,6 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
                                 <div class="filter-borders">
                                     <div class="custom-select">
@@ -103,7 +113,7 @@
                                     <input type="text" name="price_from">
                                     <span class="gold-color inner-arrow"></span>
                                     <input type="text" name="price_to">
-                                    <span class="gold-color">/  {{__('front.consultancy.installment.form.currency')}} </span>
+                                    <span class="gold-color">/ {{__('front.consultancy.installment.form.currency')}} </span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10 text-direction">
@@ -112,7 +122,7 @@
                                     <input type="text" name="area_from">
                                     <span class="gold-color inner-arrow"></span>
                                     <input type="text" name="area_to">
-                                    <span class="gold-color">/ M<sup>2</sup> </span>
+                                    <span class="gold-color">/ {{__('front.consultancy.installment.form.metere')}}<sup>2</sup> </span>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +146,7 @@
                             <div class="consultancy-square d-none d-sm-block">
                                 <span class="square-acc"></span>
                                 <span class="white-color">{{__('front.units.interested')}}</span>
-                                <span class="white-color">{{__('front.units.ask_about_this_unit_details')}}</span>
+                                <span class="white-color">{{__('front.units.ask_about_this_project_details')}}</span>
                                 <a href="#"><span class="ovak-button my-3 ask">{{__('front.units.ask_now')}}</span></a>
                             </div>
                         </div>
@@ -201,7 +211,6 @@
         @endif
     </div>
 @endsection
-
 @section('js')
     <script src="{{asset('static/assets/scripts/js/ninja-slider.js')}}"></script>
     <script>

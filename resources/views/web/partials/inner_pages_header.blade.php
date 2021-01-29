@@ -15,18 +15,17 @@
                 </ul>
                 <ul class="navbar-nav s-ul ml-auto mb-2 mb-lg-0">
                     @if(Auth::check())
-                        <li class="nav-item"><a href="javascript:void(0)" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>{{Auth::user()->name}}</a></li>
-                        <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="#"> {{__('front.header.logout')}}</a></li>
+                    <li class="nav-item"><a href="javascript:void(0)">{{Auth::user()->name}}</a></li>
+                    <li><i class="fas fa-sign-out-alt"></i></i><a href="{{route('user.logout')}}"> {{__('front.header.logout')}}</a></li>
                     @else
-                        <li class="nav-item"><a href="tel:{{config('settings.mobile')}}" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i>{{config('settings.mobile')}} </a></li>
-                        <li class="login"><i class="fa fa-user-o" aria-hidden="true"></i><a href="{{route('user.logout')}}"> {{__('front.header.login')}}</a></li>
+                    <li class="nav-item"><a dir="ltr" href="tel:{{config('settings.mobile')}}" class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> {{config('settings.mobile')}} </a></li>
+                    <li class="login"><i class="fas fa-user" aria-hidden="true"></i><a href="javascript:void(0)"> {{__('front.header.login')}}</a></li>
                     @endif
                     @if(App::getLocale() == 'ar')
-                        <li><i class="fa fa-globe" aria-hidden="true"></i><a href="{{route('change.locale', 'en')}}"> English</a></li>
+                    <li><i class="fa fa-globe" aria-hidden="true"></i><a href="{{route('change.locale', 'en')}}"> English</a></li>
                     @else
-                        <li><i class="fa fa-globe" aria-hidden="true"></i><a href="{{route('change.locale','ar')}}"> العربية</a></li>
+                    <li><i class="fa fa-globe" aria-hidden="true"></i><a href="{{route('change.locale','ar')}}"> العربية</a></li>
                     @endif
-
                 </ul>
             </div>
         </div>
@@ -41,9 +40,10 @@
                             <img class="mobile-menu-logo" src="{{asset('static/assets/images/logo.png')}}" alt="logo" />
                         </div>
                         <div class="col-6 social-links">
-                            <a href="{{config('settings.facebook_link')}}" target="_blank" class="col-sm-3 facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a>
-                            <a href="{{config('settings.instagram_link')}}" target="_blank" class="col-sm-3 instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="{{config('settings.twitter_link')}}" target="_blank" class="col-sm-3"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="{{config('settings.facebook_link')}}" target="_blank" class="col-sm-2 p-0 facebook"><i class="fab fa-facebook" aria-hidden="true"> </i></a>
+                            <a href="{{config('settings.instagram_link')}}" target="_blank" class="col-sm-2 p-0 instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="{{config('settings.twitter_link')}}" target="_blank" class="col-sm-2 p-0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="{{config('settings.whatsapp_link')}}" target="_blank" class="col-sm-3 whatsapp p-0"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -60,16 +60,16 @@
                     <div class="col-sm-12">
                         <ul>
                             @if(Auth::check())
-                                <li><a href="javascript:void(0)" class="phone">{{Auth::user()->name}}</a></li>
-                                <li><a href="{{route('user.logout')}}">{{__('front.header.logout')}}</a></li>
+                            <li><a href="javascript:void(0)" class="phone">{{Auth::user()->name}}</a></li>
+                            <li><a href="{{route('user.logout')}}">{{__('front.header.logout')}}</a></li>
                             @else
-                                <li><a href="tel:{{config('settings.mobile')}}" class="phone">{{config('settings.mobile')}}</a></li>
-                                <li class="login"><a href="#">{{__('front.header.login')}}</a></li>
+                            <li><a href="tel:{{config('settings.mobile')}}" class="phone">{{config('settings.mobile')}}</a></li>
+                            <li class="login"><a href="#">{{__('front.header.login')}}</a></li>
                             @endif
                             @if(App::getLocale() == 'ar')
-                                <li><a href="{{route('change.locale','en')}}">English</a></li>
+                            <li><a href="{{route('change.locale','en')}}">English</a></li>
                             @else
-                                <li><a href="{{route('change.locale','ar')}}">العربية</a></li>
+                            <li><a href="{{route('change.locale','ar')}}">العربية</a></li>
                             @endif
                         </ul>
                         <div class="clearfix"></div>
@@ -78,10 +78,11 @@
             </div>
         </div>
     </div>
-    @yield('pre_header_content')
+    <div class="pages-header-size h-100 w-75 m-auto">
+        @yield('pre_header_content')
+    </div>
 </div>
-
 <div class="links-carrier">
     <span class="calculator"><i class="fa fa-calculator"></i></span>
-        <span class="calculator-link"><a href="{{route('consultancy')}}"> {{__('front.header.calculate_your_installments')}}</a></span>
+    <span class="calculator-link"><a href="{{route('consultancy')}}"> {{__('front.header.calculate_your_installments')}}</a></span>
 </div>

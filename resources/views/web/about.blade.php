@@ -50,8 +50,8 @@
                     <div class="container-fluid">
                         <div class="row d-flex align-items-center">
                             <div class="service-details-header w-100 h-100 col-lg-6 col-md-4 col-sm-2 col-xs-12 text-direction">
-                                <h2 class="section-first-header letter-spacing"><span>{{__('front.about.our')}}</span> <span class="header-line"></span></h2>
-                                <h2 class="section-second-header ovak-font letter-spacing"><span class="white-color">{{__('front.about.services')}}</span></h2>
+                                <h2 class="section-first-header letter-spacing"><span>{{__('front.about.our')}}</span></h2>
+                                <h2 class="section-second-header ovak-font letter-spacing"><span class="white-color">{{__('front.about.services')}}</span><span class="header-line"></span></h2>
                             </div>
                             <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 w-100 h-100 text-direction">
                                 <div class="col-sm-12 mb-5">
@@ -142,10 +142,10 @@
                                 <form method="post" action="{{route('contact')}}">
                                     {{method_field('post')}}
                                     {{csrf_field()}}
-                                    <input type="text" name="name" placeholder="Name" required />
-                                    <input type="email" name="email" placeholder="Email" required />
-                                    <input type="tel" name="phone" placeholder="Phone Number" required />
-                                    <textarea placeholder="Message" name="message"></textarea>
+                                    <input type="text" name="name" placeholder="{{__('front.name')}}" required />
+                                    <input type="email" name="email" placeholder="{{__('front.register.email_address')}}" required />
+                                    <input type="tel" name="phone" placeholder="{{__('front.register.phone_number')}}" required />
+                                    <textarea placeholder="{{__('front.contact_message')}}" name="message"></textarea>
                                     <button type="submit" class="ovak-dark-button">{{__('front.about.form.submit')}}</button>
                                 </form>
                             </div>

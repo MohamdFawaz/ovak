@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'contact_message'=> 'نص الرسالة',
+    'name' => 'الأسم',
+    'whatsapp' =>'واتساب',
+    'confirm' => 'تأكيد',
+    'compeleted_successfully' => 'تم بنجاح',
     'head' =>
         [
             'title' =>
@@ -88,7 +93,7 @@ return [
             'projects' => 'المشاريع',
             'developers' => 'المطورين',
             'view_all_developers' => 'عرض جميع المطورين',
-            'view_all_projects' => 'عرض جميع العقارات',
+            'view_all_projects' => 'عرض جميع المشروعات',
             'similar_developers' => 'مطورين مشابهين'
         ],
     'filter' =>
@@ -100,27 +105,26 @@ return [
             'search' => 'بحث',
             'finishing_type' => 'نوع التشطيب',
             'title' => 'إبحث عن عقارك',
-            'all_project_types' => 'كل انواع المشروع',
+            'all_project_types' => 'كل انواع المشروعات',
             'all_district_location' => 'كل المواقع',
             'all_development_companies' => 'كل الشركات المطورة',
             'all_finish_types' => 'كل انواع التشطيب',
             'all_unit_types' => 'كل انوع الوحدات',
-            'all_delivery_dates' => 'كل تاواريخ التسليم',
-            'price_range' => 'نطاق الاسعار',
-            'area_range' => 'نطاق المساحة',
-            'to' => 'الى'
+            'all_delivery_dates' => 'كل مواعيد الاستلام',
+            'price_range' => 'السعر',
+            'area_range' => 'المساحة',
         ],
     'form' =>
         [
-            'sort_by' => 'ترتيب حسب',
+            'sort_by' => ' العرض حسب الموقع',
             'show_all' => 'عرض الكل'
         ],
     'home' =>
         [
-            'relax_and_let' => 'استرخ واترك',
-            'do_the_rest' => 'تفعل الباقي',
-            'consultancy' => 'الاستشارات',
-            'service' => 'خدمات',
+            'relax_and_let' => 'خدمة الاستشارات العقارية',
+            'do_the_rest' => 'أفضل اختيار',
+            'consultancy' => '',
+            'service' => '',
             'learn_more' => 'أعرف أكثر',
             'vision' => [
                 'we_find_you' => 'نحن نجد لك',
@@ -133,19 +137,20 @@ return [
                 'mission_and_vision' => 'مهمتنا و رؤيتنا'
             ],
             'project' => [
-                'projects' => 'المشروعات',
-                'featured' => 'المميزة',
+                'featured' => 'المشروعات',
+                'projects' => 'المميزة',
             ],
             'subscription' => [
                 'subscribe' => 'إشترك لمعرفة',
+                'subscribe_button'=> 'اشترك',
                 'market_news' => 'أخبار سوق العقارات',
                 'enter_email_placeholder' => 'ادخل البريد الألكتروني',
-                'title' => ' بضغطة واحده، ستصلك أحدث أخبار سوق العقارات المحلي و احدث
+                'title' => ' بنقره واحده، ستصلك أحدث أخبار سوق العقارات المحلي و احدث
                     العروض المتاحة.'
             ],
             'developers' => [
-                'projects' => 'العقاريين',
-                'developers' => 'المطورين',
+                'developers' => 'العقاريين',
+                'projects' => 'المطورين',
             ]
         ],
     'projects' =>
@@ -153,8 +158,9 @@ return [
             'district' => 'منطقة',
             'property_type' => 'نوع العقار',
             'one_of' => 'واحده من ',
-            'projects' => 'كل المشاريع',
+            'projects' => 'جميع المشروعات',
             'project' => 'مشروع',
+            'projects' => 'مشروعات',
             'interested' => 'مهتم',
             'ask_about_this_project_details' => 'اسأل عن تفاصيل هذا المشروع',
             'ask_now' => 'اسأل الآن',
@@ -163,9 +169,6 @@ return [
             'utilities' => 'خدمات',
             'previous' => 'السابق',
             'next' => 'التالى',
-            'list_developers_paragraph' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-             justo duo dolores et ea rebum.',
         ],
     'units' => [
         'overview' => 'نظرة عامة',
@@ -180,33 +183,34 @@ return [
         ],
     'consultancy' =>
         [
-            'consult' => 'استشار',
+            'consult' => 'استشر',
             'consultancy' => 'خدمة الاستشارات العقارية',
             'service' => 'أفضل اختيار',
             'form' => [
-                'title' => 'دعنا نجد لك الخيار الأمثل',
+                'title' => 'دعنا نحدد لك الإختيار الأمثل',
                 'choices' => [
                     'residential' => 'سكني',
                     'commercial' => 'تجاري',
                     'select_project' => 'حدد المشروع'
                 ],
                 'action' => [
-                    'submit' => 'استشر الآن'
+                    'submit' => 'استشرنا الآن'
                 ]
             ],
             'installment' => [
                 'installment' => 'أقساط',
-                'calculator'=>'آلة حاسبة',
+                'calculator'=>'احسب اقساطك',
                 'form' => [
                     'property_price' => 'سعر العقار',
                     'currency' => 'ج.م',
+                    'metere' => 'متر',
                     'total_amount' => 'القيمة الكلية',
                     'total_amount_placeholder' => 'القيمة بالجنية المصري',
-                    'down_payment' => 'الدفعة الأولى',
+                    'down_payment' => 'المقدم',
                     'amount' => 'المبلغ',
                     'amount_placeholder' => 'المبلغ بالجنية المصري',
                     'percent' => 'النسبة المئوية',
-                    'installment_period' => 'فترة التقسيط',
+                    'installment_period' => 'مده التقسيط',
                     'years' => 'السنوات',
                     'years_placeholder' => 'ادخل عدد السنوات',
                     'actions' => [
@@ -220,8 +224,8 @@ return [
                     'amount' => 'المبلغ',
                     'number' => 'رقم',
                     'monthly_installment' => 'القسط الشهري',
-                    'quarterly_installment' => 'قسط ربع سنوي',
-                    'semi_annual_installment' => 'القسط نصف السنوي',
+                    'quarterly_installment' => 'القسط الربع سنوي',
+                    'semi_annual_installment' => 'القسط النصف السنوي',
                     'le' => 'ج.م'
                 ]
             ]
@@ -279,8 +283,8 @@ return [
                                     الشركة المطورة المسؤولة عن الوحدة التي قمت بإختيارها ',
         'contact' => 'تواصل',
         'us' => 'معنا',
-        'address' => '٦٠١ النرجس ,التجمع الخامس, القاهرة الجديدة ,القاهرة , مصر',
-        'working_days' => 'الأحد الي الخميس 9 ص-5 م',
+        'address' => ' الحي الثاني 115, المنطقة الرابعة, التجمع الخامس ,مصر',
+        'working_days' => 'الأحد الي الخميس 10 ص-6 م',
         'form' => [
             'submit' => 'ارسل رسالة'
         ]
@@ -300,9 +304,10 @@ return [
             'header' => 'سيقوم أحد مندوبننا بالاتصال بك في أقرب وقت ممكن',
             'sub_header' => 'في خلال 24 ساعة'
         ],
-        'success' => [
-            'header' => 'Compeleted successfully ',
-
+        'password'=> [
+            'Enter_Code' => 'ادخل الرمز',
+            'Enter_Code_Email' => 'برجاء ادخال الرمز الذي تلقيته علي بريدك الألكتروني',
+            'sign_Up_Now '=>'او يمكنك التسجيل الأن',
         ]
 
     ],
@@ -314,19 +319,19 @@ return [
                 'vision_and_mission' => 'رؤيتنا ومهمتنا',
                 'projects' => 'المشروعات',
                 'subscription' => 'الاشتراك',
-                'developers' => 'شركات التطوير'
+                'developers' => 'المطورين'
             ],
             'projects' => [
                 'project' => 'المشروع',
                 'projects' => 'المشروعات',
-                'developers' => 'شركات التطوير'
+                'developers' => 'المطورين'
             ],
             'developers' => [
-                'developers' => 'شركات التطوير'
+                'developers' => 'المطورين'
             ],
             'consultancy' => [
                 'consultancy' => 'استشارات',
-                'consult' => 'استشير',
+                'consult' => 'استشر',
                 'installments' => 'حساب الاقساط',
             ],
             'about_us' => [
@@ -335,10 +340,9 @@ return [
                 'our_services' => 'خدماتنا',
                 'contact_us' => 'تواصل معنا'
             ],
-            'follow_us' => 'تابعنا',
+            'follow_us' => 'تابعنا علي',
             'market_news' => 'أخبار سوق العقارات',
-            'join_mail_listing' => 'انضم لقائمتنا البريدية  ',
-            'name' => 'Ovak',
+            'join_mail_listing' => 'انضم إلينا لتحصل علي كل جديد',
             'Copyrights' => 'حقوق النشر© :year جميع الحقوق محفوظة OVAK.'
         ]
     ]

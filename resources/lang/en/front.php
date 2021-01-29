@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'contact_message'=> 'message',
+    'name' => 'name',
+    'whatsapp' =>'whatsapp',
+    'confirm' => 'confirm',
+    'compeleted_successfully' => 'Compeleted Successfully',
     'head' =>
         [
             'title' =>
@@ -88,7 +93,7 @@ return [
             'projects' => 'Projects',
             'developers' => 'Developers',
             'view_all_developers' => 'View All Developers',
-            'view_all_projects' => 'View all properties',
+            'view_all_projects' => 'View all Projects',
             'similar_developers' => 'Similar Developers'
         ],
     'filter' =>
@@ -101,9 +106,9 @@ return [
             'finishing_type' => 'Finishing Type',
             'title' => 'SEARCH FOR YOUR PROPERTY',
             'all_project_types' => 'All Project Types',
-            'all_district_location' => 'All District Location',
+            'all_district_location' => 'All Districts Location',
             'all_development_companies' => 'All Development Companies',
-            'all_finish_types' => 'All Finish Types',
+            'all_finish_types' => 'All Finishing Types',
             'all_unit_types' => 'All Unit Types',
             'all_delivery_dates' => 'All Delivery Dates',
             'price_range' => 'Price Range',
@@ -112,7 +117,7 @@ return [
         ],
     'form' =>
         [
-            'sort_by' => 'Sort By',
+            'sort_by' => 'Sort By Location',
             'show_all' => 'Show All'
         ],
     'home' =>
@@ -136,6 +141,7 @@ return [
             ],
             'subscription' => [
                 'subscribe' => 'SUBSCRIBE',
+                'subscribe_button' =>'SUBSCRIBE',
                 'market_news' => 'market news',
                 'enter_email_placeholder' => 'Enter email placeholder',
                 'title' => 'Get updated with the newest marketplaces, properties and the latest offers, just with a click'
@@ -152,6 +158,7 @@ return [
             'one_of' => 'One Of ',
             'projects' => 'All Projects',
             'project' => 'Project',
+            'projects' => 'projects',
             'interested' => 'Interested',
             'ask_about_this_project_details' => 'ask about this project details',
             'ask_now' => 'ask now',
@@ -197,6 +204,7 @@ return [
                 'form' => [
                     'property_price' => 'Property Price',
                     'currency' => 'EGP',
+                    'metere' =>'M',
                     'total_amount' => 'Total Amount',
                     'total_amount_placeholder' => 'Amount EGP',
                     'down_payment' => 'Down Payment',
@@ -275,12 +283,11 @@ return [
         appointment with the developer of your chosen unit. ',
         'contact' => 'Contact',
         'us' => 'Us',
-        'address' => '601 , Al Narges - 5th Compound - New Cairo - Cairo - Egypt',
-        'working_days' => 'Sun-Thu 8AM-6PM',
+        'address' => '115 ,2nd Neighborhood 4th - 5th Settlement - New Cairo - Egypt',
+        'working_days' => 'Sun-Thu 11AM-6PM',
         'form' => [
             'submit' => 'Send Message'
         ]
-
     ],
 
     'modals' => [
@@ -296,11 +303,11 @@ return [
             'header' => 'One of our agents is going to contact you as soon as possible',
             'sub_header' => 'Within 24 hours'
         ],
-        'success' => [
-            'header' => 'Compeleted successfully ',
-
+        'password'=> [
+            'Enter_Code' => 'Enter the Code',
+            'Enter_Code_Email' => 'Enter the code you recieved on your E-mail',
+            'sign_Up_Now'=>'Or you can sign up now',
         ]
-
     ],
     'footer' => [
         'menus' => [

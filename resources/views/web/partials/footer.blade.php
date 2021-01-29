@@ -57,24 +57,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-direction">
+                        <div class="text-direction w-100">
                             <div class="col-sm-12 social-links">
-                                <h3>{{__('front.footer.menus.follow_us')}}</h3>
-                                <ul>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    <li> <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"> </i></a></li>
-                                    <li><a href="#" class="google"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                                <h5>{{__('front.footer.menus.follow_us')}}</h3>
+                                <ul class="p-0">
+                                    <li class="p-0"><a href="{{config('settings.instagram_link')}}" class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li class="px-2"><a href="{{config('settings.facebook_link')}}" class="facebook"><i class="fab fa-facebook" aria-hidden="true"> </i></a></li>
+                                    <li class="px-2"><a href="{{config('settings.twitter_link')}}" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li class="p-0"><a href="{{config('settings.whatsapp_link')}}" class="whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-12 margin-top-25">
-                                <h3>{{__('front.footer.menus.market_news')}}</h3>
-                                <p>{{__('front.footer.menus.join_mail_listing')}}<span class="gold-color">{{__('front.footer.menus.name')}}</span></p>
+                                <h5>{{__('front.footer.menus.market_news')}}</h3>
+                                <p>{{__('front.footer.menus.join_mail_listing')}}<span class="gold-color"></span></p>
                             </div>
-                            <div class="col-sm-12 margin-top-25">
+                            <div class="col-sm-5 col-12 margin-top-25">
                                 <div class="subscription-input">
                                     <form>
-                                        <input type="email" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
-                                        <button type="button" class="subscription-button">{{__('front.home.subscription.subscribe')}}</button>
+                                        <input class="border" type="email" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
+                                        <button type="button" class="subscription-button h-100">{{__('front.home.subscription.subscribe_button')}}</button>
                                     </form>
                                 </div>
                             </div>

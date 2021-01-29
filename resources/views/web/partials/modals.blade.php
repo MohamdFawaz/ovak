@@ -53,7 +53,7 @@
                 <div class="col-sm-12 green-background p-3">
                     <div class="px-3 row">
                         <div class="modal-close second-color"><i class="fa fa-times"></i></div>
-                        <div class="gold-color">Project Name</div>
+                        <div class="gold-color">project name</div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center h-100 mt-5">
@@ -62,11 +62,11 @@
                             <i class="far fa-check-circle fa-5x gold-color"></i>
                         </div>
                         <div class="mt-3">
-                            <h4 class="gold-color">Compeleted successfully</h4>
+                            <h4 class="gold-color">{{__('front.compeleted_successfully')}}</h4>
                         </div>
                         <div class="col-12 d-flex justify-content-center py-3">
                             <div class="col-6">
-                                <button class="ovak-dark-button ask-confirm">Confirm</button>
+                                <button class="ovak-dark-button ask-confirm">{{__('front.confirm')}}</button>
                             </div>
                         </div>
                     </div>
@@ -124,11 +124,11 @@
                                     <div class="d-none d-sm-block">
                                         <img src="{{asset('static/assets/images/login-form.png')}}" class="img-fluid modal-image" alt="" />
                                         <div class="modal-image-ovarlay">
-                                            <h2>Enter the Code</h2>
-                                            <p>Enter the code you recieved on your E-mail</p>
-                                            <p>Or you can sign up now </p>
+                                            <h2>{{__('front.modals.password.Enter_Code')}}</h2>
+                                            <p>{{__('front.modals.password.Enter_Code_Email')}}</p>
+                                            <p>{{__('front.modals.password.sign_Up_Now')}}</p>
                                             <div class="margin-top-25">
-                                                <a class="ovak-button password-change-modal">Sign up</a>
+                                                <a class="ovak-button password-change-modal">{{__('front.login.sign_up')}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -137,10 +137,10 @@
                                     <div class="d-flex justify-content-center align-items-center h-100">
                                         <div>
                                             <div class="modal-close"><i class="fa fa-times"></i></div>
-                                            <h3 class="green-color ovak-font">Reset Password</h3>
+                                            <h3 class="green-color ovak-font">{{__('front.forget_password.reset_password')}}</h3>
                                             <input name="Code" type="text" placeholder="Verification Code" required />
                                             <div class="mt-3">
-                                                <button class="ovak-dark-button pointer open-change-password-modal">Reset Password</button>
+                                                <button class="ovak-dark-button pointer open-change-password-modal">{{__('front.forget_password.reset_password')}}</button>
                                             </div>
                                         </div>
                                     </div>

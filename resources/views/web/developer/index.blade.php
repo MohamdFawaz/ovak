@@ -16,7 +16,7 @@
         <div class="container-fluid mt-5">
             <div class="row">
                 @foreach($development_companies as $company)
-                <div class="col-sm-3 my-3">
+                <div class="col-sm-3 col-6 my-3">
                     <a href="{{route('developer.page',$company->slug)}}">
                         <div class="developer-image">
                             <img src="{{$company->image}}" alt="{{$company->slug}}'-developer-image'" />

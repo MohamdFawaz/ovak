@@ -5,18 +5,27 @@
 @endsection
 
 @section('pre_header_content')
-
 <div class="h-75 w-100 d-flex justify-content-center align-items-center">
     <div>
         <h2 class="white-color"> {{$project->name}} <span class="header-line"></span></h2>
         <h2 class="white-color mt-3"> {{$project->district->name}} <span class="header-line"></span></h2>
     </div>
 </div>
-
 @endsection
-
 @section('content')
     @include('web.partials.inner_pages_header')
+    <div class="col-sm-12 white-background gold-border-bottom py-3 p-0 display-none project-menu">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <a class="ovak-button ask py-2" href="#">{{__('front.units.ask_now')}}</a>
+                    </div>
+                    <div class="col-6 p-0">
+                        <a class="ovak-button py-2 green-background" href="{{config('settings.whatsapp_link')}}"><i class="fab fa-whatsapp"></i> {{__('front.whatsapp')}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <section class="single-project">
         <div class="container py-5">
             <div class="container-fluid p-0">
@@ -27,7 +36,11 @@
                         </div>
                     </div>
                     <div class="col-8 p-0">
-                        <h5 class="green-color px-2">{{__('front.projects.one_of')}} {{$project->developer->name}} {{__('front.projects.project')}} </h5>
+                    @if(App::getLocale() == 'ar')
+                        <h5 class="green-color px-2">{{__('front.projects.one_of')}} {{__('front.projects.projects')}} {{$project->developer->name}}</h5>
+                    @else
+                        <h5 class="green-color px-2">{{__('front.projects.one_of')}} {{$project->developer->name}} {{__('front.projects.projects')}}</h5>
+                    @endif
                     </div>
                 </div>
             </div>
@@ -63,7 +76,7 @@
                     <div class="container-fluid mt-5">
                         <div class="row">
                             @foreach($project->amenity as $amenity)
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-5 mt-sm-0">
                                 <img class="img-fluid" src="{{$amenity->image}}" alt="amenity-{{$amenity->id}}" />
                             </div>
                             @endforeach

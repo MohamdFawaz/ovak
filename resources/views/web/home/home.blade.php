@@ -112,7 +112,7 @@
                                 <input type="text" name="area_from">
                                 <span class="gold-color inner-arrow"></span>
                                 <input type="text" name="area_to">
-                                <span class="gold-color">/ M<sup>2</sup> </span>
+                                <span class="gold-color">/ {{__('front.consultancy.installment.form.metere')}}<sup>2</sup> </span>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,6 @@
             </div>
         </div>
     </section>
-
     <section id="vision" class="home-vision mt-5">
         <div class="container-fluid">
             <div class="col-sm-12 p-0">
@@ -133,14 +132,13 @@
                     <div class="col-sm-6 col-xs-12 p-0">
                         <img class="img-fluid" src="{{asset('web/images/home-vision.png')}}" alt="" />
                     </div>
-                    <div class="col-sm-6 d-flex position-relative align-items-center justify-content-center col-xs-12 vision-water-mark p-0">
-                        <div class="vision-img-show"></div>
+                    <div class="col-sm-6 vision-img-show d-flex position-relative align-items-center justify-content-center col-xs-12 vision-water-mark p-0">
                         <div class="vision-text text-direction mt-5">
                             <h2 class="section-first-header header-letter-spacing"><span>{{__('front.home.vision.we_find_you')}}</span> <span class="header-line"> </span></h2>
                             <h2 class="section-second-header letter-spacing no-padding">{{__('front.home.vision.the_perfect_choice')}}</h2>
                             <h4 class="font-size-18 arial-font"><span class="gold-color">{{__('front.home.vision.description_gold')}}</span> <span class="gray-color">{{__('front.home.vision.description_gray')}}</span> </h4>
                             <h4 class="font-size-18 arial-font">{{__('front.home.vision.description')}}</h4>
-                            <div class="margin-top-50 ovak-font"><a href="{{route('about')}}" class="ovak-button">{{__('front.home.vision.mission_and_vision')}}</a></div>
+                            <div class="mt-5"><a href="{{route('about')}}" class="ovak-button">{{__('front.home.vision.mission_and_vision')}}</a></div>
                         </div>
                     </div>
                 </div>
@@ -159,10 +157,9 @@
             @foreach($projects as $project)
             <div class="slider-item">
                 <a href="{{route('projects.page',$project->id)}}">
-                    <!--link lel project-->
                     <div class="slider-image slider-ovarlay">
                         <img class="img-height" src="{{$project->image}}" alt="{{$project->id}}'-image'" />
-                        <a href="{{route('projects.list')}}" class="ovak-button"> {{__('front.actions.show_more')}} <span class="inner-arrow white-color"></span></a>
+                        <a href="{{route('projects.list')}}" class="ovak-button"><span> {{__('front.actions.show_more')}}</span> <span class="inner-arrow white-color"></span></a>
                     </div>
                     <div class="slider-body">
                         <div class="col-sm-12">
@@ -180,7 +177,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="clearfix"></div>
                             <div class="slider-list-text">
                                 <div><span class="gold-color">{{__('front.projects.district')}} :</span><span> {{$project->district->name}}</span></div>
@@ -207,7 +203,7 @@
                                 {{csrf_field()}}
                                 {{method_field('post')}}
                                 <input type="email" maxlength="40" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
-                                <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe')}}</button>
+                                <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe_button')}}</button>
                             </form>
                         </div>
                     </div>

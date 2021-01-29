@@ -1,5 +1,5 @@
 .links-carrier {
-    right: -129px;
+    right: -131px;
 }
 
 .consultancy-square {
@@ -57,17 +57,21 @@
 .float-direction{
     float:left;
 }
-.fa-phone{
-    transform:rotate(90deg);
-}
 .single-item-details .consultancy-square {
    right:50px;
    left:unset;
 }
+.links-carrier a {
+    color: #fff;
+    padding-left: 60px;
+  }
 .single-unit .consultancy-square{
     right:0;
     left:unset;
 }
 .text-direction-reverse{
     text-align:right;
+}
+.select-style{
+    border-left:1px solid #B7893D !important;
 }

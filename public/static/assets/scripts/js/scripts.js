@@ -94,7 +94,7 @@ if (lang == "ltr") {
         dots: false,
         infinite: true,
         variableWidth: true,
-        autoplay: true
+        autoplay: true,
     });
     $(".inner-arrow").append('<i class="fa fa-arrow-right"></i>');
 }
@@ -104,7 +104,7 @@ else if (lang == "rtl") {
         dots: false,
         infinite: true,
         variableWidth: true,
-        autoplay: true
+        autoplay: true,
     });
     $(".inner-arrow").append('<i class="fa fa-arrow-left"></i>');
 }
@@ -563,6 +563,3 @@ $(document).ready(function () {
         }
     })
 })
-
-document.getElementById("year").innerHTML = new Date().getFullYear();
-

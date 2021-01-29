@@ -1,7 +1,16 @@
-.links-carrier {
-    left: -129px;
+.header-letter-spacing{
+    letter-spacing: 0 !important;
 }
-
+.letter-spacing{
+letter-spacing: 0 !important;
+}
+.links-carrier {
+    left: -131px;
+}
+.links-carrier a {
+    color: #fff;
+    padding-right: 74px;
+  }
 .consultancy-square {
     right: 14%;
 }
@@ -15,6 +24,9 @@
 }
 
 .vision-img-show {
+    transform: rotate(180deg);
+}
+.vision-text {
     transform: rotate(180deg);
 }
 .home-vision img{
@@ -71,4 +83,7 @@
 }
 .text-direction-reverse{
     text-align:left;
+}
+.select-style{
+    border-right:1px solid #B7893D  !important;
 }
