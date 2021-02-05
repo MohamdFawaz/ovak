@@ -15,7 +15,9 @@
                     <tr>
                         <th>User ID</th>
                         <th>User Mobile</th>
-                        <th>Project</th>
+                        <th>First Project</th>
+                        <th>Second Project</th>
+                        <th>Unit Type</th>
                         <th>District</th>
                     </tr>
                     </thead>
@@ -24,7 +26,9 @@
                     <tr>
                         <td><a target="_blank" href="{{url('admin/users')}}">{{$user_consultation->user->name}}</a></td>
                         <td>{{$user_consultation->user->phone ?? ""}}</td>
-                        <td>{{$user_consultation->project->name ?? ""}}</td>
+                        <td>{{$user_consultation->firstProject ? $user_consultation->firstProject->name : ""}}</td>
+                        <td>{{$user_consultation->secondProject ? $user_consultation->secondProject->name : ""}}</td>
+                        <td>{{$user_consultation->unitType ? $user_consultation->unitType->name : ""}}</td>
                         <td>{{$user_filter->district->name ?? ""}}</td>
                     </tr>
                     @endforeach

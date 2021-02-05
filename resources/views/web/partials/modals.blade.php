@@ -12,8 +12,8 @@
                                             <div class="modal-close d-xs-block d-sm-none"><i class="fa fa-times"></i></div>
                                             <h3 class="green-color ovak-font">{{__('front.login.sign_in')}} <span class="gold-color">{{__('front.head.title.name')}}</span></h3>
                                             {{csrf_field()}}
+                                            <span class="small login-error" style="display: none;color: red"></span>
                                             <input name="email" type="email" id="login_email" placeholder="{{__('front.login.email')}}" required />
-                                            <small class="login-error" style="display: none;color: red"></small>
                                             <input name="password" type="password" id="login_password" placeholder="{{__('front.login.password')}}" required />
                                             <div class="margin-top-10 forget-cahnge-modal"><a class="links" href="#">{{__('front.forget_password.forgot_password')}}</a></div>
                                             <div class="mt-3">

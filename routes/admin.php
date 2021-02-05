@@ -19,6 +19,7 @@ Route::group(['prefix' => '/admin','namespace' => 'Admin'], function (){
     Route::group(['prefix' => '/auth'], function (){
         Route::get('login',[LoginController::class,'showLoginForm'])->name('admin.auth.login.form');
         Route::post('login',[LoginController::class,'login'])->name('login');
+        Route::get('logout',[LoginController::class,'logout'])->name('admin.logout');
     });
 
     Route::group(['middleware' => 'auth:admin'] , function (){

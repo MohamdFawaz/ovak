@@ -16,9 +16,19 @@ class UserConsultation extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
-    public function project()
+    public function firstProject()
     {
-        return $this->belongsTo(Project::class,'project_id');
+        return $this->belongsTo(Project::class,'first_project_id');
+    }
+
+    public function secondProject()
+    {
+        return $this->belongsTo(Project::class,'second_project_id');
+    }
+
+    public function unitType()
+    {
+        return $this->belongsTo(UnitType::class,'unit_type_id');
     }
 
     public function district()

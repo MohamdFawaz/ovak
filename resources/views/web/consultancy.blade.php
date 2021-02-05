@@ -63,8 +63,17 @@
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center mt-3">
+                                            <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center">
+                                                <select id="SecondProject" name="second_project_id" required>
+                                                    <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
+                                                    @foreach($projects as $project)
+                                                        <option value="{{$project->id}}">{{$project->name}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                            </div>
                                             <div class="col-12 col-sm-3 d-sm-block mt-3 mt-sm-0 d-flex justify-content-center">
-                                                <select id="FirstProject" name="first_project" required>
+                                                <select id="FirstProject" name="first_project_id" required>
                                                     <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
                                                     @foreach($projects as $project)
                                                         <option value="{{$project->id}}">{{$project->name}}</option>
@@ -131,8 +140,9 @@
                                                                type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
                                                     </div>
                                                     <div class="col-6">
-                                                        <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.percent')}}</h4>
-                                                        <input type="text" name="installment-down-payment-percentage"
+                                                        <h4 class="white-color bold ovak-font text-uppercase percentage">{{__('front.consultancy.installment.form.percent')}}</h4>
+                                                        <input type="text" name="installment-down-payment-percentage" class="percentage"
+                                                               maxlength="3"
                                                                onkeyup="convertDownPayment(event)"
                                                                onchange="convertDownPayment(event)"
                                                                placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />

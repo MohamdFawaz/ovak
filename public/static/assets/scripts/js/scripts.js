@@ -452,7 +452,7 @@ $(document).ready(function () {
         let formFields = {};
         let installmentForm = '#installment-form';
         formFields = getFromFields(installmentForm,formFields);
-
+        console.log('etst');
         if (formFields.totalAmount.val().length){
 
             if (e.currentTarget.classList.contains('percentage')){
@@ -545,12 +545,14 @@ $(document).ready(function () {
             let userId = JSON.parse(user).id;
             let unit_type_id = $('#consultancy-form select[name="unit_type"]').val();
             let district_id = $('#consultancy-form select[name="district_id"]').val();
-            let first_project = $('#consultancy-form select[name="first_project"]').val();
+            let first_project = $('#consultancy-form select[name="first_project_id"]').val();
+            let second_project = $('#consultancy-form select[name="second_project_id"]').val();
             let _token = $('#consultancy-form input[name="_token"]').val();
             form.append('user_id', userId);
             form.append('unit_type_id', unit_type_id);
             form.append('district_id', district_id);
-            form.append('project_id', first_project);
+            form.append('first_project_id', first_project);
+            form.append('second_project_id', second_project);
             form.append('_token', _token);
             axios({
                 method: 'post',

@@ -20,8 +20,8 @@
                         <label class="gold-color margin-top-5"> {{__('front.form.sort_by')}} </label>
                         <select class="select select-style margin-top-5">
                             <option value="all">{{__('front.form.show_all')}}</option>
-                            @foreach($property_types as $type)
-                                <option value="type-{{$type->id}}">{{$type->name}}</option>
+                            @foreach($districts as $district)
+                                <option value="district-{{$district->id}}">{{$district->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -30,7 +30,7 @@
         <div class="container-fluid my-5">
             <div class="row">
                 @foreach($projects as $project)
-                <div class="col-md-3 col-sm-4 col-12 column type-{{$type->id}} text-direction my-3">
+                <div class="col-md-3 col-sm-4 col-12 column district-{{$project->district->id}} text-direction my-3">
                     <div class="content">
                         <a href="{{route('projects.page',$project->id)}}">
                             <img src="{{$project->image}}" class="item-pic" alt="{{$project->id}}-project-image" />

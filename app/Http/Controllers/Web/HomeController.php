@@ -139,11 +139,7 @@ class HomeController extends Controller
 
     public function submitConsultancy(Request $request)
     {
-        UserConsultation::query()->create([
-                'user_id' => $request->user_id,
-                'project_id' => $request->project_id,
-                'district_id' => $request->project_id,
-            ]);
+        UserConsultation::query()->create($request->except('_token'));
         return response()->json('success');
     }
 
