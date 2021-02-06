@@ -130,9 +130,9 @@ return [
             'vision' => [
                 'we_find_you' => 'we find you',
                 'the_perfect_choice' => 'the perfect choice',
-                'description_gold' => 'Own variable advanced knowledge',
+                'description_gold' => 'Own valuable advanced knowledge',
                 'description_gray' => 'to find your perfect unit',
-                'description' => 'You search, we counsult, you get the keys to your dream ',
+                'description' => 'You search, we Advise, you get the keys to your dream ',
                 'mission_and_vision' => 'Mission & Vision'
             ],
             'project' => [
@@ -143,7 +143,7 @@ return [
                 'subscribe' => 'SUBSCRIBE',
                 'subscribe_button' =>'SUBSCRIBE',
                 'market_news' => 'market news',
-                'enter_email_placeholder' => 'Enter email placeholder',
+                'enter_email_placeholder' => 'Enter email',
                 'title' => 'Get updated with the newest marketplaces, properties and the latest offers, just with a click'
             ],
             'developers' => [

@@ -1,29 +1,31 @@
 @extends('web.layout')
 
 @section('title')
-    <title>{{__('front.head.title.name')}} | {{__('front.header.filter_result')}}</title>
+<title>{{__('front.head.title.name')}} | {{__('front.header.filter_result')}}</title>
 @endsection
 
 @section('pre_header_content')
-    <div class="h-75 w-100 d-flex justify-content-center align-items-center">
-        <h2 class="white-color"> {{__('front.header.filter_result')}} <span class="header-line"></span></h2>
-    </div>
+<div class="h-75 w-100 d-flex justify-content-center align-items-center">
+    <h2 class="white-color"> {{__('front.header.filter_result')}} <span class="header-line"></span></h2>
+</div>
 @endsection
 
 @section('content')
-    @include('web.partials.inner_pages_header')
-    <section id="result">
-        <div class="container">
-            <div class="margin-top-75">
-                <div class="col-md-8 col-sm-6">
-                    <div class="secondery-page-header-ovarlay">
-                        <h2 class="green-color ovak-font">{{count($units)}} {{__('front.result.residential')}}</h2>
-                        <h2 class="green-color ovak-font">{{__('front.result.compound')}} <span class="header-line"></span></h2>
-                    </div>
+@include('web.partials.inner_pages_header')
+<section id="result">
+    <div class="container">
+        <div class="margin-top-75">
+            <div class="col-md-8 col-sm-6">
+                <div class="secondery-page-header-ovarlay">
+                    <h2 class="green-color ovak-font">{{count($units)}} {{__('front.result.residential')}}</h2>
+                    <h2 class="green-color ovak-font">{{__('front.result.compound')}} <span class="header-line"></span></h2>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            @foreach($units as $unit)
+        </div>
+        <div class="clearfix"></div>
+        <div class="container-fluid">
+            <div class="row">
+                @foreach($units as $unit)
                 <div class="col-sm-6 col-12 column text-direction my-3">
                     <div class="content">
                         <div class="container-fluid">
@@ -55,32 +57,35 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
-    </section>
-    <section id="developers" class="developers mt-5">
-        <div class="container">
-            <div class="col-sm-12 text-direction">
-                <h2 class="section-first-header">
-                    <span>{{__('front.home.developers.projects')}}</span>
-                    <span class="header-line"></span></h2>
-                <h2 class="section-second-header letter-spacing">{{__('front.home.developers.developers')}}</h2>
-            </div>
-        </div>
-        <div class="slider-background mt-5">
-            <div class="variable slider">
-                @foreach($development_companies as $company)
-                    <div class="slider-item">
-                        <a href="{{route('developer.page',$company->slug)}}">
-                            <div class="slider-image">
-                                <img src="{{$company->image}}" alt="{{$company->slug}}-developer-image" />
-                            </div>
-                        </a>
-                    </div>
                 @endforeach
             </div>
         </div>
-        <div class="clearfix"></div>
-        <div class="text-center margin-top-75"><a href="{{route('developers.list')}}" class="ovak-button">{{__('front.title.view_all_developers')}}</a></div>
-    </section>
+    </div>
+</section>
+<section id="developers" class="developers mt-5">
+    <div class="container">
+        <div class="col-sm-12 text-direction">
+            <h2 class="section-first-header">
+                <span>{{__('front.home.developers.projects')}}</span>
+                <span class="header-line"></span>
+            </h2>
+            <h2 class="section-second-header letter-spacing">{{__('front.home.developers.developers')}}</h2>
+        </div>
+    </div>
+    <div class="slider-background mt-5">
+        <div class="variable slider">
+            @foreach($development_companies as $company)
+            <div class="slider-item">
+                <a href="{{route('developer.page',$company->slug)}}">
+                    <div class="slider-image">
+                        <img src="{{$company->image}}" alt="{{$company->slug}}-developer-image" />
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="text-center margin-top-75"><a href="{{route('developers.list')}}" class="ovak-button">{{__('front.title.view_all_developers')}}</a></div>
+</section>
 @endsection

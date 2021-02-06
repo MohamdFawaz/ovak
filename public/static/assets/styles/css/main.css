@@ -1236,3 +1236,6 @@ table td {
     display: none !important;
   }
 }
+img{
+  object-fit:cover;
+}

@@ -95,6 +95,7 @@ if (lang == "ltr") {
         infinite: true,
         variableWidth: true,
         autoplay: true,
+        fade: false
     });
     $(".inner-arrow").append('<i class="fa fa-arrow-right"></i>');
 }
@@ -105,6 +106,7 @@ else if (lang == "rtl") {
         infinite: true,
         variableWidth: true,
         autoplay: true,
+        fade: false
     });
     $(".inner-arrow").append('<i class="fa fa-arrow-left"></i>');
 }
@@ -170,7 +172,6 @@ $(".login-change-modal").click(function () {
 });
 $(".open-password-change-modal").click(function () {
     $(".password-modal").toggleClass("display-none");
-    $(".blolom").toggleClass("display-none");
 });
 $(".password-change-modal").click(function () {
     $(".password-modal").toggleClass("display-none");
