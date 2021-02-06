@@ -53,7 +53,7 @@
                 <div class="col-sm-12 green-background p-3">
                     <div class="px-3 row">
                         <div class="modal-close second-color"><i class="fa fa-times"></i></div>
-                        <div class="gold-color">project name</div>
+                        <div class="gold-color" id="ask-modal-title"></div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center h-100 mt-5">

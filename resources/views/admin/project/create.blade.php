@@ -79,9 +79,9 @@
 {{--                            </select>--}}
 {{--                        </div>--}}
                         <div class="form-group">
-                            <label for="area">Google Map Link</label>
-                            <input type="text" required name="google_map_link" class="form-control" id="area"
-                                   placeholder="Enter Google Map Link">
+                            <label for="google-maps-link">Google Map Link</label>
+                            <textarea  required name="google_map_link" class="form-control" id="google-maps-link"
+                                       placeholder="Enter Google Map Link"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="deliveryDate">Delivery Date</label>

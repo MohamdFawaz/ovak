@@ -51,7 +51,10 @@
                         <span class="square-acc"></span>
                         <span class="white-color">{{__('front.projects.interested')}}</span>
                         <span class="white-color">{{__('front.projects.ask_about_this_project_details')}}</span>
-                        <a href="javascript:void(0)"><span class="ovak-button my-3 trigger-ask @if(Auth::check()) ask @else login @endif" data-entity-id="{{$project->id}}" data-entity-type="project">{{__('front.projects.ask_now')}}</span></a>
+                        <a href="javascript:void(0)"><span class="ovak-button my-3 trigger-ask @if(Auth::check()) ask @else login @endif"
+                                                           data-entity-id="{{$project->id}}"
+                                                           data-entity-type="project"
+                                                           data-entity-name="{{$project->name}}">{{__('front.projects.ask_now')}}</span></a>
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -104,7 +107,7 @@
                 </div>
                 @endif
                 <div class="col-sm-12 mt-5">
-                    <iframe src="{{$project->google_map_link}}" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    {!! $project->google_map_link !!}
                 </div>
                 @if($project->gallery)
                 <div class="col-sm-12 mt-5 pt-5">
