@@ -210,6 +210,27 @@
 @section('js')
     <script src="{{asset('static/assets/scripts/js/ninja-slider.js')}}"></script>
     <script>
+        var lang = document.getElementsByTagName("html")[0].getAttribute("dir");
+        if (lang == "ltr") {
+            $(".variable").slick({
+                rtl: false,
+                slidesToShow: 1,
+                dots: true,
+                infinite: true,
+                variableWidth: true,
+                autoplay: true
+            });
+        }
+        else if (lang == "rtl") {
+            $(".variable").slick({
+                rtl: true,
+                slidesToShow: 1,
+                dots: true,
+                infinite: true,
+                variableWidth: true,
+                autoplay: true
+            });
+        }
         var ProjectMenu = document.getElementsByClassName("project-menu");
         $(document).ready(function () {
             window.onscroll = function () { scrollFunction() };

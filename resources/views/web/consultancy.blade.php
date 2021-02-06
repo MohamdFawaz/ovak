@@ -62,7 +62,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row d-flex justify-content-center mt-3">
+                                        <!-- <div class="row d-flex justify-content-center mt-3">
                                             <div class="col-12 col-sm-3 d-sm-block mt-3 mt-sm-0 d-flex justify-content-center">
                                                 <select id="FirstProject" name="first_project" required>
                                                     <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
@@ -73,6 +73,22 @@
                                             </div>
                                             <div>
 
+                                            </div>
+                                        </div> -->
+                                        <div class="row d-flex justify-content-center mt-3">
+                                        <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
+                                                    @foreach($projects as $project)
+                                                        <option value="{{$project->id}}">{{$project->name}}</option>
+                                                    @endforeach
+                                            <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center">
+                                                <select id="SecondProject" name="second_project" required>
+                                                <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
+                                                    @foreach($projects as $project)
+                                                        <option value="{{$project->id}}">{{$project->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div>
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
