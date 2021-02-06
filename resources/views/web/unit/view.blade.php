@@ -1,17 +1,12 @@
 @extends('web.layout')
-@section('css')
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/ninja-slider.css')}}">
-@endsection
 @section('title')
     <title>{{__('front.head.title.name')}} | {{$unit->name}}</title>
 @endsection
-
 @section('pre_header_content')
     <div class="h-75 w-100 d-flex justify-content-center align-items-center">
         <h2 class="section-second-header green-color">{{$unit->project->district->name}}<span class="header-line"></span></h2>
     </div>
 @endsection
-
 @section('content')
     @include('web.partials.inner_pages_header')
     <div class="col-sm-12 white-background gold-border-bottom py-3 p-0 display-none project-menu">
@@ -146,7 +141,7 @@
                             <div class="consultancy-square d-none d-sm-block">
                                 <span class="square-acc"></span>
                                 <span class="white-color">{{__('front.units.interested')}}</span>
-                                <span class="white-color">{{__('front.projects.ask_about_this_project_details')}}</span>
+                                <span class="white-color">{{__('front.units.ask_about_this_unit_details')}}</span>
                                 <a href="javascript:void(0)">
                                     <span class="ovak-button my-3 trigger-ask @if(Auth::check()) ask @else login @endif"
                                           data-entity-id="{{$unit->id}}"
@@ -200,34 +195,17 @@
     </section>
     <div class="container">
         @if($unit->gallery)
-        <div id="ninja-slider">
-            <div class="slider-inner">
-                <ul>
-                    @foreach($unit->gallery as $gallery)
-                    <li>
-                        <a class="ns-img" href="{{$gallery->image}}"></a>
-                    </li>
-                    @endforeach
-                </ul>
-                <div class="fs-icon" title="Expand/Close"></div>
+            <div class="variable slider project-slider mt-5">
+                @foreach($unit->gallery as $gallery)
+                <div class="slider-item">
+                    <a href="{{$gallery->image}}" target="_blank">
+                        <div class="slider-image">
+                            <img src="{{$gallery->image}}" alt="unit-image-{{$gallery->id}}" />
+                        </div>
+                    </a>
+                </div>
+                @endforeach
             </div>
-        </div>
         @endif
     </div>
-@endsection
-@section('js')
-    <script src="{{asset('static/assets/scripts/js/ninja-slider.js')}}"></script>
-    <script>
-        var ProjectMenu = document.getElementsByClassName("project-menu");
-        $(document).ready(function () {
-            window.onscroll = function () { scrollFunction() };
-            function scrollFunction() {
-                if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                    $(".project-menu").removeClass("display-none");
-                } else {
-                    $(".project-menu").addClass("display-none");
-                }
-            }
-        });
-    </script>
 @endsection

@@ -95,6 +95,7 @@ if (lang == "ltr") {
         infinite: true,
         variableWidth: true,
         autoplay: true,
+        fade: false
     });
     $(".inner-arrow").append('<i class="fa fa-arrow-right"></i>');
 }
@@ -105,6 +106,7 @@ else if (lang == "rtl") {
         infinite: true,
         variableWidth: true,
         autoplay: true,
+        fade: false
     });
     $(".inner-arrow").append('<i class="fa fa-arrow-left"></i>');
 }
@@ -170,7 +172,6 @@ $(".login-change-modal").click(function () {
 });
 $(".open-password-change-modal").click(function () {
     $(".password-modal").toggleClass("display-none");
-    $(".blolom").toggleClass("display-none");
 });
 $(".password-change-modal").click(function () {
     $(".password-modal").toggleClass("display-none");
@@ -560,12 +561,25 @@ $(document).ready(function () {
                 data: form,
                 headers: {'Content-Type': 'application/json'}
             }).then(function (response) {
-                console.log(response);
+                var params = [];
+                params.push('success_modal');
+                window.location.href = window.location.protocol + "//" + window.location.host +
+                    window.location.pathname + '?' + params.join('&');
             }).catch(error => {
                 console.error(error);
             });
         } else {
             $('#login').trigger('click');
         }
-    })
+    });
+    const params = new URLSearchParams(window.location.search)
+    if(params.has('success_modal')){
+        $(".ask-modal").toggleClass("display-none");
+        $(".links-carrier").toggleClass("display-none");
+        $(".modals").toggleClass("page-ovarlay");
+        $("body").toggleClass("custom-body");
+        if (location.href.includes('?')) {
+            history.pushState({}, null, location.href.split('?')[0]);
+        }
+    }
 })

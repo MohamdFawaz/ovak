@@ -73,6 +73,7 @@ return [
         'arabic_name' => 'Arabic Name',
         'image' => 'Image',
         'development_company' => 'Development Company',
+        'district' => 'District',
         'actions' => 'Actions'
     ],
     'unit' => [

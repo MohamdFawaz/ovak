@@ -31,7 +31,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $properties = Project::query()->with('developer')->get();
+        $properties = Project::query()->with(['developer','district'])->get();
 
         return view('admin.project.index', compact('properties'));
 

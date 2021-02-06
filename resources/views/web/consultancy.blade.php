@@ -41,7 +41,6 @@
                                                 <div class="custom-select">
                                                     <select name="unit_type" required>
                                                         <option value="">{{__('front.filter.all_unit_types')}}</option>
-                                                        <option value="">{{__('front.filter.all_unit_types')}}</option>
                                                         @foreach($unitTypes as $type)
                                                         <option value="{{$type->id}}">{{$type->name}}</option>
                                                         @endforeach
@@ -52,8 +51,7 @@
                                         <div class="row d-flex justify-content-center mt-3">
                                             <div class="col-sm-6 col-8">
                                                 <div class="custom-select">
-                                                    <select name="district_id" required>
-                                                        <option value="">{{__('front.filter.district_location')}} </option>
+                                                    <select name="district_id" required >
                                                         <option value="">{{__('front.filter.district_location')}} </option>
                                                         @foreach($districts as $district)
                                                         <option value="{{$district->id}}">{{$district->name}}</option>
@@ -64,28 +62,24 @@
                                         </div>
                                         <div class="row d-flex justify-content-center mt-3">
                                             <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center">
-                                                <select id="SecondProject" name="second_project_id" required>
-                                                    <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
-                                                    @foreach($projects as $project)
-                                                        <option value="{{$project->id}}">{{$project->name}}</option>
-                                                    @endforeach
-                                                </select>
-
-                                            </div>
-                                            <div class="col-12 col-sm-3 d-sm-block mt-3 mt-sm-0 d-flex justify-content-center">
                                                 <select id="FirstProject" name="first_project_id" required>
                                                     <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
+                                                        @foreach($projects as $project)
+                                                            <option value="{{$project->id}}">{{$project->name}}</option>
+                                                        @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center">
+                                                <select id="SecondProject" name="second_project_id" required>
+                                                <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
                                                     @foreach($projects as $project)
                                                         <option value="{{$project->id}}">{{$project->name}}</option>
                                                     @endforeach
                                                 </select>
-                                            </div>
-                                            <div>
-
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="ovak-button py-2 px-4 mt-4"> {{__('front.consultancy.form.action.submit')}}</button>
+                                            <button class="ovak-button py-2 px-4 mt-4 @if(!Auth::check()) login @endif"> {{__('front.consultancy.form.action.submit')}}</button>
                                         </div>
                                     </div>
                                 </div>
