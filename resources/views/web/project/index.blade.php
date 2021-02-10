@@ -31,15 +31,15 @@
         <div class="row">
             @foreach($projects as $project)
             <div class="col-md-3 col-sm-4 col-12 column district-{{$project->district->id}} text-direction my-3">
-                <div class="content">
+                <div class="content min-height-control">
                     <a href="{{route('projects.page',$project->id)}}">
                         <img src="{{$project->image}}" class="item-pic" alt="{{$project->id}}-project-image" />
                     </a>
                     <div class="row d-flex align-items-center py-3 px-3">
-                        <div class="col-sm-8 col-6 mt-2">
+                        <div class="col-sm-8 col-7 mt-2">
                             <h5 class="ovak-font green-color">{{$project->name}}</h5>
                         </div>
-                        <div class="col-sm-4 col-6">
+                        <div class="col-sm-4 col-5">
                             <a href="{{route('developer.page',$project->developer->slug)}}">
                                 <img src="{{$project->developer->image}}" class="img-fluid" alt="" /></a>
                         </div>
@@ -52,7 +52,6 @@
             @endforeach
         </div>
     </div>
-    <div class="text-center margin-top-25"><a class="white-color ovak-button" id="show">{{__('front.actions.show_more')}}</a></div>
 </section>
 <section id="developers" class="developers mt-5">
     <div class="container">

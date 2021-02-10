@@ -69,7 +69,7 @@
                                                         @endforeach
                                                 </select>
                                             </div>
-                                            <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center">
+                                            <div class="col-12 col-sm-3 d-sm-block d-flex justify-content-center mt-3 mt-sm-0 w-100 w-sm-auto">
                                                 <select id="SecondProject" name="second_project_id" required>
                                                 <option value="">{{__('front.consultancy.form.choices.select_project')}}</option>
                                                     @foreach($projects as $project)
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="ovak-button py-2 px-4 mt-4 @if(!Auth::check()) login @endif"> {{__('front.consultancy.form.action.submit')}}</button>
+                                            <button class="ovak-button py-2 px-4 mt-4 @if(!Auth::check()) consult @endif"> {{__('front.consultancy.form.action.submit')}}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -101,10 +101,10 @@
             <div class="service-background">
                 <div class="service-details my-5 d-flex justify-content-center py-5">
                     <div class="col-sm-8 col-12">
-                        <div class="consultation-background py-5">
+                        <div class="consultation-background">
                             <div class="container">
-                                <div class="col-12">
-                                    <div class="row d-flex justify-content-center">
+                                <div class="col-12 py-5">
+                                    <div class="row d-flex justify-content-center h-100">
                                         <div class="col-sm-8 col-12">
                                             <form id="installment-form">
                                                 {{csrf_field()}}
@@ -126,20 +126,20 @@
                                             </div>
                                             <div class="col-12 p-0">
                                                 <div class="row">
-                                                    <div class="col-6">
-                                                        <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.amount')}}</h4>
-                                                        <input name="installment-down-payment-amount"
-                                                               onkeyup="convertDownPayment(event)"
-                                                               onchange="convertDownPayment(event)"
-                                                               type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
-                                                    </div>
-                                                    <div class="col-6">
+                                                <div class="col-6">
                                                         <h4 class="white-color bold ovak-font text-uppercase percentage">{{__('front.consultancy.installment.form.percent')}}</h4>
                                                         <input type="text" name="installment-down-payment-percentage" class="percentage"
                                                                maxlength="3"
                                                                onkeyup="convertDownPayment(event)"
                                                                onchange="convertDownPayment(event)"
                                                                placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h4 class="white-color bold ovak-font text-uppercase">{{__('front.consultancy.installment.form.amount')}}</h4>
+                                                        <input name="installment-down-payment-amount"
+                                                               onkeyup="convertDownPayment(event)"
+                                                               onchange="convertDownPayment(event)"
+                                                               type="text" placeholder="{{__('front.consultancy.installment.form.amount_placeholder')}}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,7 +155,7 @@
                                                     <div class="col-6">
                                                         <button type="submit"
                                                                 onclick="calculateInstallment(event)"
-                                                                class="ovak-button w-100 py-2 text-center text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
+                                                                class="ovak-button w-100 py-2 text-center p-0 text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
                                                     </div>
                                                     <div class="col-6">
                                                         <button type="submit"
@@ -172,8 +172,8 @@
                                             </div>
                                             </form>
                                         </div>
-                                        <div class="col-12 mt-5">
-                                            <table id="installment-table" class="hide">
+                                        <div class="col-12">
+                                            <table id="installment-table mt-5" class="hide">
                                                 <thead>
                                                 <tr class="gold-color ovak-font bold text-center text-uppercase">
                                                     <td class="gold-color">{{__('front.consultancy.installment.table.installment_type')}}</td>
@@ -214,8 +214,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="margin-top-50 margin-bottom-80">
-
                                 </div>
                             </div>
                         </div>

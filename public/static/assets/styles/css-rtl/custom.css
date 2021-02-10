@@ -57,6 +57,10 @@ letter-spacing: 0 !important;
 .filter-button .row {
     justify-content:flex-start;
 }
+.single-item-details .consultancy-square {
+    left:150px;
+    right:unset;
+ }
 .custom-select{
     text-align:right
 }

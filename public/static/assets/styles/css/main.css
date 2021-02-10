@@ -1239,3 +1239,6 @@ table td {
 img{
   object-fit:cover;
 }
+.min-height-control{
+  min-height: 370px;
+}

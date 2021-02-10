@@ -76,11 +76,12 @@
                     <div class="col-sm-12">
                         <h2 class="gold-color">{{__('front.projects.amenities')}}</h2>
                     </div>
-                    <div class="container-fluid mt-5">
+                    <div class="container-fluid mt-3">
                         <div class="row">
                             @foreach($project->amenity as $amenity)
-                            <div class="col-md-4 mt-5 mt-sm-0">
+                            <div class="col-md-4 mt-3 mt-sm-0">
                                 <img class="img-fluid" src="{{$amenity->image}}" alt="amenity-{{$amenity->id}}" />
+                                <h4 class="green-color mt-3">hello</h4>
                             </div>
                             @endforeach
                         </div>
