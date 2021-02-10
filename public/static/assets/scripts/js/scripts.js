@@ -155,6 +155,12 @@ $(".login").click(function () {
     $(".links-carrier").addClass("display-none");
     $(".modals").toggleClass("page-ovarlay");
 });
+$(".consult").click(function () {
+    $(".login-modal").toggleClass("display-none");
+    $(".mobile-menu").addClass("display-none");
+    $("body").toggleClass("custom-body");
+    $(".modals").toggleClass("page-ovarlay");
+});
 $(".modal-close").click(function () {
     $(".consultancy-square").toggleClass("display-none");
     $(".links-carrier").toggleClass("display-none");
@@ -583,3 +589,25 @@ $(document).ready(function () {
         }
     }
 })
+var ProjectMenu =document.getElementsByClassName("project-menu");
+$(document).ready(function () {
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            $(".project-menu").removeClass("display-none");
+        } else {
+            $(".project-menu").addClass("display-none");
+        }
+    }
+});
+$(document).ready(function () {
+    var item = $(".column , .developer-item");
+    var numToShow = 4;
+    var button = $("#show");
+    var numInList = item.length;
+    item.hide();
+    if (numInList > numToShow) {
+        button.show();
+    }
+    item.slice(0, numToShow).show();
+});
