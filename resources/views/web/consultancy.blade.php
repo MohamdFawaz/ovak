@@ -17,7 +17,7 @@
 @section('content')
     @include('web.partials.inner_pages_header')
 
-    <section id="consult" class="consult">
+    <section id="consult">
         <div class="container">
             <div class="my-5 text-direction">
                 <h2 class="section-first-header letter-spacing"><span>{{__('front.consultancy.consult')}}</span></h2>
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="ovak-button py-2 px-4 mt-4 @if(!Auth::check()) consult @endif"> {{__('front.consultancy.form.action.submit')}}</button>
+                                            <button class="ovak-button py-2 px-4 mt-4 @if(!Auth::check()) login @endif"> {{__('front.consultancy.form.action.submit')}}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                                     <div class="col-6">
                                                         <button type="submit"
                                                                 onclick="calculateInstallment(event)"
-                                                                class="ovak-button w-100 py-2 text-center p-0 text-uppercase bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
+                                                                class="ovak-button w-100 py-2 text-center p-0 text-uppercase @if(!Auth::check()) login @endif bold">{{__('front.consultancy.installment.form.actions.calculate')}}</button>
                                                     </div>
                                                     <div class="col-6">
                                                         <button type="submit"
@@ -173,7 +173,7 @@
                                             </form>
                                         </div>
                                         <div class="col-12">
-                                            <table id="installment-table mt-5" class="hide">
+                                            <table id="installment-table" class="hide mt-5">
                                                 <thead>
                                                 <tr class="gold-color ovak-font bold text-center text-uppercase">
                                                     <td class="gold-color">{{__('front.consultancy.installment.table.installment_type')}}</td>

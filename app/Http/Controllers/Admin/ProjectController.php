@@ -75,6 +75,7 @@ class ProjectController extends Controller
             $project->delivery_date = $request->delivery_date;
             $project->image = $request->image;
             $project->google_map_link = $request->google_map_link;
+            $project->google_map_image = $request->google_map_image;
             $project->fill([
                 'en' => [
                     'name' => $request->english_name,
@@ -120,7 +121,6 @@ class ProjectController extends Controller
             }
             return redirect(route('project.index'));
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return redirect(route('project.index'));
         }
     }
@@ -188,6 +188,7 @@ class ProjectController extends Controller
             $project->finish_type_id = $request->finish_type_id;
             $project->unit_type_id = $request->unit_type_id;
             $project->google_map_link = $request->google_map_link;
+            $project->google_map_image = $request->google_map_image;
             $project->delivery_date = $request->delivery_date;
             $project->image = $request->image;
 

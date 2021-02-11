@@ -84,6 +84,15 @@
                                        placeholder="Enter Google Map Link"></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="google-maps-link">Google Map Image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="google_map_image" class="custom-file-input" id="google-maps-link">
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="deliveryDate">Delivery Date</label>
                             <input type="date" required name="delivery_date" class="form-control" id="deliveryDate">
                         </div>

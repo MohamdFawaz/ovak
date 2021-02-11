@@ -108,7 +108,9 @@
                 </div>
                 @endif
                 <div class="col-sm-12 mt-5">
-                    {!! $project->google_map_link !!}
+                    <a target="_blank" href="{{$project->google_map_link}}">
+                      <img src="{{$project->google_map_image}}" alt="{{$project->name}}-google-maps-link">
+                    </a>
                 </div>
                 @if($project->gallery)
                 <div class="col-sm-12 mt-5 pt-5">

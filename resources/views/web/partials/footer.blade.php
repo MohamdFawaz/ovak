@@ -101,7 +101,7 @@
 <script src="{{asset('static/assets/scripts/js/select.js')}}"></script>
 <script src="{{asset('static/assets/scripts/js/slick.min.js')}}"></script>
 <script src="{{asset('static/assets/scripts/js/navbar.js')}}"></script>
-<script src="{{asset('static/assets/scripts/js/scripts.js')}}"></script>
+<script src="{{asset('static/assets/scripts/js/scripts.js?v=1.1')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
 @yield('js')
 <script>
@@ -112,6 +112,7 @@
     var forgotPasswordUri = "{{route('user.forgotPassword')}}"
     var verifyCodeUri = "{{route('user.verifyCode')}}"
     var consultFormUri = "{{route('submit.consultancy')}}"
+    var isAuthenticated = "{{Auth::check()}}"
 </script>
 </body>
 </html>

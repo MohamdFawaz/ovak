@@ -370,7 +370,6 @@ $(document).ready(function () {
             data: form,
             headers: {'Content-Type': 'application/json' }
         }).then(function (response) {
-            console.log(response);
             // window.location.reload();
         }).catch(error => {
             $(".verify-code-error").css('display','block');
@@ -408,7 +407,6 @@ $(document).ready(function () {
                 let remainingAmount = 0;
                 let remainingAmountOverYears = 0;
                 if (formFields.downPaymentAmount.val().length) {
-                    console.log(formFields.downPaymentAmount.val());
                     remainingAmount = (formFields.totalAmount.val() - formFields.downPaymentAmount.val());
                 } else {
                     remainingAmount = (formFields.totalAmount.val() - ((parseInt(formFields.downPaymentPercentage.val()) / 100)) * formFields.totalAmount.val());
@@ -459,7 +457,6 @@ $(document).ready(function () {
         let formFields = {};
         let installmentForm = '#installment-form';
         formFields = getFromFields(installmentForm,formFields);
-        console.log('etst');
         if (formFields.totalAmount.val().length){
 
             if (e.currentTarget.classList.contains('percentage')){
@@ -574,8 +571,6 @@ $(document).ready(function () {
             }).catch(error => {
                 console.error(error);
             });
-        } else {
-            $('#login').trigger('click');
         }
     });
     const params = new URLSearchParams(window.location.search)
@@ -610,4 +605,8 @@ $(document).ready(function () {
         button.show();
     }
     item.slice(0, numToShow).show();
+
+    if (!isAuthenticated){
+        localStorage.removeItem('currentUser');
+    }
 });
