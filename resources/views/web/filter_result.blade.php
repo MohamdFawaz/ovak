@@ -187,7 +187,7 @@
     </div>
 </section>
 @if(!Auth::check()) 
-<div class="text-center margin-top-25"><a class="ovak-button white-color login" id="show">{{__('front.actions.show_more')}}</a></div>
+<div class="text-center margin-top-25"><a class="ovak-button white-color consult" id="show">{{__('front.actions.show_more')}}</a></div>
 @endif
 <section id="developers" class="developers mt-5">
     <div class="container">
