@@ -21,7 +21,7 @@ return [
             'consultancy' => 'الاستشارات',
             'about_contact' => 'عنا /تواصل معنا',
             'about' => 'عنا',
-            'filter_result' => 'نتيجة البحث',
+            'filter_result' => 'نتائج البحث',
             'logout' => 'تسجيل الخروج',
             'login' => 'تسجيل الدخول',
             'calculate_your_installments' => 'إحسب أقساطك',

@@ -58,7 +58,11 @@ letter-spacing: 0 !important;
     justify-content:flex-start;
 }
 .single-item-details .consultancy-square {
-    left:150px;
+    right:7%;
+    left: unset;
+ }
+ .single-unit .consultancy-square {
+    right:0;
     right:unset;
  }
 .custom-select{
@@ -91,3 +95,10 @@ letter-spacing: 0 !important;
 .select-style{
     border-right:1px solid #B7893D  !important;
 }
+.modal-close i {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    color: #0d3a3a;
+    cursor: pointer;
+  }
