@@ -135,7 +135,7 @@ class UserController extends Controller
 
     public function consultationList()
     {
-        $user_consultations = UserConsultation::query()->with(['user','firstProject','secondProject','unitType','district'])
+        $user_consultations = UserConsultation::query()->with(['user','firstProject','secondProject','propertyType','district'])
             ->latest()->get();
         return view('admin.user.consultations',compact('user_consultations'));
     }

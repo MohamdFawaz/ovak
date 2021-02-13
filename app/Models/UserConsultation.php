@@ -26,9 +26,9 @@ class UserConsultation extends Model
         return $this->belongsTo(Project::class,'second_project_id');
     }
 
-    public function unitType()
+    public function propertyType()
     {
-        return $this->belongsTo(UnitType::class,'unit_type_id');
+        return $this->belongsTo(PropertyType::class,'property_type_id');
     }
 
     public function district()

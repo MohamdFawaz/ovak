@@ -110,6 +110,7 @@ return [
             'all_development_companies' => 'كل الشركات المطورة',
             'all_finish_types' => 'كل انواع التشطيب',
             'all_unit_types' => 'كل انوع الوحدات',
+            'all_property_types' => 'كل انواع المشروعات',
             'all_delivery_dates' => 'كل مواعيد الاستلام',
             'price_range' => 'السعر',
             'area_range' => 'المساحة',

@@ -40,8 +40,8 @@
                                             <div class="col-sm-6 col-8">
                                                 <div class="custom-select">
                                                     <select name="unit_type" required>
-                                                        <option value="">{{__('front.filter.all_unit_types')}}</option>
-                                                        @foreach($unitTypes as $type)
+                                                        <option value="">{{__('front.filter.all_property_types')}}</option>
+                                                        @foreach($propertyTypes as $type)
                                                         <option value="{{$type->id}}">{{$type->name}}</option>
                                                         @endforeach
                                                     </select>

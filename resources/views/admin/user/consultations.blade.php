@@ -17,7 +17,7 @@
                         <th>User Mobile</th>
                         <th>First Project</th>
                         <th>Second Project</th>
-                        <th>Unit Type</th>
+                        <th>Property Type</th>
                         <th>District</th>
                     </tr>
                     </thead>
@@ -28,7 +28,7 @@
                         <td>{{$user_consultation->user->phone ?? ""}}</td>
                         <td>{{$user_consultation->firstProject ? $user_consultation->firstProject->name : ""}}</td>
                         <td>{{$user_consultation->secondProject ? $user_consultation->secondProject->name : ""}}</td>
-                        <td>{{$user_consultation->unitType ? $user_consultation->unitType->name : ""}}</td>
+                        <td>{{$user_consultation->propertyType ? $user_consultation->propertyType->name : ""}}</td>
                         <td>{{$user_filter->district->name ?? ""}}</td>
                     </tr>
                     @endforeach

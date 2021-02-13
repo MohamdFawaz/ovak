@@ -133,8 +133,8 @@ class HomeController extends Controller
     {
         $districts = District::query()->get();
         $projects = Project::query()->get();
-        $unitTypes = UnitType::query()->get();
-        return view('web.consultancy', compact('districts', 'projects','unitTypes'));
+        $propertyTypes = PropertyType::query()->get();
+        return view('web.consultancy', compact('districts', 'projects','propertyTypes'));
     }
 
     public function submitConsultancy(Request $request)

@@ -110,6 +110,7 @@ return [
             'all_development_companies' => 'All Development Companies',
             'all_finish_types' => 'All Finishing Types',
             'all_unit_types' => 'All Unit Types',
+            'all_property_types' => 'All Property Types',
             'all_delivery_dates' => 'All Delivery Dates',
             'price_range' => 'Price Range',
             'area_range' => 'Area Range',

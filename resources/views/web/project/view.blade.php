@@ -81,7 +81,7 @@
                             @foreach($project->amenity as $amenity)
                             <div class="col-md-4 mt-3 mt-sm-0">
                                 <img class="img-fluid" src="{{$amenity->image}}" alt="amenity-{{$amenity->id}}" />
-                                <h4 class="green-color mt-3">hello</h4>
+                                <h4 class="green-color mt-3">{{$amenity->name}}</h4>
                             </div>
                             @endforeach
                         </div>
@@ -109,7 +109,7 @@
                 @endif
                 <div class="col-sm-12 mt-5">
                     <a target="_blank" href="{{$project->google_map_link}}">
-                      <img src="{{$project->google_map_image}}" alt="{{$project->name}}-google-maps-link">
+                      <img class="img-fluid" src="{{$project->google_map_image}}" alt="{{$project->name}}-google-maps-link">
                     </a>
                 </div>
                 @if($project->gallery)
