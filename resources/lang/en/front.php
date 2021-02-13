@@ -21,7 +21,7 @@ return [
             'consultancy' => 'Consultancy',
             'about_contact' => 'About/Contact',
             'about' => 'About',
-            'filter_result' => 'Filter Result',
+            'filter_result' => 'Filter Results',
             'logout' => 'Logout',
             'login' => 'Login',
             'calculate_your_installments' => 'Calculate Your installments',
@@ -133,7 +133,7 @@ return [
                 'the_perfect_choice' => 'the perfect choice',
                 'description_gold' => 'Own valuable advanced knowledge',
                 'description_gray' => 'to find your perfect unit',
-                'description' => 'You search, we Advise, you get the keys to your dream ',
+                'description' => 'You search, we Advice, you get the keys to your dream ',
                 'mission_and_vision' => 'Mission & Vision'
             ],
             'project' => [

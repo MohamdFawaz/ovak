@@ -795,13 +795,6 @@ input:focus {
   height: 380px;
 }
 
-.modal-close i {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  color: #0d3a3a;
-  cursor: pointer;
-}
 
 .modal-close i:hover {
   color: #b7893d;
@@ -1021,6 +1014,19 @@ table td {
   padding: 20px;
   border: 1px solid #707070;
 }
+.select2-container--default .select2-selection--single{
+  border-radius: 0;
+  padding: 15px 0 !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+  width: 30px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  border-width: 6px 5px 0 5px !important;
+}
+.select2-container{
+  width: 148px !important;
+}
 @media screen and (max-width: 1024px) {
   .navbar .navbar-brand {
     width: 120px;
@@ -1061,6 +1067,9 @@ table td {
   }
   .service-background{
       background-size: unset;
+  }
+  .select2-container{
+    width: 182px !important;
   }
 }
 

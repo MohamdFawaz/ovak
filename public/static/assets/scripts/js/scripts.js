@@ -596,7 +596,7 @@ $(document).ready(function () {
     }
 });
 $(document).ready(function () {
-    var item = $(".column , .developer-item");
+    var item = $(".unit-show");
     var numToShow = 4;
     var button = $("#show");
     var numInList = item.length;
