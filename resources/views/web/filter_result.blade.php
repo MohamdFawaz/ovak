@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="row">
                 @foreach($units as $unit)
-                <div class="col-sm-6 col-12 unit-show column text-direction my-3">
+                <div class="col-sm-6 col-12 @if(!Auth::check()) unit-show @endif column text-direction my-3">
                     <div class="content">
                         <div class="container-fluid">
                             <div class="row">

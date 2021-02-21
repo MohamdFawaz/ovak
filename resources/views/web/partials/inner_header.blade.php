@@ -64,7 +64,7 @@
                                 <li><a href="javascript:void(0)" class="phone">{{Auth::user()->name}}</a></li>
                                 <li><a href="{{route('user.logout')}}">{{__('front.header.logout')}}</a></li>
                                 @else
-                                <li><a href="tel:{{config('settings.mobile')}}" class="phone">{{config('settings.mobile')}}</a></li>
+                                <li><a dir="ltr" href="tel:{{config('settings.mobile')}}" class="phone">{{config('settings.mobile')}}</a></li>
                                 <li class="login"><a href="#">{{__('front.header.login')}}</a></li>
                                 @endif
                                 @if(App::getLocale() == 'ar')

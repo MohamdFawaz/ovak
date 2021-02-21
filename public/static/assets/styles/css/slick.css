@@ -54,6 +54,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: unset !important;
 }
 
     .slick-track:before,
@@ -145,11 +146,6 @@
 
 .project-name {
     font-family: 'Bahnschrift Regular';
-}
-
-.slick-slide {
-    transition: all ease-in-out .3s;
-    opacity: 1;
 }
 
 .slick-active {
