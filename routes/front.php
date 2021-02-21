@@ -31,3 +31,8 @@ Route::group(['prefix' => 'projects'],function (){
 Route::post('/contact-us',[HomeController::class,'contactUs'])->name('contact');
 
 Route::post('/subscribe-newsletter',[HomeController::class,'subscribeToNewsletter'])->name('subscribe.newsletter');
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});

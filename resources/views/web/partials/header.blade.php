@@ -9,7 +9,6 @@
     @else
         <title>{{__('front.head.title.name')}} | {{__('front.header.home')}}</title>
     @endif
-    <title>{{__('front.head.title.name')}} | {{__('front.header.home')}}</title>
     <link rel="icon" href="{{asset('static/assets/images/icon.png')}}" width="60">
     <meta property="og:title" content="Ovak Estate">
     <meta property="og:description" content="Present the perfect advise for the real estate seekers and the consultancy you need Own variable Advanced knowledge">
@@ -26,15 +25,11 @@
         <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/custom.css')}}">
         <link rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/bootstrap.min.css')}}">
     @endif
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css?v=1.2')}}">
 </head>
 <body id="body" data-spy="scroll" data-target=".footer" data-offset="50">
 <div class="return-top">

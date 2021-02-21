@@ -26,7 +26,7 @@ class UnitController extends Controller
         $development_companies = DevelopmentCompany::all();
         $finish_types = FinishType::all();
         $unit_types = UnitType::all();
-        $delivery_dates = Project::query()->selectRaw('YEAR(delivery_date) as date')->get();
+        $delivery_dates = Project::query()->selectRaw('YEAR(delivery_date) as date')->groupBy('date')->get();
 
         $unit = Unit::query()->with(['project','project.developer','property'])->where('id',$id)->first();
         return view('web.unit.view',compact('unit','finish_types',

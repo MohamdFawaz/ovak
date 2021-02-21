@@ -36,7 +36,7 @@ class HomeController extends Controller
         $finish_types = FinishType::all();
         $unit_types = UnitType::all();
 
-        $delivery_dates = Project::query()->selectRaw('YEAR(delivery_date) as date')->get();
+        $delivery_dates = Project::query()->selectRaw('YEAR(delivery_date) as date')->groupBy('date')->get();
         $featured_projects = Project::all();
         $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])
             ->inRandomOrder()->limit(15)->get();
