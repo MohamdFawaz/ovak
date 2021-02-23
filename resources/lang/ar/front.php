@@ -176,6 +176,7 @@ return [
         'interested' => 'مهتم',
         'ask_about_this_project_details' => 'اسأل عن تفاصيل هذه الوحدة',
         'ask_now' => 'اسأل الآن',
+        'price' => 'نطاق السعر'
     ],
     'result' =>
         [

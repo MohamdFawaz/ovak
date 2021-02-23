@@ -183,6 +183,17 @@
                                                     @endif
                                                 @endforeach
                                             @endif
+                                            <div class="white-border-2 w-100 no-padding"></div>
+                                            <div class="col-12">
+                                                <div class="row py-2">
+                                                    <div class="col-4">
+                                                        {{__('front.units.price')}}
+                                                    </div>
+                                                    <div class="col-8 text-direction-reverse">
+                                                        {{$unit->from_price}}
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

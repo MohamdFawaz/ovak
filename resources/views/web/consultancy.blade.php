@@ -39,7 +39,7 @@
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-6 col-8">
                                                 <div class="custom-select">
-                                                    <select name="unit_type" required>
+                                                    <select name="property_type" required>
                                                         <option value="">{{__('front.filter.all_property_types')}}</option>
                                                         @foreach($propertyTypes as $type)
                                                         <option value="{{$type->id}}">{{$type->name}}</option>

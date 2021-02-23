@@ -547,13 +547,13 @@ $(document).ready(function () {
         if (user) {
             let form = new FormData();
             let userId = JSON.parse(user).id;
-            let unit_type_id = $('#consultancy-form select[name="unit_type"]').val();
+            let property_type_id = $('#consultancy-form select[name="property_type"]').val();
             let district_id = $('#consultancy-form select[name="district_id"]').val();
             let first_project = $('#consultancy-form select[name="first_project_id"]').val();
             let second_project = $('#consultancy-form select[name="second_project_id"]').val();
             let _token = $('#consultancy-form input[name="_token"]').val();
             form.append('user_id', userId);
-            form.append('unit_type_id', unit_type_id);
+            form.append('property_type_id', property_type_id);
             form.append('district_id', district_id);
             form.append('first_project_id', first_project);
             form.append('second_project_id', second_project);

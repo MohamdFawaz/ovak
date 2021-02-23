@@ -202,7 +202,7 @@
                             <form action="{{route('subscribe.newsletter')}}" method="post">
                                 {{csrf_field()}}
                                 {{method_field('post')}}
-                                <input type="email" maxlength="40" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
+                                <input type="email" name="email" maxlength="40" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
                                 <button class="subscription-button bold" type="submit">{{__('front.home.subscription.subscribe_button')}}</button>
                             </form>
                         </div>

@@ -25,11 +25,11 @@
         <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/custom.css')}}">
         <link rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/bootstrap.min.css')}}">
     @endif
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css?v=1.2')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css?v=1.2')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css?v=1.2')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css?v=1.2')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css?v=1.2')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css?v=1.3')}}">
 </head>
 <body id="body" data-spy="scroll" data-target=".footer" data-offset="50">
 <div class="return-top">

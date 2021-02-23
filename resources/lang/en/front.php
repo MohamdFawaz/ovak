@@ -177,6 +177,7 @@ return [
         'interested' => 'Interested',
         'ask_about_this_unit_details' => 'ask about this unit details',
         'ask_now' => 'ask now',
+        'price' => 'Price Range'
     ],
     'result' =>
         [
