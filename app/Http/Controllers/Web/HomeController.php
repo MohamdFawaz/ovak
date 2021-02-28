@@ -52,11 +52,7 @@ class HomeController extends Controller
 
         $filterUnitsQuery = Unit::query();
         if ($projectTypeId = request()->get('project_type_id')){
-            $filterUnitsQuery->with(['project' => function($q) use ($projectTypeId) {
-                $q->where('property_type_id',$projectTypeId);
-            }])->whereHas('project', function($q) use ($projectTypeId) {
-                $q->where('property_type_id',$projectTypeId);
-            });
+            $filterUnitsQuery->where('property_type_id',$projectTypeId);
         }
         if ($developerId = request()->get('development_company_id')){
             $filterUnitsQuery->with(['project' => function ($q) use ($developerId) {

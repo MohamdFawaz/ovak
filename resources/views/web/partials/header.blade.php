@@ -19,17 +19,17 @@
     <meta property="twitter:image" content="{{asset('static/assets/images/logo.png')}}">
     <meta property="twitter:url" content="https//www.ovakestate.com">
     @if(app()->getLocale() == 'ar')
-        <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-rtl/custom.css')}}">
-        <link rel="stylesheet" href="{{asset('static/assets/styles/css-rtl/bootstrap.min.css')}}">
+        <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-rtl/custom.css?v=1.4')}}">
+        <link rel="stylesheet" href="{{asset('static/assets/styles/css-rtl/bootstrap.min.css?v=1.4')}}">
     @else
-        <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/custom.css')}}">
-        <link rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/bootstrap.min.css')}}">
+        <link name="custom-style" rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/custom.css?v=1.4')}}">
+        <link rel="stylesheet" href="{{asset('static/assets/styles/css-ltr/bootstrap.min.css?v=1.4')}}">
     @endif
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css?v=1.3')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css?v=1.3')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css?v=1.3')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css?v=1.3')}}">
-    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css?v=1.3')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/select.min.css?v=1.4')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick.css?v=1.4')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/slick-theme.css?v=1.4')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/all.min.css?v=1.4')}}">
+    <link rel="stylesheet" href="{{asset('static/assets/styles/css/main.css?v=1.4')}}">
 </head>
 <body id="body" data-spy="scroll" data-target=".footer" data-offset="50">
 <div class="return-top">

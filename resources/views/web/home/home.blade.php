@@ -159,7 +159,7 @@
                 <a href="{{route('projects.page',$project->id)}}">
                     <div class="slider-image slider-ovarlay">
                         <img class="img-height" src="{{$project->image}}" alt="{{$project->id}}'-image'" />
-                        <a href="{{route('projects.list')}}" class="ovak-button"><span> {{__('front.actions.show_more')}}</span> <span class="inner-arrow white-color"></span></a>
+                        <a href="{{route('projects.page',$project->id)}}" class="ovak-button"><span> {{__('front.actions.show_more')}}</span> <span class="inner-arrow white-color"></span></a>
                     </div>
                     <div class="slider-body">
                         <div class="col-sm-12">
