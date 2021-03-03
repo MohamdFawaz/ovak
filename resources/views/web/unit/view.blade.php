@@ -220,3 +220,8 @@
         @endif
     </div>
 @endsection
+<style>
+    .slider-item{
+        margin-top: 0px !important;
+    }
+</style>

@@ -68,14 +68,16 @@
                                 </ul>
                             </div>
                             <div class="col-sm-12 margin-top-25">
-                                <h5>{{__('front.footer.menus.market_news')}}</h3>
+                                <h5>{{__('front.footer.menus.market_news')}}</h5>
                                 <p>{{__('front.footer.menus.join_mail_listing')}}<span class="gold-color"></span></p>
                             </div>
                             <div class="col-sm-5 col-12 margin-top-25">
                                 <div class="subscription-input">
-                                    <form>
-                                        <input class="border" type="email" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
-                                        <button type="button" class="subscription-button h-100">{{__('front.home.subscription.subscribe_button')}}</button>
+                                    <form action="{{route('subscribe.newsletter')}}" method="post">
+                                        {{csrf_field()}}
+                                        {{method_field('post')}}
+                                        <input name="email" class="border" type="email" placeholder="{{__('front.home.subscription.enter_email_placeholder')}}" required />
+                                            <button  class="subscription-button h-100">{{__('front.home.subscription.subscribe_button')}}</button>
                                     </form>
                                 </div>
                             </div>
@@ -116,3 +118,8 @@
 </script>
 </body>
 </html>
+<script>
+    function btnfunction(){
+        alert("hello");
+    }
+</script>

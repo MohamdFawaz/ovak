@@ -29,7 +29,7 @@
                         <td>{{$user_consultation->firstProject ? $user_consultation->firstProject->name : ""}}</td>
                         <td>{{$user_consultation->secondProject ? $user_consultation->secondProject->name : ""}}</td>
                         <td>{{$user_consultation->propertyType ? $user_consultation->propertyType->name : ""}}</td>
-                        <td>{{$user_filter->district->name ?? ""}}</td>
+                        <td>{{$user_consultation->district->name ?? ""}}</td>
                     </tr>
                     @endforeach
                     </tbody>

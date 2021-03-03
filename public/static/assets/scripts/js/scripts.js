@@ -609,4 +609,7 @@ $(document).ready(function () {
     if (!isAuthenticated){
         localStorage.removeItem('currentUser');
     }
+    if ($('#reset_values').length){
+        document.getElementById("reset_values").reset();
+    }
 });

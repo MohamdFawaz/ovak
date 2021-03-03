@@ -24,11 +24,11 @@
                 </div>
             </div>
             <div class="filter-body box-shadow">
-                <form action="{{route('filter')}}" method="get" class="mt-5">
+                <form action="{{route('filter')}}" id="reset_values" method="get" class="mt-5">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
                             <div class="custom-select">
-                                <select name="project_type_id">
+                                <select class="clear-cache" name="project_type_id">
                                     <option value="" selected="selected">{{__('front.filter.all_project_types')}}</option>
                                     <option value="" selected="selected">{{__('front.filter.all_project_types')}}</option>
                                     @foreach($project_types as $type)
@@ -118,7 +118,7 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="filter-button mb-3">
-                            <input type="submit" class="ovak-button" value="{{__('front.filter.search')}}">
+                            <input type="submit" onclick="clearform()" class="ovak-button" value="{{__('front.filter.search')}}">
                         </div>
                     </div>
                 </form>
