@@ -72,10 +72,10 @@ class HomeController extends Controller
             });
         }
         if ($finishTypeId = request()->get('finishing_type_id')){
-            $filterUnitsQuery->with(['project.finishType' => function ($q) use ($finishTypeId) {
-                $q->where('id',$finishTypeId);
-            }])->whereHas('project.finishType',function ($q) use ($finishTypeId) {
-                $q->where('id',$finishTypeId);
+            $filterUnitsQuery->with(['finishType' => function ($q) use ($finishTypeId) {
+                $q->where('finish_type_id',$finishTypeId);
+            }])->whereHas('finishType',function ($q) use ($finishTypeId) {
+                $q->where('finish_type_id',$finishTypeId);
             });
         }
         if ($unitTypeId = request()->get('unit_type_id')){
