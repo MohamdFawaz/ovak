@@ -92,15 +92,15 @@ class HomeController extends Controller
                 $q->whereYear('delivery_date',$deliveryDate);
             });
         }
-        $priceFrom = request()->get('price_from');
-        $priceTo = request()->get('price_to');
+        $priceFrom = !is_null(request()->get('price_from')) ? request()->get('price_from') : 0;
+        $priceTo = !is_null(request()->get('price_to')) ? request()->get('price_to') : PHP_INT_MAX;
         if ($priceFrom && $priceTo){
             $filterUnitsQuery->where('from_price','<=',$priceFrom)
                 ->where('to_price','>=',$priceTo);
         }
 
-        $areaFrom = request()->get('area_from');
-        $areaTo = request()->get('area_to');
+        $areaFrom = !is_null(request()->get('area_from')) ? request()->get('area_from') : 0;
+        $areaTo = !is_null(request()->get('area_to')) ? request()->get('area_to') : PHP_INT_MAX;
         if ($areaFrom && $areaTo){
             $filterUnitsQuery->whereBetween('area',[$areaFrom,$areaTo]);
         }
