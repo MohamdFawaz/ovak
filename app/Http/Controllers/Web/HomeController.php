@@ -50,63 +50,63 @@ class HomeController extends Controller
     {
         $development_companies = DevelopmentCompany::query()->inRandomOrder()->get();
 
-        $filterUnitsQuery = Unit::query();
+        $query = Unit::query();
         if ($projectTypeId = request()->get('project_type_id')){
-            $filterUnitsQuery->where('property_type_id',$projectTypeId);
+            $query->where('property_type_id',$projectTypeId);
         }
         if ($developerId = request()->get('development_company_id')){
-            $filterUnitsQuery->with(['project' => function ($q) use ($developerId) {
+            $query->with(['project' => function ($q) use ($developerId) {
                 $q->where('development_company_id',$developerId);
             }])->whereHas('project',function ($q) use ($developerId) {
                 $q->where('development_company_id',$developerId);
             });
         }else{
-            $filterUnitsQuery->with('project.developer');
+            $query->with('project.developer');
         }
 
         if ($districtId = request()->get('district_id')){
-            $filterUnitsQuery->with(['project.district' => function ($q) use ($districtId) {
+            $query->with(['project.district' => function ($q) use ($districtId) {
                 $q->where('id',$districtId);
             }])->whereHas('project.district',function ($q) use ($districtId) {
                 $q->where('id',$districtId);
             });
         }
         if ($finishTypeId = request()->get('finishing_type_id')){
-            $filterUnitsQuery->with(['finishType' => function ($q) use ($finishTypeId) {
+            $query->with(['finishType' => function ($q) use ($finishTypeId) {
                 $q->where('finish_type_id',$finishTypeId);
             }])->whereHas('finishType',function ($q) use ($finishTypeId) {
                 $q->where('finish_type_id',$finishTypeId);
             });
         }
         if ($unitTypeId = request()->get('unit_type_id')){
-            $filterUnitsQuery->with(['project.unitType' => function ($q) use ($unitTypeId) {
+            $query->with(['unitType' => function ($q) use ($unitTypeId) {
                 $q->where('id',$unitTypeId);
-            }])->whereHas('project.unitType',function ($q) use ($unitTypeId) {
+            }])->whereHas('unitType',function ($q) use ($unitTypeId) {
                 $q->where('id',$unitTypeId);
             });
         }
         if ($deliveryDate = request()->get('delivery_date')){
-            $filterUnitsQuery->with(['project' => function ($q) use ($deliveryDate) {
+            $query->with(['project' => function ($q) use ($deliveryDate) {
                 $q->whereYear('delivery_date',$deliveryDate);
             }])->whereHas('project',function ($q) use ($deliveryDate) {
                 $q->whereYear('delivery_date',$deliveryDate);
             });
         }
-        $priceFrom = !is_null(request()->get('price_from')) ? request()->get('price_from') : 0;
-        $priceTo = !is_null(request()->get('price_to')) ? request()->get('price_to') : PHP_INT_MAX;
-        if ($priceFrom && $priceTo){
-            $filterUnitsQuery->where('from_price','<=',$priceFrom)
-                ->where('to_price','>=',$priceTo);
+        $fromPrice = !is_null(request()->get('price_from')) ? request()->get('price_from') : 0;
+        $toPrice = !is_null(request()->get('price_to')) ? request()->get('price_to') : PHP_INT_MAX;
+        if ($fromPrice && $toPrice){
+            $query->where('from_price','>=', $fromPrice)
+                ->where('to_price','<=', $toPrice);
         }
 
         $areaFrom = !is_null(request()->get('area_from')) ? request()->get('area_from') : 0;
         $areaTo = !is_null(request()->get('area_to')) ? request()->get('area_to') : PHP_INT_MAX;
         if ($areaFrom && $areaTo){
-            $filterUnitsQuery->whereBetween('area',[$areaFrom,$areaTo]);
+            $query->whereBetween('area',[$areaFrom,$areaTo]);
         }
         if(\Auth::check())
         {
-            $units = $filterUnitsQuery->get();
+            $units = $query->get();
             UserFilterLog::query()->create([
                 'user_id' => \Auth::user()->id,
                 'property_type_id' => $projectTypeId,
@@ -115,7 +115,7 @@ class HomeController extends Controller
                 'unit_type_id' => $unitTypeId
             ]);
         }else{
-            $units = $filterUnitsQuery->limit(3)->get();
+            $units = $query->limit(3)->get();
         }
         return view('web.filter_result', compact('development_companies', 'units'));
     }
