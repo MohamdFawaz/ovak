@@ -95,14 +95,14 @@ class HomeController extends Controller
         $fromPrice = !is_null(request()->get('price_from')) ? request()->get('price_from') : 0;
         $toPrice = !is_null(request()->get('price_to')) ? request()->get('price_to') : PHP_INT_MAX;
         if ($fromPrice && $toPrice){
-            $query->where('from_price','>=', $fromPrice)
-                ->where('to_price','<=', $toPrice);
+            $query->where('from_price','>=', (integer)$fromPrice)
+                ->where('to_price','<=', (integer)$toPrice);
         }
 
         $areaFrom = !is_null(request()->get('area_from')) ? request()->get('area_from') : 0;
         $areaTo = !is_null(request()->get('area_to')) ? request()->get('area_to') : PHP_INT_MAX;
         if ($areaFrom && $areaTo){
-            $query->whereBetween('area',[$areaFrom,$areaTo]);
+            $query->whereBetween('area',[(integer)$areaFrom,(integer)$areaTo]);
         }
         if(\Auth::check())
         {
