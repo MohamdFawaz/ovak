@@ -26,7 +26,7 @@ class DevelopmentCompanyRepository implements UserRepositoryInterface
      */
     public function all()
     {
-        return DevelopmentCompany::all();
+        return DevelopmentCompany::query()->with(['project','project.projectAsking'])->get();
     }
 
     /**

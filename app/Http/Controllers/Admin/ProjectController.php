@@ -7,11 +7,14 @@ use App\Models\DevelopmentCompany;
 use App\Models\District;
 use App\Models\FinishType;
 use App\Models\Project;
+use App\Models\ProjectAmenity;
 use App\Models\ProjectGallery;
 use App\Models\PropertyType;
 use App\Models\UnitType;
 use App\Models\Utility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use mysql_xdevapi\Exception;
 
 class ProjectController extends Controller
 {
@@ -28,7 +31,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $properties = Project::query()->paginate(5);
+        $properties = Project::query()->with(['developer','district'])->get();
 
         return view('admin.project.index', compact('properties'));
 
@@ -72,6 +75,7 @@ class ProjectController extends Controller
             $project->delivery_date = $request->delivery_date;
             $project->image = $request->image;
             $project->google_map_link = $request->google_map_link;
+            $project->google_map_image = $request->google_map_image;
             $project->fill([
                 'en' => [
                     'name' => $request->english_name,
@@ -86,28 +90,34 @@ class ProjectController extends Controller
             ]);
             $project->save();
             $amenities = $request->amenities_files;
-            foreach ($amenities['image'] as $key => $amenityImage){
-                $project->amenity()->create([
-                    'image' => $amenityImage,
-                    'ar' => [
-                        'name' => $amenities['name']['ar'][$key]
-                    ],
-                    'en' => [
-                        'name' => $amenities['name']['en'][$key]
-                    ]
-                ]);
+            if (isset($amenities['image'])) {
+                foreach ($amenities['image'] as $key => $amenityImage) {
+                    $project->amenity()->create([
+                        'image' => $amenityImage,
+                        'ar' => [
+                            'name' => $amenities['name']['ar'][$key]
+                        ],
+                        'en' => [
+                            'name' => $amenities['name']['en'][$key]
+                        ]
+                    ]);
+                }
             }
             $utilities = $request->utilities;
-            foreach ($utilities as $utility){
-                $project->utility()->create([
-                    'utility_id' => $utility
-                ]);
+            if($utilities && count($utilities) && is_array($utilities)) {
+                foreach ($utilities as $utility) {
+                    $project->utility()->create([
+                        'utility_id' => $utility
+                    ]);
+                }
             }
             $projectGallery = $request->project_gallery;
-            foreach ($projectGallery as $image){
-                $project->gallery()->create([
-                    'image' => $image
-                ]);
+            if($projectGallery && count($projectGallery) && is_array($projectGallery)) {
+                foreach ($projectGallery as $image) {
+                    $project->gallery()->create([
+                        'image' => $image
+                    ]);
+                }
             }
             return redirect(route('project.index'));
         } catch (\Exception $e) {
@@ -123,18 +133,19 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $property = Project::query()->where('id', $id)->first();
+        $property = Project::query()->where('id', $id)->with(['amenity','utility','gallery'])->firstOrFail();
         $districts = District::query()->get();
         $propertyTypes = PropertyType::query()->get();
         $companies = DevelopmentCompany::query()->get();
         $finishTypes = FinishType::query()->get();
         $unitTypes = UnitType::query()->get();
+        $utilities = Utility::query()->get();
         return view('admin.project.show', compact('property',
             'districts',
             'propertyTypes',
             'companies',
             'finishTypes',
-            'unitTypes'));
+            'unitTypes','utilities'));
     }
 
     /**
@@ -145,18 +156,19 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $property = Project::query()->where('id', $id)->first();
+        $property = Project::query()->where('id', $id)->with(['amenity','utility','gallery'])->firstOrFail();
         $districts = District::query()->get();
         $propertyTypes = PropertyType::query()->get();
         $companies = DevelopmentCompany::query()->get();
         $finishTypes = FinishType::query()->get();
         $unitTypes = UnitType::query()->get();
+        $utilities = Utility::query()->get();
         return view('admin.project.edit', compact('property',
             'districts',
             'propertyTypes',
             'companies',
             'finishTypes',
-            'unitTypes'));
+            'unitTypes','utilities'));
     }
 
     /**
@@ -169,30 +181,75 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $property = Project::query()->where('id', $id)->first();
-            $property->district_id = $request->district_id;
-            $property->property_type_id = $request->property_type_id;
-            $property->development_company_id = $request->development_company_id;
-            $property->finish_type_id = $request->finish_type_id;
-            $property->unit_type_id = $request->unit_type_id;
-            $property->area = $request->area;
-            $property->price = $request->price;
-            $property->delivery_date = $request->delivery_date;
-            $property->image = $request->image;
+            $project = Project::query()->where('id', $id)->with('amenity')->first();
+            $project->district_id = $request->district_id;
+            $project->property_type_id = $request->property_type_id;
+            $project->development_company_id = $request->development_company_id;
+            $project->finish_type_id = $request->finish_type_id;
+            $project->unit_type_id = $request->unit_type_id;
+            $project->google_map_link = $request->google_map_link;
+            $project->google_map_image = $request->google_map_image;
+            $project->delivery_date = $request->delivery_date;
+            $project->image = $request->image;
 
-            $property->fill([
+            $project->fill([
                 'en' => [
                     'name' => $request->english_name,
-                    'description' => $request->arabic_description
+                    'description' => $request->english_description
                 ],
                 'ar' => [
                     'name' => $request->arabic_name,
                     'description' => $request->arabic_description
                 ]
             ]);
-            $property->save();
+            $project->save();
+            $amenities = $request->amenities_files;
+            $count = 0;
+            foreach ($amenities as $key => $amenity) {
+                if (is_numeric($key)){
+                    $projectAmenity = $project->amenity->where('id',$key)->first();
+                    $projectAmenity->image = isset($amenity['image']) ? reset($amenity['image']) : null;
+                    $projectAmenity->save();
+                    $projectAmenity->update([
+                        'name:ar' => $amenity['name']['ar'],
+                        'name:en' => $amenity['name']['en']
+                    ]);
+                }else{
+                    if (isset($amenities['image'][$count]) && isset($amenities['name']['ar'][$count])) {
+                        $project->amenity()->create([
+                            'image' => $amenities['image'][$count],
+                            'ar' => [
+                                'name' => $amenities['name']['ar'][$count]
+                            ],
+                            'en' => [
+                                'name' => $amenities['name']['en'][$count]
+                            ]
+                        ]);
+                        $count++;
+                    }
+                }
+
+            }
+            $utilities = $request->utilities;
+            if($utilities && count($utilities) && is_array($utilities)) {
+                $project->utility()->delete();
+                foreach ($utilities as $utility_id) {
+                    $project->utility()->create([
+                        'utility_id' => $utility_id
+                    ]);
+                }
+            }
+            $projectGallery = $request->project_gallery;
+            if ($projectGallery && count($projectGallery) && is_array($projectGallery)){
+                foreach ($projectGallery as $image){
+                    $project->gallery()->create([
+                        'image' => $image
+                    ]);
+                }
+            }
             return redirect(route('project.edit', $id));
         } catch (\Exception $e) {
+            dd($e->getMessage());
             \Log::info($e->getTraceAsString());
             return redirect(route('project.index'));
         }
@@ -206,7 +263,33 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        Project::query()->where('id', $id)->delete();
-        return redirect(route('project.index'));
+        try {
+            $project = Project::query()->where('id', $id)->first();
+            $project->units()->delete();
+            $project->delete();
+            return redirect(route('project.index'));
+        }catch (\Exception $e){
+            \Log::error($e->getTraceAsString());
+            return redirect(route('project.index'));
+        }
+    }
+
+    public function deleteAmenity($amenityId)
+    {
+        try {
+            ProjectAmenity::query()->where('id',$amenityId)->delete();
+            return redirect()->back();
+        }catch (\Exception $e){
+            \Log::info($e->getTraceAsString());
+        }
+    }
+    public function deleteImage($imageId)
+    {
+        try {
+            ProjectGallery::query()->where('id',$imageId)->delete();
+            return redirect()->back();
+        }catch (\Exception $e){
+            \Log::info($e->getTraceAsString());
+        }
     }
 }

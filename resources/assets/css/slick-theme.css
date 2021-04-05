@@ -174,12 +174,3 @@
 .slider-body img{
     width: 5px;
 }
-@media only screen and (max-width: 500px) {
-    .slick-next {
-        left: -15px !important;
-    }
-
-    .slick-prev {
-        right: -15px !important;
-    }
-}

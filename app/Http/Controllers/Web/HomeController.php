@@ -15,6 +15,7 @@ use App\Models\UnitType;
 use App\Models\User;
 use App\Models\UserAsking;
 use App\Models\UserCalculationLog;
+use App\Models\UserConsultation;
 use App\Models\UserFilterLog;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
@@ -35,75 +36,107 @@ class HomeController extends Controller
         $finish_types = FinishType::all();
         $unit_types = UnitType::all();
 
+        $delivery_dates = Project::query()->selectRaw('YEAR(delivery_date) as date')->groupBy('date')->get();
         $featured_projects = Project::all();
-        $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])->inRandomOrder()->get();
+        $projects = Project::query()->with(['developer:id,slug,image', 'district', 'propertyType'])
+            ->inRandomOrder()->limit(15)->get();
 
-        return view_front('web.home.home', compact('project_types',
+        return view('web.home.home', compact('project_types',
             'districts', 'development_companies', 'finish_types', 'unit_types',
-            'featured_projects', 'projects'));
+            'featured_projects', 'projects','delivery_dates'));
     }
 
     public function filter()
     {
         $development_companies = DevelopmentCompany::query()->inRandomOrder()->get();
 
-        $filterUnitsQuery = Unit::query();
-        if ($projectTypeId = request()->get('project_type')){
-            $filterUnitsQuery->with(['project' => function($q) use ($projectTypeId) {
-                $q->where('property_type_id',$projectTypeId);
-            }])->whereHas('project', function($q) use ($projectTypeId) {
-                $q->where('property_type_id',$projectTypeId);
-            });
+        $query = Unit::query();
+        if ($projectTypeId = request()->get('project_type_id')){
+            $query->where('property_type_id',$projectTypeId);
         }
-        if ($developerId = request()->get('development_company')){
-            $filterUnitsQuery->with(['project' => function ($q) use ($developerId) {
+        if ($developerId = request()->get('development_company_id')){
+            $query->with(['project' => function ($q) use ($developerId) {
                 $q->where('development_company_id',$developerId);
             }])->whereHas('project',function ($q) use ($developerId) {
                 $q->where('development_company_id',$developerId);
             });
         }else{
-            $filterUnitsQuery->with('project.developer');
+            $query->with('project.developer');
         }
 
         if ($districtId = request()->get('district_id')){
-            $filterUnitsQuery->with(['project.district' => function ($q) use ($districtId) {
+            $query->with(['project.district' => function ($q) use ($districtId) {
                 $q->where('id',$districtId);
             }])->whereHas('project.district',function ($q) use ($districtId) {
                 $q->where('id',$districtId);
             });
         }
         if ($finishTypeId = request()->get('finishing_type_id')){
-            $filterUnitsQuery->with(['project.finishType' => function ($q) use ($finishTypeId) {
-                $q->where('id',$finishTypeId);
-            }])->whereHas('project.finishType',function ($q) use ($finishTypeId) {
-                $q->where('id',$finishTypeId);
+            $query->with(['finishType' => function ($q) use ($finishTypeId) {
+                $q->where('finish_type_id',$finishTypeId);
+            }])->whereHas('finishType',function ($q) use ($finishTypeId) {
+                $q->where('finish_type_id',$finishTypeId);
             });
         }
         if ($unitTypeId = request()->get('unit_type_id')){
-            $filterUnitsQuery->with(['project.unitType' => function ($q) use ($unitTypeId) {
+            $query->with(['unitType' => function ($q) use ($unitTypeId) {
                 $q->where('id',$unitTypeId);
-            }])->whereHas('project.unitType',function ($q) use ($unitTypeId) {
+            }])->whereHas('unitType',function ($q) use ($unitTypeId) {
                 $q->where('id',$unitTypeId);
             });
         }
-        $units = $filterUnitsQuery->get();
+        if ($deliveryDate = request()->get('delivery_date')){
+            $query->with(['project' => function ($q) use ($deliveryDate) {
+                $q->whereYear('delivery_date',$deliveryDate);
+            }])->whereHas('project',function ($q) use ($deliveryDate) {
+                $q->whereYear('delivery_date',$deliveryDate);
+            });
+        }
+        $fromPrice = !is_null(request()->get('price_from')) ? request()->get('price_from') : 0;
+        $toPrice = !is_null(request()->get('price_to')) ? request()->get('price_to') : PHP_INT_MAX;
+        if ($fromPrice && $toPrice){
+            $query->where('from_price','>=', (integer)$fromPrice)
+                ->where('to_price','<=', (integer)$toPrice);
+        }
+
+        $areaFrom = !is_null(request()->get('area_from')) ? request()->get('area_from') : 0;
+        $areaTo = !is_null(request()->get('area_to')) ? request()->get('area_to') : PHP_INT_MAX;
+        if ($areaFrom && $areaTo){
+            $query->whereBetween('area',[(integer)$areaFrom,(integer)$areaTo]);
+        }
         if(\Auth::check())
         {
-            UserFilterLog::query()->create(['user_id' => \Auth::user()->id]);
+            $units = $query->get();
+            UserFilterLog::query()->create([
+                'user_id' => \Auth::user()->id,
+                'property_type_id' => $projectTypeId,
+                'district_id' => $districtId,
+                'development_company_id' => $developerId,
+                'unit_type_id' => $unitTypeId
+            ]);
+        }else{
+            $units = $query->limit(3)->get();
         }
-        return view_front('web.filter_result', compact('development_companies', 'units'));
+        return view('web.filter_result', compact('development_companies', 'units'));
     }
 
     public function about()
     {
-        return view_front('web.about');
+        return view('web.about');
     }
 
     public function consultancy()
     {
         $districts = District::query()->get();
         $projects = Project::query()->get();
-        return view_front('web.consultancy', compact('districts', 'projects'));
+        $propertyTypes = PropertyType::query()->get();
+        return view('web.consultancy', compact('districts', 'projects','propertyTypes'));
+    }
+
+    public function submitConsultancy(Request $request)
+    {
+        UserConsultation::query()->create($request->except('_token'));
+        return response()->json('success');
     }
 
     public function contactUs(Request $request)
@@ -120,13 +153,26 @@ class HomeController extends Controller
 
     public function logUserAsking(Request $request)
     {
-        UserAsking::query()->create($request->all());
+        if ($request->entity_type === 'project'){
+            $request->merge(['project_id' => $request->entity_id]);
+            $request->request->remove('entity_type');
+            $request->request->remove('entity_id');
+        }else{
+            $request->merge(['unit_id' => $request->entity_id]);
+            $request->request->remove('entity_type');
+            $request->request->remove('entity_id');
+        }
+        if (!UserAsking::query()->where($request->all())->exists()){
+            UserAsking::query()->create($request->all());
+        }
         return response()->json('success');
     }
 
     public function subscribeToNewsletter(Request $request)
     {
-        NewsletterSubscription::query()->create($request->except('_token','_method'));
+        if (!NewsletterSubscription::query()->where($request->except('_token','_method'))->exists()){
+            NewsletterSubscription::query()->create($request->except('_token','_method'));
+        }
         return redirect()->back();
     }
 

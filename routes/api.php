@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Auth\LoginController;
@@ -33,3 +34,6 @@ Route::post('/auth/verify-code',[ForgotPasswordController::class,'verifyResetCod
 Route::post('/log-user-calculations',[HomeController::class,'logUserCalculation'])->name('user.logCalculation');
 
 Route::post('/log-user-askings',[HomeController::class,'logUserAsking'])->name('user.logAsking');
+
+
+Route::get('/user-authentications',[DashboardController::class,'userAuthentications'])->name('user.authentications');

@@ -1,0 +1,84 @@
+.links-carrier {
+    right: -131px;
+}
+
+.consultancy-square {
+    left: 14%;
+}
+
+    .consultancy-square .square-acc {
+        margin-left: 50%;
+    }
+
+.return-top .ovak-button {
+    right: 5%;
+}
+.vision-img-show {
+    transform: rotate(0deg);
+}
+.slider-ovarlay .ovak-button {
+    margin: 0;
+    left: 30px;
+}
+.text-direction{
+    text-align:left;
+}
+.text-direction-reverse {
+    text-align: right;
+}
+.subscription-button {
+    right:20px;
+}
+.footer-links{
+    text-align:left;
+}
+.footer .subscription-button {
+    right: 15px;
+}
+.filter-button .row {
+    justify-content:flex-end;
+}
+.custom-select {
+    text-align: left
+}
+
+.select-selected:after {
+    right: 10px;
+}
+.navbar-toggler {
+    right: 30px;
+}
+.mobile-menu{
+    left:0
+}
+.select-style {
+    border-left: 1px solid #B7893D
+}
+.float-direction{
+    float:left;
+}
+.single-item-details .consultancy-square {
+   right:7%;
+   left:unset;
+}
+.links-carrier a {
+    color: #fff;
+    padding-left: 60px;
+  }
+.single-unit .consultancy-square{
+    left:0;
+    left:unset;
+}
+.text-direction-reverse{
+    text-align:right;
+}
+.select-style{
+    border-left:1px solid #B7893D !important;
+}
+.modal-close i {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #0d3a3a;
+    cursor: pointer;
+  }

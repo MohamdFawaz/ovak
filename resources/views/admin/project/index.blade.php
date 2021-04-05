@@ -24,6 +24,8 @@
                         <th>{{ __('admin.property.id') }}</th>
                         <th>{{ __('admin.property.arabic_name') }}</th>
                         <th>{{ __('admin.property.english_name') }}</th>
+                        <th>{{ __('admin.property.development_company') }}</th>
+                        <th>{{ __('admin.property.district') }}</th>
                         <th>{{ __('admin.property.image') }}</th>
                         <th>{{ __('admin.property.actions') }}</th>
                     </tr>
@@ -34,6 +36,8 @@
                             <td>{{ $property->id }}</td>
                             <td>{{ $property->translate('ar')->name ?? "-" }}</td>
                             <td>{{ $property->translate('en')->name ?? "-" }}</td>
+                            <td>{{ $property->developer->name }}</td>
+                            <td>{{ $property->district->name ?? "" }}</td>
                             <td>
                                 <img class="img-fluid img-responsive" width="100px" src="{{ $property->image }}"
                                      alt="{{$property->id . '-image'}}"></td>
@@ -55,9 +59,18 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="box-footer clearfix" style="margin-left: 20px ">
-                {{ $properties->links("pagination::bootstrap-4") }}
-            </div>
+{{--            <div class="box-footer clearfix" style="margin-left: 20px ">--}}
+{{--                {{ $properties->links("pagination::bootstrap-4") }}--}}
+{{--            </div>--}}
         </div>
     </div>
+@endsection
+
+
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $('#example1').dataTable();
+        });
+    </script>
 @endsection

@@ -41,15 +41,15 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="propertyTypesId">Property Type</label>
-                            <select id="propertyTypesId" class="form-control select" name="property_type_id" required>
-                                <option value="" class="form-control">Choose Property Type</option>
-                                @foreach($propertyTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="propertyTypesId">Property Type</label>--}}
+{{--                            <select id="propertyTypesId" class="form-control select" name="property_type_id" required>--}}
+{{--                                <option value="" class="form-control">Choose Property Type</option>--}}
+{{--                                @foreach($propertyTypes as $type)--}}
+{{--                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             <label for="developmentCompanyId">Development Company</label>
                             <select id="developmentCompanyId" class="form-control select" name="development_company_id"
@@ -60,28 +60,37 @@
                                 @endforeach
                             </select>
                         </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="finishTypeId">Finish Type</label>--}}
+{{--                            <select id="finishTypeId" class="form-control select" name="finish_type_id" required>--}}
+{{--                                <option value="" class="form-control">Choose Finish Type</option>--}}
+{{--                                @foreach($finishTypes as $type)--}}
+{{--                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label for="unitTypeId">Unit Type</label>--}}
+{{--                            <select id="unitTypeId" class="form-control select" name="unit_type_id" required>--}}
+{{--                                <option value="" class="form-control">Choose Unit Type</option>--}}
+{{--                                @foreach($unitTypes as $type)--}}
+{{--                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <div class="form-group">
-                            <label for="finishTypeId">Finish Type</label>
-                            <select id="finishTypeId" class="form-control select" name="finish_type_id" required>
-                                <option value="" class="form-control">Choose Finish Type</option>
-                                @foreach($finishTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
-                                @endforeach
-                            </select>
+                            <label for="google-maps-link">Google Map Link</label>
+                            <textarea  required name="google_map_link" class="form-control" id="google-maps-link"
+                                       placeholder="Enter Google Map Link"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="unitTypeId">Unit Type</label>
-                            <select id="unitTypeId" class="form-control select" name="unit_type_id" required>
-                                <option value="" class="form-control">Choose Unit Type</option>
-                                @foreach($unitTypes as $type)
-                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="area">Google Map Link</label>
-                            <input type="text" required name="google_map_link" class="form-control" id="area"
-                                   placeholder="Enter Google Map Link">
+                            <label for="google-maps-link">Google Map Image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="google_map_image" class="custom-file-input" id="google-maps-link">
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="deliveryDate">Delivery Date</label>
@@ -106,16 +115,6 @@
                             <label for="englishDescription">English Description</label>
                             <textarea required name="english_description" class="form-control" rows="5"
                                       id="englishDescription"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="arabicAddress">Arabic Address</label>
-                            <textarea required name="arabic_address" class="form-control" rows="5"
-                                      id="arabicAddress"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="englishAddress">English Address</label>
-                            <textarea required name="english_address" class="form-control" rows="5"
-                                      id="englishAddress"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="image">Image</label>

@@ -24,12 +24,27 @@ class Project extends Model implements TranslatableContract
         }
     }
 
+    public function getGoogleMapImageAttribute($value)
+    {
+        if ($value){
+            return asset('images/projects/'.$value);
+        }
+    }
     public function setImageAttribute($image)
     {
         if($image){
             $img_name = time().rand(1111,9999).'.'.$image->getClientOriginalExtension();
             $image->move(public_path('images/projects/'),$img_name);
             $this->attributes['image'] = $img_name ;
+        }
+    }
+
+    public function setGoogleMapImageAttribute($image)
+    {
+        if($image){
+            $img_name = time().rand(1111,9999).'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('images/projects/'),$img_name);
+            $this->attributes['google_map_image'] = $img_name ;
         }
     }
 
@@ -81,5 +96,10 @@ class Project extends Model implements TranslatableContract
     public function projectAsking()
     {
         return $this->hasMany(UserAsking::class,'project_id');
+    }
+
+    public function units()
+    {
+        return $this->hasMany(Unit::class,'project_id');
     }
 }

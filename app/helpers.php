@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Contracts\View\Factory as ViewFactory;
 
-if (! function_exists('view_front')) {
+if (! function_exists('view')) {
     /**
      * Get the evaluated view contents for the given view.
      *
@@ -10,7 +10,7 @@ if (! function_exists('view_front')) {
      * @param  array  $mergeData
      * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
      */
-    function view_front($view = null, $data = [], $mergeData = [])
+    function view($view = null, $data = [], $mergeData = [])
     {
         $factory = app(ViewFactory::class);
 
@@ -18,7 +18,6 @@ if (! function_exists('view_front')) {
             return $factory;
         }
 
-        $view = substr($view, 0, 4) . app()->getLocale() . "." . substr($view, 4);
         return $factory->make($view, $data, $mergeData);
     }
 }

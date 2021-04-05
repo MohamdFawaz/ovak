@@ -14,6 +14,7 @@
                     <thead>
                     <tr>
                         <th>User Name</th>
+                        <th>User Mobile</th>
                         <th>Total Amount</th>
                         <th>Down Payment</th>
                         <th>No of years</th>
@@ -24,6 +25,7 @@
                     @foreach($calculations as $calculation)
                     <tr>
                         <td>{{$calculation->user->name}}</td>
+                        <td>{{$calculation->user->phone}}</td>
                         <td>{{$calculation->project_total_amount}}</td>
                         <td>{{$calculation->down_payment}}</td>
                         <td>{{$calculation->number_of_years}}</td>

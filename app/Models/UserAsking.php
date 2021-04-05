@@ -18,6 +18,11 @@ class UserAsking extends Model
 
     public function project()
     {
-        return $this->belongsTo(Project::class,"project_id");
+        return $this->belongsTo(Project::class,"project_id")->withTrashed();
+    }
+
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class,'unit_id')->withTrashed();
     }
 }

@@ -42,6 +42,33 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="finishTypeId">Finish Types</label>
+                            <select id="finishTypeId" class="form-control select text-dark" multiple="multiple" name="finish_type_ids[]" required>
+                                <option value="" class="form-control" >Choose Finish Types</option>
+                                @foreach($finishTypes as $type)
+                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="unitTypeId">Unit Type</label>
+                            <select id="unitTypeId" class="form-control select" name="unit_type_id" required>
+                                <option value="" class="form-control">Choose Unit Type</option>
+                                @foreach($unitTypes as $type)
+                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="propertyTypeId">Property Type</label>
+                            <select id="propertyTypeId" class="form-control select" name="property_type_id" required>
+                                <option value="" class="form-control">Choose Property Type</option>
+                                @foreach($propertyTypes as $type)
+                                    <option value="{{$type->id}}" class="form-control">{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="area">Area</label>
                             <input type="number"  required name="area" class="form-control" id="area"
                                    placeholder="Enter unit area">
@@ -76,6 +103,15 @@
                             <label for="englishDescription">English Description</label>
                             <textarea required name="english_description" class="form-control" rows="5"
                                       id="englishDescription"></textarea>
+                        </div>
+                        <label>Properties</label>
+                        <div class="form-group row">
+                            @foreach($properties as $property)
+                                <label class="col-6">{{$property->name}}</label>
+                                <input type="text" name="properties[{{$property->id}}]"
+                                       class="form-control col-6 mt-2"
+                                       placeholder="Enter {{$property->name}}">
+                            @endforeach
                         </div>
                         <div class="form-group">
                             <label for="image">Image</label>

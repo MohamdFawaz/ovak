@@ -1,15 +1,17 @@
 <?php
 
+use App\Http\Controllers\Web\Auth\LoginController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\DevelopmentCompanyController;
 use App\Http\Controllers\Web\ProjectController;
 use \App\Http\Controllers\Web\UnitController;
 
-Route::get('/logout',[\App\Http\Controllers\Web\Auth\LoginController::class,'logout'])->name('user.logout');
+Route::get('/logout',[LoginController::class,'logout'])->name('user.logout');
 Route::get('/',[HomeController::class,'home']);
 Route::get('/filters-result',[HomeController::class,'filter'])->name('filter');
 Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/consultancy',[HomeController::class,'consultancy'])->name('consultancy');
+Route::post('/consultancy',[HomeController::class,'submitConsultancy'])->name('submit.consultancy');
 Route::get('/change-locale/{lang}',[HomeController::class,'switchLocale'])->name('change.locale');
 
 Route::group(['prefix' => 'units'],function (){
@@ -29,3 +31,8 @@ Route::group(['prefix' => 'projects'],function (){
 Route::post('/contact-us',[HomeController::class,'contactUs'])->name('contact');
 
 Route::post('/subscribe-newsletter',[HomeController::class,'subscribeToNewsletter'])->name('subscribe.newsletter');
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});

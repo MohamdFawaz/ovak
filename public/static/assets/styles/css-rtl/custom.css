@@ -1,0 +1,104 @@
+.header-letter-spacing{
+    letter-spacing: 0 !important;
+}
+.letter-spacing{
+letter-spacing: 0 !important;
+}
+.links-carrier {
+    left: -131px;
+}
+.links-carrier a {
+    color: #fff;
+    padding-right: 74px;
+  }
+.consultancy-square {
+    right: 14%;
+}
+
+    .consultancy-square .square-acc {
+        margin-right: 50%;
+    }
+
+.return-top .ovak-button {
+    left: 5%;
+}
+
+.vision-img-show {
+    transform: rotate(180deg);
+}
+.vision-text {
+    transform: rotate(180deg);
+}
+.home-vision img{
+    transform:rotateY(180deg);
+}
+.slider-ovarlay .ovak-button{
+    margin:0;
+    right:30px;
+}
+.text-direction{
+    text-align:right;
+}
+.text-direction-reverse {
+    text-align: left;
+}
+.subscription-button {
+    left:20px;
+}
+.footer-links{
+    text-align:right;
+}
+.footer .subscription-button{
+    left:15px;
+}
+.subscription {
+    text-align:right;
+}
+.filter-button .row {
+    justify-content:flex-start;
+}
+.single-item-details .consultancy-square {
+    right:7%;
+    left: unset;
+ }
+ .single-unit .consultancy-square {
+    right:0;
+    right:unset;
+ }
+.custom-select{
+    text-align:right
+}
+.select-selected:after {
+    left:10px;
+}
+.navbar-toggler {
+    left: 30px;
+}
+.mobile-menu{
+    right:0;
+}
+.header-letter-spacing {
+    letter-spacing: 0;
+}
+.letter-spacing{
+    letter-spacing:0;
+}
+.select-style {
+    border-right: 1px solid #B7893D
+}
+.float-direction{
+    float:right;
+}
+.text-direction-reverse{
+    text-align:left;
+}
+.select-style{
+    border-right:1px solid #B7893D  !important;
+}
+.modal-close i {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    color: #0d3a3a;
+    cursor: pointer;
+  }

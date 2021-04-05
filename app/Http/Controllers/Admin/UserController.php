@@ -9,6 +9,8 @@ use App\Models\NewsletterSubscription;
 use App\Models\User;
 use App\Models\UserAsking;
 use App\Models\UserCalculationLog;
+use App\Models\UserConsultation;
+use App\Models\UserFilterLog;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -105,10 +107,9 @@ class UserController extends Controller
 
     public function askingList()
     {
-        $askings = UserAsking::query()->with(['user','project'])->get();
+        $askings = UserAsking::query()->with(['user','project','unit'])->get();
         return view('admin.user.askings',compact('askings'));
     }
-
     public function newsletterSubscription()
     {
         $newsletters = NewsletterSubscription::query()->get();
@@ -122,5 +123,20 @@ class UserController extends Controller
             \Mail::to($email)->send(new NewsletterMail($request->email_content, $request->subject));
         }
         return redirect(route('user.newsletter'));
+    }
+
+
+    public function filtersList()
+    {
+        $user_filters = UserFilterLog::query()->with(['propertyType','district','developer','unitType'])
+            ->latest()->get();
+        return view('admin.user.filters',compact('user_filters'));
+    }
+
+    public function consultationList()
+    {
+        $user_consultations = UserConsultation::query()->with(['user','firstProject','secondProject','propertyType','district'])
+            ->latest()->get();
+        return view('admin.user.consultations',compact('user_consultations'));
     }
 }
